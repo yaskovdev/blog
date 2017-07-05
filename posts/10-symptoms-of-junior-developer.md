@@ -6,7 +6,7 @@
 4. Passes data between methods using mutable class fields
 5. Invents over-engineered solutions. And then genuinely defends them as if they were their own children 
 6. Does not use ready solutions, writes their own instead
-7. Never wrights unit tests. If nevertheless does, uses hacky tools like Mockito or PowerMock.
+7. Never writes unit tests. If nevertheless does, uses hacky tools like Mockito or PowerMock.
 8. Never uses interfaces
 9. Never uses static imports
 10. Does not embed new functionality into current code, instead puts it as much "aside" as possible, causing code duplicates and mess
