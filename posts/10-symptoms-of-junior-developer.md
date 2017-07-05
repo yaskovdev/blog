@@ -1,4 +1,6 @@
-### How determine a junior developer by their code
+# Draft
+
+### How to determine a junior developer by their code
 
 1. Has a phobia of new methods creation (prefers to increase the size of existing methods turning them into unsupportable 500-lines-of-code mess). Believes that introducing of new method noticeably reduces performance
 2. Has a phobia of new classes creation (prefers to increase the size of existing classes turning them into unsupportable 8000-lines-of-code mess). Believes that introducing of new class noticeably reduces performance

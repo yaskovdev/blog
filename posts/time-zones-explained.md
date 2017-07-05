@@ -1,3 +1,5 @@
+# Draft
+
 ### Ideal world
 
 Let's imagine an ideal world. In this world everyone uses the same clock which always shows the same time. The time never changes, goes evenly. This clock, common for everyone, is called UTC. What is wrong in this world? Why our world cannot be as simple as this? Why do we need all such complications as leap seconds, time zones, daylight saving time and so on?
