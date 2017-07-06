@@ -20,11 +20,11 @@ By the way, the statement "an hour has 60 minutes" is perfectly true, there are 
 
 OK, now, after we introduced the second type of minutes (longer ones), we can finally assume that the Earth rotates evenly. Of course, in reality it is not true, but our "complication" with the leap seconds allows us to continue *as if* it was true. Whenever we use a term "minute", we refer to a "normal" minute, which has 60 seconds.
 
-##### Does it mean I might see something like 23:59:60 on my clock?
+#### Does it mean I might see something like 23:59:60 on my clock?
 
 Yes.
 
-##### Is a variable like MS_IN_HOUR = 60 * 60 * 1000 still valid?
+#### Is a variable like MS_IN_HOUR = 60 * 60 * 1000 still valid?
 
 Yes, *in majority of cases*. But you need to be careful here. If you have an event and you want to know, say, which time was on UTC clock exactly one hour before the event, you cannot just subtract MS_IN_HOUR from the timestamp of your event.
 
@@ -39,7 +39,7 @@ There is no problem with 1 and 2. For any particular place on our Earth let's sp
 
 So the only solution we have here is to introduce more clocks. Damn it. Namely, we divide the surface of the Earth in areas. Each area has its own clock. To not complicate things even more, let's require that the time of a clock of each area differs from the time of the UTC clock on an integer amount of minutes. Let's call those areas *time zones*. And the difference between the time zone clock time and the UTC clock time will be called *offset*.
 
-##### So, is UTC a time standard or a time zone?
+#### So, is UTC a time standard or a time zone?
 
 Both.
 
