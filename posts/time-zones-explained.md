@@ -2,17 +2,21 @@
 
 ### Ideal world
 
-Let's imagine an ideal world. In this world there exists only one clock which always shows the same time. The time never changes and goes evenly. This clock, common for everyone, is called UTC. What is wrong in this world? Why our world cannot be as simple as this? Why do we need all such complications as leap seconds, time zones, daylight saving time and so on?
+Let's imagine an ideal world. In this world there exists only one clock which always shows the same time. The time never changes and goes evenly. This clock, common for everyone, is called UTC. What is wrong with this world? Why cannot our world be as simple as that? Why do we need all such complications as leap seconds, time zones, daylight saving time and so on?
+
+Let's have a look again on the ideal world and understand why in reality it would have problems. Let's fix the problems one by one and get to the world we have now: not ideal, but one of the best possible.
 
 ### Does a minute really have 60 seconds?
 
-Our ideal world is not plane. In reality, all inhabitants of the world live on a surface of a planet called Earth. The planet rotates around its axis.
+The world is not plane. In reality, we live on a surface of a planet called Earth. The planet rotates around its axis.
 
 We want our UTC clock to be synchronized with the Earth rotation (TODO: reason?). This means that after every equal interval of time the Earth should rotate to the same position that was the interval of time before (TODO: what we want/what we have illustration). But, unfortunately, the rotation of the Earth is not even: it slows down, just a bit. It even *could* speed up, theoretically. But in practice it always slows down. What can we can to not have difference between the Earth rotation and UTC accumulated?
 
-Let's constantly monitor the difference. And once it becomes 0.9 seconds, let's "stop" our UTC clock for one second to let the Earth to catch up. Such "stop" can be achieved by introducing minutes that have 61 seconds. As a result, the statement "a minute has 60 seconds" is false. In reality a minute can have either 60 or 61 seconds. Most of minutes, however, have 60 seconds indeed. By the way, the statement "an hour has 60 minutes" is perfectly true, there are no "leap minutes", thanks god. But obviously "an hour has 3600 seconds" is false: can have more (and, theoretically, even less).
+Let's constantly monitor the difference. And once it reaches 0.9 seconds, let's "stop" our UTC clock for one second to let the Earth to catch up. Such "stop" can be achieved by introducing minutes that have 61 seconds. As a result, the statement "a minute has 60 seconds" is false. On the other hand, we achieved the desired synchronization. This additional second is called *leap second*.
 
-These additional second are called *leap seconds*. For the sake of justice we must notice, that in theory there could be negative leap seconds, so, theoretically, there could be minutes which have 59 seconds. But in practice this is very unlikely to happen: the Earth rotation is slowing down.
+Potentially, a minute can have 59, 60 or 61 seconds. Most of minutes have 60 seconds. Some of them have 61 seconds. There *could be* minutes which have 59 seconds. But in practice this is very unlikely to happen: the Earth rotation is slowing down.
+
+By the way, the statement "an hour has 60 minutes" is perfectly true, there are no "leap minutes", thanks god. But obviously "an hour has 3600 seconds" is false: can have more (and, theoretically, even less).
 
 OK, now, after we introduced the second type of minutes (longer minutes), we can finally assume that the Earth rotates evenly. Of course, in reality it is not true, but our "complication" with the leap seconds allows us to continue *as if* it was true. Whenever we use a term "minute", we refer to a "normal" minute, which has 60 seconds.
 
