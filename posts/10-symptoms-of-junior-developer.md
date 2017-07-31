@@ -9,7 +9,7 @@
 5. Invents over-engineered solutions. And then genuinely defends them as if they were their own children 
 6. Does not use ready solutions, writes their own instead
 7. Never writes unit tests. If nevertheless does, uses hacky tools like Mockito or PowerMock.
-8. Never uses checked exception. Does not understand why and when are they needed.
+8. Never uses checked exceptions. Does not understand why and when are they needed.
 9. Never uses interfaces
 10. Never uses static imports
 11. Does not embed new functionality into current code, instead puts it as much "aside" as possible, causing code duplicates and mess
