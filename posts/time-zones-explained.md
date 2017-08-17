@@ -58,10 +58,20 @@ Or in Windows you see UTC in the list of time zones, like this:
 
 TODO: screenshot from Windows
 
-### History of changes in the offset
+### History of changes in a time zone
 
-Even to answer a simple question "How many seconds ago the event happened?" we need to know what was the offset at the moment of the event.
+So a time zone can be thought as a clock. The time, the clock shows, differs from one of UTC clock by an integer amount of minutes. A time zone can be fully described as UTC+N, where N shows the number of minutes, for example UTC+5:30 or UTC-2:00. N is also called "an offset from UTC" sometimes.
+
+But that's not enough again. Imagine the City ABC. It is located in such place that it is conveinent to use UTC+3:00 as the time zone. The mayor of the city changed. The new mayor likes even numbers more, so he decided to change the time zone from UTC+3:00 to UTC+4:00. Noone could stop him from doing this, cause he's a mayor.
+
+But as a result, our simple model with offsets does not work anymore. Now a time zone is not only current offset, but also all previous offsets. Other words, now a time zone also includes the history of the changes. We can now think about time zone as clock + table with changes, something like this:
+
+TODO: add table as an example
+
+Why do we need to keep all this historical data with us? Do we need it? The answer is yes. Even to answer a simple question "How many seconds ago the event happened?" we need to know what was the offset at the moment of the event. TODO: add an example, e.g., with the time when a UFO landed and you want to know how many seconds ago did it happen.
 
 ### Daylight saving time
 
-Coming soon.
+The mayor of the City ABC cannot calm down still. Now he decided to split a year into 2 halfs. And have one offset for the first half and a different offset for the second half of the year. Why? Well, he just *wants*. He wants it so much that even came up with an explanation why the idea allows to save money (TODO: include a link to DST reasons explanation here).
+
+Now we need to complicate our model even more. We already have current offset and the history of the offset changes as a time zone. Now we introduce the next information: integer number of minutes for one of the halfs of the year (asumming 0 for another) which represent the different from the offset, 2 moments of time in a year we move the clocks forward and back. And also the history of changes for these new 2 parameters.
