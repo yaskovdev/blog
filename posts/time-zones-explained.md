@@ -66,7 +66,10 @@ But that's not enough again. Imagine the City ABC. It is located in such place t
 
 But as a result, our simple model with offsets does not work anymore. Now a time zone is not only current offset, but also all previous offsets. Other words, now a time zone also includes the history of the changes. We can now think about time zone as clock + table with changes, something like this:
 
-TODO: add table as an example
+Offset  |Valid until
+--------|-----------------------
+UTC+3:00|20.08.2017 00:00:00 UTC
+UTC+4:00|n/a (still valid)
 
 Do we need to keep all this historical data? Yes. Even to answer a simple question "How many seconds ago the event happened?" we need to know not only the current offset but also the offset at the moment of the event. TODO: add an example, e.g., with the time when a UFO landed and you want to know how many seconds ago did it happen.
 
