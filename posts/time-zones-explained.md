@@ -77,7 +77,7 @@ This is better to understand by example. Imagine that a UFO landed on August, 19
 
 To do this let's convert both time of the UFO landing and current time to UTC and calculate the difference once again. For current time it's simple: current offset is UTC+4:00, current time is `21.08.17 00:00`, so current UTC time will be 4 hours less, namely `20.08.17 20:00 UTC`. What about the landing time, `19.08.2017 00:00`? To find the UTC time for it it's not enough to know current offset. And that's why we need the historycal data. Based on our above table the offset at that time was UTC+3:00, so the landing time by UTC clock will be only 3 hours less, namely `18.08.2017 21:00 UTC`. The difference between `20.08.17 20:00 UTC` and `18.08.2017 21:00 UTC` is `3 + 24 + 20 = 47 hours`. So the correct difference in seconds is `47 * 3600 = 169200`. Had it not been for the historical data, it would be impossible to find the correct difference.
 
-Note: even now the answer theoretically could be incorrect due to the leap seconds described above. But we assume in our calcualtions that no leap seconds were added/subtracted for any minute between the given dates. TODO: check this.
+Note: even now the answer theoretically could be incorrect due to the leap seconds described above. But we assume for simplicity that no leap seconds were added/subtracted for any minute between the given dates. TODO: check this.
 
 ### Daylight saving time
 
