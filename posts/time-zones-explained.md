@@ -64,14 +64,16 @@ So a time zone can be thought as a clock. The time, the clock shows, differs fro
 
 But that's not enough again. Imagine the City ABC. It is located in such place that it is conveinent to use UTC+3:00 as the time zone. The mayor of the city changed. The new mayor likes even numbers more, so he decided to change the time zone from UTC+3:00 to UTC+4:00. Noone could stop him from doing this, cause he's a mayor.
 
-But as a result, our simple model with offsets does not work anymore. Now a time zone is not only current offset, but also all previous offsets. Other words, now a time zone also includes the history of the changes. We can now think about time zone as clock + table with changes, something like this:
+But as a result, our simple model with offsets does not work anymore. Now a time zone is not only current offset, but also all previous offsets. Other words, now a time zone also includes the history of the changes. Now time zone is not only the clock, but also the table with changes which looks somehow like this:
 
 Offset  |Valid until
 --------|-----------------------
-UTC+3:00|20.08.2017 00:00:00 UTC
+UTC+3:00|20.08.2017 00:00 UTC
 UTC+4:00|n/a (still valid)
 
-Do we need to keep all this historical data? Yes. Even to answer a simple question "How many seconds ago the event happened?" we need to know not only the current offset but also the offset at the moment of the event. TODO: add an example, e.g., with the time when a UFO landed and you want to know how many seconds ago did it happen.
+Do we need to keep all this historical data? Yes. Even to answer a simple question "How many seconds ago the event happened?" we need to know not only the current offset but also the offset at the moment of the event.
+
+This is better to understand by example. Imagine that a UFO landed on August, 19 in the City ABC. And you want to answer the question: how many seconds ago the event happened? You know that at the moment of landing the clock on the city tower was showing midnight. Now there is 25 of August and the clock shows midnight again. Other words, you need to find the difference in milliseconds between `19.08.2017 00:00` and `25.08.17 00:00`. Seems like a simple task, isn't it? Since then till now exactly 6 days passed. One day has `24 * 3600` seconds. So the difference is `6 * 24 * 3600 = 518400` seconds. But the result is wrong! Had it not been for the mayor's changes in the timezone, it would be correct. But now we need to consider the changes to find the correct answer.
 
 ### Daylight saving time
 
