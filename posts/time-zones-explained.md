@@ -68,7 +68,7 @@ But as a result, our simple model with offsets does not work anymore. Now a time
 
 TODO: add table as an example
 
-Why do we need to keep all this historical data with us? Do we need it? The answer is yes. Even to answer a simple question "How many seconds ago the event happened?" we need to know what was the offset at the moment of the event. TODO: add an example, e.g., with the time when a UFO landed and you want to know how many seconds ago did it happen.
+Do we need to keep all this historical data? Yes. Even to answer a simple question "How many seconds ago the event happened?" we need to know not only the current offset but also the offset at the moment of the event. TODO: add an example, e.g., with the time when a UFO landed and you want to know how many seconds ago did it happen.
 
 ### Daylight saving time
 
