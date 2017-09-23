@@ -1,25 +1,17 @@
 ---
 layout: post
-title:  "How to write an awful website"
+title:  "Как создать ужасный онлайн-сервис"
 date:   2017-09-23 17:28:39 +0300
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Обязательно должны выполняться следующие несложные рекомендации:
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+1. Побольше невыполненных обещаний (например, скажите пользователю "мы вам ответим в течение суток". И не вздумайте отвечать.)
+2. Добавьте изрядное количество багов. Дайте пользователю возможность увидеть NullPointerException и полный стектрейс с вашими оригинальными названиями методов при попытке отправить тщательно заполненную форму. Предоставьте ему уникальную возможность всё начать сначала.
+3. Кнопка "Назад" браузера ни в коем случае не должна работать. Если пользователь случайно нажал на неё, не заметив невзрачной кнопки "Назад" где-нибудь в самом неожиданном месте, — пусть начинает всё сначала в наказание за невнимательность.
+4. Введённая информация вообще должна удаляться как можно чаще. Например, заполнил поля на одной вкладке и решил заглянуть во вторую (появилось подозрение, что вариант на второй вкладке подходит больше). Вариант всё-таки не подошёл, но по возвращении на первую вкладку, пользователь должен обнаружить, что введённая информация не сохранилась.
+5. Нужно использовать только placeholder’ы, чтобы пользователь забывал, что он сейчас вводит, стирал и только тогда видел placeholder.
+6. Служба поддержки не должна отвечать в принципе. Отвечать пользователям означает опускаться до их уровня. Пусть эти дураки разбираются со своими проблемами сами, даже несмотря на то, что ваш сервис и есть причина их проблем. В следующий раз будут знать.
+7. Сайт должен обязательно тормозить. Причём даже без видимых на то причин. Должно создаваться впечатление, что вместо сервера у вас сидит десяток рабов, набирающих каждый response вручную.
+8. И побольше дропдаунов по 1000 значений в каждом, пусть листают до посинения.
+9. Общая рекомендация: сделайте ваш сайт немного похожим на дешёвый китайский чайник. Чтобы было видно, что вам плевать на детали, ведь они не важны. Заодно будет сразу видно ваше отношение к пользователям и их проблемам.
