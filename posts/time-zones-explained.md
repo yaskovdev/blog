@@ -16,7 +16,7 @@ Let's constantly monitor the difference. And once it reaches 0.9 seconds, let's 
 
 Potentially, a minute can have 59, 60 or 61 seconds. Most of minutes have 60. Some of them have 61. There *could be* minutes which have 59 seconds. But in practice this is very unlikely to happen: the Earth rotation is slowing down.
 
-By the way, the statement "an hour has 60 minutes" is perfectly true, there are no "leap minutes", thanks god. But obviously "an hour has 3600 seconds" is false: can have more (and, theoretically, even less).
+By the way, the statement "an hour has 60 minutes" is perfectly true, there are no "leap minutes", thanks god. But obviously "an hour has 3600 seconds" is false: can have more (or, theoretically, even less).
 
 OK, now, after we introduced the second type of minutes (longer ones), we can finally assume that the Earth rotates evenly. Of course, in reality it is not true, but our "complication" with the leap seconds allows us to continue *as if* it was true. Whenever we use a term "minute", we refer to a "normal" minute, which has 60 seconds.
 
