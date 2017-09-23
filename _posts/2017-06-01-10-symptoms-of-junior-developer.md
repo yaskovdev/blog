@@ -1,4 +1,9 @@
-# Draft
+---
+layout: post
+title:  "10 symptoms of Junior Developer"
+date:   2017-06-01 11:00:00 +0300
+categories: jekyll update
+---
 
 ### How to determine a junior developer by their code
 
