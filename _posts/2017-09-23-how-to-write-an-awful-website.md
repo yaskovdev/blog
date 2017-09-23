@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "How to write an awful website"
 date:   2017-09-23 17:28:39 +0300
 categories: jekyll update
 ---
