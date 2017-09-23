@@ -1,0 +1,19 @@
+server {
+    server_name  www.blog.yaskovdev.com;
+    rewrite ^(.*) http://blog.yaskovdev.com$1 permanent;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/blog;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name blog.yaskovdev.com;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
