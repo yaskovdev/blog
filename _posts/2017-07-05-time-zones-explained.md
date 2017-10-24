@@ -15,7 +15,11 @@ Let's have a look again on the ideal world and understand why in reality it woul
 
 The world is not plane. In reality, we live on a surface of a planet called Earth. The planet rotates around its axis.
 
-We want our UTC clock to be synchronized with the Earth rotation (TODO: reason?). This means that after every equal interval of time the Earth should rotate to the same position that was in the beginning of the interval (TODO: what we want/what we have illustration). But, unfortunately, the rotation of the Earth is not even: it slows down, just a bit. It even *could* speed up, theoretically. But in practice it always slows down. What can we do to not have the difference between the Earth rotation and UTC accumulated?
+We want our UTC clock to be synchronized with the Earth rotation (TODO: reason?). This means that after every equal interval of time the Earth should rotate to the same position that was in the beginning of the interval.
+
+![What We Want/What We Have](/images/logo.png)
+
+But, unfortunately, the rotation of the Earth is not even: it slows down, just a bit. It even *could* speed up, theoretically. But in practice it always slows down. What can we do to not have the difference between the Earth rotation and the UTC clock accumulated?
 
 Let's constantly monitor the difference. And once it reaches 0.9 seconds, let's "stop" our UTC clock for one second to let the Earth to catch up. Such "stop" can be achieved by introducing minutes that have 61 seconds. As a result, the statement "a minute has 60 seconds" is false. On the other hand, we achieve the desired synchronization. This additional 61st second is called *leap second*.
 
