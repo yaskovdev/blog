@@ -15,7 +15,7 @@ Let's have a look again on the ideal world and understand why in reality it woul
 
 The world is not plane. In reality, we live on a surface of a planet called Earth. The planet rotates around its axis.
 
-We want our UTC clock to be synchronized with the Earth rotation (TODO: reason?). This means that after every equal interval of time the Earth should rotate to the same position that was in the beginning of the interval.
+We want our UTC clock to be synchronized with the Earth rotation (TODO: reason?). This means that after every 24 hours period of time the Earth should rotate to the same position that was in the beginning of the period.
 
 ![What We Want/What We Have](/assets/placeholder.png)
 
