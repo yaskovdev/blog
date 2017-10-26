@@ -7,6 +7,8 @@ categories: utc
 
 ## UTC — a time standard or a time zone?
 
+Short answer is: both. Longer answer is below.
+
 There are some [popular resources](https://www.timeanddate.com/time/gmt-utc-time.html) which clearly state that UTC is not a time zone, but a time standard.
 
 On the other hand, on some operating systems you can find UTC in the list of time zones. Also in Java, for example, this simple call `TimeZone.getTimeZone("UTC")` does return TimeZone object without any problems.
