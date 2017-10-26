@@ -41,4 +41,4 @@ So a time zone is still the clock which shows the time according to the UTC stan
 
 As it usually happens, term "UTC" is overloaded. Other words, "UTC" refers to more than one concept. Namely, depending on a context, **it can be a time standard or a specific time zone** with the next 2 features:
 1. There is no country (yet) which officially uses UTC timezone
-2. The UTC timezone always has the same time as UTC time standard. Other words, the UTC offset for the UTC time zone (sounds not very well, but that's because of the overload) is always 0 and can be written for example as UTC+00:00.
+2. The UTC timezone always has the same time as UTC time standard. Other words, the UTC offset for the UTC time zone (sounds not very well, but that's because of the overload) is always 0 and can be written for example as UTC+00:00. Obviously, UTC timezone does not have DST. Also the history of changes of the offset and DST is empty, because they were never changed.
