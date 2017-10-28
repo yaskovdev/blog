@@ -15,7 +15,7 @@ On the other hand, on some operating systems you can find UTC in the list of tim
 
 ![UTC as time zone in Windows](/assets/utc-as-time-zone-in-windows.png)
 
-Let's finaly clarify what is UTC: a time standard or a time zone? To do it let's first understand what is each of them.
+Let's finally clarify what is UTC: a time standard or a time zone? To do it let's first understand what is each of them.
 
 ### What is a time standard?
 
