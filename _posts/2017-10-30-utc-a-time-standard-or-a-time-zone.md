@@ -27,11 +27,11 @@ You can think of UTC (or any other time standard) as a big clock in the middle o
 
 ### What is a time zone?
 
-A time zone is a more complex concept. It consists of:
+A time zone is a more complex concept. It usually corresponds to some region in the world. It consists of:
 
 1. The UTC offset. The offset is just the difference between the time of the timezone and UTC time. Usually it is expressed in integer number of hours. But there are few exceptions when the number of hours is not integer.
 2. A time of DST (daylight saving time) start and end.
-3. The full history of changes in 1. and 2.
+3. All the changes in 1. and 2. this region had during its history.
 
 So a time zone is still the clock which shows the time according to the UTC standard. But besides the clock you also have the UTC offset, the DST rules and the history of any changes in the offset and in the DST rules.
 
@@ -39,6 +39,8 @@ So a time zone is still the clock which shows the time according to the UTC stan
 
 ### So what is UTC?
 
-As it usually happens, term "UTC" is overloaded. Other words, "UTC" refers to more than one concept. Namely, depending on a context, **it can be a time standard or a specific time zone** with the next 2 features:
+As it usually happens, term "UTC" is overloaded. Other words, "UTC" refers to more than one concept. Namely, depending on a context, **it can be a time standard or a specific time zone**. The time zone is specific because it has the next 2 features:
 1. There is no country (yet) which officially uses UTC timezone
 2. The UTC timezone always has the same time as UTC time standard. Other words, the UTC offset for the UTC time zone (sounds not very well, but that's because of the overload) is always 0 and can be written for example as UTC+00:00. Obviously, UTC timezone does not have DST. Also the history of changes of the offset and the DST is empty, because they were never changed.
+
+Thanks to people who answered [this question](https://stackoverflow.com/questions/44756430/why-utc-which-is-not-a-time-zone-is-considered-as-a-time-zone-in-java-and-not) for their answers.
