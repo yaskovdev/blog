@@ -23,7 +23,7 @@ We want for each event to be able to say when did it happen (or will happen). Ot
 
 You can think of UTC (or any other time standard) as a big clock in the middle of the Universe, common to everyone.
 
-![Big UTC Clock](/assets/placeholder.png)
+![Big UTC Clock](/assets/big-utc-clock.png)
 
 ### What is a time zone?
 
@@ -41,4 +41,4 @@ As it usually happens, term "UTC" is overloaded. Other words, "UTC" refers to mo
 1. There is no country (yet) which officially uses UTC timezone
 2. The UTC timezone always has the same time as UTC time standard. Other words, the UTC offset for the UTC time zone (sounds not very well, but that's because of the overload) is always 0 and can be written for example as UTC+00:00. Obviously, UTC timezone does not have DST. Also the history of changes of the offset and the DST is empty, because they were never changed.
 
-Thanks to people who answered [this question](https://stackoverflow.com/questions/44756430/why-utc-which-is-not-a-time-zone-is-considered-as-a-time-zone-in-java-and-not) for their answers.
+Thanks to the people who answered [this question](https://stackoverflow.com/questions/44756430/why-utc-which-is-not-a-time-zone-is-considered-as-a-time-zone-in-java-and-not) for their answers.
