@@ -13,7 +13,7 @@ There are some [popular resources](https://www.timeanddate.com/time/gmt-utc-time
 
 On the other hand, on some operating systems you can find UTC in the list of time zones. Also in Java, for example, this simple call `TimeZone.getTimeZone("UTC")` does return TimeZone object without any problems.
 
-![UTC as time zone in Windows](/assets/placeholder.png)
+![UTC as time zone in Windows](/assets/utc-as-time-zone-in-windows.png)
 
 Let's finaly clarify what is UTC: a time standard or a time zone? To do it let's first understand what is each of them.
 
