@@ -29,13 +29,11 @@ You can think of UTC (or any other time standard) as a big clock in the middle o
 
 A time zone is a more complex concept. It usually corresponds to some region in the world. It consists of:
 
-1. The UTC offset. The offset is just the difference between the time of the timezone and UTC time. Usually it is expressed in integer number of hours. But there are few exceptions when the number of hours is not integer.
-2. A time of DST (daylight saving time) start and end.
+1. The UTC offset. The offset is just the difference between the time of the timezone and UTC time. Usually it is expressed in integer number of hours. But there are few exceptions when the number of hours is not integer. The offset is different during DST (daylight saving time).
+2. A time of the DST start and end.
 3. All the changes in 1. and 2. this region had during its history.
 
 So a time zone is still the clock which shows the time according to the UTC standard. But besides the clock you also have the UTC offset, the DST rules and the history of any changes in the offset and in the DST rules.
-
-![Time Zone](/assets/placeholder.png)
 
 ### So what is UTC?
 
