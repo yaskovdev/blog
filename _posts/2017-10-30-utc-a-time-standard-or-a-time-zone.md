@@ -23,7 +23,7 @@ We want for each event to be able to say when did it happen (or will happen). Ot
 
 You can think of UTC (or any other time standard) as a big clock in the middle of the Universe, common to everyone.
 
-<img alt="Big UTC Clock" src="/assets/big-utc-clock.png" align="left" height="147">
+<img alt="Big UTC Clock" src="/assets/big-utc-clock.png" height="200">
 
 ### What is a time zone?
 
