@@ -5,9 +5,7 @@ date:   2017-10-30 21:00:00 +0300
 categories: utc
 ---
 
-## UTC — a time standard or a time zone?
-
-Short answer is: **both**. Longer answer is below.
+Short answer is **both**. Longer answer is below.
 
 There are some [popular resources](https://www.timeanddate.com/time/gmt-utc-time.html) which clearly state that UTC is not a time zone, but a time standard.
 
@@ -38,7 +36,7 @@ So a time zone is still the clock which shows the time according to the UTC stan
 ### So what is UTC?
 
 As it usually happens, term "UTC" is overloaded. Other words, "UTC" refers to more than one concept. Namely, depending on a context, **it can be a time standard or a special time zone**. The time zone is special because it has the next 2 features:
-1. There is no country (yet) which officially uses UTC timezone
+1. There is no country (yet) which officially uses UTC timezone for any of its regions
 2. The UTC timezone always has the same time as UTC time standard. Other words, the UTC offset for the UTC time zone (sounds not very well, but that's because of the overload) is always 0 and can be written for example as UTC+00:00. Obviously, UTC timezone does not have DST. Also the history of changes of the offset and the DST is empty, because they were never changed.
 
 Thanks to the people who answered [this question](https://stackoverflow.com/questions/44756430/why-utc-which-is-not-a-time-zone-is-considered-as-a-time-zone-in-java-and-not) for their answers.
