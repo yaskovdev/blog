@@ -1,11 +1,19 @@
 ---
 layout: post
-title:  "10 symptoms of Junior Developer"
+title:  "10 mistakes you do in your code"
 date:   2017-06-01 11:00:00 +0300
-categories: jekyll update
+categories: java code
 ---
 
-### How to determine a junior developer by their code
+While working with the code of even experienced developers, I noticed that they very often do the same mistakes which can dramatically reduce readability (and therefore maintainability) of the code.
+
+### Make a method static, it is so convenient
+
+### Do not pollute methods with all these arguments, pass data between methods using mutable class fields
+
+### Avoid new classes creation
+
+### Avoid new methods creation
 
 1. Has a phobia of new methods creation (prefers to increase the size of existing methods turning them into unsupportable 500-lines-of-code mess). Believes that introducing of new method noticeably reduces performance
 2. Has a phobia of new classes creation (prefers to increase the size of existing classes turning them into unsupportable 8000-lines-of-code mess). Believes that introducing of new class noticeably reduces performance
