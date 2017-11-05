@@ -9,13 +9,15 @@ While working with the code of even experienced developers, I noticed that they 
 
 ### Make a method static, it is so convenient
 
-### Do not pollute methods with all these arguments, pass data between methods using mutable class fields
+### Never pass data between methods using mutable class fields
 
 Passes data between methods using mutable class fields.
 
-### "final" keyword is redundant in Java
+### Use "final" for any variable declaration
 
-Sincerely convinced that "final" is an excessive keyword, never uses it.
+I mean it. Not only class fields must be declared final, but all kinds variables. I mean method variables, method arguments declaration (even if the method has no body), exception declaration in a catch block, resource declaration in a try-with-resources block.
+Imagine yourself riding a bicycle where all possible nuts are loosened a bit. Everything is rattling and is ready to fall off. This is how it feels to maintain code where "final" is not used. "final" is a wrench which guarantees that you will never loose a wheel.
+By the way, modern IDEs can be configured to highlight cases where "final" can be (but is not) used.
 
 ### Avoid new classes creation
 
@@ -27,7 +29,7 @@ Has a phobia of new methods creation (prefers to increase the size of existing m
 
 ### Never use static imports
 
-10. Never uses static imports
+Never uses static imports
 
 ### Never modify existing code to not break something
 
@@ -56,3 +58,7 @@ Never uses checked exceptions. Does not understand why and when are they needed.
 ### Interfaces pollute your codebase, never use them
 
 Never uses interfaces.
+
+### Always explicitly pass encodings
+
+### Always explicitly specify time zones
