@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "10 hints how to become a true enterprise developer"
+title:  "You do these 10 mistakes when you code"
 date:   2017-06-01 11:00:00 +0300
-categories: java code
+categories: code java
 ---
 
 While working with the code of even experienced developers, I noticed that they very often do the same mistakes which can dramatically reduce readability (and therefore maintainability) of the code.
 
-### Make a method static, it is so convenient
+### Use static methods
 
-### Never pass data between methods using mutable class fields
+### Pass data between methods using mutable class fields
 
 Passes data between methods using mutable class fields.
 
-### Use "final" for any variable declaration
+### Don't use "final"
 
 I mean it. Not only class fields must be declared final, but all kinds variables. I mean method variables, method arguments declaration (even if the method has no body), exception declaration in a catch block, resource declaration in a try-with-resources block.
 Imagine yourself riding a bicycle where all possible nuts are loosened a bit. Everything is rattling and is ready to fall off. This is how it feels to maintain code where "final" is not used. "final" is a wrench which guarantees that you will never loose a wheel.
@@ -27,7 +27,7 @@ Has a phobia of new classes creation (prefers to increase the size of existing c
 
 Has a phobia of new methods creation (prefers to increase the size of existing methods turning them into unsupportable 500-lines-of-code mess). Believes that introducing of new method noticeably reduces performance.
 
-### Never use static imports
+### Believe static imports are evil
 
 Never uses static imports
 
