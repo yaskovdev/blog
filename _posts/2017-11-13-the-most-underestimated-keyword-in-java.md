@@ -27,7 +27,7 @@ if (success) {
 }
 return result;
 ```
-The person who is forced to use `final` will have to rewrite it like this:
+The person who is forced to use `final` will have to rewrite it to:
 ```java
 if (success) {
     return "some string";
@@ -42,14 +42,14 @@ Think about this in the next way. Different languages use different ways to decl
 
 ### Yes, but it may reduce performance
 
-Yes, once I've heard even this. I believe this is just because some developers confuse semantics of `final` and one of "volatile". This is just not true. Moreover, `final` is erased in compile time for local parameters and variables, i.e., they do not appear in the .class file.
+Yep, once I've heard even this. The only explanation which came to my mind is that some developers confuse semantics of `final` and one of `volatile`. The objection is just wrong. Moreover, `final` is erased in compile time for local parameters and variables, i.e., they do not appear in the .class file. You can check by yourself using a decompiler.
 
 ### I am still not convinced
 
-Once one of reviewers left literally the next comment during some code review: "all variables are final..."
+Once one of reviewers left literally the next disappointed comment during some code review: "all variables are final..."
 
 What can I recommend to such person? Try to write in Scala for some time and then switch back to plain old Java. Most likely some shift will happen in your way of thinking and you will understand how useful the `final` keyword is and how it makes the code more readable and maintainable.
 
 ### Summary
 
-`final` should be used everywhere. If you have a variable declaration which does not compile when you declare it `final`, it is a clear sign that you are doing something wrong and your code has to be refactored.
+`final` is your friend. It should be used everywhere. If you have a variable declaration which does not compile when you declare it `final`, it is a clear sign that you are doing something wrong and your code has to be refactored.
