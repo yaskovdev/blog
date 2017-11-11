@@ -5,9 +5,9 @@ date:   2017-11-13 21:00:00 +0300
 categories: java
 ---
 
-Imagine yourself riding a bicycle where all the nuts are loosened. Everything is rattling and is ready to fall off. This is exactly how it feels to maintain code where the keyword we are going to speak about is not used or used only from time to time for some class fields and constants.
+Imagine yourself riding a bicycle where all the screw-nuts are loosened. Everything is rattling and is ready to fall off. This is exactly how it feels to maintain code where the keyword we are going to speak about is not used or used only from time to time for some class fields and constants.
 
-<img alt="UTC as time zone in Windows" src="/assets/broken-bike.jpg">
+<img alt="Broken bike" src="/assets/broken-bike.jpg">
 
 ### Always use final
 
@@ -19,7 +19,7 @@ Even developers who understand why `final` has to be used for constants and for 
 
 It makes the code more maintainable: even if you have a big method (that is bad, but it's a different topic), you can be sure that its `final` parameters definitely have the same values which were passed to the method.
 
-It makes the code more readable: after some time of using `final` you will notice that it is easier to spot where the method variables are declared because all such declarations start with final. The method (even if it is a big one) does not look as a wall of text anymore. Try it yourself and you will see the difference.
+It makes the code more readable: after some time of using `final` you will notice that it is easier to spot where the method variables are declared because all such declarations start with `final`. The method (even if it is a big one) does not look as a wall of text anymore. Try it yourself and you will see the difference.
 
 Probably, the most important one: __it forces developers to think harder to write better code__. It does not allow to produce methods like this (cannot count how many of them I've seen in the legacy code):
 ```java
@@ -40,7 +40,7 @@ Already better, isn't it? And, who knows, maybe he will now notice `return null`
 
 ### Yes, but it pollutes the code
 
-Think about this in the next way. Different languages use different ways to declare variables. Scala has `val`, modern JavaScript has `const`, Java has... `final`. Does `const` pollute the code? If no, then why `final` does? What is the difference? Note that even the number of letters in these two keywords is the same.
+Think about this in the next way. Different languages use different ways to declare variables. Scala has `val`, modern JavaScript has `const`, Java has... `final`. Does `const` pollute the code? If no, then why does `final` pollute it? What is the difference? Note that even the number of letters in these two keywords is the same.
 
 ### Yes, but it may reduce performance
 
