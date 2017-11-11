@@ -5,11 +5,13 @@ date:   2017-11-13 21:00:00 +0300
 categories: java
 ---
 
-Imagine yourself riding a bicycle where all the nuts are loosened a bit. Everything is rattling and is ready to fall off. This is exactly how it feels to maintain code where `final` is not used or used only from time to time for some class fields and constants.
+Imagine yourself riding a bicycle where all the nuts are loosened. Everything is rattling and is ready to fall off. This is exactly how it feels to maintain code where the keyword we are going to speak about is not used or used only from time to time for some class fields and constants.
+
+<img alt="UTC as time zone in Windows" src="/assets/broken-bike.jpg">
 
 ### Always use final
 
-Literally _always_. For constants and class fields, for method parameters, for declarations of exceptions in catch blocks and for resource declaration in try-with-resources. In short, everywhere where possible. Even for parameters of methods without a body (abstract methods and methods of an interface), to be consistent.
+Literally _always_. For constants and class fields, for method parameters, for declarations of exceptions in catch blocks and for resource declaration in try-with-resources. In short, everywhere where possible. Including parameters of methods without a body (abstract methods and methods of an interface), to be consistent.
 
 Even developers who understand why `final` has to be used for constants and for fields sometimes are wondering why should we use it in all other cases, for example for method parameters. Let's try to explain the reasons.
 
@@ -38,7 +40,7 @@ Already better, isn't it? And, who knows, maybe he will now notice `return null`
 
 ### Yes, but it pollutes the code
 
-Think about this in the next way. Different languages use different ways to declare variables. Scala has `val`, modern JavaScript has `const`, Java has... `final`. Why do you think `final` pollutes the code, but, for example, `const` does not? What is the difference? Note that even the number of letters in these two keywords is the same.
+Think about this in the next way. Different languages use different ways to declare variables. Scala has `val`, modern JavaScript has `const`, Java has... `final`. Does `const` pollute the code? If no, then why `final` does? What is the difference? Note that even the number of letters in these two keywords is the same.
 
 ### Yes, but it may reduce performance
 
