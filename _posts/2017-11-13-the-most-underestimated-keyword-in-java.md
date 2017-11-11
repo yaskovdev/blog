@@ -13,7 +13,7 @@ Imagine yourself riding a bicycle where all the screw-nuts are loosened. Everyth
 
 Literally _always_. For constants and class fields, for method parameters, for declarations of exceptions in catch blocks and for resource declaration in try-with-resources. In short, everywhere where possible. Including parameters of methods without a body (abstract methods and methods of an interface), to be consistent.
 
-Even developers who understand why `final` has to be used for constants and for fields sometimes are wondering why should we use it in all other cases, for example for method parameters. Let's try to explain the reasons.
+Even developers who understand why `final` has to be used for constants and for class fields sometimes are wondering why should we use it in all other cases, for example for method parameters. Let's try to explain the reasons.
 
 ### Benefits of using final
 
@@ -21,7 +21,7 @@ It makes the code more maintainable: even if you have a big method (that is bad,
 
 It makes the code more readable: after some time of using `final` you will notice that it is easier to spot where the method variables are declared because all such declarations start with `final`. The method (even if it is a big one) does not look as a wall of text anymore. Try it yourself and you will see the difference.
 
-Probably, the most important one: __it forces developers to think harder to write better code__. It does not allow to produce methods like this (cannot count how many of them I've seen in the legacy code):
+And the most important one: __it forces developers to think harder to write better code__. It does not allow to produce methods like this (cannot count how many of them I've seen in the legacy code):
 ```java
 String result = null;
 if (success) {
