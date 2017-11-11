@@ -3,6 +3,7 @@ layout: post
 title:  "You do these 10 mistakes when you code"
 date:   2017-06-01 11:00:00 +0300
 categories: code java
+comments: true
 ---
 
 While working with the code of even experienced developers, I noticed that they very often do the same mistakes which can dramatically reduce readability (and therefore maintainability) of the code.

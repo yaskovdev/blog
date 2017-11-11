@@ -3,6 +3,7 @@ layout: post
 title:  "Time zones explained"
 date:   2017-07-05 17:00:00 +0300
 categories: jekyll update
+comments: true
 ---
 
 ### Ideal world
