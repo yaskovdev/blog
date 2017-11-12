@@ -51,7 +51,7 @@ Yep, once I've heard even this. The only explanation which came to my mind is th
 
 Once one of reviewers left literally the next disappointed comment during some code review: "all variables are final..."
 
-What can I recommend to such person? Try to write in Scala for some time and then switch back to plain old Java. Most likely some shift will happen in your way of thinking and you will understand how useful the `final` keyword is and how it makes the code more readable and maintainable.
+What can I recommend to such person? Start using it when writing Java code. Or just try to write in Scala for some time and then switch back to plain old Java. The shift will happen in your way of thinking and you will see how useful the `final` keyword is and how it makes the code more readable and maintainable.
 
 ### Summary
 
