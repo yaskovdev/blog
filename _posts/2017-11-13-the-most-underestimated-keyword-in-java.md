@@ -22,7 +22,9 @@ It makes the code more maintainable: for any method you can be sure that its `fi
 
 It makes the code more readable: after some time of using `final` you will notice that it is easier to spot where the method variables are declared because all such declarations start with the `final` keyword. The method does not look as a wall of text anymore. Try it yourself and you will see the difference.
 
-And the most important one: __it forces developers to think harder to write better code__. It does not allow to produce methods like this (cannot count how many of them I've seen in the legacy code):
+And the most important one: __it forces developers to think harder to write better code__. It prevents them from producing crappy code in many different ways.
+
+As a simple example, it does not allow to produce methods like this (cannot count how many of them I've seen in the legacy code):
 ```java
 String result = null;
 if (success) {
