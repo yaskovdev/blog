@@ -73,4 +73,4 @@ What did we change? First of all, we extracted mocks/fakes initialization to a s
 
 Unit test methods should have the shape of the horizontal rectangle. If this is not the case (e.g., they look more like a square or a vertical rectangle), this is a sign that you have duplicates in your unit tests. Refactor.
 
-By the way, this rule can be extrapolated from test methods to methods in general. And even to classes. Though for classes the proportions may be _a bit_ "less horizontal".
+By the way, this rule can be applied to all methods. And even to classes. Though for classes the proportions may be _a bit_ "less horizontal".
