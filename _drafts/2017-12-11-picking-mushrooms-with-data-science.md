@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Picking mushrooms with data science"
-date:   2017-11-27 11:00:00 +0300
+date:   2017-12-11 11:00:00 +0300
 categories: scala ann knn
 comments: true
 ---

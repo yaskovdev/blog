@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Shape of your unit tests says a lot about their quality"
-date:   2017-12-11 11:00:00 +0300
+date:   2017-11-27 11:00:00 +0300
 categories: java testing
 comments: true
 ---
