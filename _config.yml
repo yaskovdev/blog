@@ -16,7 +16,7 @@
 title: Developer Notes
 email: yaskovdev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  New post about software development every second Monday.
+  New article about software development every second Monday.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://blog.yaskovdev.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: yaskovdev

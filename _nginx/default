@@ -1,0 +1,24 @@
+server {
+    server_name www.yaskovdev.com;
+    return 301 http://yaskovdev.com$request_uri;
+}
+
+server {
+    server_name blog.yaskovdev.com;
+    return 301 http://yaskovdev.com$request_uri;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/blog;
+
+    server_name yaskovdev.com;
+
+    rewrite ^(/.*)\.html(\?.*)?$ $1$2 permanent;
+    rewrite ^/(.*)/$ /$1 permanent;
+
+    index index.html;
+    try_files $uri/index.html $uri.html $uri /404.html =404;
+}
