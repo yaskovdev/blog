@@ -51,7 +51,7 @@ public void render_forValidRequest_returnsExpectedModelAndView() {
 }
 ```
 
-What is wrong here? __Duplicates.__ The logic which prepares the testing object (together with its dependencies) and the logic which asserts the test results is usually similar for all the test methods. Imagine you made a change in the behavior of the tested object. It will be an extra work to go through all the test methods and change, say, the assertion logic for all of them.
+What is wrong here? __Duplicates.__ The logic which prepares the testing object (together with its dependencies) and the logic which asserts the test results is usually similar for all the test methods. Imagine you made a change in the behavior of the tested object. It will be an extra work to go through all the test methods and change the duplicated logic for all of them.
 
 ### Example of the good test method
 
@@ -68,6 +68,8 @@ public void render_forValidRequest_returnsExpectedModelAndView() {
 ```
 
 What did we change? First of all, we extracted mocks/fakes initialization to a separate methods (like `model()` or `renderRequest()`). Second, we did the same for the tested object initialization (extracted it to the `testedObject()`). And, finally, we moved the assertion logic to the method called `assertResult()`. Now, in case of changes in the behavior of the tested object, you have only one place to change in the unit tests.
+
+And this happens _always_. Once you get rid of duplicates, you end up with the "horizontal rectangle" methods.
 
 ### Summary
 
