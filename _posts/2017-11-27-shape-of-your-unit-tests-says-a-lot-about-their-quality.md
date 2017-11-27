@@ -55,7 +55,7 @@ What is wrong here? __Duplicates.__ The logic which prepares the testing object 
 
 ### Example of the good test method
 
-Let's refactor the above test method and note hove its shape changed.
+Let's refactor the above test method and note how its shape changed.
 
 ```java
 @Test
