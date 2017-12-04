@@ -23,6 +23,7 @@ twitter_username: yaskovdev
 github_username:  yaskovdev
 disqus:
   shortname: yaskovdev
+google_analytics: UA-110546298-1
 
 # Build settings
 markdown: kramdown
