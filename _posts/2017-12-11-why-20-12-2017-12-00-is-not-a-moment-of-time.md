@@ -1,16 +1,18 @@
 ---
 layout: post
-title:  "Why 12.12.2012 12:00 is not the moment of time?"
+title:  "Why 20.12.2017 12:00 is not a moment of time?"
 date:   2017-12-11 21:00:00 +0300
 categories: java utc
 comments: true
 ---
 
-The event happened `12.**.2012 12:00`. Can you tell me, when exactly? Not really, because something is missing? How about `21.12.2012 12:00`? If you think that now you can, you are wrong. You still do not know the exact moment of time. However, the missing part is much less obvious now.
+The event happened `20.**.2017 12:00`. Can you tell me, when exactly? Not really, because something is missing? How about `20.12.2017 12:00`? If you think that now you can, you are wrong. You still do not know the exact moment of time. However, the missing part is much less obvious now.
+
+<img alt="Moment of time" src="/assets/placeholder.png">
 
 ### The UTC offset<sup>*</sup> is just as important as the day, month, year, hour, etc.
 
-Returning to our example, only `12.12.2012 12:00 UTC+03:00` gives you enough information about when the event happened. But are you sure you always remember about the `UTC+03:00` part? Even worse, is it always given to you?
+Returning to our example, only `20.12.2017 12:00 UTC+03:00` gives you enough information about when the event happened. But are you sure you always remember about the `UTC+03:00` part? Even worse, is it always given to you?
 
 ### A real life example
 
@@ -33,7 +35,7 @@ And no matter what option you choose, you have to stop using `DateUtil`. It pret
 
 ### This is not my case, I do not have the DateUtil
 
-OK, maybe you do not have `DateUtil` in your company. But more popular `SimpleDateFormat` suffers from exactly the same issues.
+Well, maybe you do not have `DateUtil` in your company. But more popular `SimpleDateFormat` suffers from exactly the same issues.
 
 Your best bet is start using new [Java 8 Date and Time API](http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html). Or, if you are still using an older version of Java, consider [Joda Time library](http://www.joda.org/joda-time/). One of their advantages is that they do not allow you to make a mistake by forcing you to provide the complete information.
 
@@ -41,6 +43,6 @@ Your best bet is start using new [Java 8 Date and Time API](http://www.oracle.co
 
 Never forget about the UTC offset when working with dates. Use modern APIs and libraries, they can help you with this.
 
-------
-
-<sup>*</sup> Not necessarily the UTC offset should be given to you. Time zone also fills the gap, as it keeps the offset information. So `12.12.2012 12:00 Europe/Moscow` would be also perfectly OK. Though remember about the [differences between the UTC offset and a time zone](/2017/10/30/utc-a-time-standard-or-a-time-zone).
+<p>
+<sup>*</sup> Not necessarily the UTC offset should be given to you. Time zone also fills the gap, as it keeps the offset information. So `20.12.2017 12:00 Europe/Moscow` would be also perfectly OK. Though remember about the [differences between the UTC offset and a time zone](/2017/10/30/utc-a-time-standard-or-a-time-zone).
+</p>
