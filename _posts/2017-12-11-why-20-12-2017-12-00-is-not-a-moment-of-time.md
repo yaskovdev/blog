@@ -6,7 +6,7 @@ categories: java utc
 comments: true
 ---
 
-The event happened `20.**.2017 12:00`. Can you tell me, when exactly? Not really, because something is missing? How about `20.12.2017 12:00`? If you think that now you can, you are wrong. You still do not know the exact moment of time. However, the missing part is much less obvious now.
+An event happened `20.**.2017 12:00`. Can you tell me, when exactly? Not really, because something is missing? How about `20.12.2017 12:00`? If you think that now you can, you are wrong. You still do not know the exact moment of time. However, the missing part is much less obvious now.
 
 <img alt="Moment of time" src="/assets/placeholder.png">
 
@@ -41,8 +41,6 @@ Your best bet is start using new [Java 8 Date and Time API](http://www.oracle.co
 
 ### Summary
 
-Never forget about the UTC offset when working with dates. Use modern APIs and libraries, they can help you with this.
+Always remember about the UTC offset when working with dates. Use modern APIs and libraries, they can help you with this.
 
-<p>
 <sup>*</sup> Not necessarily the UTC offset should be given to you. Time zone also fills the gap, as it keeps the offset information. So `20.12.2017 12:00 Europe/Moscow` would be also perfectly OK. Though remember about the [differences between the UTC offset and a time zone](/2017/10/30/utc-a-time-standard-or-a-time-zone).
-</p>
