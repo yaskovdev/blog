@@ -18,11 +18,11 @@ Even developers who understand why `final` has to be used for constants and for 
 
 ### Benefits of using final
 
-It makes the code more maintainable: for any method you can be sure that its `final` parameters definitely have the same values which were passed to it.
+It makes the code more maintainable: for any method you can be sure that its `final` parameters always have the same values as you passed.
 
 It makes the code more readable: after some time of using `final` you will notice that it is easier to spot where the method variables are declared because all such declarations start with the `final` keyword. The method does not look as a wall of text anymore. Try it yourself and you will see the difference.
 
-And the most important one: __it forces developers to think harder to write better code__. It prevents them from producing crappy code in many different ways.
+And the most important one: __it forces you to think harder to write better code__. It prevents you from producing crappy code in many different ways.
 
 As a simple example, it does not allow to produce methods like this (cannot count how many of them I've seen in the legacy code):
 ```java
@@ -32,16 +32,16 @@ if (success) {
 }
 return result;
 ```
-The person who is forced to use `final` will have to rewrite it to:
+If you are forced to use `final`, you have to rewrite it to:
 ```java
 if (success) {
     return "some string";
 }
 return null;
 ```
-Already better, isn't it? And, who knows, maybe he will now notice `return null` and remember that it is something bad and an exception should be thrown instead.
+Already better, isn't it? And, who knows, maybe you will now notice `return null` and remember that it is something bad and an exception should be thrown instead.
 
-### Yes, but it pollutes the code
+### Yes, but it pollutes my code
 
 Think about this in the next way. Different languages use different ways to declare variables. Scala has `val`, modern JavaScript has `const`, Java has... `final`. Does `const` pollute the code? If no, then why does `final` pollute it? What is the difference? Note that even the number of letters in these two keywords is the same.
 

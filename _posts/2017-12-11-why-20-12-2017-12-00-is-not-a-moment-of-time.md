@@ -6,13 +6,13 @@ categories: java utc
 comments: true
 ---
 
-An event happened `20.**.2017 12:00`. Can you tell me, when exactly? Not really, because something is missing? How about `20.12.2017 12:00`? If you think that now you can, you are wrong. You still do not know the exact moment of time. However, the missing part is much less obvious now.
+An event happened at `20.**.2017 12:00`. Can you tell me when exactly? Oh, so you cannot, because something is missing? How about at `20.12.2017 12:00`? If you think that now you can, you are wrong. You still do not know the exact moment of time. However, the missing part is much less obvious now.
 
 <img alt="Moment of time" src="/assets/placeholder.png">
 
 ### The UTC offset<sup>*</sup> is just as important as the day, month, year, hour, etc.
 
-Returning to our example, only `20.12.2017 12:00 UTC+03:00` gives you enough information about when the event happened. But are you sure you always remember about the `UTC+03:00` part? Even worse, is it always given to you?
+Returning to the above example, only `20.12.2017 12:00 UTC+03:00` gives you enough information about when the event happened. But are you sure you always remember about the `UTC+03:00` part? Even worse, is it always given to you?
 
 ### A real life example
 
@@ -24,7 +24,7 @@ Imagine you have a RESTful service that provides you data in the XML format. And
 </subscription>
 ```
 
-Luckily, some of caring developers of your company created a handy utility class to parse such dates, so you can just call `Date date = DateUtil.dateValue("20060501")` and have the date of the subscription. And a _tricky bug_ as well.
+Luckily, some of caring developers of your company created a handy utility class to parse such dates, so once you called the service, you can just write `Date date = DateUtil.dateValue("20060501")` and have the date of the subscription. And a _tricky bug_ as well.
 
 I guess the reason is clear already. The [JavaDoc](https://docs.oracle.com/javase/6/docs/api/java/util/Date.html) states: "The class Date represents a specific instant in time, with millisecond precision." But, as we just discussed, `20060501` is not enough to determine the specific instant in time, you need also the UTC offset. So you have two options:
 
@@ -33,14 +33,14 @@ I guess the reason is clear already. The [JavaDoc](https://docs.oracle.com/javas
 
 And no matter what option you choose, you have to stop using `DateUtil`. It pretends to be your friend by making your life easier, but in reality it gives you a great opportunity to make a mistake. Instead of throwing an exception that says "Sorry, mate, cannot parse you date, it does not contain enough information to be parsed" or using some other way to save you from the mistake, it just silently guesses the missing part (by using server time zone, for example) and returns the wrong result.
 
-### This is not my case, I do not have the DateUtil
+### Yes, but this is not my case, I do not use the DateUtil
 
-Well, maybe you do not have `DateUtil` in your company. But more popular `SimpleDateFormat` suffers from exactly the same issues.
+Well, maybe you do not have any `DateUtil`s in your code. But more popular `SimpleDateFormat` suffers from exactly the same issues. Make sure you do not use it either.
 
-Your best bet is start using new [Java 8 Date and Time API](http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html). Or, if you are still using an older version of Java, consider [Joda Time library](http://www.joda.org/joda-time/). One of their advantages is that they do not allow you to make a mistake by forcing you to provide the complete information.
+Instead, use new [Java 8 Date and Time API](http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html) or [Joda Time](http://www.joda.org/joda-time/), if you got stuck with an old Java. One of the advantages of these libraries is that they force you to provide the complete information. In this way they do not allow you to make the mistake.
 
 ### Summary
 
-Always remember about the UTC offset when working with dates. Use modern APIs and libraries, they can help you with this.
+Always take care about the UTC offset when working with dates. Use modern APIs and libraries, they can help you with this.
 
 <sup>*</sup> Not necessarily the UTC offset should be given to you. Time zone also fills the gap, as it keeps the offset information. So `20.12.2017 12:00 Europe/Moscow` would be also perfectly OK. Though remember about the [differences between the UTC offset and a time zone](/2017/10/30/utc-a-time-standard-or-a-time-zone).
