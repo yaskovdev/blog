@@ -18,7 +18,7 @@ Even developers who understand why `final` has to be used for constants and for 
 
 ### Benefits of using final
 
-It makes the code more maintainable: for any method you can be sure that its `final` parameters always have the same values as you passed.
+It makes your code more maintainable: for any method you can be sure that its `final` parameters always have the same values as you passed.
 
 It makes the code more readable: after some time of using `final` you will notice that it is easier to spot where the method variables are declared because all such declarations start with the `final` keyword. The method does not look as a wall of text anymore. Try it yourself and you will see the difference.
 
