@@ -6,13 +6,13 @@ categories: java utc
 comments: true
 ---
 
-An event happened at `20.**.2017 12:00`. Can you tell me when exactly? Oh, so you cannot, because something is missing? How about at `20.12.2017 12:00`? If you think that now you can, you are wrong. You still do not know the exact moment of time. However, the missing part is much less obvious now.
+Your friend Joyce from another country wants you to have a video call at `20.**.2020 12:00`. Will you join? Oh, so you cannot, because you don't know the exact moment of time? How about at `20.12.2020 12:00`? If you think that now you know, you are wrong. However, the missing part is much less obvious now.
 
-<img alt="Moment of time" src="/assets/placeholder.png">
+<img alt="Moment of time" src="/assets/moment-of-time.jpg">
 
 ### The UTC offset<sup>*</sup> is just as important as the day, month, year, hour, etc.
 
-Returning to the above example, only `20.12.2017 12:00 UTC+03:00` gives you enough information about when the event happened. But are you sure you always remember about the `UTC+03:00` part? Even worse, is it always given to you?
+Returning to the above example, only `20.12.2017 12:00 UTC+03:00` gives you enough information about when the call should happen. But are you sure you always remember about the `UTC+03:00` part? Even worse, is it always given to you?
 
 ### A real life example
 
@@ -26,12 +26,12 @@ Imagine you have a RESTful service that provides you data in the XML format. And
 
 Luckily, some of caring developers of your company created a handy utility class to parse such dates, so once you called the service, you can just write `Date date = DateUtil.dateValue("20060501")` and have the date of the subscription. And a _tricky bug_ as well.
 
-I guess the reason is clear already. The [JavaDoc](https://docs.oracle.com/javase/6/docs/api/java/util/Date.html) states: "The class Date represents a specific instant in time, with millisecond precision." But, as we just discussed, `20060501` is not enough to determine the specific instant in time, you need also the UTC offset. So you have two options:
+I guess the reason of the bug is clear already. The [JavaDoc](https://docs.oracle.com/javase/6/docs/api/java/util/Date.html) states: "The class Date represents a specific instant in time, with millisecond precision." But, as we just discussed, `20060501` is not enough to determine the specific instant in time, you need also the UTC offset. So you have two options:
 
-1. Request the missing part from the service. This is robust, but not always possible.
-2. Make an assumption about the UTC offset yourself and make sure your code takes it into account.
+1. Request the missing part from the service, so that it will return `20060501 UTC` to you. This is robust, but not always possible.
+2. Make the right assumption about the UTC offset yourself and make sure your code takes it into account.
 
-And no matter what option you choose, you have to stop using `DateUtil`. It pretends to be your friend by making your life easier, but in reality it gives you a great opportunity to make a mistake. Instead of throwing an exception that says "Sorry, mate, cannot parse you date, it does not contain enough information to be parsed" or using some other way to save you from the mistake, it just silently guesses the missing part (by using server time zone, for example) and returns the wrong result.
+And stop using `DateUtil`. It pretends to be your friend by making your life easier, but in reality it gives you a great opportunity to make a mistake. Instead of throwing an exception that says "Sorry, mate, cannot parse you date, it does not contain enough information to be parsed" or using some other way to save you from the mistake, it just silently guesses the missing part (by using server time zone, for example) and returns the wrong result.
 
 ### Yes, but this is not my case, I do not use the DateUtil
 
