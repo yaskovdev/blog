@@ -1,1 +1,0 @@
-You do already own it. This company is you. But when what is the company you are working in?
