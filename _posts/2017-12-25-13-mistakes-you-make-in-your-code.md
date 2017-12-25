@@ -10,13 +10,20 @@ While working with the code of even experienced developers, I noticed that they 
 
 ### Static methods are very convenient
 
-### "final" is only for constants
+In one of my projects I had the `SecurityContextUtil#getUser()` method. The method supposed to return a currently logged it user. Everything was fine, except that the method was `static`. As a result, every class that consumed the method was __literally untestable__ due to the tight coupling to the security context which is obviously absent during the unit testing phase.
 
-I mean it. Not only class fields must be declared final, but all kinds variables. I mean method variables, method arguments declaration (even if the method has no body), exception declaration in a catch block, resource declaration in a try-with-resources block.
-Imagine yourself riding a bicycle where all possible nuts are loosened a bit. Everything is rattling and is ready to fall off. This is how it feels to maintain code where "final" is not used. "final" is a wrench which guarantees that you will never loose a wheel.
-By the way, modern IDEs can be configured to highlight cases where "final" can be (but is not) used.
+Do not repeat this mistake. Avoid `static` methods.
+
+### `final` is only for constants
+
+This is a very popular fallacy. The truth is that _all possible variables_ must be declared `final`. `final` is a wrench that guarantees that you will never loose a wheel. You can find more details in [my previous article](/2017/11/13/the-most-underestimated-keyword-in-java).
 
 ### I can pass data between methods using mutable class fields
+
+This is very dangerous approach. It has 2 issues:
+
+1. Maintainability suffers. A method that utilizes mutable class fields to get necessary data lies about its input<sup>*</sup>. When you read such method you believe that it works only with its arguments, while in reality its behavior depends also on the class fields.
+2. It does not work when the field is accessed by more than one thread.
 
 ### Too many classes reduce readability and performance of my code
 
@@ -34,9 +41,9 @@ Does not embed new functionality into current code, instead puts it as much "asi
 
 ### Comments make my code more clear
 
-Prefers comments to self-explanatory names for variables, methods, classes etc.
+No. They just generate noise. Prefer self-explanatory names for variables, methods, classes etc. to comments. If you have to write a comment for your code, this is a signal that your code needs to be refactored to the state when the comment becomes absolutely obvious and redundant.
 
-### Over-engineered solutions show to everyone how smart I am
+### Over-engineered solutions show everyone that I am smart
 
 Invents over-engineered solutions. And then genuinely defends them as if they were their own children.
 
@@ -50,4 +57,6 @@ Never uses checked exceptions. Does not understand why and when are they needed.
 
 ### Interfaces pollute my codebase, I have to avoid them
 
-### Default encoding and time zone just work, why should I care about them?
+### Default encoding and time zone work just fine, why should I care about them?
+
+<sup>*</sup> First time I encountered this useful term in [this article](https://www.toptal.com/qa/how-to-write-testable-code-and-why-it-matters).
