@@ -1,18 +1,26 @@
 ---
 layout: post
-title:  "13 mistakes you make in your code"
+title:  "13 ugly mistakes you make in your code"
 date:   2017-12-25 21:00:00 +0300
 categories: code java
 comments: true
 ---
 
-While working with the code of even experienced developers, I noticed that they very often do the same mistakes which can dramatically reduce readability (and therefore maintainability) of the code.
+While writing code, you make the same mistakes again and again. Some of them are quite minor, while others could lead to really expensive consequences. I am going to list the most popular of these mistakes below, with no particular order. Next time you will be working on a new feature, make sure you won't fall into these errors. And notify me, if I will.
 
-<img alt="13" src="/assets/placeholder.png">
+<figure>
+    <img alt="13" src="/assets/13.jpg">
+</figure>
+
+### "Comments make my code more clear"
+
+In reality they just generate noise.
+
+Prefer self-explanatory names for variables, methods, classes etc. to comments. If you have to write a comment for your code, this is a signal that your code needs to be refactored to the state when the comment becomes absolutely obvious and redundant.
 
 ### "Static methods are very convenient"
 
-In one of my projects I had the `SecurityContextUtil#getUser()` method. The method returned a currently logged in user. Everything was fine, except that the method was `static`. As a result, every class that consumed the method was __literally untestable__ due to the tight coupling to the security context which is obviously absent during the unit testing phase.
+In one of the security frameworks there was the `SecurityContextUtil#getUser()` method. The method returned a currently logged in user. Everything was fine, except that the method was `static`. As a result, every class that consumed the method was __literally untestable__ due to the tight coupling to the security context which is unavailable during the unit testing phase.
 
 Do not repeat this mistake. Avoid `static` methods.
 
@@ -24,8 +32,10 @@ This is a very popular fallacy. The truth is that _all possible variables_ must 
 
 This is very dangerous approach. It has 2 issues:
 
-1. Maintainability suffers. A method that utilizes mutable class fields to get necessary data lies about its input<sup>*</sup>. When you read such method you believe that it works only with its arguments, while in reality its behavior depends also on the class fields.
+1. Maintainability suffers. A method that utilizes mutable class fields to get necessary data lies about its input<sup>*</sup>. When you read such method you believe that it consumes only its arguments, while in reality its behavior depends also on the class fields.
 2. It does not work when the field is accessed by more than one thread.
+
+So only parameters. No exceptions to this rule!
 
 ### "Too many classes reduce readability of my code"
 
@@ -33,11 +43,11 @@ Do you also have this phobia? Were you also in a situation when you need to deci
  
 I noticed that maintainable code always has one feature: it consists of a big number of small classes. Not vice versa. This is not sufficient condition for code to be maintainable. But it is definitely the necessary one.
  
-Create new classes more often. Think twice before appending new methods to existing ones.
+Create new classes more often. Think twice before appending new methods to existing classes.
 
 ### "Interfaces pollute my codebase, I have to avoid them"
 
-This is very similar to the previous one. As interfaces clearly state what is the API of your package and reduce coupling, they should not be avoided.
+This is very similar to the previous one. As interfaces clearly state what is the API of your package and reduce coupling, they have to be used when appropriate. I.e., quite often.
 
 ### "Static imports make my code less readable"
 
@@ -53,9 +63,7 @@ with
 checkIf(IN_PROGRESS)
 ```
 
-Really less readable?
-
-Maybe you believe that `SomeVeryLongUtilityClassName` or `AnotherVeryLongEnumName` add some clarify to your code. But in the vast majority of cases they only pollute it.
+Really less readable? Or you believe that `SomeVeryLongUtilityClassName` or `AnotherVeryLongEnumName` add some clarify to your code? Note that in the vast majority of cases they only pollute it.
 
 ### "Existing code is a black box"
 
@@ -67,15 +75,9 @@ You have to _embed_ new functionality into current code, instead of putting it a
 
 Imagine you need to join strings with a separator. Quite simple and popular task. You are going to write the method yourself.
 
-But wait a minute! Before doing this, make sure nobody already did it for you. Most likely one did. And even more likely with better quality. Not because you are not that smart. You just have the different priority: you have to write your complex business logic, not simply join some strings. Having this bigger priority it is really easy to forget about an important corner case and join the strings in a wrong way.
+But wait a minute! Before doing this, make sure nobody already did it for you. Most likely one did. And even more likely with better quality. Not because you are not that smart. You just have the different priority: you have to write your complex business logic, not simply join some strings. Having this bigger priority, it is really easy to forget about an important corner case and join the strings in a wrong way.
 
 The less code you have, the less painful it is to maintain it. Write less code. Use ready solutions and libraries.
-
-### "Comments make my code more clear"
-
-Nope. They just generate noise.
-
-Prefer self-explanatory names for variables, methods, classes etc. to comments. If you have to write a comment for your code, this is a signal that your code needs to be refactored to the state when the comment becomes absolutely obvious and redundant.
 
 ### "Over-engineered solutions show everyone that I am smart"
 
@@ -108,5 +110,11 @@ Because they do not work fine. You just were lucky so far.
 Java is very complaisant. It kindly tries to save you from extra thinking by implicit providing default encodings and time zones whenever possible. It is doing you a disservice.
 
 The consequences of using default time zone are considered in [the separate article](/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time). As for default encoding, there is an awesome [article by Joel Spolsky](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/).
+
+### Summary
+
+This was the list of mistakes which are very repetitive. Most of them are caused by the momentary benefit. You believe that you save time and effort, while in reality you just postpone and accumulate the problems.
+
+Did I forget something?
 
 <sup>*</sup> First time I encountered this useful term in [this article](https://www.toptal.com/qa/how-to-write-testable-code-and-why-it-matters).
