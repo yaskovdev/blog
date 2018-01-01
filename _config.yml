@@ -27,7 +27,7 @@ google_analytics: UA-110546298-1
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 permalink: /:year/:month/:day/:title
 future: true
 plugins:
