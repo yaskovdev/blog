@@ -19,6 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   New article about software development every second Monday.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://yaskovdev.com"
+title_image: "/assets/placeholder.png"
 twitter_username: yaskovdev
 github_username:  yaskovdev
 disqus:
