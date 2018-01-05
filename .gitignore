@@ -12,3 +12,4 @@ target
 /RUNNING_PID
 
 Gemfile.lock
+.DS_Store
