@@ -31,7 +31,7 @@ permalink: /unsubscribe
 </style>
 
 <form action="http://formspree.io/yaskovdev@gmail.com" method="POST">
-    <input type="hidden" name="_next" value="http://blog.yaskovdev.com/unsubscribed"/>
+    <input type="hidden" name="_next" value="{{ site.url }}/unsubscribed"/>
     <input type="hidden" name="_subject" value="Unsubscribe Me"/>
     <input type="hidden" name="_format" value="text"/>
     <label for="email">Your email</label>
