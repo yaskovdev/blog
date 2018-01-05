@@ -44,4 +44,4 @@ Instead, use new [Java 8 Date and Time API](http://www.oracle.com/technetwork/ar
 
 Always take care about the UTC offset when working with dates. Use modern APIs and libraries, they can help you with this.
 
-<sup>*</sup> Not necessarily the UTC offset should be given to you. Time zone also fills the gap, as it keeps the offset information. So `20.12.2017 12:00 Europe/Moscow` would be also perfectly OK. Though remember about the [differences between the UTC offset and a time zone](/2017/10/30/utc-a-time-standard-or-a-time-zone).
+<sup>*</sup> Not necessarily the UTC offset should be given to you. Time zone also fills the gap, as it keeps the offset information. So `20.12.2017 12:00 Europe/Moscow` would be also perfectly OK. Though remember about the [differences between the UTC offset and a time zone]({{ site.url }}/2017/10/30/utc-a-time-standard-or-a-time-zone).

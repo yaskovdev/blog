@@ -6,4 +6,4 @@ permalink: /unsubscribed
 
 You were successfully unsubscribed.
 
-You always can subscribe again using [the link](/subscribe).
+You always can subscribe again using [the link]({{ site.url }}/subscribe).

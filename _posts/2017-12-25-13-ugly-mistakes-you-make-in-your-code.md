@@ -3,7 +3,7 @@ layout: post
 title:  "13 ugly mistakes you make in your code"
 date:   2017-12-25 21:00:00 +0300
 image: /assets/13.jpg
-categories: code java
+categories: java code
 comments: true
 ---
 
@@ -25,7 +25,7 @@ Do not repeat this mistake. Avoid `static` methods.
 
 ### "_final_ is only for constants"
 
-This is a very popular fallacy. The truth is that _all possible variables_ must be declared `final`. `final` is a wrench that guarantees that you will never loose a wheel. You can find the detailed explanation in [my previous article](/2017/11/13/the-most-underestimated-keyword-in-java).
+This is a very popular fallacy. The truth is that _all possible variables_ must be declared `final`. `final` is a wrench that guarantees that you will never loose a wheel. You can find the detailed explanation in [my previous article]({{ site.url }}/2017/11/13/the-most-underestimated-keyword-in-java).
 
 ### "I can pass data between methods using mutable class fields"
 
@@ -108,7 +108,7 @@ Because they do not work fine. You just were lucky so far.
 
 Java is very complaisant. It kindly tries to save you from extra thinking by implicit providing default encodings and time zones whenever possible. It is doing you a disservice.
 
-The consequences of using default time zone are considered in [the separate article](/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time). As for default encoding, there is an awesome [article by Joel Spolsky](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/).
+The consequences of using default time zone are considered in [the separate article]({{ site.url }}/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time). As for default encoding, there is an awesome [article by Joel Spolsky](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/).
 
 ### Summary
 

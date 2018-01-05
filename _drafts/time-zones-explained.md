@@ -19,7 +19,7 @@ The world is not plane. In reality, we live on a surface of a planet called Eart
 
 We want our UTC clock to be synchronized with the Earth rotation (TODO: reason?). This means that after every 24 hours period of time the Earth should rotate to the same position that was in the beginning of the period.
 
-![What We Want/What We Have](/assets/placeholder.png)
+![What We Want/What We Have]({{ site.url }}/assets/placeholder.png)
 
 But, unfortunately, the rotation of the Earth is not even: it slows down, just a bit. It even *could* speed up, theoretically. But in practice it always slows down. What can we do to not have the difference between the Earth rotation and the UTC clock accumulated?
 
