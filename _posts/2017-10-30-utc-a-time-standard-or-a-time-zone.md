@@ -2,6 +2,7 @@
 layout: post
 title:  "UTC — a time standard or a time zone?"
 date:   2017-10-30 21:00:00 +0300
+image: /assets/big-utc-clock.png
 categories: utc
 comments: true
 ---
@@ -22,7 +23,7 @@ We want for each event to be able to say when did it happen (or will happen). Ot
 
 You can think of UTC (or any other time standard) as a big clock in the middle of the Universe, common to everyone.
 
-<img alt="Big UTC Clock" src="/assets/big-utc-clock.png" height="300">
+<img alt="Big UTC Clock" src="{{ page.image }}" height="300">
 
 ### What is a time zone?
 

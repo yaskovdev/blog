@@ -2,15 +2,14 @@
 layout: post
 title:  "13 ugly mistakes you make in your code"
 date:   2017-12-25 21:00:00 +0300
+image: /assets/13.jpg
 categories: code java
 comments: true
 ---
 
 While writing code, you make the same mistakes again and again. Some of them are quite minor, while others could lead to really expensive consequences. I am going to list the most popular of these mistakes below, with no particular order. Next time you will be working on a new feature, make sure you won't fall into these errors. And notify me, if I will.
 
-<figure>
-    <img alt="13" src="/assets/13.jpg">
-</figure>
+<img alt="13" src="{{ page.image }}">
 
 ### "Comments make my code more clear"
 

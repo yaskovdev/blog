@@ -3,6 +3,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  {% assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
+
   <meta name="twitter:site" content="@{{ site.twitter_username }}">
   {% if page.author %}
   <meta name="twitter:creator" content="@{{ page.author }}">
@@ -10,11 +12,7 @@
   <meta name="twitter:creator" content="@{{ site.twitter_username }}">
   {% endif %}
   <meta name="twitter:title" content="{{ page.title }}">
-  {% if page.summary %}
-  <meta name="twitter:description" content="{{ page.summary }}">
-  {% else %}
-  <meta name="twitter:description" content="{{ site.description }}">
-  {% endif %}
+  <meta name="twitter:description" content="{{ description }}">
   {% if page.image %}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
@@ -24,7 +22,7 @@
   {% endif %}
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta name="description" content="{{ description }}">
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">

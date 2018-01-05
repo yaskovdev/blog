@@ -2,13 +2,14 @@
 layout: post
 title:  "Why is 20.12.2017 12:00 not a moment in time?"
 date:   2017-12-11 21:00:00 +0300
+image: /assets/moment-in-time.jpg
 categories: java utc
 comments: true
 ---
 
 Your friend Joyce from another country wants you to have a video call at `20.**.2017 12:00`. Will you join? Oh, so you cannot, because you don't know the exact moment in time? How about at `20.12.2017 12:00`? If you think that now you know, you are wrong. However, the missing part is much less obvious now.
 
-<img alt="Moment in time" src="/assets/moment-in-time.jpg">
+<img alt="Moment in time" src="{{ page.image }}">
 
 ### The UTC offset<sup>*</sup> is just as important as the day, month, year, hour, etc.
 

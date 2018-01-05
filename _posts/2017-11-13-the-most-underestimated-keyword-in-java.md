@@ -2,13 +2,14 @@
 layout: post
 title:  "The most underestimated keyword in Java"
 date:   2017-11-13 21:00:00 +0300
+image: /assets/broken-bike.jpg
 categories: code java
 comments: true
 ---
 
 Imagine yourself riding a bicycle where all the screw-nuts are loosened. Everything is rattling and is ready to fall off. This is exactly how it feels to maintain code where the keyword we are going to speak about is not used or used only from time to time for some class fields and constants.
 
-<img alt="Broken bike" src="/assets/broken-bike.jpg">
+<img alt="Broken bike" src="{{ page.image }}">
 
 ### Always use final
 

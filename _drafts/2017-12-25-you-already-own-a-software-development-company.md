@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "You already own a software development company"
-summary: TODO
 date:   2017-12-25 21:00:00 +0300
 image: /assets/placeholder.png
 categories: company
