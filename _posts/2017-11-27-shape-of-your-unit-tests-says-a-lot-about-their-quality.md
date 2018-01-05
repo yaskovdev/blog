@@ -2,6 +2,7 @@
 layout: post
 title:  "Shape of your unit tests says a lot about their quality"
 date:   2017-11-27 11:00:00 +0300
+image: /assets/good-test-method-vs-bad-test-method.png
 categories: java testing
 comments: true
 ---
@@ -12,7 +13,7 @@ Whether you are writing your own unit tests or reviewing ones written by someone
 
 Good unit test method __always looks like a thin horizontal rectangle__, not like a square or a vertical rectangle. That's it.
 
-<img alt="Good test method vs bad test method" src="/assets/good-test-method-vs-bad-test-method.png">
+<img alt="Good test method vs bad test method" src="{{ page.image }}">
 
 ### Example of the bad test method
 

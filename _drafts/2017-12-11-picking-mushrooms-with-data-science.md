@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Picking mushrooms with data science"
-summary: TODO
 date:   2017-12-11 11:00:00 +0300
 image: /assets/placeholder.png
 categories: scala ann knn
