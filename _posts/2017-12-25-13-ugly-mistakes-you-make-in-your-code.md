@@ -9,7 +9,7 @@ comments: true
 
 While writing code, you make the same mistakes again and again. Some of them are quite minor, while others could lead to really expensive consequences. I am going to list the most popular of these mistakes below, with no particular order. Next time you will be working on a new feature, make sure you won't fall into these errors. And notify me, if I will.
 
-<img alt="13" src="{{ page.image }}">
+<img alt="13" src="{{ site.url }}{{ page.image }}">
 
 ### "Comments make my code more clear"
 
