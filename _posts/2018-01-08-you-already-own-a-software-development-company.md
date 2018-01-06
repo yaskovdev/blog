@@ -13,11 +13,11 @@ In fact, it's just the opposite. You hire your employer. Your employer in realit
 
 And you pay, you pay [really much](http://TODO-proof-link).
 
-The payments are of course indirect. Your employer just filters out most of the money your clients transfer to _you_.
+The payments are of course indirect. Your employer just filters out most of the money your clients transfer to _you_. He takes part of them as the fee for his service. The rest is spent for the ping-pong table, for your comfortable chair, for the fancy coffee machine in the kitchen and sometimes even for your free<sup>*</sup> lunches.
 
-Imagine your favorite restaurant one day started cooking awful food. What do you do in this case? Right, you change the restaurant. You have every right to do this: you pay for the food really much and expect it to be of the best possible quality.
+Imagine your favorite restaurant one day cooked you an awful breakfast. What do you do in this case? You kindly demand to replace it. What do you do if it happens again and again?  Right, you change the restaurant. You have every right to do this: you pay for the food really much and expect it to be of the best possible quality.
 
-The same has to be with your employer: he finds clients for you. You work with him until he no longer fits you. Once he stops fitting – you immediately change him to a better one. Nothing personal. Those who pay the piper call the tune.
+The same has to be with your employer: he finds clients for you. You work with him as long as he suits you. Once he stops suiting – you must explain the situation and ask him to make necessary changes. If he claims nothing can be done, you immediately change him to a better one. Nothing personal. Those who pay the piper call the tune.
 
 And don't be afraid to demand what you want. Because you pay. (Т. е. может лучше не заменять, а вежливо попросить изменить свои условия? Так же, как в ресторане вы просите заменить невкусную порцию или в магазине техники неисправную технику.)
 
@@ -31,3 +31,5 @@ You are not looking for
 
 1. _You_ are one who pays. Don't hesitate to demand what you want.
 2. Try to get rid of the platform and start looking for clients by yourself. You'll save _plenty_ of money.
+
+<sup>*</sup> Not free.
