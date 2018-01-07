@@ -9,6 +9,8 @@ comments: true
 
 Your employer hires you, pays for your working environment, corporate events and the table for playing tennis. Right? Not at all.
 
+<img alt="TODO" src="{{ site.url }}{{ page.image }}">
+
 In fact, it's just the opposite. You hire your employer. Your employer in reality is a fancy platform for finding clients. You tell him "I can do this and that, could you please find someone who will pay me for this?" and he answers you "Okay, no problem. But not for free."
 
 And you pay, you pay [really much](https://www.entrepreneurs-journey.com/2641/is-outsourcing-exploitation/).
@@ -21,18 +23,15 @@ First, __don't feel guilty when you demand better conditions for yourself__.
 
 Imagine your favorite restaurant one day cooked you an awful breakfast. What do you do in this case? You kindly demand to replace it. What do you do if it happens again? Right, you change the restaurant. You have every right to do this: you pay for the food and expect it to be of the best possible quality.
 
-The same has to be with your employer: he finds clients for you. He is also responsible for your working environment. You work with him as long as he suits you. Once he stops suiting – you must explain the situation and ask him to take the necessary actions. It could be replacing your old monitor with the new one or paying you more competitive salary. If he claims nothing can be done, you immediately change him to a better one. Nothing personal. Those who pay the piper call the tune.
+The same has to be with your employer: he finds clients for you. He is also responsible for your working environment. You collaborate with him as long as he suits you. Once he stops suiting – you must explain the situation and ask him to take the necessary actions. It could be replacing your old monitor with the new one or paying you more competitive salary. If he claims nothing can be done, you change him to a better one. Nothing personal. Those who pay the piper call the tune.
 
-Second, __consider getting rid of the services of your employer__. Find clients yourself.
+Second, __consider getting rid of the services of your employer__ at all. Find clients yourself.
 
-It's easier said than done. However, I believe that you have at least try your hand at freelancing. The rates there are higher in particular [because there is no the filter](https://www.quora.com/Why-are-freelancers-paid-more-than-employees) that takes the most of the money.
+It's easier said than done. However, I believe that you have at least try your hand at, say, freelancing. Your rates there are higher in particular [because there is no the filter](https://www.quora.com/Why-are-freelancers-paid-more-than-employees) that takes the most of your money.
 
-### Looks like that was about an outsource company, how about a product company?
+### Looks like that was about an outsource company, how about a product one?
 
-Продуктовая компания – это тоже платформа для поиска клиентов. Просто клиентами являются подзазделения самой этой компании. А в остальном всё то же самое: платформа _за твои собственные деньги_ даёт тебе бесплатные обеды, кофе в офисе, теннисный стол и так далее.
-
-Если ты хочешь покинуть ресторан, тебя не остановят мольбы шефа остаться. А тут почему-то останавливают?
-Если ты открыто выказываешь недовольство, шеф тебя любить не будет. Но это лучше, чем травиться просроченным бургером.
+No big difference for you. A product company is also the platform to look for clients. But the "clients" are the company itself. Everything else is the same: the platform _for your own money_ gives you the job opportunity and the coffee.
 
 ### Summary
 
