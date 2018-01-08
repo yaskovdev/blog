@@ -7,7 +7,7 @@ categories: company
 comments: true
 ---
 
-Your employer hires you, pays for your working environment, corporate events and the ping-pong table. Right? Absolutely no.
+Your employer hires you, pays for your working environment, corporate events and the ping-pong table. Right? Absolutely not.
 
 <img alt="You and Your Employer" src="{{ site.url }}{{ page.image }}">
 
