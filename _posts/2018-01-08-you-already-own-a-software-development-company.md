@@ -2,14 +2,14 @@
 layout: post
 title:  "Who pays for your coffee?"
 date:   2018-01-08 21:00:00 +0300
-image: /assets/placeholder.png
+image: /assets/you-and-your-employer.jpg
 categories: company
 comments: true
 ---
 
 Your employer hires you, pays for your working environment, corporate events and the table for playing tennis. Right? Not at all.
 
-<img alt="TODO" src="{{ site.url }}{{ page.image }}">
+<img alt="You and Your Employer" src="{{ site.url }}{{ page.image }}">
 
 In fact, it's just the opposite. You hire your employer. Your employer in reality is a fancy platform for finding clients. You tell him "I can do this and that, could you please find someone who will pay me for this?" and he answers you "Okay, no problem. But not for free."
 
