@@ -23,7 +23,7 @@ First, __don't feel guilty when you demand better conditions for yourself__.
 
 Imagine your favorite restaurant one day cooked you an awful breakfast. What would you do in this case? You would kindly demand to replace it. What would you do if it happens again? Right, you would go somewhere else. You have every right to do this: you pay for the food and expect it to be of the best possible quality.
 
-It has to be the same with your employer -- _he_ finds clients for _you_. He is also responsible for your working environment. You collaborate with him as long as he suits you. Once this stops, you must explain the situation and ask him to take the necessary actions. It could be as simple as replacing your old monitor with a new one, or paying you a more competitive salary. If he claims that nothing can be done, you replace him with a better employer. Nothing personal. __Those who pay the piper call the tune.__
+It has to be the same with your employer – _he_ finds clients for _you_. He is also responsible for your working environment. You collaborate with him as long as he suits you. Once this stops, you must explain the situation and ask him to take the necessary actions. It could be as simple as replacing your old monitor with a new one, or paying you a more competitive salary. If he claims that nothing can be done, you replace him with a better employer. Nothing personal. __Those who pay the piper call the tune.__
 
 Second, __consider getting rid of the services of your employer__ altogether. Find clients yourself. Be your own boss.
 
