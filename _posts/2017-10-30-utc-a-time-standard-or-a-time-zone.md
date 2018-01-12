@@ -37,7 +37,7 @@ So a time zone is still the clock which shows the time according to the UTC stan
 
 I think that the term "UTC" is overloaded, because "UTC" refers to more than one concept. Depending on a context, **it can be a time standard or a special time zone**. The time zone is special because it has these two features:
 
-1. There is no country (yet) which officially uses UTC timezone for any of its regions.
-2. The UTC time zone always has the same time as the UTC time standard. In other words, the UTC offset for the UTC time zone (it's confusing, isn't it? Exactly why I think it's an overloaded term) is always 0 and can be written, for example, as UTC+00:00. Obviously, the UTC timezone does not have DST. Also, the history of changes of the offset and the DST is empty, because these factors never change.
+1. There is no country (yet) which officially uses UTC time zone for any of its regions.
+2. The UTC time zone always has the same time as the UTC time standard. In other words, the UTC offset for the UTC time zone (it's confusing, isn't it? Exactly why I think it's an overloaded term) is always 0 and can be written, for example, as UTC+00:00. Obviously, the UTC time zone does not have DST. Also, the history of changes of the offset and the DST is empty, because these factors never change.
 
 Thanks to the people who answered [this question](https://stackoverflow.com/questions/44756430/why-utc-which-is-not-a-time-zone-is-considered-as-a-time-zone-in-java-and-not) for their answers.
