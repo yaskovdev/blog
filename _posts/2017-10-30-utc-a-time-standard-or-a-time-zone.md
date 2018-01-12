@@ -9,7 +9,7 @@ comments: true
 
 The short answer is **both**. Let me explain.
 
-There are some [popular resources](https://www.timeanddate.com/time/gmt-utc-time.html) which clearly state that UTC is not a time zone, but a time standard. However, on some operating systems you can find UTC in the list of time zones. Also in Java, for example, this simple call `TimeZone.getTimeZone("UTC")` does return a TimeZone object without any problem.
+There are some [popular resources](https://www.timeanddate.com/time/gmt-utc-time.html) which clearly state that UTC is not a time zone, but a time standard. However, on some operating systems you can find UTC in the list of time zones. Also in Java, for example, this simple call `TimeZone.getTimeZone("UTC")` does return a `TimeZone` object without any problem.
 
 <img alt="UTC as time zone in Windows" src="{{ site.url }}/assets/utc-as-time-zone-in-windows.png" height="300">
 
