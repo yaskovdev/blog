@@ -29,7 +29,7 @@ Second, __consider getting rid of the services of your employer__ altogether. Fi
 
 It's easier said than done. However, I believe that you have to at least try your hand at, say, freelancing. Your rates as a freelancer are higher in particular [because there is no middleman](https://www.quora.com/Why-are-freelancers-paid-more-than-employees) that takes most of your money.
 
-### Sure, That Might Work For An Outsource Company, But What About A Product-Based Company?
+### "Sure, That Might Work For An Outsource Company, But What About A Product-Based Company?"
 
 Actually, there's no big difference here. A product-based company is also a good platform to look for clients. But the "clients" are the company itself. Everything else is the same: the platform _for your own money_ gives you the job opportunity and the coffee.
 
