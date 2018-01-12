@@ -37,7 +37,7 @@ Actually, there's no big difference here. A product-based company is also a good
 
 You hire your employer to look for clients for you. This means that:
 
-1. _You_ are one who pays, with your time and your work. Don't be afraid and don't hesitate to demand what you want. You have the power in the relationship.
+1. _You_ are one who pays, by sacrificing some of _your_ money for _your_ time and work. Don't be afraid and don't hesitate to demand what you want. You have the power in the relationship.
 2. You have to stop overpaying for the services of your employer and start looking for clients yourself. You'll save _plenty_ of money.
 
 <sup>*</sup> Not free.
