@@ -19,7 +19,7 @@ I'd recommend using self-explanatory names for variables, methods, classes etc. 
 
 ### "Static Methods Are Very Convenient"
 
-In one of the security frameworks, there was the `SecurityContextUtil#getUser()` method. The method returned a currently logged-in user. Everything was fine, except that the method was `static`. As a result, every class that consumed the method was __literally untestable__ due to the tight coupling of the security context, which is unavailable during the unit testing phase.
+In one of the security frameworks, there was the `SecurityContext#getUser()` method. The method returned a currently logged-in user. Everything was fine, except that the method was `static`. As a result, every class that consumed the method was __literally untestable__ due to the tight coupling between the class and the `SecurityContext`, which is unavailable during the unit testing phase.
 
 Do not repeat this mistake. Avoid `static` methods.
 
@@ -68,7 +68,7 @@ Is this _really_ less readable? Or do you just believe that `SomeVeryLongUtility
 
 It is much easier to write new code than it is to read one written by someone else. As a result, you can start implementing new functionality without understanding how the component works. This leads to code duplicates and a lot of unnecessary mess.
 
-You have to _embed_ new functionality into current code, instead of putting it as much aside as possible. To do this, you have to understand in details how it works. Spend some time learning this method. Open the black box.
+You have to _embed_ new functionality into current code, instead of putting it as much aside as possible. To do this, you have to understand in details how it works. Spend some time learning the existing code. Open the black box.
 
 ### "I Don’t Need The New Library. I Can Write The Method Myself!"
 
@@ -80,9 +80,9 @@ The less code you have, the less painful it is to maintain it. Write less code. 
 
 ### "Complicated Solutions Show How Smart I Am"
 
-Such a point of view is very unprofessional. Even worse, if you believe that if you are the only person who understands your code, you will never complete the project.
+Such a point of view is very unprofessional. Even worse, over-engineering your code can inflate your ego, and you may be less inclined to fix any flaws in your work.
 
-The bad news is that even _you_ will not understand everything in your own code in several months, or even earlier. A good manager knows this will happen and will try to get rid of you as soon as possible, while the mess in the project is still under control.
+The mess will continue growing until even _you_ will not understand everything in your own code, in several months or even earlier. A good manager knows this will happen and will try to get rid of you as soon as possible, while the mess in the project is still under control.
 
 _Your code should be as simple as possible_. If your solution happens to be over-engineered and one of your colleagues points that out, do not try to defend it as if it is your own child. Refactor as soon as possible. Otherwise, you will have much more "fun" later, when you will have to remember all the details from scratch.
 
@@ -106,7 +106,7 @@ Use checked exceptions in your code when appropriate. This will allow you and ot
 
 Because they do not work fine. You have just been lucky so far.
 
-Java is very complacent. It kindly tries to save you from extra thinking by implicitly providing default encodings and time zones whenever possible. It is doing you a disservice.
+Java can trick you into being complacent and lazy, if you aren’t careful. It kindly tries to save you from extra thinking by implicitly providing default encodings and time zones whenever possible. It is doing you a disservice.
 
 The consequences of using the default time zone are considered in [a separate article]({{ site.url }}/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time). As for default encoding, there is [an awesome article by Joel Spolsky](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) to explain more.
 
