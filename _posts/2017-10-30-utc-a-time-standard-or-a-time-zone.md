@@ -11,7 +11,7 @@ The short answer is **both**. Let me explain.
 
 There are some [popular resources](https://www.timeanddate.com/time/gmt-utc-time.html) which clearly state that UTC is not a time zone, but a time standard. However, on some operating systems you can find UTC in the list of time zones. Also in Java, for example, this simple call `TimeZone.getTimeZone("UTC")` does return a `TimeZone` object without any problem.
 
-<img alt="UTC as time zone in Windows" src="{{ site.url }}/assets/utc-as-time-zone-in-windows.png" height="300">
+<img alt="UTC as time zone in Windows" src="{{ site.url }}/assets/utc-as-time-zone-in-windows.png">
 
 Let's finally clarify what UTC is. To do this, we have to understand the difference between a time standard and a time zone.
 
@@ -21,7 +21,7 @@ When discussing an event, we want to be able to identify when it happened (or wh
 
 You can think of UTC (or any other time standard) as a big clock in the middle of the Universe, common to everyone.
 
-<img alt="Big UTC Clock" src="{{ site.url }}{{ page.image }}" height="300">
+<img alt="Big UTC Clock" src="{{ site.url }}{{ page.image }}">
 
 ### What Is A Time Zone?
 
