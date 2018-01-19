@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Как создать ужасный онлайн-сервис"
-date:   2017-09-23 17:28:39 +0300
+date:   2017-09-23 17:00:00 +0300
 image: /assets/placeholder.png
 categories: jekyll update
 comments: true

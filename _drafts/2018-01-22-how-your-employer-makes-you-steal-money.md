@@ -7,6 +7,4 @@ categories: jekyll update
 comments: true
 ---
 
-If someone takes your money for nothing and against your will it is called stealing.
-
-There is a number of ways how to steal money: you can just take away someone's walled by force. Or you can silently pull the wallet out of someone's pocket. Or you can take render someone a service
+There is a number of ways how someone can steal your money. He can just pick up your wallet. Alternatively, he can silently pull the wallet out of your pocket. Or (and this is the most "civilized" way) he can take your money in exchange for goods or a certain service, but then give you only a half of what was initially promised.
