@@ -21,9 +21,9 @@ Let's assume you work for your client 40 hours a week and your hourly rate is 20
 
 Unfortunately, your employer has his own plans on you. Because of these plans, you work for your client only about 36 hours a week, even being paid for 40. How do you spend the rest four hours? Here are the possible options:
 
-1. Attendance of the mega important corporate trainings
+1. Attendance of the super important corporate trainings
 2. Preparation of these trainings
-3. Mandatory psychological tests
+3. Passing mandatory psychological tests
 4. Quiz preparation to select candidates for the ongoing QA school
 5. Helping new employees to become the part of the company. Of course, on a regular basis, as your employer hires really much
 6. Internal certification
@@ -33,7 +33,7 @@ Does anything from the list solve the issues of your client, ones he paid you to
 
 ### Your Employer Makes You Steal
 
-As a result of the things discussed above, you steal money from your client. And, surprisingly, your employer makes you do so. Even _without realizing_ this. Even without wanting this. But just __by distracting you from your main responsibilities__. In the long run, not only the product of your client is worse than it could be, but also much of your time is wasted on things that don't make you the better specialist, on things that are not interesting for you at all.
+As a result of the sad things discussed above, __you steal money from your client__. And, surprisingly, your employer makes you do so. Even _without realizing_ this. Even _without wanting_ this. But just __by distracting you from your main responsibilities__. In the long run, not only the product of your client is worse than it could be, but also much of your time is wasted on the things that don't make you the better specialist, on the things that are not interesting for you _at all_.
 
 Now let's see how you can prevent this from happening.
 
@@ -45,7 +45,7 @@ Now let's see how you can prevent this from happening.
 
 ### To Summarize
 
-The client is the god. He pays you. In return, you do your best to provide him with the best possible solution. The employer destructs you from that. You should be ready to minimize the destruction. If you charge for 40 hours, work 40 hours, not 36.
+In the threesome "You, Your Employer, Your Client" namely your client is the most important part. He pays you. In return, you do your best to provide him with the best possible solution. Your employer distracts you from that. You should be ready to minimize the distraction. If you charge for 40 hours, work for the 40 hours, not for the 36.
 
 <sup>*</sup> That's not _always_ the case, yet a common practice in the software development.
 
