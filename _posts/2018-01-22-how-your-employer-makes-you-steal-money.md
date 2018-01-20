@@ -7,7 +7,7 @@ categories: jekyll update
 comments: true
 ---
 
-Unfortunately, there are many ways how an unscrupulous person can steal your money. He can just pick up your wallet. This is the most straight yet dangerous way. Alternatively, he can silently pull the wallet out of your pocket. Already better, though still dangerous. Or he can take your money in exchange for goods or a certain service, but then give you only a half of what he initially promised. This is the safest and the most civilized option. So, lower result for the same money _is stealing_.
+Unfortunately, there are many ways of how an unscrupulous person can steal your money. He can just pick up your wallet. This is the most straight yet dangerous way. Alternatively, he can silently pull the wallet out of your pocket. Already better, though still dangerous. Or he can take your money in exchange for goods or a certain service, but then give you only a half of what he initially promised. This is the safest and the most civilized option. So, _lower result for the same money is stealing_.
 
 The bad news are that with the last way even you _can_ steal. Even worse: you may do it unconsciously and even not of your own free will.
 
@@ -47,6 +47,6 @@ Now let's see how you can prevent this from happening.
 
 In the threesome "You, Your Employer, Your Client" namely your client is the most important part. He pays you. In return, you do your best to provide him with the best possible solution. Your employer distracts you from that. You should be ready to minimize the distraction. If you charge for 40 hours, work for the 40 hours, not for the 36.
 
-<sup>*</sup> That's not _always_ the case, yet a common practice in the software development.
+<sup>*</sup> That's not _always_ the case. Still, it is a common practice in the software development.
 
 <sup>**</sup> Those, you know, that work only in Internet Explorer.
