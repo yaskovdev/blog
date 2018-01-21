@@ -9,11 +9,11 @@ comments: true
 
 Speaking abstractly, there are many ways of how an unscrupulous person can steal your money. 
 
-He can just pick up your wallet off of a table. This is the most straightforward way, but risky for the thief. 
+He can take your wallet by force. This is the most straightforward way, but risky for the thief. 
 
 Alternatively, he can silently pull the wallet out of your pocket. Sneakier, but still risky. 
 
-Or, he can take your money in exchange for goods or for a certain service, but then give you only a half of what he initially promised. This is the safest and the "most civilized" option. So, _lower result for the same money is stealing_.
+Or, he can take your money in exchange for goods or for a certain service, but then give you only half of what he initially promised. This is the safest and the "most civilized" option. So, not providing the agreed upon amount of work, but still demanding the same pay is as bad as stealing.
 
 <img alt="Placeholder" src="{{ site.url }}{{ page.image }}">
 
