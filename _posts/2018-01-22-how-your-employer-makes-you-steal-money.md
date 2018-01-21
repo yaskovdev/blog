@@ -51,7 +51,7 @@ Now let's see how you can prevent this from happening. Though the list has three
 2. Overtime. Charge your employer for the additional 4 hours a week. In this case, at least, you are not doing the dull stuff for free.
 3. Charge your client for the 36 hours only. Charge your employer for the remaining 4 hours.
 
-Did I miss something else?
+Did I miss anything else?
 
 ### To Summarize
 
