@@ -53,7 +53,7 @@ Now that we have agreed on the configuration of the neural network, I am ready t
 
 <img alt="Training" src="{{ site.url }}/assets/training.png">
 
-After training network models with 900 iterations of practice data, I can now test the resulting neural network on the real data. The "real data" is the subset of the mushrooms that I had previously put aside and didn't use for the neural network training. The tests show that even without the optimization of the network parameters, **the proportion<sup>**</sup> of the correct answers is 0.92**, which is quite good.
+After the training (900 iterations), I can now test the resulting neural network on the real data. The "real data" is the subset of the mushrooms that I had previously put aside and didn't use for the neural network training. The tests show that even without the optimization of the network parameters, **the proportion<sup>**</sup> of the correct answers is 0.92**, which is quite good.
 
 Can I improve the result? Apparently, yes. For example, I still could play with the neural network configuration and find the best one. I also could deal with the training data [in the more optimal way](https://towardsdatascience.com/cross-validation-in-machine-learning-72924a69872f), not just by splitting it in half. However, there is another unexpectedly simple algorithm that shows _really_ good results for the mushrooms problem.
 
@@ -77,7 +77,7 @@ By the way, if I'm comparing two identical mushrooms, the number of features wit
 
 ### K-Nearest Neighbours: Implementation And Evaluation
 
-In light of the above discussion, it is now trivial to implement the perceptron algorithm:
+In light of the above discussion, it is now trivial to implement the k-nearest neighbours algorithm:
 
 ```scala
 class NearestNeighbor {
@@ -106,4 +106,4 @@ The full implementation of both [the neural network](https://github.com/yaskovde
 
 <sup>*</sup> In reality, it will be something like (0.00087, 0.99841). As I need to clearly state "edible" or "poisonous", I will just compare these 2 numbers. If the first value is larger, then I claim "edible", otherwise "poisonous".
 
-<sup>**</sup> The ratio between the number of the correct answers given by the neural network and the total number of the mushrooms in the test data. This is the broadest and, in my opinion, the worst way to evaluate a model because it has a lot of disadvantages. For example, it does not pay attention to the proportion of the classes in the test data. However, because of its simplicity, it can be used for illustration purposes.
+<sup>**</sup> The ratio between the number of the correct answers given by the neural network and the total number of the mushrooms in the test data. This is the broadest and, in my opinion, far not the best way to evaluate a model because it has a lot of disadvantages. For example, it does not pay attention to the proportion of the classes in the test data. However, because of its simplicity, it can be used for illustration purposes.
