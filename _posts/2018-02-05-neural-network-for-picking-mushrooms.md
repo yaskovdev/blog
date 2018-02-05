@@ -39,13 +39,13 @@ Imagine I found a mushroom with the _partial white_ veil. This means I can subst
 
 Similarly, if it was the _universal yellow_ veil, the vector would be `(0, 1, 0, 0, 0, 1)`. I hope you get the idea now.
 
-When I apply the above method to the actual 22 features, I have 126 neurons in the input layer. The same approach, applied to the output layer, gives me 2 neurons: the first represents the degree of edibility of a mushroom, the second represents the degree of lethality. If, for example, I deal with a very poisonous mushroom, the output is `(0, 1)`<sup>*</sup>.
+When I apply the above method to the actual 22 features, I have 126 neurons in the input layer. The same approach, applied to the output layer, gives me 2 neurons: the first represents the degree of edibility of a mushroom, the second represents how poisonous the mushroom is. If, for example, I deal with a very poisonous mushroom, the output is `(0, 1)`<sup>*</sup>.
 
 <img alt="Output Layer" src="{{ site.url }}/assets/output-layer.png">
 
 Having agreed on how to represent the inputs and the outputs of the neural network, let's then briefly discuss its type and its hidden layers.
 
-I decided to use perceptron as the algorithm of the network because it [fits well](https://en.wikipedia.org/wiki/Perceptron) in the classification problem I am solving. I added a hidden layer, which is also called a dense layer. It is located between input and output layers and has ten neurons. Why ten? Well, there are many [rules of thumb](https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw) about how to pick the number of the neurons in the hidden layer. The real value is always a matter of experimentation and optimization. I picked ten using one of these rules of thumb. It is a good value _to start with_.
+I decided to use a multilayer perceptron network because it [fits well](https://en.wikipedia.org/wiki/Multilayer_perceptron) in the classification problem I am solving. I added a hidden layer, which is also called a dense layer. It is located between input and output layers and has ten neurons. Why ten? Well, there are many [rules of thumb](https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw) about how to pick the number of the neurons in the hidden layer. The real value is always a matter of experimentation and optimization. I picked ten using one of these rules of thumb. It is a good value _to start with_.
 
 ### Artificial Neural Network: Training And Evaluation
 
@@ -53,7 +53,7 @@ Now that we have agreed on the configuration of the neural network, I am ready t
 
 <img alt="Training" src="{{ site.url }}/assets/training.png">
 
-After the training (900 iterations), I can now test the resulting neural network on the real data. The "real data" is the subset of the mushrooms that I had previously put aside and didn't use for the neural network training. The tests show that even without the optimization of the network parameters, **the proportion<sup>**</sup> of the correct answers is 0.92**, which is quite good.
+After training the network through 900 iterations, I can now test the resulting neural network on the real data. The "real data" is the subset of the mushrooms that I had previously put aside and didn't use for the neural network training. The tests show that even without the optimization of the network parameters, **the proportion<sup>**</sup> of the correct answers is 0.92**, which is quite good.
 
 Can I improve the result? Apparently, yes. For example, I still could play with the neural network configuration and find the best one. I also could deal with the training data [in the more optimal way](https://towardsdatascience.com/cross-validation-in-machine-learning-72924a69872f), not just by splitting it in half. However, there is another unexpectedly simple algorithm that shows _really_ good results for the mushrooms problem.
 
@@ -106,4 +106,4 @@ The full implementation of both [the neural network](https://github.com/yaskovde
 
 <sup>*</sup> In reality, it will be something like (0.00087, 0.99841). As I need to clearly state "edible" or "poisonous", I will just compare these 2 numbers. If the first value is larger, then I claim "edible", otherwise "poisonous".
 
-<sup>**</sup> The ratio between the number of the correct answers given by the neural network and the total number of the mushrooms in the test data. This is the broadest and, in my opinion, far not the best way to evaluate a model because it has a lot of disadvantages. For example, it does not pay attention to the proportion of the classes in the test data. However, because of its simplicity, it can be used for illustration purposes.
+<sup>**</sup> The ratio between the number of the correct answers given by the neural network and the total number of the mushrooms in the test data. This is the broadest and definitely not the best way to evaluate a model because it has a lot of disadvantages. For example, it does not pay attention to the proportion of the classes in the test data. However, because of its simplicity, it can be used for illustration purposes.
