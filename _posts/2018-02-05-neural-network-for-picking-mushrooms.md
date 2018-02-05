@@ -2,7 +2,7 @@
 layout: post
 title:  "Neural Network For Picking Mushrooms"
 date:   2018-02-05 11:00:00 +0300
-image: /assets/placeholder.png
+image: /assets/mushrooms.jpg
 categories: scala ann knn
 comments: true
 ---
