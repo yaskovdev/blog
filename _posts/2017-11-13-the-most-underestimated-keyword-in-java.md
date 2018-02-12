@@ -42,7 +42,7 @@ if (success) {
 }
 return null;
 ```
-Already better, isn't it? And, who knows, maybe you will now notice `return null` and remember that it is undesirable and an exception that should be thrown out instead?
+Already better, isn't it? And, who knows, maybe you will now notice `return null` and remember that it is undesirable and you should throw an exception instead?
 
 ### "Yes, But It Pollutes My Code!"
 
