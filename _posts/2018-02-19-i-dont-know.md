@@ -27,7 +27,7 @@ To clarify the terminology, let's call a question "stupid" when it is either irr
 
 In this case, as I already mentioned above, instead of _pretending_ politely that you don't know, better to spend some time to explain what exactly is wrong with the question and express the hope that such questions will never be asked to you again.
 
-Why is it bad to politely pretend? Because the asking person may even don't know that he is behaving in a non-productive way (e.g., does not want to concentrate on his job and distracts others). So why not to help him to understand his mistake? This small investment allows you to not have such situation with the same person in the future.
+Why is it bad to politely pretend? Because the asking person may don't even know that he is behaving in a non-productive way (e.g., does not want to concentrate on his job and distracts others). So why not to help him to understand his mistake? This small investment allows you to not have such situation with the same person in the future.
 
 ### But What If You Really Don't Know?
 
