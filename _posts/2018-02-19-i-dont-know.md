@@ -2,7 +2,7 @@
 layout: post
 title:  "I Don't Know"
 date:   2018-02-19 11:00:00 +0300
-image: /assets/placeholder.png
+image: /assets/i-dont-know.png
 categories: development
 comments: true
 ---
@@ -27,7 +27,7 @@ To clarify the terminology, let's call a question "stupid" when it is either irr
 
 In this case, as I already mentioned above, instead of _pretending_ politely that you don't know, it's better to spend some time _explaining_ what exactly is wrong with the question and hope that such questions will never be asked to you again.
 
-Why is it bad to pretend, politely, that you don't know what's wrong? Because you _do know_ what's wrong, and because the person who's asking may not even know that he is behaving in such a non-productive way (e.g., does not want to concentrate on his job and distracts others). So why not help him to understand his mistake? This small investment allows you to not have this situation with the same person in the future.
+Why is it bad to pretend that you don't know the answer to a stupid question (if the answer even exists)? Because the person who's asking may not even know that he is behaving in such a non-productive way (e.g., does not want to concentrate on his job and distracts others). So why not help him to understand his mistake? This small investment allows you to not have this situation with the same person in the future.
 
 ### But What If You Really Don't Know?
 
@@ -43,4 +43,4 @@ What is the worst thing you, as a professional, can say? "I don't know"! Forget 
 
 If you are the one who should know the answer (and you don't), use "I'll clarify" or "I'll get back to you", instead of "I don't know", and then clarify indeed. Alternatively (if someone asks something stupid) you should say, "That is not important", or even, "Try finding out the answer yourself before asking", but **never say, "I don’t know"**.
 
-<sup>*</sup> It's not bad to try this and that. Actually, this approach works well. But you still have _to have at least a little understanding on what are you doing_. Otherwise you will most likely spend a lot of time and money, because there will be damage to the system and you _still_ won't solve the problem.
+<sup>*</sup> It's not bad to try this and that. Actually, this approach works well. But you still have to have at least a little understanding on what are you doing. Otherwise you will most likely spend a lot of time and money, because there will be damage to the system and you _still_ won't solve the problem.
