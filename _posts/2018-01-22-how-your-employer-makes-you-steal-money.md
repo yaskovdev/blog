@@ -21,7 +21,7 @@ The really bad news is that with this last way, even _you_ can steal. Even worse
 
 ### Your Client Pays You For Your Time<sup>*</sup>
 
-To clarify the terminology, [your client is not the same as your employer]({{ site.url }}/2018/01/08/who-pays-for-your-coffee). The former hires you, and gives you the laptop and the coffee. The latter consumes your software development services and pays you money. The employer finds the clients for you. In return, you share some part of your income with your employer. This is true for the outsource companies, but also true (though not as obvious) for the product-based companies.
+To clarify the terminology, [your employer is not the same as your client]({{ site.url }}/2018/01/08/who-pays-for-your-coffee). The former hires you, and gives you the laptop and the coffee. The latter consumes your software development services and pays you money. The employer finds the clients for you. In return, you share some part of your income with your employer. This is true for the outsource companies, but also true (though not as obvious) for the product-based companies.
 
 Let's assume you work for your client for 40 hours a week and your hourly rate is $20. This means that you charge your client $800 a week. Sometimes you do it _explicitly_ by putting your hours to the Excel tables or to the form on the ugly corporate website<sup>**</sup>. In return, the client expects you to spend these 40 hours solving _his_ problems.
 
