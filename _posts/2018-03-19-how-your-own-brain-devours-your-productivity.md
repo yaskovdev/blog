@@ -6,17 +6,22 @@ image: /assets/placeholder.png
 categories: development
 comments: true
 ---
- 
-Постарайтесь понаблюдать за своим мозгом во время решения сложной задачи. Он постоянно пытается уйти в сторону, переключиться на неактуальные в данный момент вещи.
+
+"Let's discuss!"
+
+Try to watch your brain while solving a complex task. This little bustard always tries to dodge the problem solving, to switch to less actual or completely irrelevant things at the moment.
 
 It is a lazy beast!
 
+### Real Life Example
+
+This is even easier to observe during brainstorming (mistakenly called "discussion" by stupid managers).
+
 ### Plan
 
-Мозг старается уйти в сторону. Нельзя ему это позволять. Чтобы было легче это контролировать, воспользуйтесь планом.
+Your brain always tries to go aside. Don't let him do it! One of the approach is to utilize a plan.
 
-Не придётся делать лишнего: часто бывает, что план говно.
-Лучше понять это заранее и придумать план получше, чем потратить полдня на бесполезную работу.
+You will save much time: often happens that the plan sucks. You better understand it as soon as possible and develop a better plan instead of wasting half a day for the futile job.
 
 ### To Summarize
 
