@@ -7,7 +7,7 @@ categories: development
 comments: true
 ---
 
-To check if a person is a specialist, you have to ask a really simple question: "Could you please recommend a book of your speciality?"
+To check if a person is a specialist, you have to ask a really simple question: "Could you please recommend a book on your speciality?"
 
 <img alt="A Specialist" src="{{ site.url }}{{ page.image }}">
 
