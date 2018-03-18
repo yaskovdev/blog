@@ -3,7 +3,7 @@ layout: post
 title:  "Bullet-Proof Way To Make Sure You Are Hiring A Specialist"
 date:   2018-03-19 11:00:00 +0300
 image: /assets/placeholder.png
-categories: reading
+categories: hiring reading
 comments: true
 ---
 
