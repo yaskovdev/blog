@@ -35,6 +35,6 @@ So, official documentation can replace books, but only if you read it from cover
 
 ### To Summarize
 
-Reading books is an essential part of professional growing. If a person claims he is a specialist and cannot name at least one book on the topic, he lies.
+Reading books is an essential part of professional growth. If a person claims he is a specialist and cannot name at least one book on the topic, he lies.
 
 What about you? How much books on your speciality did you read?
