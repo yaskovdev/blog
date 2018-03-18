@@ -9,11 +9,15 @@ comments: true
 
 The question is really simple: "Could you please recommend a book on your specialization?"
 
-A scrum master should be able to name a book about the scrum mastering _immediately_. A Microservices Specialist — about microservices. A QA Engineer — about testing. I guess you've got my point. If a person says “Sam Newman, Microservices”, you have a chance that he is a specialist. If he says “I read articles on the internet” or “I read answers on StackOverflow” — beware of his lies.
+A scrum master should be able to name a book about the scrum methodology _immediately_. A Microservices Specialist — about microservices. A QA Engineer — about testing. I guess you've got my point. If a person says “Sam Newman, Microservices”, you have a chance that he is a specialist. If he says “I read articles on the internet” or “I read answers on StackOverflow” — beware of his lies.
 
 ### What If I Watch Video Lectures?
 
-He may say "But reading books is too old-fashioned, I watch video lectures and attend online courses instead!" Bullshit, and here's why.
+He may say "But reading books is too old-fashioned, I watch videos and attend online courses instead!" Bullshit, and here's why.
+
+Let's start with videos. Believe it or not, their main purpose is entertainment. They fit well if you want to spend your free evening with a pack of chips and you are tired watching series or comedians. Being made for entertainment, they do not cover all the necessary parts of the technology. If they did, they would be boring.
+
+As for the online courses, that's already better. But it is still difficult to imagine a specialist who learned only by online courses.
 
 ### What If I Read The Official Documentation?
 
