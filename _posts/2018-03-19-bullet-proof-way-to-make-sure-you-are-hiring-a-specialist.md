@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "Bullet-Proof Way To Make Sure You Are Hiring A Specialist"
+title:  "Bullet-Proof Way To Weed Out Non-Specialists"
 date:   2018-03-19 11:00:00 +0300
 image: /assets/placeholder.png
 categories: hiring reading
 comments: true
 ---
 
-To check if a person is a specialist, you have to ask a really simple question: "Could you please recommend a book on your speciality?"
+Imagine you are an interviewer. To check if a person is a non-specialist, you have to ask a really simple question: "Could you please recommend a book on your speciality?"
 
 <img alt="A Specialist" src="{{ site.url }}{{ page.image }}">
 
-A Scrum Master should be able to name [a book about the Scrum methodology](https://www.amazon.com/Scrum-Breathtakingly-Brief-Agile-Introduction-ebook/dp/B007P5N8D4/ref=sr_1_4?s=books&ie=UTF8&qid=1521386327&sr=1-4&keywords=scrum) _immediately_. A Microservices Specialist — [about microservices](https://www.amazon.com/Spring-Microservices-Action-John-Carnell/dp/1617293989/ref=sr_1_5?s=books&ie=UTF8&qid=1521386408&sr=1-5&keywords=microservices). A QA Engineer — [about testing](https://www.amazon.com/Friendly-Introduction-Software-Testing-ebook/dp/B01BCPXLHU/ref=sr_1_2?s=books&ie=UTF8&qid=1521386486&sr=1-2&keywords=quality+assurance+testing). I guess you've got my point. If a person says “Sam Newman, [Microservices](https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358)”, you have a good chance that he is a microservices specialist. If he says “I read articles on the internet” or “I read answers on StackOverflow” — beware of his lies.
+A Scrum Master should be able to name [a book about the Scrum methodology](https://www.amazon.com/Scrum-Breathtakingly-Brief-Agile-Introduction-ebook/dp/B007P5N8D4/ref=sr_1_4?s=books&ie=UTF8&qid=1521386327&sr=1-4&keywords=scrum) _immediately_. A Microservices Specialist — [about microservices](https://www.amazon.com/Spring-Microservices-Action-John-Carnell/dp/1617293989/ref=sr_1_5?s=books&ie=UTF8&qid=1521386408&sr=1-5&keywords=microservices). A QA Engineer — [about testing](https://www.amazon.com/Friendly-Introduction-Software-Testing-ebook/dp/B01BCPXLHU/ref=sr_1_2?s=books&ie=UTF8&qid=1521386486&sr=1-2&keywords=quality+assurance+testing). I guess you've got my point. If a person says “Sam Newman, [Building Microservices](https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358)”, you have a good chance that he is a microservices specialist. If he says “I read articles on the Internet” or “I read answers on Stack Overflow” — beware of his lies.
 
-This approach is very useful if you have a lot of candidates to interview because it allows you to save quite much time.
+This approach is especially useful if you have a lot of candidates to interview because it allows you to save quite much time.
 
 So, the necessary part of being a specialist is _reading books on the speciality_.
 
@@ -27,11 +27,11 @@ If you replaced reading books with watching entertaining videos, you cannot beco
 
 ### "Yes, But What If I Read The Official Documentation?"
 
-If you read it from cover to cover, that's okay. But, based on my experience, that's rarely the case. Usually you fallback to reading documentation in case of troubles when, by some reason, answers on [StackOverflow](https://stackoverflow.com) do not help. So you read a small part, small enough to fix the issue. Once the fix is in place, you forget what you've read.
+If you read it from cover to cover, that's okay. But, based on my experience, that's rarely the case. Usually you fallback to reading documentation in case of troubles when, by some reason, answers on [Stack Overflow](https://stackoverflow.com) do not help. So you read a small part, small enough to fix the issue. Once the fix is in place, you forget what you've read.
 
 Though this is better than watching videos, this is not enough if you call yourself a specialist. A specialist should have the whole picture in mind. Snatching out pieces from the documentation does not give the idea about all the aspects and possibilities of the technology (or methodology).
 
-So, official documentation can replace books, but only if you read it from cover to cover. Scattered pieces of information do not make much sense.
+So, official documentation *could* replace books, but only if you read it from cover to cover. Scattered pieces of information do not make much sense.
 
 ### To Summarize
 
