@@ -1,12 +1,20 @@
 "There Are No Bad Developers, There Are Bad Architects"
 
+There was an orphaned component, nobody touched it for almost half a year. Then the client asked me to fix a small bug in the component.
+
+I started building the component and found out that the tests (that always used to pass before) started failing. That was a bit demotivating because I had not made any changes in the code yet.
+
+The tests were trying to explain me what went wrong. But the message they used for it was not too informative. Some of them were saying that "expected: 200, actual: 210", while others just threw `ArrayIndexOutOfBoundsException`, being even more stingy at the details.
+
 ### The Mystery
 
-I could not count how many wild versions did I have. But the secret was much simpler.
+I could not count how many wild versions came to my mind.
+
+But the secret was much simpler.
 
 ### The Disclosure
 
-Do you remember how I already [wrote]({{ site.url }}/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time) that `DateUtil` library is a pure evil? In less that several months the library decided to demonstrate once again how evil it is.
+I already [mentioned]({{ site.url }}/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time) that `DateUtil` library is a pure evil. In less that several months the library decided to demonstrate once again how evil it is.
 
 The code against which the unit tests were running was calculating a price for a certain service based on the age of a customer. The older the customer, the more expensive the service.
 
@@ -51,4 +59,4 @@ You can then make this class a dependency of the class you are trying to test an
 
 ### To Summarize
 
-Either be careful when choosing a library. Or do not increase a price of a service as the customer ages.
+Either be careful when choosing a library. Or do not increase a price of a service for the elderly customers.
