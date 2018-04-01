@@ -31,7 +31,7 @@ As a result, you _discussed_ the performance issue. You also _discussed_ the nam
 
 ### How To Stay On Track?
 
-How to not become a victim of the "brain dodging"? How to stay effective in problem solving? Personally, I stick with the next 3 rules:
+How to not become a victim of the "brain dodging"? How to stay effective in problem solving? Personally, I stick with the next 3 principles:
 
 1. Be aware
 2. Start with a plan
@@ -61,7 +61,7 @@ One is a good number to start with. However it can be too few, because you somet
 
 Three, however, is too many, because the third one, in the best case, will be not involved. In the worst case he will be the one who "does not like the naming", the one from the above example.
 
-So, start with yourself only. If it does not work for some time, pick _the right person_ to help you. And then __don't allow anyone else to join you__. Do not turn the brainstorming into a circus!
+So, start with yourself only. If it does not work for some time, pick _the right person_ to help you. And then __don't allow anyone else to join you__. Do not turn the problem solving into a circus!
 
 ### To Summarize
 
