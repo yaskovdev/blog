@@ -2,7 +2,7 @@
 layout: post
 title:  "The 3 Principles Of Effective Problem Solving"
 date:   2018-04-02 11:00:00 +0300
-image: /assets/placeholder.png
+image: /assets/problem-solving.png
 categories: development
 comments: true
 ---
@@ -13,7 +13,7 @@ Why exactly does it behave in this way is a question to biologists. One of the r
 
 Instead, let's try to figure out how we can save our productivity by not allowing our brain to switch to irrelevant stuff. After all, we want the complex problem to be solved, don't we?
 
-<img alt="Screening" src="{{ site.url }}{{ page.image }}">
+<img alt="Problem Solving" src="{{ site.url }}{{ page.image }}">
 
 ### "Let's Discuss"
 
