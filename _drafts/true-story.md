@@ -6,6 +6,9 @@ I started building the component and found out that the tests (that always used 
 
 The tests were trying to explain me what went wrong. But the message they used for it was not too informative. Some of them were saying that "expected: 200, actual: 210", while others just threw `ArrayIndexOutOfBoundsException`, being even more stingy at the details.
 
+1. Probably something was changed? No, I don't see any commits
+2. Maybe it takes some prices or coefficients from another service? No, I don't see any communications in the logs.
+
 ### The Mystery
 
 I could not count how many wild versions came to my mind.
