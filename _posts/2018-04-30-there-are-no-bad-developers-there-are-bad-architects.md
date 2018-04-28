@@ -1,10 +1,21 @@
-This happened when I was supporting deployment of a huge enterprise system of a bank.
+---
+layout: post
+title:  "There Are No Bad Developers, There Are Bad Architects"
+date:   2018-04-30 11:00:00 +0300
+image: /assets/placeholder.png
+categories: development testing
+comments: true
+---
 
-The deployment was not automated. Special people with access were doing the necessary changes. I, as a developer, was telling them in details what to do. Why I was not allowed to do it directly is a different story. Probably it was due to stupidness security reasons.
+This happened long time ago when I was supporting production deployment of a big enterprise system of a bank.
 
-The Jenkins job that deployed a component became red. I started to dig into it and realized that the unit tests failed. That was quite a surprise, because nobody touched the component for a month and all the previous builds were green.
+The deployment was not automated. Special people with production access were doing necessary changes. I, as a developer, was telling them via Skype what to do. The people were not familiar with the system. They were not developers even. Due to such an approach the deployment usually took very long time. It was already late evening when this happened.
 
-OK, the code didn’t change. This means that the service takes some data (probably some price coefficients) from the outside (that can be either another service or a database).
+Suddenly, a Jenkins job that was doing a deployment of a component became red. That was an unpleasant surprise as the component was the last one in the long list of components. I opened the log and found ouy that the unit tests failed. They expected 20 € as a price of an insurance, but the actual price was 25 €. That was really weird: nobody touched the component for a month and all the previous builds were green.
+
+Frankly, the first idea that came to my mind was to ignore unit tests and continue deployment. After all, that's how developers usually deal with failing unit tests, don't they? However, given a criticality of this component, that was not a good idea. The component was responsible for calculation of insurances prices. People can forgive broker UI layout. But they never forgive any issues with their money. So I had only one choice: to fix the test as soon as possible. I started to dig into the error.
+
+OK, I thought, the code of the service didn’t change. This means that the service was taking some data (probably some price coefficients) from the outside (that can be either another service or a database) and the unit tests were written in a wrong way, i.e., they relied on the data from the outer world.
 
 But after spending quite 
 
@@ -17,7 +28,6 @@ Never allow your unit tests depend on anything external.
 ----
 
 "There Are No Bad Developers, There Are Bad Architects"
-there-are-no-bad-developers-there-are-bad-architects
 
 There was an orphaned component, nobody touched it for almost half a year. Then the client asked me to fix a small bug in the component.
 
