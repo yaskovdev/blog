@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Happy Birthday, Mr Smith!"
+title:  "Happy Birthday, Mr. Johnson!"
 date:   2018-04-30 11:00:00 +0300
 image: /assets/placeholder.png
 categories: development testing
@@ -19,94 +19,22 @@ OK, I thought, yesterday everything was fine. Today the tests fail. This means t
 
 I started with the first option. I checked the commits history, the history of the job itself, nothing changed since last month. Then I took the green build and the build that failed and compared their SHA1 hashes. They were identical. This meant that nothing changed, definitely.
 
-Then I switched to the second option. It was a bit trickier as the service itself was really old and big, with thousands of lines of spaghetti code. I was looking for all signs of that the service consumes something from the outer world. JDBC connection strings, JNDI bindings, REST clients configurations, SFTP to external file system... Nothing. The service was the thing-in-itself. It didn't consume any other storages or services. TODO: consumes, but test was mocking it.
+Then I switched to the second option. It was a bit trickier as the service itself was the legacy, with thousands of lines of spaghetti code per class. I was looking for all signs of that the service consumes something from the outer world. JDBC connection strings, JNDI bindings, REST clients configurations, SFTP to external file system... Nothing. The only external RESTful service that provided the coefficients for the price (to be able to change it without changing the code) was properly mocked in the unit tests.
 
 The only way that left after this is to dig into the price calculation business logic. That was the place that was written long time ago and nobody really wanted to touch it. After some time of futile attempts to understand the logic my attention was attracted by the following line:
 
 ```java
-int age = DateUtil.countAge("280752-7918")
+int age = DateUtil.countAgeUsingPersonalCode("280752-7918")
 ```
 
-The insurance became more expensive than the test expected. And the insurances usually become more expensive when the client gets older. Wait a second...
+The insurance became more expensive than the test expected. The insurances usually become more expensive when the clients get older. Wait a second...
 
-Today is July, 29th. Mr Smith (that was the name of the fictional client from the unit tests) celebrated his sixtieth birthday yesterday. And 60 years is one of the frontiers when the price for the insurance gets higher.
+Today is July, 29th. Mr. Johnson (that was the name of the fictional client from the unit tests) celebrated his sixtieth birthday yesterday. And sixty years is one of the frontiers when the price for the insurance gets higher.
 
-Now everything was completely clear to me. The code didn't change indeed. And the unit tests didn't consume any services from the outer world. The only outer service was properly mocked. The only external thing they "consumed" was time. Yesterday, and for all the earlier time, the tests were passing because Mr Smith was still young and was eligible for cheaper insurance. Starting from today, however, he turned 60, the price for him got higher, while the test still expected it to be the same.
+Now everything was completely clear to me. The code didn't change indeed. And the unit tests didn't consume any services from the outer world: the only outer service was properly mocked. However, one external thing they still "consumed" was time. Yesterday, and for all the earlier time, the tests were passing because Mr. Johnson was still young and was eligible for cheaper insurance. Starting from today, however, he turned 60, the price for him got higher, while the test still expected it to stay the same...
 
-OK, I thought, the code of the service didn’t change. This means that the service was taking some data (probably some price coefficients) from the outside (that can be either another service or a database) and the unit tests were written in a wrong way, i.e., they relied on the data from the outer world.
+### The Morality Of The Story
 
-But after spending quite 
+Never allow your unit tests depend on _anything_ external. Time is also the external thing, though it may seem stable and predictable.
 
-It was far not that obvious to understand that the test depends on current date because the age of a customer was calculated using his birthday, which, in turn was calculated using the customer’s ID card number.
-
-Morality Of The Story
-
-Never allow your unit tests depend on anything external.
-
-----
-
-"There Are No Bad Developers, There Are Bad Architects"
-
-There was an orphaned component, nobody touched it for almost half a year. Then the client asked me to fix a small bug in the component.
-
-I started building the component and found out that the tests (that always used to pass before) started failing. That was a bit demotivating because I had not made any changes in the code yet.
-
-The tests were trying to explain me what went wrong. But the message they used for it was not too informative. Some of them were saying that "expected: 200, actual: 210", while others just threw `ArrayIndexOutOfBoundsException`, being even more stingy at the details.
-
-1. Probably something was changed? No, I don't see any commits
-2. Maybe it takes some prices or coefficients from another service? No, I don't see any communications in the logs.
-
-### The Mystery
-
-I could not count how many wild versions came to my mind.
-
-But the secret was much simpler.
-
-### The Disclosure
-
-I already [mentioned]({{ site.url }}/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time) that `DateUtil` library is a pure evil. In less that several months the library decided to demonstrate once again how evil it is.
-
-The code against which the unit tests were running was calculating a price for a certain service based on the age of a customer. The older the customer, the more expensive the service.
-
-The age of the customer was derived from his social security number. The author of the code decided to not re-invent the wheel and re-use the existing library to calculate the age.
-
-So deeply in the code under testing there was the call like this:
-
-```java
-int age = DateUtil.countAge("280237-7918")
-```
-
-I guess now you already can see why the tests started to fail.
-
-Exactly, because since the previous tests run the customer became one year older. So the age increased by one. So the actual price became a bit bigger than expected. So the tests started failing.
-
-### Who Is Responsible?
-
-I am trying to imagine myself developing this functionality. I am forced to use certain libraries. At the same time, these libraries force me to write untestable code. Other words, I am forced to write untestable code.
-
-And this is everywhere. I am forced to use Eclipse instead of IntelliJ IDEA due to so-called "company policy". I am not allowed to use MobaXterm by the similar reasons.
-
-### How To Solve?
-
-Like this:
-
-```java
-int age = DateUtil.countAge("280237-7918", new Date())
-```
-
-If you are in a situation when you have what you have (`countAge` that takes only one parameter), then you can consider extracting it to a different class, like this:
-
-```java
-class Age {
-    
-    int fromSsn(final String ssn) {
-        return DateUtil.countAge(ssn);
-    }
-}
-```
-
-You can then make this class a dependency of the class you are trying to test and mock (or fake) it with a dummy class that does not depend on a current year.
-
-### To Summarize
-
-Either be careful when choosing a library. Or do not increase a price of a service for the elderly customers.
+One good "test" for unit tests can be changing your PC clock to some very strange time, like to a distant past or future, and check that the tests keep passing and do not raise false-positive errors.
