@@ -1,4 +1,23 @@
+This happened when I was supporting deployment of a huge enterprise system of a bank.
+
+The deployment was not automated. Special people with access were doing the necessary changes. I, as a developer, was telling them in details what to do. Why I was not allowed to do it directly is a different story. Probably it was due to stupidness security reasons.
+
+The Jenkins job that deployed a component became red. I started to dig into it and realized that the unit tests failed. That was quite a surprise, because nobody touched the component for a month and all the previous builds were green.
+
+OK, the code didn’t change. This means that the service takes some data (probably some price coefficients) from the outside (that can be either another service or a database).
+
+But after spending quite 
+
+It was far not that obvious to understand that the test depends on current date because the age of a customer was calculated using his birthday, which, in turn was calculated using the customer’s ID card number.
+
+Morality Of The Story
+
+Never allow your unit tests depend on anything external.
+
+----
+
 "There Are No Bad Developers, There Are Bad Architects"
+there-are-no-bad-developers-there-are-bad-architects
 
 There was an orphaned component, nobody touched it for almost half a year. Then the client asked me to fix a small bug in the component.
 
