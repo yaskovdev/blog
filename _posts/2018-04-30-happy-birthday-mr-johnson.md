@@ -17,7 +17,7 @@ Suddenly, a Jenkins job that was deploying a component turned red. That was an u
 
 Frankly, the first idea that came to my mind was to ignore the unit tests and continue deployment. After all, that's how developers usually deal with failing unit tests, isn't it? 
 
-However, that would be too risky this time. People can forgive broken UI layout. But they never forgive any issues with their money. 
+However, that would be too risky that time. People can forgive broken UI layout. But they never forgive any issues with their money. 
 
 So I had only one choice: to fix the tests as soon as possible and finish the deployment. I started digging into the error.
 
