@@ -2,7 +2,7 @@
 layout: post
 title:  "Happy Birthday, Mr. Johnson!"
 date:   2018-04-30 11:00:00 +0300
-image: /assets/placeholder.png
+image: /assets/old-geezer.png
 categories: development testing
 comments: true
 ---
@@ -11,7 +11,7 @@ This happened long time ago when I was supporting production deployment of a big
 
 The deployment was not automated. Special people with production access were sitting abroad and doing necessary changes. I, as a developer, was telling them via Skype what to do. The people were not familiar with the system. They were not even developers. Due to such an approach the deployment usually took very long time. It was already late evening when this happened...
 
-<img alt="Happy Birthday" src="{{ site.url }}{{ page.image }}">
+<img alt="Old Geezer" style="margin: 0 auto; display: block;" src="{{ site.url }}{{ page.image }}">
 
 Suddenly, a Jenkins job that was deploying a component became red. That was an unpleasant surprise as the component was the last one in the long list to deploy. I opened the log and saw that the unit tests failed. They expected 60 € as a price of a health insurance, but the actual price the component calculated was 80 €. That was really weird: nobody touched the code for a month and all the previous builds were green.
 
