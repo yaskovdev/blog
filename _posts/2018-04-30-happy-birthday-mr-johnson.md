@@ -21,7 +21,7 @@ However, that would be too risky that time. People can forgive broken UI layout.
 
 So I had only one choice: to fix the tests as soon as possible and finish the deployment. I started digging into the error.
 
-"OK", I thought, "yesterday, everything was fine. Today, the tests failed. This means that either the code changed (though it was not supposed to), or the service was taking in some external data (for example, pricing coefficients) from outside sources, such as a database, resulting in faulty unit tests.
+"OK", I thought, "yesterday, everything was fine. Today, the tests failed. This means that either the code changed (though it was not supposed to), or the service was taking in some external data (for example, pricing coefficients) from outside sources, such as a database, resulting in faulty unit tests."
 
 I started with the first option. I checked the commits history, the history of the job itself. Nothing had changed since last month. Then I went further, and took the green build and the build that failed and compared their checksums. They were identical. This meant definitively that nothing had changed in the code.
 
