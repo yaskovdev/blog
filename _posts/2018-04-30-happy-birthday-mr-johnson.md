@@ -17,7 +17,7 @@ Suddenly, a Jenkins job that was deploying a component turned red. That was an u
 
 Frankly, the first idea that came to my mind was to ignore the unit tests and continue deployment. After all, that's how developers usually deal with failing unit tests, isn't it? 
 
-However, that would be too risky that time. People can forgive broken UI layout. But they never forgive any issues with their money. 
+However, that would be too risky this time. People can forgive broken UI layout. But they never forgive any issues with their money. 
 
 So I had only one choice: to fix the tests as soon as possible and finish the deployment. I started digging into the error.
 
@@ -43,6 +43,6 @@ That deployment took a little longer than expected. Still, it was successfully f
 
 ### The Lesson Learned
 
-Never allow your unit tests to depend on _anything_ external. Time is also an external value, though it may seem stable and predictable.
+To make sure that no "Mr. Johnsons" spoil your evening again, never allow your unit tests to depend on _anything_ external. Time is also an external value, though it may seem stable and predictable.
 
 One good way to validate your unit tests can be changing your PC clock to something out-of-date, like to a distant past or future, and check that the tests keep passing without raising false-positive errors.
