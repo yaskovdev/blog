@@ -2,26 +2,26 @@
 layout: post
 title:  "Happy Birthday, Mr. Johnson!"
 date:   2018-04-30 11:00:00 +0300
-image: /assets/placeholder.png
+image: /assets/old-geezer.png
 categories: development testing
 comments: true
 ---
 
-This happened a long time ago, when I was supporting production deployment of the large-enterprise system of a bank.
+This happened a long time ago, when I was supporting production deployment of the large enterprise system of a bank.
 
 The deployment was not automated. Specialists with production access were working abroad and making necessary changes. I, as a developer, was telling them what to do via Skype. These people were not familiar with the system. They were not even developers. Because of this, the deployment usually took a very long time. It was already late evening when this happened...
 
-<img alt="Happy Birthday" src="{{ site.url }}{{ page.image }}">
+<img alt="Old Geezer" style="margin: 0 auto; display: block;" src="{{ site.url }}{{ page.image }}">
 
 Suddenly, a Jenkins job that was deploying a component turned red. That was an unpleasant surprise, as the component was the last one in the long list to deploy. I opened the log and saw that the unit tests had failed. The tests had expected 60 € as the price of a health insurance policy, but the actual price the component calculated was 80 €. That was really weird: nobody had touched the code for a month and all the previous builds were green.
 
 Frankly, the first idea that came to my mind was to ignore the unit tests and continue deployment. After all, that's how developers usually deal with failing unit tests, isn't it? 
 
-People can forgive broken UI layout. But they never forgive any issues with their money. 
+However, that would be too risky this time. People can forgive broken UI layout. But they never forgive any issues with their money. 
 
 So I had only one choice: to fix the tests as soon as possible and finish the deployment. I started digging into the error.
 
-"OK", I thought, "yesterday, everything was fine. Today, the tests failed. This means that either the code changed (though it was not supposed to), or the service was taking in some external data (for example, pricing coefficients) from outside sources, such as a database, resulting in faulty unit tests.
+"OK", I thought, "yesterday, everything was fine. Today, the tests failed. This means that either the code changed (though it was not supposed to), or the service was taking in some external data (for example, pricing coefficients) from outside sources, such as a database, resulting in faulty unit tests."
 
 I started with the first option. I checked the commits history, the history of the job itself. Nothing had changed since last month. Then I went further, and took the green build and the build that failed and compared their checksums. They were identical. This meant definitively that nothing had changed in the code.
 
@@ -43,6 +43,6 @@ That deployment took a little longer than expected. Still, it was successfully f
 
 ### The Lesson Learned
 
-Never allow your unit tests to depend on _anything_ external. Time is also an external value, though it may seem stable and predictable.
+To make sure that no "Mr. Johnsons" spoil your evening again, never allow your unit tests to depend on _anything_ external. Time is also an external value, though it may seem stable and predictable.
 
 One good way to validate your unit tests can be changing your PC clock to something out-of-date, like to a distant past or future, and check that the tests keep passing without raising false-positive errors.
