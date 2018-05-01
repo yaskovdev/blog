@@ -9,7 +9,7 @@ comments: true
 
 This happened a long time ago, when I was supporting production deployment of the large enterprise system of a bank.
 
-The deployment was not automated. IT support guys with production access were working abroad and making necessary changes. I, as a developer, was telling them what to do via Skype. These people were not familiar with the system. They were not even developers. Because of this, the deployment usually took a very long time. It was already late evening when this happened...
+The deployment was not automated. Specialists with production access were working abroad and making necessary changes. I, as a developer, was telling them what to do via Skype. These people were not familiar with the system. They were not even developers. Because of this, the deployment usually took a very long time. It was already late evening when this happened...
 
 <img alt="Old Geezer" style="margin: 0 auto; display: block;" src="{{ site.url }}{{ page.image }}">
 
