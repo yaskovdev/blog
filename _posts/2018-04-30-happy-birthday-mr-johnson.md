@@ -13,19 +13,19 @@ The deployment was not automated. IT support guys with production access were wo
 
 <img alt="Old Geezer" style="margin: 0 auto; display: block;" src="{{ site.url }}{{ page.image }}">
 
-Suddenly, a Jenkins job that was deploying a component turned red. That was an unpleasant surprise, as the component was the last one in the long list to deploy. I opened the log and saw that the unit tests had failed. The tests had expected 60 € as the price of a health insurance policy, but the actual price the component calculated was 80 €. That was really weird: nobody had touched the code for a month and all the previous builds were green.
+Suddenly, a [Jenkins](https://jenkins.io) job that was deploying a component turned red. That was an unpleasant surprise, as the component was the last one in the long list to deploy. I opened the log and saw that the unit tests had failed. The tests had expected 60 € as the price of a health insurance policy, but the actual price the component calculated was 80 €. That was really weird: nobody had touched the code for a month and all the previous builds were green.
 
-Frankly, the first idea that came to my mind was to ignore the unit tests and continue deployment. After all, that's how developers usually deal with failing unit tests, isn't it? 
+Frankly, the first idea that came to my mind was to ignore the unit tests and continue deployment. After all, that's how developers usually deal with failing unit tests, isn't it?
 
-However, that would be too risky this time. People can forgive broken UI layout. But they never forgive any issues with their money. 
+However, that would be too risky this time. People can forgive broken UI layout. But they never forgive any issues with their money.
 
 So I had only one choice: to fix the tests as soon as possible and finish the deployment. I started digging into the error.
 
 "OK", I thought, "yesterday, everything was fine. Today, the tests failed. This means that either the code changed (though it was not supposed to), or the service was taking in some external data (for example, pricing coefficients) from outside sources, such as a database, resulting in faulty unit tests."
 
-I started with the first option. I checked the commits history, the history of the job itself. Nothing had changed since last month. Then I went further, and took the green build and the build that failed and compared their checksums. They were identical. This meant definitively that nothing had changed in the code.
+I started with the first option. I checked the commits history, the history of the job itself. Nothing had changed since last month. Then I went further, and took the green build and the build that failed and compared their [checksums](https://en.wikipedia.org/wiki/Cksum). They were identical. This meant definitively that nothing had changed in the code.
 
-Then I switched to the second option. It was a bit trickier as the service itself was the legacy, with thousands of lines of spaghetti code per class. I was looking for any and all signs that the service was consuming something from the outer world. JDBC connection strings, JNDI bindings, REST clients, SFTP to external file system and so on. Nothing, except for one small RESTful service that provided coefficients for the prices. However, that service was properly mocked in the unit tests, i.e., the tests were consuming its static fake twin, not the service itself.
+Then I switched to the second option. It was a bit trickier as the service itself was the legacy, with thousands of lines of spaghetti code per class. I was looking for any and all signs that the service was consuming something from the outer world. JDBC connection strings, JNDI bindings, REST clients, SFTP to external file system and so on. Nothing, except for one small [RESTful service](https://en.wikipedia.org/wiki/Representational_state_transfer) that provided coefficients for the prices. However, that service was properly [mocked](https://en.wikipedia.org/wiki/Mock_object) in the unit tests, i.e., the tests were consuming its static fake twin, not the service itself.
 
 The only route left to me was to start digging into the price calculation business logic. That was a daunting task. The logic was written a long time ago and nobody really wanted to touch it. After some time of futile attempts and several questions like, "How much longer should we wait?" from my deployers overseas, my attention was attracted by the following line:
 
