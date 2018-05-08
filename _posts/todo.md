@@ -27,7 +27,7 @@ You pay me for 40 hours a week. I work for you these 40 hours. I don't waste a s
 
 We both know that the team events are one of these things. They help you make more money by improving team communication and by turning us, employees, into loyal and friendly slaves. They, probably, even help me to communicate with my team better. Still, dear Employer, I prefer to solve my working problems _at work_. Nobody pays me for solving them in my free time.
 
-You want me to join the events? No problem, if they are during working hours. Ah, they are in the evening or on the weekend? Okay, but where is my overtime bonus then? They are just mandatory and you don't want to pay? Well, sorry, I don't think we can work together.
+You want me to join the events? No problem, if they are during working hours. Ah, they are in the evening or on the weekend? Okay, but where is my overtime bonus then? The events are just mandatory and you don't want to pay? Well, sorry, I don't think we can work together.
 
 By the way, I do meet my colleagues in my free time. But the difference is that in this case I decide _when_ to meet, _whom_ to join and _what_ to do.
 
