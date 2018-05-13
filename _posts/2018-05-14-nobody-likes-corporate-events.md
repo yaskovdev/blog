@@ -1,31 +1,41 @@
 ---
 layout: post
-title:  "Nobody Likes Corporate Events"
+title:  "Corporate Events Are Your Enemy"
 date:   2018-05-14 11:00:00 +0300
 image: /assets/old-geezer.png
 categories: development testing
 comments: true
 ---
 
-Corporate events are an important part of a healthy team spirit and great performance. People like them. People join them of mere motion. That is... complete nonsense!
+### You Are Just A Resource
 
-Let's start with the harsh truth. You are not a person. Even not a human being. You are a money-making tool of your employer. Some employers even call you "a resource" and refer to you by your "resource ID", did you know about that?
+Let's start with the harsh truth: you are not a person. Even not a human being. You are a money-making tool of your employer. Some employers even call you "a resource" and refer to you by your "resource ID", did you know about that?
 
-Being a tool for money-making, you must be profitable. If you are not profitable, you are fired. Nobody is going to coddle with you.
+### You Must Be Profitable
 
-Your employer lies to you.
+Being a tool for money-making, you must be profitable. If you are not profitable, you are fired. Nobody is going to coddle (?) with you.
 
-You and your employer are in a conflict.
+What is the profitability? In a simple language, it is a difference between how much you earn for your employee and how much your employee spends on you.
+
+Obviously, the bigger is your profitability the more chances you have to succeed as an employee. If it is close to zero or, god forbid, negative, you will be eventually fired.
+
+### Killers Of Your Profitability
+
+That's it. Everything is super-simple. All the other stuff, like corporate trainings you attend, brownbag presentations you give and new joiners you coach, __does not matter at all__! Nobody cares, really. (Well, except for your employer, twice a year: these things are a valid reason to not give you your promotion, but that's a bit different story.)
+
+I cannot give you a full list of these completely unimportant things, because it is really huge. Every employer has its own. But the most phony, the most terrible item in this list is, of course, the corporate events!
+
+### Corporate Events Are The Main Profitability Killer
+
+You and your colleagues are not the big family. You are [not even friends](http://theweek.com/articles/748743/coworkers-are-not-friends). And you will never be. Your employer just lies to you in order to make you less likely to leave the company. Indeed, how dare you even think about betraying your family?
 
 Corporate events are mandatory.
 
-Most of the people do not like corporate events
-
-Team building is procuration.
+Corporate events are expensive.
 
 It does not matter if you are completely ignoring the events or you are visiting all of them. Even though in some organizations they are declared mandatory (usually offstage). Even though you may believe that by visiting them you are becoming "a better employee". Enough! You'll be fired anyway once you will stop being profitable.
 
-They are not your friends (link to the book here). How many of them will go to your funeral? Nobody will even remember about you the next day.
+Based on my small research, most of the people do not like corporate events.
 
 Dear Employer,
 
@@ -40,3 +50,5 @@ Ah, they are in the evening or on the weekend? Okay, but where is my overtime bo
 They are just mandatory and you don't want to pay? Well, sorry, I don't think we can continue working together.
 
 By the way, I do meet my colleagues in my free time. I even date with some of them from time to time. But the difference is that in this case I decide _when_ to meet, _whom_ to join and _what_ to do. I am not 10 years old. Let _me_ decide.
+
+The article is not about you because you really like the corporate events? Please, leave a comment, I would like to know the reason why you _sincerely_ like them.
