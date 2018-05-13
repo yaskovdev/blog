@@ -9,7 +9,9 @@ comments: true
 
 Corporate events are an important part of a healthy team spirit and great performance. People like them. People join them of mere motion. That is... complete nonsense!
 
-You are a money-making tool of your employer.
+Let's start with the harsh truth. You are not a person. Even not a human being. You are a money-making tool of your employer. Some employers even call you "a resource" and refer to you by your "resource ID", did you know about that?
+
+Being a tool for money-making, you must be profitable. If you are not profitable, you are fired. Nobody is going to coddle with you.
 
 Your employer lies to you.
 
@@ -21,7 +23,7 @@ Most of the people do not like corporate events
 
 Team building is procuration.
 
-You'll be fired anyway once you will stop being profitable. It does not matter if you were completely ignoring the events or you visited all of them. Do not build illusions about the corporate events.
+It does not matter if you are completely ignoring the events or you are visiting all of them. Even though in some organizations they are declared mandatory (usually offstage). Even though you may believe that by visiting them you are becoming "a better employee". Enough! You'll be fired anyway once you will stop being profitable.
 
 They are not your friends (link to the book here). How many of them will go to your funeral? Nobody will even remember about you the next day.
 
@@ -38,9 +40,3 @@ Ah, they are in the evening or on the weekend? Okay, but where is my overtime bo
 They are just mandatory and you don't want to pay? Well, sorry, I don't think we can continue working together.
 
 By the way, I do meet my colleagues in my free time. I even date with some of them from time to time. But the difference is that in this case I decide _when_ to meet, _whom_ to join and _what_ to do. I am not 10 years old. Let _me_ decide.
-
-But What If I Will Get Fired For Ignoring These Events?
-
-You will get fired if you will be not efficient worker. You can visit all the possible team events, but it won't help you if you are not making enough money for your employer. Indians were fired.
-
-Don't try to make friends at work.
