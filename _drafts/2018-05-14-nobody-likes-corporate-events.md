@@ -7,6 +7,8 @@ categories: development testing
 comments: true
 ---
 
+Corporate events are not only the way to maintain good professional relations with your employer and your colleagues, but also a way to have a good time, right? Not at all! In reality, they are the main enemy of your career. Let me explain.
+
 ### You Are Just A Resource
 
 Let's start with the harsh truth: you are not a person. Even not a human being. You are a money-making tool of your employer. Some employers even call you "a resource" and refer to you by your "resource ID", did you know about that?
