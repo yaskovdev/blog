@@ -1,13 +1,17 @@
 ---
 layout: post
-title:  "Corporate Events Are Your Enemy"
+title:  "Team Building Is Your Enemy"
 date:   2018-05-14 11:00:00 +0300
-image: /assets/old-geezer.png
+image: /assets/no-team-buildings.jpeg
 categories: development testing
 comments: true
 ---
 
-Corporate events are not only the way to maintain good professional relations with your employer and your colleagues, but also a way to have a good time, right? Not at all! In reality, they are the main enemy of your career. Let me explain.
+Team building is very useful for your career growth: it helps you build and maintain good relations with your colleagues and your employer. It also improves your performance in a team-based environment.
+
+Right? Not really... In reality, it is an enemy of your career. Let me explain why.
+
+<img alt="Problem Solving" src="{{ site.url }}{{ page.image }}">
 
 ### You Are Just A Resource
 
@@ -19,15 +23,15 @@ Being a tool for money-making, you must be profitable. If you are not profitable
 
 What is the profitability? In a simple language, it is a difference between how much you earn for your employee and how much your employee spends on you.
 
-Obviously, the bigger is your profitability the more chances you have to succeed as an employee. If it is close to zero or, god forbid, negative, you will be eventually fired.
+Obviously, the bigger is your profitability the more chances you have to succeed as an employee. If it is close to zero or, god forbid, negative, you will be eventually fired. That's it. Everything is super-simple.
 
 ### Killers Of Your Profitability
 
-That's it. Everything is super-simple. All the other stuff, like corporate trainings you attend, brownbag presentations you give and new joiners you coach, __does not matter at all__! Nobody cares, really. (Well, except for your employer, twice a year: these things are a valid reason to not give you your promotion, but that's a bit different story.)
+How about all the other stuff, like corporate trainings you attended, brownbag presentations you gave and new joiners you coached? They __do not matter at all__! Nobody cares, really. (Well, except for your employer, twice a year: these things are a valid reason to not give you your promotion, but that's a bit different story.)
 
 I cannot give you a full list of these completely unimportant things, because it is really huge. Every employer has its own. But the most phony, the most terrible item in this list is, of course, the corporate events!
 
-### Corporate Events Are The Main Profitability Killer
+### Team Building Is The Main Profitability Killer
 
 You and your colleagues are not the big family. You are [not even friends](http://theweek.com/articles/748743/coworkers-are-not-friends). And you will never be. Your employer just lies to you in order to make you less likely to leave the company. Indeed, how dare you even think about betraying your family?
 
