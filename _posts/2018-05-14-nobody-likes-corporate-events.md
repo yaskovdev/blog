@@ -9,13 +9,13 @@ comments: true
 
 Team building is very useful for your career growth: it helps you build and maintain relations with your colleagues and your employer. It also improves your performance in a team-based environment. Right?
 
-Not really. In reality, it is an enemy of your career. Let me explain why.
+Not at all. In fact, it is an enemy of your career. Let me explain why.
 
 <img alt="Problem Solving" src="{{ site.url }}{{ page.image }}">
 
 ### You Are Just A Resource
 
-Let's start with the harsh truth: you are not a person. Even not a human being. You are a money-making tool of your employer. Some employers even call you "a resource" and refer to you by your "resource ID", did you know about that?
+Let's start with the harsh truth: you are not a person. Even not a human being. You are a money-making tool of your employer. They even call you "[a resource](https://www.quora.com/Why-do-IT-companies-call-employees-a-resource)" and refer to you by your "resource ID", did you know about that?
 
 ### You Must Be Profitable
 
@@ -33,13 +33,13 @@ I cannot give you a full list of these completely unimportant things, because it
 
 These things are not only _not helping_ you with your career. No. They are the enemies of it. Why? Because they take _a lot_ of your time and energy and, as a result, give you a false hope that your employer will notice your "efforts" and start paying you more money.
 
-One of the most popular enemies of your career is team building.
+One of the most widespread enemies of your career is team building.
 
-### You Work Overtime Without Compensation There
+### You Show That You Are Ready To Work For Free
 
-Wake up. Your colleagues [are not your friends](https://chinmaeke.wordpress.com/2017/03/14/your-colleagues-are-not-your-friends/). Team building with them is not a party with your friends, therefore. You are still at work. You should be very careful with what you are doing, what you are saying and about whom you are saying it.
+Wake up. Your colleagues [are not your friends](https://chinmaeke.wordpress.com/2017/03/14/your-colleagues-are-not-your-friends/). Team building with them is not a party with your friends therefore. You are still _at work_.
 
-Participating in team buildings is your job. __Every job should be paid.__ If it is not paid, you should not even start it. When your employer forces you to participate in team buildings, you have to answer something like this, in a very polite way:
+__Every work should be paid.__ If it is not paid, you should not even start it. When your employer forces you to participate in team buildings, instead of silently agreeing, you have to answer something like this, still in a very polite way:
 
 "Dear \<put the name of your employer here\>,
 
@@ -51,20 +51,26 @@ It is absolutely mandatory to join the events? No problem, if they are during wo
 
 Oh, they are in the evening or on the weekend? Okay, but where is my overtime compensation then?
 
-There is no compensation provided? Well, sorry, I don't think we can continue working together. I value my own time too much."
+There is no compensation provided? Well, sorry, I don't think I can join. I value my own time too much. Just like you value yours."
 
-### You Drink There
+### You Drink Alcohol
 
-I'm not a doctor to talk about the dangers of alcohol. All people are different. Alcohol turns some of them into stupid monkeys and eventually kills them. But, who knows, maybe it makes others really smart and healthy? I'm not to judge.
+I'm not a doctor to talk about the dangers of alcohol. All people are different. Alcohol turns most of them into stupid monkeys and eventually kills them. But, who knows, maybe it makes others really smart and healthy? I'm not to judge.
 
-However, what I know for sure is that it's really bad idea to drink with your colleagues and, especially, with your boss.
+However, I know for sure that it's really bad idea to drink with your colleagues and, especially, with your boss.
 
 When you are drunk, your start doing stupid things. I was a witness of such things quite often.
 
-They can be relatively innocuous (like one my colleague who tore to shreds all the money from his wallet trying to prove that money do not matter). Sometimes, however, they can be really dangerous, at least for your reputation, not to speak about your life.
+They can be relatively innocuous (like once my colleague tore to shreds all the money from his wallet trying to prove that money do not matter). Sometimes, however, they can be really dangerous, at least for your reputation, not to speak about your life.
 
 Do not want to tarnish your reputation? Stay away from team buildings.
 
 ### To Summarize
 
-The article is not about you because you really like the corporate events? Please, leave a comment, I would like to know the reason why you _sincerely_ like them.
+Team building is very dangerous, because, being fully a job, it pretends to be a party.
+
+As many people mistakenly believe it's a party, they do things which, in a long run, are harmful for their career.
+
+In particular, they show that they are ready to work for free by not requesting money for a team building participation. Also, they often behave in too casual, non-professional manner. Finally, sometimes they even destroy their reputation by doing stupid things while being drunk.
+
+What is your experience? Do you participate in team buildings? What makes personally you to take part in them?
