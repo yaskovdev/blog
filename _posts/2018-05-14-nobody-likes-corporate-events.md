@@ -7,9 +7,9 @@ categories: development testing
 comments: true
 ---
 
-Team building is very useful for your career growth: it helps you build and maintain good relations with your colleagues and your employer. It also improves your performance in a team-based environment.
+Team building is very useful for your career growth: it helps you build and maintain relations with your colleagues and your employer. It also improves your performance in a team-based environment. Right?
 
-Right? Not really... In reality, it is an enemy of your career. Let me explain why.
+Not really. In reality, it is an enemy of your career. Let me explain why.
 
 <img alt="Problem Solving" src="{{ site.url }}{{ page.image }}">
 
@@ -21,40 +21,50 @@ Let's start with the harsh truth: you are not a person. Even not a human being. 
 
 Being a tool for money-making, you must be profitable. If you are not profitable, you are fired. Nobody is going to coddle (?) with you.
 
-What is the profitability? In a simple language, it is a difference between how much you earn for your employee and how much your employee spends on you.
+What is the profitability? In a simple language, it is a difference between how much you earn for your employee and how much you cost for him.
 
 Obviously, the bigger is your profitability the more chances you have to succeed as an employee. If it is close to zero or, god forbid, negative, you will be eventually fired. That's it. Everything is super-simple.
 
-### Killers Of Your Profitability
+### Enemies Of Your Profitability
 
-How about all the other stuff, like corporate trainings you attended, brownbag presentations you gave and new joiners you coached? They __do not matter at all__! Nobody cares, really. (Well, except for your employer, twice a year: these things are a valid reason to not give you your promotion, but that's a bit different story.)
+There is your profitability. It matters. And there is other stuff, for example, how many corporate trainings you attended, how many new joiners you coached and how awesome the brownbag presentations you gave were. They __do not matter at all__! Nobody cares, really.
 
-I cannot give you a full list of these completely unimportant things, because it is really huge. Every employer has its own. But the most phony, the most terrible item in this list is, of course, the corporate events!
+I cannot give you a full list of these completely unimportant things, because it is really huge. Every employer has his own.
 
-### Team Building Is The Main Profitability Killer
+These things are not only _not helping_ you with your career. No. They are the enemies of it. Why? Because they take _a lot_ of your time and energy and, as a result, give you a false hope that your employer will notice your "efforts" and start paying you more money.
 
-You and your colleagues are not the big family. You are [not even friends](http://theweek.com/articles/748743/coworkers-are-not-friends). And you will never be. Your employer just lies to you in order to make you less likely to leave the company. Indeed, how dare you even think about betraying your family?
+One of the most popular enemies of your career is team building.
 
-Corporate events are mandatory.
+### You Work Overtime Without Compensation There
 
-Corporate events are expensive.
+Wake up. Your colleagues [are not your friends](https://chinmaeke.wordpress.com/2017/03/14/your-colleagues-are-not-your-friends/). Team building with them is not a party with your friends, therefore. You are still at work. You should be very careful with what you are doing, what you are saying and about whom you are saying it.
 
-It does not matter if you are completely ignoring the events or you are visiting all of them. Even though in some organizations they are declared mandatory (usually offstage). Even though you may believe that by visiting them you are becoming "a better employee". Enough! You'll be fired anyway once you will stop being profitable.
+Participating in team buildings is your job. __Every job should be paid.__ If it is not paid, you should not even start it. When your employer forces you to participate in team buildings, you have to answer something like this, in a very polite way:
 
-Based on my small research, most of the people do not like corporate events.
+"Dear \<put the name of your employer here\>,
 
-Dear Employer,
+You pay me for 40 hours a week. I work for you these 40 hours. I don't waste a second on watching YouTube and PornHub, scrolling Facebook and discussing politics with my colleagues. I work like hell. Even when I'm drinking coffee, I keep thinking on how to make the code I've just written [more maintainable](https://govnokod.ru).
 
-You pay me for 40 hours a week. I work for you these 40 hours. I don't waste a second on watching YouTube (or PornHub), scrolling Facebook and discussing politics with my colleagues. I work like hell. Even when I'm drinking coffee, I keep thinking on how to make the code I've just written more maintainable.
+Now, why do you think I should spend even _a second_ of my personal time on things that are part of my work? Yes, I am speaking about the team buildings you force me to participate in. Even if they help me communicate more efficiently with my team, still, I'd prefer to solve my working problems _at work_. You are not paying me for doing this in my free time.
 
-Now, why do you think I should spend even _a second_ of my personal time on things that are part of my work? Yes, I am speaking about the corporate events you want me to participate in. Even if they help me communicate more efficiently with my team, still, I'd prefer to solve my working problems _at work_. You are not paying me for doing this in my free time.
+It is absolutely mandatory to join the events? No problem, if they are during working hours.
 
-You want me to join the events? No problem, if they are during working hours.
+Oh, they are in the evening or on the weekend? Okay, but where is my overtime compensation then?
 
-Ah, they are in the evening or on the weekend? Okay, but where is my overtime bonus then?
+There is no compensation provided? Well, sorry, I don't think we can continue working together. I value my own time too much."
 
-They are just mandatory and you don't want to pay? Well, sorry, I don't think we can continue working together.
+### You Drink There
 
-By the way, I do meet my colleagues in my free time. I even date with some of them from time to time. But the difference is that in this case I decide _when_ to meet, _whom_ to join and _what_ to do. I am not 10 years old. Let _me_ decide.
+I'm not a doctor to talk about the dangers of alcohol. All people are different. Alcohol turns some of them into stupid monkeys and eventually kills them. But, who knows, maybe it makes others really smart and healthy? I'm not to judge.
+
+However, what I know for sure is that it's really bad idea to drink with your colleagues and, especially, with your boss.
+
+When you are drunk, your start doing stupid things. I was a witness of such things quite often.
+
+They can be relatively innocuous (like one my colleague who tore to shreds all the money from his wallet trying to prove that money do not matter). Sometimes, however, they can be really dangerous, at least for your reputation, not to speak about your life.
+
+Do not want to tarnish your reputation? Stay away from team buildings.
+
+### To Summarize
 
 The article is not about you because you really like the corporate events? Please, leave a comment, I would like to know the reason why you _sincerely_ like them.
