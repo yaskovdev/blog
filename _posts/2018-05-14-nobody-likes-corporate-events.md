@@ -31,7 +31,7 @@ There is your profitability. It matters. And there is other stuff, for example, 
 
 I cannot give you a full list of these [completely unimportant things]({{ site.url }}/2018/01/22/how-your-employer-makes-you-steal-money), because it is really huge. Every employer has his own.
 
-These things are not only _not helping_ you with your career. No. They are the enemies of it. Why? Because they take _a lot_ of your time and energy and, as a result, give you a false hope that your employer will notice your "efforts" and start paying you more money.
+These things are not only _not helping_ you with your career. No. They are the enemies of it. Why? Because they take _a lot_ of your time and energy and, in return, give you a false hope that your employer will notice your "efforts" and start paying you more money.
 
 One of the most widespread enemies of your career is team building.
 
