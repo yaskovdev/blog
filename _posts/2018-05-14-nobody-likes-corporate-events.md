@@ -27,7 +27,7 @@ Obviously, the bigger is your profitability the more chances you have to succeed
 
 ### Enemies Of Your Profitability
 
-There is your profitability. It matters. And there is other stuff, for example, how many corporate trainings you attended, how many new joiners you coached and how awesome the brownbag presentations you gave were. They __do not matter at all__! Nobody cares, really.
+There is your profitability. It matters. And there is other stuff, for example, how many corporate trainings you attended, how many new joiners you coached and how awesome the brownbag presentations you gave were. It __does not matter at all__! Nobody cares, really.
 
 I cannot give you a full list of these [completely unimportant things]({{ site.url }}/2018/01/22/how-your-employer-makes-you-steal-money), because it is really huge. Every employer has his own.
 
