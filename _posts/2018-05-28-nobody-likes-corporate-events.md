@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Team Building Is Your Enemy"
-date:   2018-05-14 11:00:00 +0300
+date:   2018-05-28 11:00:00 +0300
 image: /assets/no-team-buildings.jpeg
 categories: development testing
 comments: true
