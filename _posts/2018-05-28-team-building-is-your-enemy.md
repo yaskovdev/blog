@@ -21,7 +21,7 @@ Let's start with the harsh truth: you are not a person. Even not a human being. 
 
 Being a tool for money-making, you must be profitable. If you are not profitable, you are fired. Nobody is going to coddle (?) with you.
 
-What is the profitability? In short, it is a difference between how much you earn for your employee and how much you cost for him.
+What is the profitability? In short, it is a difference between how much you earn for your employer and how much you cost for him.
 
 Obviously, the bigger is your profitability the more chances you have to succeed as an employee. If it is close to zero or, god forbid, negative, you will be eventually fired. That's it, everything is super-simple.
 
