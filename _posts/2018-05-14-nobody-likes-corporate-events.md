@@ -43,7 +43,7 @@ __Every work should be paid.__ If it is not paid, do not even start it. If you d
 
 "Dear \<put the name of your employer here\>,
 
-You pay me for 40 hours a week. I work for you these 40 hours. I don't waste a second on watching YouTube and PornHub, scrolling Facebook and discussing politics with my colleagues. I work like hell. Even when I'm drinking coffee, I keep thinking on how to make the code I've just written more maintainable.
+You pay me for 40 hours a week. I work for you these 40 hours. I don't waste a second on watching YouTube, scrolling Facebook and discussing politics with my colleagues. I work like hell. Even when I'm drinking coffee, I keep thinking on how to make the code I've just written more maintainable.
 
 Now, why do you think I should spend even _a second_ of my personal time on things that are part of my work? Yes, I am speaking about the team buildings you force me to participate in. Even if they help me communicate more efficiently with my team, still, I'd prefer to solve my working problems _at work_. You are not paying me for doing this in my free time.
 
@@ -55,7 +55,7 @@ I'm not a doctor to talk about the dangers of alcohol. All people are different.
 
 However, I know for sure that it's really bad idea to drink with your colleagues and, especially, with your boss.
 
-When you are drunk, your start doing stupid things. I was a witness of such things quite often. Your friends can forgive them. You employer cannot.
+When you are drunk, you, as a rule, start doing stupid things. I was a witness of such things quite often. Your friends can forgive them. Your colleagues and your boss cannot.
 
 They can be relatively innocuous (like once my colleague tore to shreds all the money from his wallet trying to prove that money do not matter). Sometimes, however, they can be really dangerous, at least for your reputation, not to speak about your life.
 
@@ -63,10 +63,10 @@ Do not want to tarnish your reputation? Stay away from team buildings.
 
 ### To Summarize
 
-Team buildings are very dangerous, because they are a job which pretends a party.
+Team buildings are dangerous, because they are a job which pretends a party.
 
 As many people mistakenly believe team buildings are parties, they do things which in a long run are harmful for their career.
 
-In particular, they clearly demonstrate that they are ready to work for free by not requesting payments for team building participation. Also, they often behave in too casual manner which is okay for a party, but unacceptable for a job. Finally, sometimes they get drunk and destroy their reputation.
+In particular, they clearly demonstrate that they are ready to work for free just by the team building participation. Also, they often behave in too casual manner which is okay for a party, but unacceptable for a job. Finally, sometimes they get drunk and destroy their reputation.
 
 What is your experience? Do you participate in team buildings? What makes personally you to take part in them?
