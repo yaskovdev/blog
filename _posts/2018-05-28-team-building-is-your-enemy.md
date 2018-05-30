@@ -11,7 +11,7 @@ Team-building is very useful for your career growth: it helps you build and main
 
 Not at all. In fact, it is an enemy of your career. Let me explain why.
 
-<img alt="Problem Solving" src="{{ site.url }}{{ page.image }}">
+<img alt="No Team-Buildings" src="{{ site.url }}{{ page.image }}">
 
 ### You Are Just A Resource
 
