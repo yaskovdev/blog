@@ -1,3 +1,3 @@
-UnicornException (500)
-UnicornClientErrorException (400)
-UnicornResourceNotFoundException (404)
+ServerErrorException (500)
+ClientErrorException (400)
+ResourceNotFoundException (404)
