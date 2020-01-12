@@ -1,4 +1,11 @@
-## Pros
+---
+layout: post
+title:  "Why Do I Like Living In Tallinn?"
+date:   2020-01-20 21:00:00 +0300
+image: /assets/you-and-your-employer.jpg
+categories: city
+comments: true
+---
 
 ### People
 
