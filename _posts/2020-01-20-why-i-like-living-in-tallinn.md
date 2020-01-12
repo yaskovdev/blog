@@ -11,6 +11,8 @@ Some two years ago, I did not even think about living Tallinn. Not because of th
 
 Why do I think this place is great? Let me explain.
 
+When we evaluate something, we inevitably, consciously or unconsciously compare it with something else. In this article I am going to compare Tallinn with Saint Petersburg.
+
 <img alt="Tallinn" src="{{ site.url }}{{ page.image }}">
 
 ### People
@@ -18,6 +20,8 @@ Why do I think this place is great? Let me explain.
 Difficult to judge about people without scientific research, I am going to rely on my personal sensation here.
 
 It seems to me that people here are very direct. If they like what you are doing they tell it right away. If they do not like, they criticize directly. Being a direct person myself, I do like this approach.
+
+TODO: specific sense of humor. Interesting books in a store.
 
 ### Easy To Do Everyday Activities
 
