@@ -29,7 +29,7 @@ Another reason why I think people do not like wasting time is because how quick 
 
 Electronic signature makes it possible to save time by signing documents online. No need to go to by person and put an analog signature on a paper. You can even start your own company without leaving your apartment.
 
-Public transport goes strictly by schedule, covers pretty much all the places and is free for ones who have Tallinn registration. The size of the city, however, often allows you to go by foot, everything is really close to each other.
+Public transport goes strictly by schedule, covers pretty much all the places and is free for ones who have Tallinn registration. The compact size of the city, however, often allows you to go by foot, everything is really close to each other.
 
 Due to the small amount of people in the city, the traffic jam is not huge even in a rush hour. Physical queues are also a rare thing here.
 
@@ -37,7 +37,7 @@ If you are a dog owner, the dog walking grounds are everywhere.
 
 ### Ecology And Crime
 
-The air is clean. It is especially noticeable after spending a weekend in Saint Petersburg. It is not only my subjective feeling, [the numbers](https://www.numbeo.com/pollution/compare_cities.jsp?country1=Estonia&country2=Russia&city1=Tallinn&city2=Saint+Petersburg) say the same.
+The air is clean. It is especially noticeable after spending a weekend in Saint Petersburg. And it is not only my subjective feeling, [the numbers](https://www.numbeo.com/pollution/compare_cities.jsp?country1=Estonia&country2=Russia&city1=Tallinn&city2=Saint+Petersburg) say the same.
 
 Tallinn is green. It is full of parks, while itself is surrounded by forests. Even living next to the city center, you easily can see a hare hiding in bushes. From some people I also heard about foxes and deers, it was, however already closer to the outskirts of the city.
 
