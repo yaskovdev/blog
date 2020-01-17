@@ -7,48 +7,49 @@ categories: city
 comments: true
 ---
 
-Some two years ago, I did not even think about living Tallinn. Not because of the lack of opportunities for software developers. More because I could not imagine that there is such a great place for working as a programmer in 4 hours by car from my hometown Saint Petersburg.
+A couple of years ago I did not even think about moving to Tallinn. Not because of the lack of opportunities for programmers in Europe, but mostly because I did not expect from this small city to be so comfortable for living and, in particular, working as a software developer.
 
-Why do I think this place is great? Let me explain.
-
-When we evaluate something, we inevitably, consciously or unconsciously compare it with something else. In this article I am going to compare Tallinn with Saint Petersburg.
+Why I like the city? Let me explain.
 
 <img alt="Tallinn" src="{{ site.url }}{{ page.image }}">
 
 ### People
 
-Difficult to judge about people without scientific research, I am going to rely on my personal sensation here.
+Since the beginning I have an impression that people here are very direct. If they like what you do they tell it right away. If they do not like, they criticize in a frank way.
 
-It seems to me that people here are very direct. If they like what you are doing they tell it right away. If they do not like, they criticize directly. Being a direct person myself, I do like this approach.
-
-TODO: specific sense of humor. Interesting books in a store.
-
-### Easy To Do Everyday Activities
-
-Another reason why I think people do not like wasting time is because how quick and easy is to do common things here.
-
-Electronic signature makes it possible to save time by signing documents online. No need to go to by person and put an analog signature on a paper. You can even start your own company without leaving your apartment.
-
-Public transport goes strictly by schedule, covers pretty much all the places and is free for ones who have Tallinn registration. The compact size of the city, however, often allows you to go by foot, everything is really close to each other.
-
-Due to the small amount of people in the city, the traffic jam is not huge even in a rush hour. Physical queues are also a rare thing here.
-
-If you are a dog owner, the dog walking grounds are everywhere.
-
-### Ecology And Crime
-
-The air is clean. It is especially noticeable after spending a weekend in Saint Petersburg. And it is not only my subjective feeling, [the numbers](https://www.numbeo.com/pollution/compare_cities.jsp?country1=Estonia&country2=Russia&city1=Tallinn&city2=Saint+Petersburg) say the same.
-
-Tallinn is green. It is full of parks, while itself is surrounded by forests. Even living next to the city center, you easily can see a hare hiding in bushes. From some people I also heard about foxes and deers, it was, however already closer to the outskirts of the city.
-
-"Kraanivesi on joogivesi!" was the first thing I have heard about the local tape water. Indeed, the tape water is completely fine and [safe for drinking](https://www.tripadvisor.com/ShowTopic-g274958-i996-k5879936-Is_tap_water_safe_to_drink_in_Tallinn-Tallinn_Harju_County.html).
-
-Crime level is [relatively low](https://www.numbeo.com/crime/compare_cities.jsp?country1=Estonia&country2=Russia&city1=Tallinn&city2=Saint+Petersburg). This of course does not mean robbery and murder do not happen (open any local news website). Still, chances of being robbed or killed on a street, get your car stolen or your apartment robbed are low.
+Not only I like this approach because I am a direct person myself, but also because it saves time and provides me with more realistic feedback which I might use to improve.
 
 ### IT World
 
-Estonia has built [attractive conditions for IT companies](https://medium.com/swlh/the-new-silicon-valley-tallinn-estonia-83e0f06fd20f). As a result, the number of the companies has grown high. High number of the IT companies entails high demand for software developers. The number of developers currently available on the labor market is too small to fulfil the demand. As a result, the salaries are high, the number of job opportunities is big, the potential employers are open for communication if you want to agree on better conditions for yourself.
+Estonia has built [attractive conditions for IT companies](https://medium.com/swlh/the-new-silicon-valley-tallinn-estonia-83e0f06fd20f). As a result, the number of the companies has grown high.
+
+High number of the IT companies entails high demand for software developers. The number of available developers is too small to fulfil the demand.
+
+As a result, the salaries are high, the number of job opportunities is quite impressive and the potential employers are open for communication if you want to agree on better conditions for yourself.
+
+### Comfort Of Life
+
+Tallinn is not ~~yet~~ facing a problem of accommodating millions of people. As a result:
+
+1. The city is geographically compact. The buildings are mostly low, they do not try to run you down with all their massiveness.
+2. Long physical queues are a rare thing here. Not to mention that thanks to the electronic signature you can do your paperwork online. You can even start your own company without leaving your apartment.
+3. If you still need to go outside, then there are good news again: public transport runs strictly on schedule, covers pretty much all the places and is free for ones who are registered in Tallinn. The compact size of the city, however, often encourages you to go by foot: everything is really close.
+4. If you prefer your own auto, then you will be pleasantly surprised that due to the small amount of people the traffic jam is quite low even in a rush hour.
+
+### Ecology And Crime
+
+The air is clean. It is especially noticeable after spending a weekend in a big city like Saint Petersburg. And it is not only my subjective feeling, [the numbers](https://www.numbeo.com/pollution/compare_cities.jsp?country1=Estonia&country2=Russia&city1=Tallinn&city2=Saint+Petersburg) say the same.
+
+The city is green. It is full of parks, while itself is surrounded by forests. Wild animals are a proof of that: even living next to the city center, you easily can see a hare hiding in bushes. From some people I also heard about foxes and deers, it was, however already closer to the outskirts of the city.
+
+"Kraanivesi on joogivesi" was the first thing I have heard about the local tape water. Indeed, the tape water is completely fine and [safe for drinking](https://www.tripadvisor.com/ShowTopic-g274958-i996-k5879936-Is_tap_water_safe_to_drink_in_Tallinn-Tallinn_Harju_County.html).
+
+Crime level is [relatively low](https://www.numbeo.com/crime/compare_cities.jsp?country1=Estonia&country2=Russia&city1=Tallinn&city2=Saint+Petersburg). This does not mean of course that robbery and murder do not happen (open a website with the local crime news). Still, chances of being killed, getting your car stolen or your apartment robbed are low.
 
 ### To Summarize
 
-Next time let's discuss the downsides of Tallinn.
+In the very beginning of my career I was dreaming about living in a village and creating software.
+
+Dreams come true! This does not necessary mean that Tallinn is a village. Still, it shares certain things with that "ideal imaginary village" I was dreaming about, including: direct and simple people, calm lifestyle, clean and fresh air.
+
+What do you like the most in the city you are currently living in?
