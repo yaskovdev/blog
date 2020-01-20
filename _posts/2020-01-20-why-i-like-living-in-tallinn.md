@@ -43,7 +43,7 @@ The air is clean. It is especially noticeable after spending a weekend in a big 
 
 The city is green. It is full of parks and is surrounded by forests. Tallinn seems almost a natural habitat for wild animals: even living next to the city center, you easily can see a hare hiding in bushes. I even hear stories of foxes and deer, although these can mainly be found on the outskirts of the city.
 
-"Kraanivesi on joogivesi" was the first thing I have heard about the local tap water. Indeed, the tap water is completely fine and [safe for drinking](https://www.tripadvisor.com/ShowTopic-g274958-i996-k5879936-Is_tap_water_safe_to_drink_in_Tallinn-Tallinn_Harju_County.html).
+"Kraanivesi on joogivesi" ("Tap water is drinking water") was the first thing I have heard about the local tap water. Indeed, the tap water is completely fine and [safe for drinking](https://www.tripadvisor.com/ShowTopic-g274958-i996-k5879936-Is_tap_water_safe_to_drink_in_Tallinn-Tallinn_Harju_County.html).
 
 The crime level is [relatively low](https://www.numbeo.com/crime/compare_cities.jsp?country1=Estonia&country2=Russia&city1=Tallinn&city2=Saint+Petersburg). This does not mean, of course, that robbery and murder do not happen here (open a website with the local crime news). But the chances of being killed, getting your car stolen, or your apartment robbed are low.
 
