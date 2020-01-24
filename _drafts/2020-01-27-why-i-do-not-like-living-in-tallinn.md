@@ -7,6 +7,8 @@ categories: city
 comments: true
 ---
 
+Since my previous [article about Tallinn](http://yaskovdev.com/2020/01/20/why-i-like-living-in-tallinn) I got a couple of comments that I am biased and my latest article is an advertisement. Let me fix that.
+
 ### Village
 
 ### Complex Language
