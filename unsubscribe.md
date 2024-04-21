@@ -30,12 +30,12 @@ permalink: /unsubscribe
     }
 </style>
 
-<form action="http://formspree.io/yaskovdev@gmail.com" method="POST">
+<form action="https://formsubmit.co/2fbaff1baa2edf1cab112c50135fdf9b" method="POST">
     <input type="hidden" name="_next" value="{{ site.url }}/unsubscribed"/>
     <input type="hidden" name="_subject" value="Unsubscribe Me"/>
-    <input type="hidden" name="_format" value="text"/>
+    <input type="hidden" name="_captcha" value="false"/>
     <label for="email">Your email</label>
     <input id="email" class="field field-text" name="email" size="25" maxlength="255" type="email"
         required="required"/>
-    <button>Unsubscribe</button>
+    <button type="submit">Unsubscribe</button>
 </form>
