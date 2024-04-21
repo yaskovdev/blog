@@ -14,7 +14,7 @@ How would you check if an integer number is even?
 I bet you would do something like this:
 
 ```java
-boolean IsEven(int number) {
+boolean isEven(int number) {
     return number % 2 == 0;
 }
 ```
@@ -22,7 +22,7 @@ boolean IsEven(int number) {
 Or maybe like this, if you tend to preliminarily optimize your code:
 
 ```java
-boolean IsEven(int number) {
+boolean isEven(int number) {
     return number & 1 == 0;
 }
 ```
