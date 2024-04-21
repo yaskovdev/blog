@@ -32,12 +32,10 @@ permalink: /subscribe
     }
 </style>
 
-<form action="http://formspree.io/yaskovdev@gmail.com" method="POST">
+<form action="https://formsubmit.co/yaskovdev@gmail.com" method="POST">
     <input type="hidden" name="_next" value="{{ site.url }}/subscribed"/>
     <input type="hidden" name="_subject" value="Subscribe Me"/>
-    <input type="hidden" name="_format" value="text"/>
     <label for="email">Your email</label>
-    <input id="email" class="field field-text" name="email" size="25" maxlength="255" type="email"
-        required="required"/>
-    <button>Subscribe</button>
+    <input id="email" class="field field-text" name="email" size="25" maxlength="255" type="email" required="required"/>
+    <button type="submit">Subscribe</button>
 </form>
