@@ -32,11 +32,16 @@ In Push the solution would look like below one, assuming the input is on the int
 (2 integer.% 0 integer.=)
 ```
 
-Interesting way to check if a number from [0, 10) is even (TODO: figure out how it works):
+Interesting way to check if a number from [0, 10) is even:
 
 ```push
 (false code.quote boolean.not code.stackdepth code.do*range)
 ```
+
+`code.do*range` executes an instruction that is on the top of the code stack as many times as the number on the top
+of the integer stack. The number on the top of the integer stack is what we want to check for evenness (let's say the
+number is `n`). I.e., we apply `boolean.not` to `true` `n` times. If `n` is even, the result is `false`. If `n` is odd,
+the result is `true`.
 
 Correct way:
 ```push
