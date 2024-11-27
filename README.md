@@ -1,4 +1,4 @@
-# Developer Notes [![Availability at SixNines](http://www.sixnines.io/b/0e54)](http://www.sixnines.io/h/0e54)
+# Developer Notes [![Availability At SixNines](http://www.sixnines.io/b/0e54)](http://www.sixnines.io/h/0e54)
 
 ## Set up Ruby on macOS
 
