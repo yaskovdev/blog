@@ -1,23 +1,10 @@
 # Developer Notes [![Availability At SixNines](http://www.sixnines.io/b/0e54)](http://www.sixnines.io/h/0e54)
 
-## Set up Ruby on macOS
-
-Run the below commands from the same Terminal window, from the folder with this `README.md` file.
-
-```shell
-brew install rbenv
-rbenv install -l # list the Ruby versions
-rbenv install 3.1.6 # install the latest one
-rbenv local 3.1.6 # set the Ruby version for this directory
-ruby --version # check the version
-bundle install
-```
-
 ## Build and run locally
 
-Set the next environment variable to build and run locally: `set JEKYLL_ENV=development`.
-
-Once the environment variable is set, just run `bundle exec jekyll serve`.
+```shell
+hexo server
+```
 
 ## Build for production
 
