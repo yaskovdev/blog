@@ -11,7 +11,7 @@ This happened a long time ago, when I was supporting production deployment of th
 
 The deployment was not automated. IT support guys with production access were working abroad and making necessary changes. I, as a developer, was telling them what to do via Skype. These people were not familiar with the system. They were not even developers. Because of this, the deployment usually took a very long time. It was already late evening when this happened...
 
-<img alt="Old Geezer" style="margin: 0 auto; display: block;" src="{{ site.url }}{{ page.image }}">
+{% asset_img old-geezer.png Old Geezer %}
 
 Suddenly, a [Jenkins](https://jenkins.io) job that was deploying a component turned red. That was an unpleasant surprise, as the component was the last one in the long list to deploy. I opened the log and saw that the unit tests had failed. The tests had expected 60 € as the price of a health insurance policy, but the actual price the component calculated was 80 €. That was really weird: nobody had touched the code for a month and all the previous builds were green.
 

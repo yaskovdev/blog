@@ -13,7 +13,7 @@ Whether you are writing your own unit tests or reviewing ones written by someone
 
 The best unit test method __always looks like a _thin, horizontal_ rectangle__, not like a square or a vertical rectangle. That's it.
 
-<img alt="Good test method vs bad test method" src="{{ site.url }}{{ page.image }}">
+{% asset_img good-test-method-vs-bad-test-method.png Good test method vs bad test method %}
 
 ### Example Of A Bad Test Method
 

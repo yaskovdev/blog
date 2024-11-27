@@ -9,7 +9,7 @@ comments: true
 
 Imagine yourself riding a bicycle where all the screw-nuts are loosened. Everything is rattling and the bike is ready to fall apart. This is exactly how it feels to maintain code when this essential keyword we are going to discuss is not used or is used only sparingly for some class fields and constants.
 
-<img alt="Broken bike" src="{{ site.url }}{{ page.image }}">
+{% asset_img broken-bike.jpg Broken Bike %}
 
 ### Always Use `final`
 

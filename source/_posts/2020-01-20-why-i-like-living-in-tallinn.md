@@ -2,8 +2,7 @@
 layout: post
 title:  "Why I Like Living In Tallinn"
 date:   2020-01-20 21:00:00 +0300
-image: /assets/tallinn.png
-categories: city
+categories: [city]
 comments: true
 ---
 
@@ -11,7 +10,7 @@ A couple of years ago, I never thought that I would move to Tallinn. Not because
 
 Why do I like this city? Let me explain.
 
-<img alt="Tallinn" src="{{ site.url }}{{ page.image }}">
+{% asset_img tallinn.png Tallinn %}
 
 ### People
 

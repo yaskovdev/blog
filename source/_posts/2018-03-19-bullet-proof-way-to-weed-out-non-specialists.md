@@ -9,7 +9,7 @@ comments: true
 
 Imagine you are an interviewer. To check if a person is a non-specialist (someone who really has no clue about their supposed field), you have to ask a really simple question: "Could you please recommend a book on your speciality?"
 
-<img alt="Screening" src="{{ site.url }}{{ page.image }}">
+{% asset_img screening.jpg Screening %}
 
 A Scrum Master should be able to name [a book about the Scrum methodology](https://www.amazon.com/Scrum-Breathtakingly-Brief-Agile-Introduction-ebook/dp/B007P5N8D4) _immediately_. A Microservices Specialist — [about microservices](https://www.amazon.com/Spring-Microservices-Action-John-Carnell/dp/1617293989). A QA Engineer — [about testing](https://www.amazon.com/Friendly-Introduction-Software-Testing-ebook/dp/B01BCPXLHU). I guess you've gotten my point. If a person says, “Sam Newman, [Building Microservices](https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358)”, there's a good chance that he is a microservices specialist. If he says, “I read articles on the Internet”, or, “I read answers on Stack Overflow” — beware his lies.
 

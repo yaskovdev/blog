@@ -11,7 +11,7 @@ Imagine you had a toothache. You went to a dentist who began to treat it right a
 
 What would be your impression of this specialist? Would you visit him again for a similar problem? Or would you run for the hills and find someone else as soon as possible?
 
-<img alt="I Don't Know" style="margin: 0 auto; display: block;" src="{{ site.url }}{{ page.image }}">
+{% asset_img i-dont-know.png I Don't Know %}
 
 ### Never Say This At Work
 

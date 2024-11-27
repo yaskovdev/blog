@@ -13,7 +13,7 @@ Why exactly it behaves in this way is a question for biologists. One of the reas
 
 Instead, let's try to figure out how we can save our productivity by not allowing our brain to switch to irrelevant stuff. After all, we want the complex problem to be solved, don't we?
 
-<img alt="Problem Solving" src="{{ site.url }}{{ page.image }}">
+{% asset_img problem-solving.png Problem Solving %}
 
 ### "Let's Discuss"
 

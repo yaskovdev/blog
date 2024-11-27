@@ -13,7 +13,7 @@ Oh, you can't, because you don't know the exact moment in time? How about at `20
 
 Nope, still wrong, and even further from the real time. How can we be sure what the time is?
 
-<img alt="Moment in time" src="{{ site.url }}{{ page.image }}">
+{% asset_img moment-in-time.jpg Moment in time %}
 
 ### The UTC Offset<sup>*</sup> Is Just As Important As The Day, Month, Year, Hour, etc.
 

@@ -15,7 +15,7 @@ Alternatively, he can silently pull the wallet out of your pocket. Sneakier, but
 
 Or, he can take your money in exchange for goods or for a certain service, but then give you only half of what he initially promised. This is the safest and the "most civilized" option. So, not providing the agreed upon amount of work, but still demanding the same pay is as bad as stealing.
 
-<img alt="You and Your Client" src="{{ site.url }}{{ page.image }}">
+{% asset_img you-and-your-client.jpg You and Your Client %}
 
 The really bad news is that with this last way, even _you_ can steal. Even worse: you may do it unconsciously and not of your own free will.
 

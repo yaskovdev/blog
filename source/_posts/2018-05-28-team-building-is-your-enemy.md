@@ -2,8 +2,7 @@
 layout: post
 title:  "Team-Building Is Your Enemy"
 date:   2018-05-28 11:00:00 +0300
-image: /assets/no-team-buildings.jpeg
-categories: development testing
+categories: [development, testing]
 comments: true
 ---
 
@@ -11,7 +10,7 @@ Team-building is very useful for your career growth: it helps you build and main
 
 Not at all. In fact, it is an enemy of your career. Let me explain why.
 
-<img alt="No Team-Buildings" src="{{ site.url }}{{ page.image }}">
+{% asset_img no-team-buildings.jpeg No Team-Buildings %}
 
 ### You Are Just A Resource
 

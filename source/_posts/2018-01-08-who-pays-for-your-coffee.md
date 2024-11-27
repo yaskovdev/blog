@@ -9,7 +9,7 @@ comments: true
 
 Today, most of our lives tend to focus around our jobs and our all-important relationships with our employers. After all, your employer hires you, pays for your working environment, sponsors the fun corporate events, and even provides the table for playing tennis. We should accept that our employers have all the power in this relationship, right? Wrong.
 
-<img alt="You and Your Employer" src="{{ site.url }}{{ page.image }}">
+{% asset_img you-and-your-employer.jpg You and Your Employer %}
 
 In fact, it's just the opposite. You hire your employer. Your employer is, in reality, a fancy platform for finding clients. You tell him, "I can do this and that. Could you please find someone who will pay me for this?" And he answers you, "Okay, no problem, but not for free."
 

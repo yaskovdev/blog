@@ -9,7 +9,7 @@ comments: true
 
 Imagine yourself in a forest picking mushrooms, either for fun or, probably more likely, so you won't starve to death. How do you decide if a mushroom is edible or poisonous? Is there a way to utilize an artificial neural network to help you with the decision? If so, can you come up with a simpler, but more efficient solution? Let's figure it out!
 
-<img alt="Mushroom" src="{{ site.url }}{{ page.image }}">
+{% asset_img mushrooms.jpg Mushrooms %}
 
 ### Test Data
 
@@ -31,17 +31,17 @@ There are [a number of ways](https://www.researchgate.net/post/How_to_code_categ
 
 Imagine for simplicity that each mushroom has only 2 features: veil type and veil color. The veil type can be _partial_ or _universal_, the veil color can be _brown_, _orange_, _white_ or _yellow_. These mushrooms can be described by the table below.
 
-<img alt="An Abstract Mushroom" src="{{ site.url }}/assets/an-abstract-mushroom.png">
+{% asset_img an-abstract-mushroom.png An Abstract Mushroom %}
 
 Imagine I found a mushroom with the _partial white_ veil. This means I can substitute question marks with values. Each value will be 0 or 1. I have now updated the table below with the new values. The zeros and the ones now form the `(1, 0, 0, 0, 1, 0)` vector which I can pass on to the neural network.
 
-<img alt="The Mushroom With The Partial White Veil" src="{{ site.url }}/assets/the-mushroom-with-the-partial-white-veil.png">
+{% asset_img the-mushroom-with-the-partial-white-veil.png The Mushroom With The Partial White Vei %}
 
 Similarly, if it was the _universal yellow_ veil, the vector would be `(0, 1, 0, 0, 0, 1)`. I hope you get the idea now.
 
 When I apply the above method to the actual 22 features, I have 126 neurons in the input layer. The same approach, applied to the output layer, gives me 2 neurons: the first represents the degree of edibility of a mushroom, the second represents how poisonous the mushroom is. If, for example, I deal with a very poisonous mushroom, the output is `(0, 1)`<sup>*</sup>.
 
-<img alt="Output Layer" src="{{ site.url }}/assets/output-layer.png">
+{% asset_img output-layer.png An Abstract Output Layer %}
 
 Having agreed on how to represent the inputs and the outputs of the neural network, let's then briefly discuss its type and its hidden layers.
 
@@ -51,7 +51,7 @@ I decided to use a multilayer perceptron network because it [fits well](https://
 
 Now that we have agreed on the configuration of the neural network, I am ready to build and train it. To do this, I will use [NeuroFlow](https://github.com/zenecture/neuroflow), a powerful Scala library to design, train, and evaluate neural networks.
 
-<img alt="Training" src="{{ site.url }}/assets/training.png">
+{% asset_img training.png Training %}
 
 After training the network through 900 iterations, I can now test the resulting neural network on the real data. The "real data" is the subset of the mushrooms that I had previously put aside and didn't use for the neural network training. The tests show that even without the optimization of the network parameters, **the proportion<sup>**</sup> of the correct answers is 0.92**, which is quite good.
 
@@ -71,7 +71,7 @@ The main thing I need to decide here is how to measure the similarity. There are
 
 If the first mushroom has the _brown_ cap and the _white_ stalk, and the second one also has the _brown_ cap, but the _gray_ stalk, the distance will be 1, as they differ only in one feature, only in the stalk color.
 
-<img alt="Distance" src="{{ site.url }}/assets/distance.png">
+{% asset_img distance.png Distance %}
 
 By the way, if I'm comparing two identical mushrooms, the number of features with different values is obviously 0, so the distance is also 0, as expected. Identical mushrooms are "as similar as possible".
 
