@@ -28,6 +28,14 @@ If you want Disqus to work locally, you need to add the following to your `hosts
 
 Then you should run Hexo on the 80 port:
 
-```text
+```shell
 hexo server -p 80
 ```
+
+## Deploy To GitHub Pages
+
+```shell
+hexo clean && hexo deploy
+```
+
+See [this article](https://hexo.io/docs/one-command-deployment#Git) for more information.
