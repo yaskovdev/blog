@@ -1,26 +1,41 @@
-# Developer Notes [![Availability at SixNines](http://www.sixnines.io/b/0e54)](http://www.sixnines.io/h/0e54)
+# Developer Notes [![Availability At SixNines](http://www.sixnines.io/b/0e54)](http://www.sixnines.io/h/0e54)
 
-## Set up Ruby on macOS
-
-Run the below commands from the same Terminal window, from the folder with this `README.md` file.
+## Generating Static Files
 
 ```shell
-brew install rbenv
-rbenv install -l # list the Ruby versions
-rbenv install 3.1.6 # install the latest one
-rbenv local 3.1.6 # set the Ruby version for this directory
-ruby --version # check the version
-bundle install
+hexo generate
 ```
 
-## Build and run locally
+You can then run an HTTP server from that folder:
 
-Set the next environment variable to build and run locally: `set JEKYLL_ENV=development`.
+```shell
+npm install http-server -g
+cd public
+http-server
+```
 
-Once the environment variable is set, just run `bundle exec jekyll serve`.
+## Build And Run Locally
 
-## Build for production
+```shell
+hexo server
+```
 
-Set the next environment variable to build for production (e.g. to see Disqus comments and enable Google Analytics): `set JEKYLL_ENV=production` (note that default value is `development`).
+If you want Disqus to work locally, you need to add the following to your `hosts` file (`/private/etc/hosts` in macOS):
 
-Once the environment variable is set, just run `bundle exec jekyll build`.
+```text
+127.0.0.1 yaskovdev.com
+```
+
+Then you should run Hexo on the 80 port:
+
+```shell
+hexo server -p 80
+```
+
+## Deploy To GitHub Pages
+
+```shell
+hexo clean && hexo deploy
+```
+
+See [this article](https://hexo.io/docs/one-command-deployment#Git) for more information.
