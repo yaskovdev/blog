@@ -19,3 +19,15 @@ http-server
 ```shell
 hexo server
 ```
+
+If you want Disqus to work locally, you need to add the following to your `hosts` file (`/private/etc/hosts` in macOS):
+
+```text
+127.0.0.1 yaskovdev.com
+```
+
+Then you should run Hexo on the 80 port:
+
+```text
+hexo server -p 80
+```

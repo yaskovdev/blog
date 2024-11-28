@@ -28,3 +28,7 @@ google_analytics:
 intensedebate:
   enable: false
   acct: "00000000000000000000000000000000"
+
+disqus:
+  enable: true
+  shortname: "yaskovdev"
