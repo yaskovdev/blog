@@ -1,5 +1,8 @@
-hexo.extend.filter.register('post_permalink', src => {
-    const dst = src.replace(/\d{4}-\d{2}-\d{2}-/, '');
-    hexo.log.info('post_permalink is replacing ' + src + ' with ' + dst)
-    return dst
-})
+const DEFAULT_PRIORITY = 10
+
+hexo.extend.filter.register('post_permalink', data => {
+    const slug = data.slug.replace(/\d{4}-\d{2}-\d{2}-/, '');
+    hexo.log.debug('post_permalink is replacing slug ' + data.slug + ' with ' + slug)
+    data.slug = slug
+    return data
+}, DEFAULT_PRIORITY - 1)
