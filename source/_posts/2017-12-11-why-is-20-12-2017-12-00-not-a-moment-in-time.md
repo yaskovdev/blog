@@ -2,8 +2,7 @@
 layout: post
 title:  "Why Is 20.12.2017 12:00 Not A Moment In Time?"
 date:   2017-12-11 21:00:00 +0300
-image: /assets/moment-in-time.jpg
-categories: java utc
+categories: [java, utc]
 comments: true
 ---
 

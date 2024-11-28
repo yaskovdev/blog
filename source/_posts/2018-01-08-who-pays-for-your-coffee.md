@@ -2,8 +2,7 @@
 layout: post
 title:  "Who Pays For Your Coffee?"
 date:   2018-01-08 21:00:00 +0300
-image: /assets/you-and-your-employer.jpg
-categories: company
+categories: [company]
 comments: true
 ---
 

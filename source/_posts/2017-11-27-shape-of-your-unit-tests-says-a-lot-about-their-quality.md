@@ -2,8 +2,7 @@
 layout: post
 title:  "The Shape Of Your Unit Tests Says A Lot About Their Quality"
 date:   2017-11-27 11:00:00 +0300
-image: /assets/good-test-method-vs-bad-test-method.png
-categories: java testing
+categories: [java, testing]
 comments: true
 ---
 

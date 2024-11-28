@@ -2,8 +2,7 @@
 layout: post
 title:  "The Most Underestimated Keyword In Java"
 date:   2017-11-13 21:00:00 +0300
-image: /assets/broken-bike.jpg
-categories: code java
+categories: [code, java]
 comments: true
 ---
 

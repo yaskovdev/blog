@@ -2,8 +2,7 @@
 layout: post
 title:  "The 3 Principles Of Effective Problem Solving"
 date:   2018-04-02 11:00:00 +0300
-image: /assets/problem-solving.png
-categories: development
+categories: [development]
 comments: true
 ---
 

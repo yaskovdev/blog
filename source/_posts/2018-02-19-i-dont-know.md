@@ -2,8 +2,7 @@
 layout: post
 title:  "I Don't Know"
 date:   2018-02-19 11:00:00 +0300
-image: /assets/i-dont-know.png
-categories: development
+categories: [development]
 comments: true
 ---
 

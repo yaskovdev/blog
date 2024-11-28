@@ -2,7 +2,7 @@
 layout: post
 title:  "13 Ugly Mistakes You Make In Your Code"
 date:   2017-12-25 21:00:00 +0300
-categories: java code
+categories: [java, code]
 comments: true
 ---
 

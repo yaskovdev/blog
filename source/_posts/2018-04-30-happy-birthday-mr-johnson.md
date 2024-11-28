@@ -2,8 +2,7 @@
 layout: post
 title:  "Happy Birthday, Mr. Johnson!"
 date:   2018-04-30 11:00:00 +0300
-image: /assets/old-geezer.png
-categories: development testing
+categories: [development, testing]
 comments: true
 ---
 

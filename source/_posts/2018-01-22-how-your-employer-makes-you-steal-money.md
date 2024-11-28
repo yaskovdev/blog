@@ -2,8 +2,7 @@
 layout: post
 title:  "How Your Employer Makes You Steal Money"
 date:   2018-01-22 17:00:00 +0300
-image: /assets/you-and-your-client.jpg
-categories: client employer
+categories: [client, employer]
 comments: true
 ---
 

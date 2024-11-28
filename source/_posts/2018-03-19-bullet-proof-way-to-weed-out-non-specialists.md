@@ -2,8 +2,7 @@
 layout: post
 title:  "Bullet-Proof Way To Weed Out Non-Specialists"
 date:   2018-03-19 11:00:00 +0300
-image: /assets/screening.jpg
-categories: screening reading
+categories: [screening, reading]
 comments: true
 ---
 

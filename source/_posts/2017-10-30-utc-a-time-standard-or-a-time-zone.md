@@ -2,8 +2,7 @@
 layout: post
 title:  "UTC – A Time Standard Or A Time Zone?"
 date:   2017-10-30 21:00:00 +0300
-image: /assets/big-utc-clock.png
-categories: utc
+categories: [utc]
 comments: true
 ---
 
