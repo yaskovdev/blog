@@ -25,7 +25,7 @@ Do not repeat this mistake. Avoid `static` methods.
 
 ### "`final` Is Only For Constants"
 
-This is a very popular fallacy. The truth is that _all possible variables_ must be declared `final`. `final` is a wrench that guarantees that you will never lose a wheel. You can find a more detailed explanation in [my previous article]({{ site.url }}/2017/11/13/the-most-underestimated-keyword-in-java).
+This is a very popular fallacy. The truth is that _all possible variables_ must be declared `final`. `final` is a wrench that guarantees that you will never lose a wheel. You can find a more detailed explanation in {% post_link 2017-11-13-the-most-underestimated-keyword-in-java 'my previous article' %}.
 
 ### "I Can Pass Data Between Methods Using Mutable Class Fields"
 
@@ -108,7 +108,7 @@ Because they do not work fine. You have just been lucky so far.
 
 Java can trick you into being complacent and lazy, if you aren’t careful. It kindly tries to save you from extra thinking by implicitly providing default encodings and time zones whenever possible. It is doing you a disservice.
 
-The consequences of using the default time zone are considered in [a separate article]({{ site.url }}/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time). As for default encoding, there is [an awesome article by Joel Spolsky](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) to explain more.
+The consequences of using the default time zone are considered in {% post_link 2017-12-11-why-is-20-12-2017-12-00-not-a-moment-in-time 'a separate article' %}. As for default encoding, there is [an awesome article by Joel Spolsky](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) to explain more.
 
 ### To Summarize
 

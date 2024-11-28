@@ -29,7 +29,7 @@ Obviously, the larger your profitability, the more chances you have to succeed a
 
 Your profitability is the only thing that matters. Sure, there may be other stuff (for example, how many corporate trainings you've attended, how many new hires you coached and how awesome the brownbag presentations you gave were), but it __does not matter at all__! Nobody cares, really.
 
-I cannot give you a full list of these [completely unimportant things]({{ site.url }}/2018/01/22/how-your-employer-makes-you-steal-money), because there are too many to count. Every employer has his own, unique, utterly useless garbage.
+I cannot give you a full list of these {% post_link 2018-01-22-how-your-employer-makes-you-steal-money 'completely unimportant things' %}, because there are too many to count. Every employer has his own, unique, utterly useless garbage.
 
 These things are not only _not helping_ you with your career. They are the active enemies of it. Why? Because they take _a lot_ of your time and energy and, in return, give you a false hope that your employer will notice your "efforts" and start paying you more money.
 

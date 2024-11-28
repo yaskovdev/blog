@@ -48,4 +48,4 @@ Instead, use the new [Java 8 Date and Time API](http://www.oracle.com/technetwor
 
 Always take care with the UTC offset when working with dates. Use modern APIs and libraries, as they can help you with this.
 
-<sup>*</sup> The UTC offset will not necessarily be given to you. If this happens, keep in mind that the time zone also fills the gap, as it keeps the offset information. So `20.12.2017 12:00 Europe/Moscow` would be  perfectly OK. However, remember the [differences between the UTC offset and a time zone]({{ site.url }}/2017/10/30/utc-a-time-standard-or-a-time-zone). 
+<sup>*</sup> The UTC offset will not necessarily be given to you. If this happens, keep in mind that the time zone also fills the gap, as it keeps the offset information. So `20.12.2017 12:00 Europe/Moscow` would be  perfectly OK. However, remember the {% post_link 2017-10-30-utc-a-time-standard-or-a-time-zone 'differences between the UTC offset and a time zone' %}. 
