@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>The Shape Of Your Unit Tests Says A Lot About Their Quality | Developer Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+  
+  <meta name="description" content="Whether you are writing your own unit tests or reviewing ones written by someone else, you can easily assess their quality by the shape of the test methods. You don&#39;t even need to read them.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Shape Of Your Unit Tests Says A Lot About Their Quality">
+<meta property="og:url" content="https://yaskovdev.com/2017/11/27/shape-of-your-unit-tests-says-a-lot-about-their-quality/index.html">
+<meta property="og:site_name" content="Developer Notes">
+<meta property="og:description" content="Whether you are writing your own unit tests or reviewing ones written by someone else, you can easily assess their quality by the shape of the test methods. You don&#39;t even need to read them.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yaskovdev.com/2017/11/27/shape-of-your-unit-tests-says-a-lot-about-their-quality/good-test-method-vs-bad-test-method.png">
+<meta property="article:published_time" content="2017-11-27T08:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-28T21:39:19.936Z">
+<meta property="article:author" content="Sergey Yaskov">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yaskovdev.com/2017/11/27/shape-of-your-unit-tests-says-a-lot-about-their-quality/good-test-method-vs-bad-test-method.png"><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">Developer Notes</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
+</header>
+
+    <div id="content">
+      <article id="post-shape-of-your-unit-tests-says-a-lot-about-their-quality" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      The Shape Of Your Unit Tests Says A Lot About Their Quality
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2017-11-27T08:00:00.000Z" itemprop="datePublished">November 27, 2017, 10:00</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>Whether you are writing your own unit tests or reviewing ones written by someone else, you can easily assess their quality by the shape of the test methods. You don’t even need to read them.</p>
+<h3 id="So-What-Is-The-“Rule-Of-The-Shape”"><a href="#So-What-Is-The-“Rule-Of-The-Shape”" class="headerlink" title="So What Is The “Rule Of The Shape”?"></a>So What Is The “Rule Of The Shape”?</h3><p>The best unit test method <strong>always looks like a <em>thin, horizontal</em> rectangle</strong>, not like a square or a vertical rectangle. That’s it.</p>
+<img src="/2017/11/27/shape-of-your-unit-tests-says-a-lot-about-their-quality/good-test-method-vs-bad-test-method.png" class="" title="Good test method vs bad test method">
+
+<h3 id="Example-Of-A-Bad-Test-Method"><a href="#Example-Of-A-Bad-Test-Method" class="headerlink" title="Example Of A Bad Test Method"></a>Example Of A Bad Test Method</h3><p>Let’s first consider a bad example of the test method. Note that it has a relative shape of a square.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">render_forValidRequest_returnsExpectedModelAndView</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">ExtendedModelMap</span> <span class="variable">model</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ExtendedModelMap</span>();</span><br><span class="line">    when(propertyFile.getString(Constants.PROP_ITEMS_MAX_LIMIT)).thenReturn(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    List&lt;Item&gt; items = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="type">Item</span> <span class="variable">item</span> <span class="operator">=</span> getItem(<span class="string">&quot;389&quot;</span>, <span class="string">&quot;315-18-4584&quot;</span>);</span><br><span class="line">    items.add(item);</span><br><span class="line"></span><br><span class="line">    <span class="type">Item</span> <span class="variable">item1</span> <span class="operator">=</span> getItem(<span class="string">&quot;388&quot;</span>, <span class="string">&quot;315-18-4585&quot;</span>);</span><br><span class="line">    items.add(item1);</span><br><span class="line"></span><br><span class="line">    <span class="type">Item</span> <span class="variable">item2</span> <span class="operator">=</span> getItem(<span class="string">&quot;387&quot;</span>, <span class="string">&quot;315-18-4586&quot;</span>);</span><br><span class="line">    items.add(item2);</span><br><span class="line"></span><br><span class="line">    when(facade.getItemsAccordingToType(any(String.class), any(String.class))).thenReturn(items);</span><br><span class="line">    <span class="type">RedirectionResolver</span> <span class="variable">resolver</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RedirectionResolver</span>();</span><br><span class="line">    <span class="type">MenuItemsController</span> <span class="variable">controller</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MenuItemsController</span>(facade, propertyFile, service, resolver);</span><br><span class="line">    assertEquals(<span class="string">&quot;PersonalMenuItems&quot;</span>, controller.render(model, renderRequest));</span><br><span class="line"></span><br><span class="line">    <span class="type">MenuItemsForm</span> <span class="variable">itemsForm</span> <span class="operator">=</span> (MenuItemsForm) model.get(<span class="string">&quot;itemForm&quot;</span>);</span><br><span class="line">    assertEquals(<span class="string">&quot;387&quot;</span>, itemsForm.getItems().get(<span class="number">0</span>).getItemCode());</span><br><span class="line">    assertEquals(<span class="number">1</span>, itemsForm.getItems().size());</span><br><span class="line"></span><br><span class="line">    verify(context, times(<span class="number">3</span>)).getUser();</span><br><span class="line">    verify(user).getValue(<span class="string">&quot;USER_ID&quot;</span>);</span><br><span class="line">    verify(renderRequest).getPreferences();</span><br><span class="line">    verify(preferences).getValue(Constants.ITEM_TYPE, StringPool.BLANK);</span><br><span class="line">    verify(facade).getItemsAccordingToType(any(String.class), any(String.class));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>What is wrong here? <strong>Duplicates.</strong> The logic which prepares the testing object (together with its dependencies) and the logic which asserts the test results are usually similar for all the test methods. Imagine you made a change in the behavior of the tested object. It will be extra work to go through all the test methods and change the duplicated logic for all of them.</p>
+<h3 id="Example-Of-A-Good-Test-Method"><a href="#Example-Of-A-Good-Test-Method" class="headerlink" title="Example Of A Good Test Method"></a>Example Of A Good Test Method</h3><p>Let’s refactor the above test method. Note how its shape changed.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">render_forValidRequest_returnsExpectedModelAndView</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">ExtendedModelMap</span> <span class="variable">model</span> <span class="operator">=</span> model();</span><br><span class="line">    <span class="type">RenderRequest</span> <span class="variable">renderRequest</span> <span class="operator">=</span> renderRequest();</span><br><span class="line">    <span class="type">String</span> <span class="variable">view</span> <span class="operator">=</span> testedObject().render(model, renderRequest);</span><br><span class="line">    assertResult(model, view);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>What did we change? First, we extracted mocks&#x2F;fakes initialization to a separate method (like <code>model()</code> or <code>renderRequest()</code>). Second, we did the same for the tested object initialization (extracted it to the <code>testedObject()</code>). And, finally, we moved the assertion logic to the method called <code>assertResult()</code>. Now, in case of changes in the behavior of the tested object, you have only one place to change in the unit tests.</p>
+<p>And this <em>always</em> happens. Once you get rid of the duplicates, you will end up with the “horizontal rectangle” methods.</p>
+<h3 id="To-Summarize"><a href="#To-Summarize" class="headerlink" title="To Summarize"></a>To Summarize</h3><p>Unit test methods should have the shape of a horizontal rectangle. If this is not the case (e.g., they look more like a square or a vertical rectangle), this is a sign that you have duplicates in your unit tests. Refactor.</p>
+<p>By the way, this rule can be applied to all methods. Even to classes, though the proportions may be <em>a bit</em> “less horizontal”.</p>
+
+      
+    </div>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/java/">java</a>, <a class="article-category-link" href="/categories/java/testing/">testing</a>
+      
+      
+      
+    </div>
+    
+    
+  </div>
+</article>
+
+  
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Why Is 20.12.2017 12:00 Not A Moment In Time?
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/13/the-most-underestimated-keyword-in-java/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          The Most Underestimated Keyword In Java
+        
+      </div>
+    </a>
+  
+</nav>
+
+
+
+
+
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var disqusShortname = 'yaskovdev';
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+  </div>
+  
+
+
+
+
+<div id="settings-container">
+  <div id="dark-mode">dark</div>
+  <div id="sans-font">sans</div>
+</div>
+<script type="text/javascript">
+let d=document,r=d.documentElement.style,f=r.setProperty.bind(r),l=localStorage,s=l.getItem('s')||(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches),n=l.getItem('n'),m=d.getElementById("dark-mode"),b=()=>{f('--bg-color','#fafafa');f('--code-bg-color','#f4f4f4');f('--text-color','#212121');f('--secondary-color','#808080');f('--tertiary-color','#b0b0b0');f('--link-color','#b5c8cf');f('--link-hover-color','#618794');f('--link-bg-color','#dae4e7');f('--selection-color','#dae4e7');m.innerHTML="dark"},c=()=>{f('--bg-color','#212121');f('--code-bg-color','#292929');f('--text-color','#fff');f('--secondary-color','#c0c0c0');f('--tertiary-color','#6e6e6e');f('--link-color','#4d6b75');f('--link-hover-color','#96b1bb');f('--link-bg-color','#5d828e');f('--selection-color','#acc1c9');m.innerHTML="light"},o=d.getElementById("sans-font"),e=()=>{f('--body-stack','"Lora", "Georgia", "Times New Roman", serif');o.innerHTML="sans"},g=()=>{f('--body-stack','"Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif');o.innerHTML="serif"};m.onclick=()=>{if(s==2){s=1;l.setItem('s',s);c()}else{s=2;l.setItem('s',s);b()}};o.onclick=()=>{if(n==2){n=1;l.setItem('n',n);g()}else{n=2;l.setItem('n',n);e()}};if(!s){s=2;l.setItem('s',2)};if(s==1){c()};if(!n){n=2;l.setItem('n',2)};if(n==1){g()};
+</script>
+
+
+
+
+</body>
+</html>

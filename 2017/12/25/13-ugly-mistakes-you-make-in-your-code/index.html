@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>13 Ugly Mistakes You Make In Your Code | Developer Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+  
+  <meta name="description" content="When writing code, you will make the same mistakes again and again. Some of them can be quite minor, while others could lead to really expensive consequences. I am going to list the most common of the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="13 Ugly Mistakes You Make In Your Code">
+<meta property="og:url" content="https://yaskovdev.com/2017/12/25/13-ugly-mistakes-you-make-in-your-code/index.html">
+<meta property="og:site_name" content="Developer Notes">
+<meta property="og:description" content="When writing code, you will make the same mistakes again and again. Some of them can be quite minor, while others could lead to really expensive consequences. I am going to list the most common of the">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yaskovdev.com/2017/12/25/13-ugly-mistakes-you-make-in-your-code/number-13.jpg">
+<meta property="article:published_time" content="2017-12-25T18:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-28T21:39:19.937Z">
+<meta property="article:author" content="Sergey Yaskov">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yaskovdev.com/2017/12/25/13-ugly-mistakes-you-make-in-your-code/number-13.jpg"><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">Developer Notes</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
+</header>
+
+    <div id="content">
+      <article id="post-13-ugly-mistakes-you-make-in-your-code" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      13 Ugly Mistakes You Make In Your Code
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2017-12-25T18:00:00.000Z" itemprop="datePublished">December 25, 2017, 20:00</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>When writing code, you will make the same mistakes again and again. Some of them can be quite minor, while others could lead to really expensive consequences. I am going to list the most common of these mistakes below, in no particular order. Next time you work on a new feature, make sure you won’t fall into any of these traps. And please notify me, if <em>I</em> do.</p>
+<img src="/2017/12/25/13-ugly-mistakes-you-make-in-your-code/number-13.jpg" class="" title="Number 13">
+
+<h3 id="“Comments-Make-My-Code-Clearer”"><a href="#“Comments-Make-My-Code-Clearer”" class="headerlink" title="“Comments Make My Code Clearer”"></a>“Comments Make My Code Clearer”</h3><p>In reality, they just generate noise.</p>
+<p>I’d recommend using self-explanatory names for variables, methods, classes etc. instead of comments. If you have to write a comment for your code, this is a signal that your code needs to be refactored until the comment becomes absolutely obvious and redundant.</p>
+<h3 id="“Static-Methods-Are-Very-Convenient”"><a href="#“Static-Methods-Are-Very-Convenient”" class="headerlink" title="“Static Methods Are Very Convenient”"></a>“Static Methods Are Very Convenient”</h3><p>In one of the security frameworks, there was the <code>SecurityContext#getUser()</code> method. The method returned a currently logged-in user. Everything was fine, except that the method was <code>static</code>. As a result, every class that consumed the method was <strong>literally untestable</strong> due to the tight coupling between the class and the <code>SecurityContext</code>, which is unavailable during the unit testing phase.</p>
+<p>Do not repeat this mistake. Avoid <code>static</code> methods.</p>
+<h3 id="“final-Is-Only-For-Constants”"><a href="#“final-Is-Only-For-Constants”" class="headerlink" title="“final Is Only For Constants”"></a>“<code>final</code> Is Only For Constants”</h3><p>This is a very popular fallacy. The truth is that <em>all possible variables</em> must be declared <code>final</code>. <code>final</code> is a wrench that guarantees that you will never lose a wheel. You can find a more detailed explanation in <a href="/2017/11/13/the-most-underestimated-keyword-in-java/" title="The Most Underestimated Keyword In Java">my previous article</a>.</p>
+<h3 id="“I-Can-Pass-Data-Between-Methods-Using-Mutable-Class-Fields”"><a href="#“I-Can-Pass-Data-Between-Methods-Using-Mutable-Class-Fields”" class="headerlink" title="“I Can Pass Data Between Methods Using Mutable Class Fields”"></a>“I Can Pass Data Between Methods Using Mutable Class Fields”</h3><p>This is a very dangerous approach. It has two issues:</p>
+<ol>
+<li>Maintainability suffers. A method that utilizes mutable class fields to get necessary data lies about its input<sup>*</sup>. When you read such a method, you believe that it consumes only its arguments, while in reality, its behavior depends also on the class fields.</li>
+<li>It does not work when the field is accessed by more than one thread.</li>
+</ol>
+<p>You should only use parameters. No exceptions to this rule!</p>
+<h3 id="“Too-Many-Classes-Reduce-Readability-Of-My-Code”"><a href="#“Too-Many-Classes-Reduce-Readability-Of-My-Code”" class="headerlink" title="“Too Many Classes Reduce Readability Of My Code”"></a>“Too Many Classes Reduce Readability Of My Code”</h3><p>Do you also have this phobia? Have you also been in a situation when you needed to decide whether to create a new class or to increase an existing one <em>just a bit</em>? Did you finally choose the second option, even though by doing that you violated the Single Responsibility Principle?</p>
+<p>I have noticed that maintainable code always has one feature: it consists of a large number of small classes. Not vice versa. This is not a sufficient condition for the code to be maintainable. But it is definitely a necessary one.</p>
+<p>Create new classes more often. Think twice before appending new methods to existing classes.</p>
+<h3 id="“Interfaces-Pollute-My-Codebase-I-Have-To-Avoid-Them-”"><a href="#“Interfaces-Pollute-My-Codebase-I-Have-To-Avoid-Them-”" class="headerlink" title="“Interfaces Pollute My Codebase. I Have To Avoid Them!”"></a>“Interfaces Pollute My Codebase. I Have To Avoid Them!”</h3><p>This is very similar to the previous mistake. As interfaces clearly state what the API of your package is and reduce coupling, they have to be used when appropriate, i.e., quite often.</p>
+<h3 id="“Static-Imports-Make-My-Code-Less-Readable”"><a href="#“Static-Imports-Make-My-Code-Less-Readable”" class="headerlink" title="“Static Imports Make My Code Less Readable”"></a>“Static Imports Make My Code Less Readable”</h3><p>Compare</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SomeVeryLongUtilityClassName.checkIf(AnotherVeryLongEnumName.IN_PROGRESS)</span><br></pre></td></tr></table></figure>
+
+<p>with</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checkIf(IN_PROGRESS)</span><br></pre></td></tr></table></figure>
+
+<p>Is this <em>really</em> less readable? Or do you just believe that <code>SomeVeryLongUtilityClassName</code> or <code>AnotherVeryLongEnumName</code> add some clarity to your code? Note that in the vast majority of cases, they only pollute it.</p>
+<h3 id="“Existing-Code-Is-A-Black-Box”"><a href="#“Existing-Code-Is-A-Black-Box”" class="headerlink" title="“Existing Code Is A Black Box”"></a>“Existing Code Is A Black Box”</h3><p>It is much easier to write new code than it is to read one written by someone else. As a result, you can start implementing new functionality without understanding how the component works. This leads to code duplicates and a lot of unnecessary mess.</p>
+<p>You have to <em>embed</em> new functionality into current code, instead of putting it as much aside as possible. To do this, you have to understand in details how it works. Spend some time learning the existing code. Open the black box.</p>
+<h3 id="“I-Don’t-Need-The-New-Library-I-Can-Write-The-Method-Myself-”"><a href="#“I-Don’t-Need-The-New-Library-I-Can-Write-The-Method-Myself-”" class="headerlink" title="“I Don’t Need The New Library. I Can Write The Method Myself!”"></a>“I Don’t Need The New Library. I Can Write The Method Myself!”</h3><p>Imagine you need to join strings with a separator. Quite a simple and popular task, right? So you decide to write the method yourself.</p>
+<p>But wait a minute! Before doing this, make sure no one already did it for you. Most likely, someone did, and even more likely, with better quality. Not because you are slow or incapable. You just have a different priority: you have to write your complex business logic, not just simply join some strings. Having this more important priority, it is really easy to forget about an important corner case and join the strings incorrectly.</p>
+<p>The less code you have, the less painful it is to maintain it. Write less code. Use ready solutions and libraries.</p>
+<h3 id="“Complicated-Solutions-Show-How-Smart-I-Am”"><a href="#“Complicated-Solutions-Show-How-Smart-I-Am”" class="headerlink" title="“Complicated Solutions Show How Smart I Am”"></a>“Complicated Solutions Show How Smart I Am”</h3><p>Such a point of view is very unprofessional. Even worse, over-engineering your code can inflate your ego, and you may be less inclined to fix any flaws in your work.</p>
+<p>The mess will continue growing until even <em>you</em> will not understand everything in your own code, in several months or even earlier. A good manager knows this will happen and will try to get rid of you as soon as possible, while the mess in the project is still under control.</p>
+<p><em>Your code should be as simple as possible</em>. If your solution happens to be over-engineered and one of your colleagues points that out, do not try to defend it as if it is your own child. Refactor as soon as possible. Otherwise, you will have much more “fun” later, when you will have to remember all the details from scratch.</p>
+<h3 id="“Unit-Tests-Waste-My-Time-And-Do-Not-Allow-Me-To-Modify-My-Code-Quickly”"><a href="#“Unit-Tests-Waste-My-Time-And-Do-Not-Allow-Me-To-Modify-My-Code-Quickly”" class="headerlink" title="“Unit Tests Waste My Time And Do Not Allow Me To Modify My Code Quickly”"></a>“Unit Tests Waste My Time And Do Not Allow Me To Modify My Code Quickly”</h3><p>You have to treat unit tests as an investment for the future. Yes, it takes a bit more time to keep your unit tests up-to-date. But this time is nothing in comparison with the time you will have to spend finding and fixing tons of tricky bugs caused by changes in untested code.</p>
+<h3 id="“Checked-Exceptions-Are-Redundant”"><a href="#“Checked-Exceptions-Are-Redundant”" class="headerlink" title="“Checked Exceptions Are Redundant”"></a>“Checked Exceptions Are Redundant”</h3><p>All possible exceptions can be divided into two categories: ones that you have to handle and ones that you cannot handle (or it does not have sense to handle them). In Java, there are checked exceptions for the former case and unchecked exceptions for the latter.</p>
+<p>Checked exceptions have the advantage that <em>they force you to handle them</em>. Otherwise, your code will not even compile.</p>
+<p>Of course, checked exceptions seem really annoying: they make you think more. That takes your time and energy. But again: this is your investment for the future.</p>
+<p>For example, the <code>InterruptedException</code> is checked. This way, you will never forget to handle the interruption of your thread properly (e.g., close necessary resources, notify other threads about the interruption, etc.). You will spend a bit more time now to save so much more time in the future.</p>
+<p>Use checked exceptions in your code when appropriate. This will allow you and other developers to write better code.</p>
+<h3 id="“Default-Encoding-And-Time-Zone-Work-Just-Fine-Why-Should-I-Care-About-Them-”"><a href="#“Default-Encoding-And-Time-Zone-Work-Just-Fine-Why-Should-I-Care-About-Them-”" class="headerlink" title="“Default Encoding And Time Zone Work Just Fine, Why Should I Care About Them?”"></a>“Default Encoding And Time Zone Work Just Fine, Why Should I Care About Them?”</h3><p>Because they do not work fine. You have just been lucky so far.</p>
+<p>Java can trick you into being complacent and lazy, if you aren’t careful. It kindly tries to save you from extra thinking by implicitly providing default encodings and time zones whenever possible. It is doing you a disservice.</p>
+<p>The consequences of using the default time zone are considered in <a href="/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time/" title="Why Is 20.12.2017 12:00 Not A Moment In Time?">a separate article</a>. As for default encoding, there is <a target="_blank" rel="noopener" href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">an awesome article by Joel Spolsky</a> to explain more.</p>
+<h3 id="To-Summarize"><a href="#To-Summarize" class="headerlink" title="To Summarize"></a>To Summarize</h3><p>This is a list of mistakes which I have found to be very repetitive and time-consuming. Most of them are caused by a misguided belief in a short-term benefit. You believe that you save time and effort, while in reality you just postpone and accumulate the problems. It is best to avoid them whenever possible.</p>
+<p>Have I forgotten something?</p>
+<p><sup>*</sup> First time I encountered this useful term was in <a target="_blank" rel="noopener" href="https://www.toptal.com/qa/how-to-write-testable-code-and-why-it-matters">this article</a>.</p>
+
+      
+    </div>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/java/">java</a>, <a class="article-category-link" href="/categories/java/code/">code</a>
+      
+      
+      
+    </div>
+    
+    
+  </div>
+</article>
+
+  
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/01/08/who-pays-for-your-coffee/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Who Pays For Your Coffee?
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Why Is 20.12.2017 12:00 Not A Moment In Time?
+        
+      </div>
+    </a>
+  
+</nav>
+
+
+
+
+
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var disqusShortname = 'yaskovdev';
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+  </div>
+  
+
+
+
+
+<div id="settings-container">
+  <div id="dark-mode">dark</div>
+  <div id="sans-font">sans</div>
+</div>
+<script type="text/javascript">
+let d=document,r=d.documentElement.style,f=r.setProperty.bind(r),l=localStorage,s=l.getItem('s')||(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches),n=l.getItem('n'),m=d.getElementById("dark-mode"),b=()=>{f('--bg-color','#fafafa');f('--code-bg-color','#f4f4f4');f('--text-color','#212121');f('--secondary-color','#808080');f('--tertiary-color','#b0b0b0');f('--link-color','#b5c8cf');f('--link-hover-color','#618794');f('--link-bg-color','#dae4e7');f('--selection-color','#dae4e7');m.innerHTML="dark"},c=()=>{f('--bg-color','#212121');f('--code-bg-color','#292929');f('--text-color','#fff');f('--secondary-color','#c0c0c0');f('--tertiary-color','#6e6e6e');f('--link-color','#4d6b75');f('--link-hover-color','#96b1bb');f('--link-bg-color','#5d828e');f('--selection-color','#acc1c9');m.innerHTML="light"},o=d.getElementById("sans-font"),e=()=>{f('--body-stack','"Lora", "Georgia", "Times New Roman", serif');o.innerHTML="sans"},g=()=>{f('--body-stack','"Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif');o.innerHTML="serif"};m.onclick=()=>{if(s==2){s=1;l.setItem('s',s);c()}else{s=2;l.setItem('s',s);b()}};o.onclick=()=>{if(n==2){n=1;l.setItem('n',n);g()}else{n=2;l.setItem('n',n);e()}};if(!s){s=2;l.setItem('s',2)};if(s==1){c()};if(!n){n=2;l.setItem('n',2)};if(n==1){g()};
+</script>
+
+
+
+
+</body>
+</html>

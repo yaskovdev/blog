@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Neural Network For Picking Mushrooms | Developer Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+  
+  <meta name="description" content="Imagine yourself in a forest picking mushrooms, either for fun or, probably more likely, so you won’t starve to death. How do you decide if a mushroom is edible or poisonous? Is there a way to utilize">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Neural Network For Picking Mushrooms">
+<meta property="og:url" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/index.html">
+<meta property="og:site_name" content="Developer Notes">
+<meta property="og:description" content="Imagine yourself in a forest picking mushrooms, either for fun or, probably more likely, so you won’t starve to death. How do you decide if a mushroom is edible or poisonous? Is there a way to utilize">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/mushrooms.jpg">
+<meta property="og:image" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/an-abstract-mushroom.png">
+<meta property="og:image" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/the-mushroom-with-the-partial-white-veil.png">
+<meta property="og:image" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/output-layer.png">
+<meta property="og:image" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/training.png">
+<meta property="og:image" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/distance.png">
+<meta property="article:published_time" content="2018-02-05T08:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-28T21:39:19.941Z">
+<meta property="article:author" content="Sergey Yaskov">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yaskovdev.com/2018/02/05/neural-network-for-picking-mushrooms/mushrooms.jpg"><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">Developer Notes</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
+</header>
+
+    <div id="content">
+      <article id="post-neural-network-for-picking-mushrooms" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      Neural Network For Picking Mushrooms
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2018-02-05T08:00:00.000Z" itemprop="datePublished">February 5, 2018, 10:00</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>Imagine yourself in a forest picking mushrooms, either for fun or, probably more likely, so you won’t starve to death. How do you decide if a mushroom is edible or poisonous? Is there a way to utilize an artificial neural network to help you with the decision? If so, can you come up with a simpler, but more efficient solution? Let’s figure it out!</p>
+<img src="/2018/02/05/neural-network-for-picking-mushrooms/mushrooms.jpg" class="" title="Mushrooms">
+
+<h3 id="Test-Data"><a href="#Test-Data" class="headerlink" title="Test Data"></a>Test Data</h3><p>Before we start, we need to study some mushrooms to collect the test data. Unfortunately, currently it is winter in my region, so at the moment, it is difficult for me to collect the mushrooms myself. But, luckily, the test data is already available in the <a target="_blank" rel="noopener" href="https://archive.ics.uci.edu/ml/datasets/mushroom">UC Irvine Machine Learning Repository</a>.</p>
+<p>I am splitting the data into two equal parts. The first part is called <em>training data</em>. It will be used to train the neural network. The second part is called <em>evaluation data</em>. It will be used to evaluate how well the neural network can classify unknown mushrooms as edible or poisonous.</p>
+<h3 id="Artificial-Neural-Network-Design"><a href="#Artificial-Neural-Network-Design" class="headerlink" title="Artificial Neural Network: Design"></a>Artificial Neural Network: Design</h3><p>The neural network should take a mushroom as an input and tell us whether or not it is edible or poisonous. The input layer of the neural network consists of a certain number of neurons. In our case, each neuron can take a value from 0 to 1 inclusively. The same for the output layer: it also has a given number of neurons, and each neuron can also return a value from 0 to 1 inclusively.</p>
+<p>You can think of the neural network as a function. The function takes multiple parameters. Each parameter may vary from 0 to 1. The function returns multiple values, each of which also varies from 0 to 1.</p>
+<p>First of all, let’s decide how many neurons the input layer should have and how to represent a mushroom as the input.</p>
+<p>Each mushroom has 22 features (cap shape, odor, veil color, etc.). Each feature can take from 2 to 12 values. For example, the veil color can be brown, orange, white or yellow.</p>
+<p>There are <a target="_blank" rel="noopener" href="https://www.researchgate.net/post/How_to_code_categorical_inputs_for_a_neural_network">a number of ways</a> of how to “feed” any such mushroom to the neural network. I’m going to explain by example the method I picked for our mushroom problem.</p>
+<p>Imagine for simplicity that each mushroom has only 2 features: veil type and veil color. The veil type can be <em>partial</em> or <em>universal</em>, the veil color can be <em>brown</em>, <em>orange</em>, <em>white</em> or <em>yellow</em>. These mushrooms can be described by the table below.</p>
+<img src="/2018/02/05/neural-network-for-picking-mushrooms/an-abstract-mushroom.png" class="" title="An Abstract Mushroom">
+
+<p>Imagine I found a mushroom with the <em>partial white</em> veil. This means I can substitute question marks with values. Each value will be 0 or 1. I have now updated the table below with the new values. The zeros and the ones now form the <code>(1, 0, 0, 0, 1, 0)</code> vector which I can pass on to the neural network.</p>
+<img src="/2018/02/05/neural-network-for-picking-mushrooms/the-mushroom-with-the-partial-white-veil.png" class="" title="The Mushroom With The Partial White Vei">
+
+<p>Similarly, if it was the <em>universal yellow</em> veil, the vector would be <code>(0, 1, 0, 0, 0, 1)</code>. I hope you get the idea now.</p>
+<p>When I apply the above method to the actual 22 features, I have 126 neurons in the input layer. The same approach, applied to the output layer, gives me 2 neurons: the first represents the degree of edibility of a mushroom, the second represents how poisonous the mushroom is. If, for example, I deal with a very poisonous mushroom, the output is <code>(0, 1)</code><sup>*</sup>.</p>
+<img src="/2018/02/05/neural-network-for-picking-mushrooms/output-layer.png" class="" title="An Abstract Output Layer">
+
+<p>Having agreed on how to represent the inputs and the outputs of the neural network, let’s then briefly discuss its type and its hidden layers.</p>
+<p>I decided to use a multilayer perceptron network because it <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multilayer_perceptron">fits well</a> in the classification problem I am solving. I added a hidden layer, which is also called a dense layer. It is located between input and output layers and has ten neurons. Why ten? Well, there are many <a target="_blank" rel="noopener" href="https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw">rules of thumb</a> about how to pick the number of the neurons in the hidden layer. The real value is always a matter of experimentation and optimization. I picked ten using one of these rules of thumb. It is a good value <em>to start with</em>.</p>
+<h3 id="Artificial-Neural-Network-Training-And-Evaluation"><a href="#Artificial-Neural-Network-Training-And-Evaluation" class="headerlink" title="Artificial Neural Network: Training And Evaluation"></a>Artificial Neural Network: Training And Evaluation</h3><p>Now that we have agreed on the configuration of the neural network, I am ready to build and train it. To do this, I will use <a target="_blank" rel="noopener" href="https://github.com/zenecture/neuroflow">NeuroFlow</a>, a powerful Scala library to design, train, and evaluate neural networks.</p>
+<img src="/2018/02/05/neural-network-for-picking-mushrooms/training.png" class="" title="Training">
+
+<p>After training the network through 900 iterations, I can now test the resulting neural network on the real data. The “real data” is the subset of the mushrooms that I had previously put aside and didn’t use for the neural network training. The tests show that even without the optimization of the network parameters, <strong>the proportion<sup></strong></sup> of the correct answers is 0.92**, which is quite good.</p>
+<p>Can I improve the result? Apparently, yes. For example, I still could play with the neural network configuration and find the best one. I also could deal with the training data <a target="_blank" rel="noopener" href="https://towardsdatascience.com/cross-validation-in-machine-learning-72924a69872f">in the more optimal way</a>, not just by splitting it in half. However, there is another unexpectedly simple algorithm that shows <em>really</em> good results for the mushrooms problem.</p>
+<h3 id="K-Nearest-Neighbours-The-Main-Idea"><a href="#K-Nearest-Neighbours-The-Main-Idea" class="headerlink" title="K-Nearest Neighbours: The Main Idea"></a>K-Nearest Neighbours: The Main Idea</h3><p>As we touched on above, let’s utilize k-nearest neighbours and compare its results with the results of the neural network.</p>
+<p>The idea of the algorithm is quite straightforward: given any unknown mushroom, I have to find the mushroom from my test data that is <em>the most similar</em> to one I have to classify. Then the edibility of the most similar one will be the edibility I am trying to find.</p>
+<p>The algorithm can be improved by picking multiple most-similar mushrooms, say, three. In this case, the edibility that most of these three mushrooms have is going to be the one I’m looking for.</p>
+<h3 id="K-Nearest-Neighbours-Similarity-Of-Two-Mushrooms"><a href="#K-Nearest-Neighbours-Similarity-Of-Two-Mushrooms" class="headerlink" title="K-Nearest Neighbours: Similarity Of Two Mushrooms"></a>K-Nearest Neighbours: Similarity Of Two Mushrooms</h3><p>The main thing I need to decide here is how to measure the similarity. There are <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Metric_(mathematics)">quite a few</a> ways of how I can do it, but the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Hamming_distance">Hamming distance</a> method fits my needs very well. The Hamming distance between two mushrooms measures the number of features for which the mushrooms have different values. The smaller the Hamming distance, the more similar the mushrooms are.</p>
+<p>If the first mushroom has the <em>brown</em> cap and the <em>white</em> stalk, and the second one also has the <em>brown</em> cap, but the <em>gray</em> stalk, the distance will be 1, as they differ only in one feature, only in the stalk color.</p>
+<img src="/2018/02/05/neural-network-for-picking-mushrooms/distance.png" class="" title="Distance">
+
+<p>By the way, if I’m comparing two identical mushrooms, the number of features with different values is obviously 0, so the distance is also 0, as expected. Identical mushrooms are “as similar as possible”.</p>
+<h3 id="K-Nearest-Neighbours-Implementation-And-Evaluation"><a href="#K-Nearest-Neighbours-Implementation-And-Evaluation" class="headerlink" title="K-Nearest Neighbours: Implementation And Evaluation"></a>K-Nearest Neighbours: Implementation And Evaluation</h3><p>In light of the above discussion, it is now trivial to implement the k-nearest neighbours algorithm:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NearestNeighbor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">nearest</span></span>(y: <span class="type">Seq</span>[<span class="type">String</span>], xs: <span class="type">Seq</span>[<span class="type">Seq</span>[<span class="type">String</span>]], k: <span class="type">Int</span>): <span class="type">String</span> = &#123;</span><br><span class="line">    <span class="keyword">val</span> knn = xs.sortWith((a, b) =&gt; distance(a.tail, y) &lt; distance(b.tail, y)).slice(<span class="number">0</span>, k)</span><br><span class="line">    <span class="keyword">val</span> edibleNumber: <span class="type">Int</span> = knn.foldLeft(<span class="number">0</span>)((count, element) =&gt; <span class="keyword">if</span> (element.head == <span class="string">&quot;e&quot;</span>) count + <span class="number">1</span> <span class="keyword">else</span> count)</span><br><span class="line">    <span class="keyword">if</span> (edibleNumber &gt; k / <span class="number">2</span>) <span class="string">&quot;e&quot;</span> <span class="keyword">else</span> <span class="string">&quot;p&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="function"><span class="keyword">def</span> <span class="title">distance</span></span>(x: <span class="type">Seq</span>[<span class="type">String</span>], y: <span class="type">Seq</span>[<span class="type">String</span>]): <span class="type">Double</span> = &#123;</span><br><span class="line">    x.zip(y).foldLeft(<span class="number">0.0</span>)((sum, pair) =&gt; <span class="keyword">if</span> (pair._1 == pair._2) sum <span class="keyword">else</span> sum + <span class="number">1.0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The algorithm does not even need the training phase. When I run the algorithm against the set of the evaluation data, I have a great result: <strong>the proportion of the correct answers is 0.98</strong>, even better than the neural network has shown.</p>
+<h3 id="To-Summarize"><a href="#To-Summarize" class="headerlink" title="To Summarize"></a>To Summarize</h3><p>Neural networks are a powerful tool that can be applied in many different areas. They can even support you during mushroom-picking, as you have just seen. There is no magic behind them: a neural network is just a function of (usually) multiple arguments.</p>
+<p>However, sometimes the simpler solution is the better. As I have just demonstrated, for the mushroom-picking problem, the k-nearest neighbours method shows even better result than the neural network.</p>
+<p>The full implementation of both <a target="_blank" rel="noopener" href="https://github.com/yaskovdev/data-science-sandbox/tree/master/mushrooms-neural-network">the neural network</a> and <a target="_blank" rel="noopener" href="https://github.com/yaskovdev/data-science-sandbox/tree/master/mushrooms-knn">the k-nearest neighbours</a> is available in GitHub.</p>
+<p><sup>*</sup> In reality, it will be something like (0.00087, 0.99841). As I need to clearly state “edible” or “poisonous”, I will just compare these 2 numbers. If the first value is larger, then I claim “edible”, otherwise “poisonous”.</p>
+<p><sup>**</sup> The ratio between the number of the correct answers given by the neural network and the total number of the mushrooms in the test data. This is the broadest and definitely not the best way to evaluate a model because it has a lot of disadvantages. For example, it does not pay attention to the proportion of the classes in the test data. However, because of its simplicity, it can be used for illustration purposes.</p>
+
+      
+    </div>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/scala/">scala</a>, <a class="article-category-link" href="/categories/scala/ann/">ann</a>, <a class="article-category-link" href="/categories/scala/ann/knn/">knn</a>
+      
+      
+      
+    </div>
+    
+    
+  </div>
+</article>
+
+  
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/02/19/i-dont-know/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          I Don&#39;t Know
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/22/how-your-employer-makes-you-steal-money/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          How Your Employer Makes You Steal Money
+        
+      </div>
+    </a>
+  
+</nav>
+
+
+
+
+
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var disqusShortname = 'yaskovdev';
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+  </div>
+  
+
+
+
+
+<div id="settings-container">
+  <div id="dark-mode">dark</div>
+  <div id="sans-font">sans</div>
+</div>
+<script type="text/javascript">
+let d=document,r=d.documentElement.style,f=r.setProperty.bind(r),l=localStorage,s=l.getItem('s')||(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches),n=l.getItem('n'),m=d.getElementById("dark-mode"),b=()=>{f('--bg-color','#fafafa');f('--code-bg-color','#f4f4f4');f('--text-color','#212121');f('--secondary-color','#808080');f('--tertiary-color','#b0b0b0');f('--link-color','#b5c8cf');f('--link-hover-color','#618794');f('--link-bg-color','#dae4e7');f('--selection-color','#dae4e7');m.innerHTML="dark"},c=()=>{f('--bg-color','#212121');f('--code-bg-color','#292929');f('--text-color','#fff');f('--secondary-color','#c0c0c0');f('--tertiary-color','#6e6e6e');f('--link-color','#4d6b75');f('--link-hover-color','#96b1bb');f('--link-bg-color','#5d828e');f('--selection-color','#acc1c9');m.innerHTML="light"},o=d.getElementById("sans-font"),e=()=>{f('--body-stack','"Lora", "Georgia", "Times New Roman", serif');o.innerHTML="sans"},g=()=>{f('--body-stack','"Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif');o.innerHTML="serif"};m.onclick=()=>{if(s==2){s=1;l.setItem('s',s);c()}else{s=2;l.setItem('s',s);b()}};o.onclick=()=>{if(n==2){n=1;l.setItem('n',n);g()}else{n=2;l.setItem('n',n);e()}};if(!s){s=2;l.setItem('s',2)};if(s==1){c()};if(!n){n=2;l.setItem('n',2)};if(n==1){g()};
+</script>
+
+
+
+
+</body>
+</html>

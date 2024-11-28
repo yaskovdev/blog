@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Why Is 20.12.2017 12:00 Not A Moment In Time? | Developer Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+  
+  <meta name="description" content="Your friend Joyce from another country wants you to have a video call at 20.**.2017 12:00. Will you join?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why Is 20.12.2017 12:00 Not A Moment In Time?">
+<meta property="og:url" content="https://yaskovdev.com/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time/index.html">
+<meta property="og:site_name" content="Developer Notes">
+<meta property="og:description" content="Your friend Joyce from another country wants you to have a video call at 20.**.2017 12:00. Will you join?">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yaskovdev.com/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time/moment-in-time.jpg">
+<meta property="article:published_time" content="2017-12-11T18:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-28T21:39:19.936Z">
+<meta property="article:author" content="Sergey Yaskov">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yaskovdev.com/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time/moment-in-time.jpg"><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">Developer Notes</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
+</header>
+
+    <div id="content">
+      <article id="post-why-is-20-12-2017-12-00-not-a-moment-in-time" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      Why Is 20.12.2017 12:00 Not A Moment In Time?
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2017-12-11T18:00:00.000Z" itemprop="datePublished">December 11, 2017, 20:00</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>Your friend Joyce from another country wants you to have a video call at <code>20.**.2017 12:00</code>. Will you join? </p>
+<p>Oh, you can’t, because you don’t know the exact moment in time? How about at <code>20.12.2017 12:00</code>? </p>
+<p>Nope, still wrong, and even further from the real time. How can we be sure what the time is?</p>
+<img src="/2017/12/11/why-is-20-12-2017-12-00-not-a-moment-in-time/moment-in-time.jpg" class="" title="Moment in time">
+
+<h3 id="The-UTC-Offset-Is-Just-As-Important-As-The-Day-Month-Year-Hour-etc"><a href="#The-UTC-Offset-Is-Just-As-Important-As-The-Day-Month-Year-Hour-etc" class="headerlink" title="The UTC Offset* Is Just As Important As The Day, Month, Year, Hour, etc."></a>The UTC Offset<sup>*</sup> Is Just As Important As The Day, Month, Year, Hour, etc.</h3><p>Returning to the above example, only <code>20.12.2017 12:00 UTC+03:00</code> gives you enough information about when the call should happen. But are you sure you can always remember about the <code>UTC+03:00</code> part? Even when it is not given to you?</p>
+<h3 id="A-Real-Life-Example"><a href="#A-Real-Life-Example" class="headerlink" title="A Real Life Example"></a>A Real Life Example</h3><p>Imagine you have a RESTful service that provides you data in the XML format, and that you are interested in the date when the subscription to your service was made.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">subscription</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">startDate</span>&gt;</span>20060501<span class="tag">&lt;/<span class="name">startDate</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">subscription</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Luckily, some of the caring developers of your company created a handy utility class to parse such dates, so that once you called the service, you can just write <code>Date date = DateUtil.dateValue(&quot;20060501&quot;)</code> and have the date of the subscription. And a <em>tricky bug</em> as well.</p>
+<p>The reason for the bug is clear already. The <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/6/docs/api/java/util/Date.html">JavaDoc</a> states: “The class Date represents a specific instant in time, with millisecond precision.” But, as we just discussed, <code>20060501</code> is not enough to determine the specific instant in time, you also need the UTC offset. So you have two options:</p>
+<ol>
+<li>Request the missing part from the service, so that it will return <code>20060501 UTC</code> to you. This is robust, but not always possible.</li>
+<li>Make the right assumption about the UTC offset yourself and make sure your code takes it into account.</li>
+</ol>
+<p>And stop using <code>DateUtil</code>. It pretends to be your friend by making your life easier, but in reality, it gives you a great opportunity to make a mistake. Instead of throwing out an exception that says “Sorry, mate, cannot parse your date, it does not contain enough information to be parsed” or using some other way to save you from the mistake, it just silently guesses the missing part (by using server time zone, for example) and returns the wrong result.</p>
+<h3 id="“Sure-But-This-Is-Not-My-Case-I-Do-Not-Use-DateUtil“"><a href="#“Sure-But-This-Is-Not-My-Case-I-Do-Not-Use-DateUtil“" class="headerlink" title="“Sure, But This Is Not My Case, I Do Not Use DateUtil“"></a>“Sure, But This Is Not My Case, I Do Not Use <code>DateUtil</code>“</h3><p>Well, maybe you do not have any <code>DateUtil</code>s in your code. But the more popular <code>SimpleDateFormat</code> suffers from exactly the same issues. Make sure you do not use it either.</p>
+<p>Instead, use the new <a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html">Java 8 Date and Time API</a> or <a target="_blank" rel="noopener" href="http://www.joda.org/joda-time/">Joda Time</a>, if you are stuck with an old Java. One of the advantages of these libraries is that they force you to provide the complete information. This way, they do not allow you to make the mistake.</p>
+<h3 id="To-Summarize"><a href="#To-Summarize" class="headerlink" title="To Summarize"></a>To Summarize</h3><p>Always take care with the UTC offset when working with dates. Use modern APIs and libraries, as they can help you with this.</p>
+<p><sup>*</sup> The UTC offset will not necessarily be given to you. If this happens, keep in mind that the time zone also fills the gap, as it keeps the offset information. So <code>20.12.2017 12:00 Europe/Moscow</code> would be  perfectly OK. However, remember the <a href="/2017/10/30/utc-a-time-standard-or-a-time-zone/" title="UTC – A Time Standard Or A Time Zone?">differences between the UTC offset and a time zone</a>. </p>
+
+      
+    </div>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/java/">java</a>, <a class="article-category-link" href="/categories/java/utc/">utc</a>
+      
+      
+      
+    </div>
+    
+    
+  </div>
+</article>
+
+  
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/12/25/13-ugly-mistakes-you-make-in-your-code/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          13 Ugly Mistakes You Make In Your Code
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/27/shape-of-your-unit-tests-says-a-lot-about-their-quality/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          The Shape Of Your Unit Tests Says A Lot About Their Quality
+        
+      </div>
+    </a>
+  
+</nav>
+
+
+
+
+
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var disqusShortname = 'yaskovdev';
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+  </div>
+  
+
+
+
+
+<div id="settings-container">
+  <div id="dark-mode">dark</div>
+  <div id="sans-font">sans</div>
+</div>
+<script type="text/javascript">
+let d=document,r=d.documentElement.style,f=r.setProperty.bind(r),l=localStorage,s=l.getItem('s')||(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches),n=l.getItem('n'),m=d.getElementById("dark-mode"),b=()=>{f('--bg-color','#fafafa');f('--code-bg-color','#f4f4f4');f('--text-color','#212121');f('--secondary-color','#808080');f('--tertiary-color','#b0b0b0');f('--link-color','#b5c8cf');f('--link-hover-color','#618794');f('--link-bg-color','#dae4e7');f('--selection-color','#dae4e7');m.innerHTML="dark"},c=()=>{f('--bg-color','#212121');f('--code-bg-color','#292929');f('--text-color','#fff');f('--secondary-color','#c0c0c0');f('--tertiary-color','#6e6e6e');f('--link-color','#4d6b75');f('--link-hover-color','#96b1bb');f('--link-bg-color','#5d828e');f('--selection-color','#acc1c9');m.innerHTML="light"},o=d.getElementById("sans-font"),e=()=>{f('--body-stack','"Lora", "Georgia", "Times New Roman", serif');o.innerHTML="sans"},g=()=>{f('--body-stack','"Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif');o.innerHTML="serif"};m.onclick=()=>{if(s==2){s=1;l.setItem('s',s);c()}else{s=2;l.setItem('s',s);b()}};o.onclick=()=>{if(n==2){n=1;l.setItem('n',n);g()}else{n=2;l.setItem('n',n);e()}};if(!s){s=2;l.setItem('s',2)};if(s==1){c()};if(!n){n=2;l.setItem('n',2)};if(n==1){g()};
+</script>
+
+
+
+
+</body>
+</html>
