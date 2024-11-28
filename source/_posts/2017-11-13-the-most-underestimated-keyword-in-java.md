@@ -4,6 +4,7 @@ title:  "The Most Underestimated Keyword In Java"
 date:   2017-11-13 21:00:00 +0300
 categories: [code, java]
 comments: true
+excerpt: "Imagine yourself riding a bicycle where all the screw-nuts are loosened. Everything is rattling and the bike is ready to fall apart. This is exactly how it feels to maintain code when this essential keyword we are going to discuss is not used or is used only sparingly for some class fields and constants."
 ---
 
 Imagine yourself riding a bicycle where all the screw-nuts are loosened. Everything is rattling and the bike is ready to fall apart. This is exactly how it feels to maintain code when this essential keyword we are going to discuss is not used or is used only sparingly for some class fields and constants.

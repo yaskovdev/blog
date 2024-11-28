@@ -4,6 +4,7 @@ title:  "Why Is 20.12.2017 12:00 Not A Moment In Time?"
 date:   2017-12-11 21:00:00 +0300
 categories: [java, utc]
 comments: true
+excerpt: "Your friend Joyce from another country wants you to have a video call at 20.**.2017 12:00. Will you join?"
 ---
 
 Your friend Joyce from another country wants you to have a video call at `20.**.2017 12:00`. Will you join? 

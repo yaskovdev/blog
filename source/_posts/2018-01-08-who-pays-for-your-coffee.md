@@ -4,6 +4,7 @@ title:  "Who Pays For Your Coffee?"
 date:   2018-01-08 21:00:00 +0300
 categories: [company]
 comments: true
+excerpt: "Today, most of our lives tend to focus around our jobs and our all-important relationships with our employers. After all, your employer hires you, pays for your working environment, sponsors the fun corporate events, and even provides the table for playing tennis. We should accept that our employers have all the power in this relationship, right?"
 ---
 
 Today, most of our lives tend to focus around our jobs and our all-important relationships with our employers. After all, your employer hires you, pays for your working environment, sponsors the fun corporate events, and even provides the table for playing tennis. We should accept that our employers have all the power in this relationship, right? Wrong.

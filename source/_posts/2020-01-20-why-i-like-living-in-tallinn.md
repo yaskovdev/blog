@@ -4,6 +4,7 @@ title:  "Why I Like Living In Tallinn"
 date:   2020-01-20 21:00:00 +0300
 categories: [city]
 comments: true
+excerpt: "A couple of years ago, I never thought that I would move to Tallinn. Not because of any lack of opportunities for programmers in Europe, but because I did not expect this small city to be so comfortable with so many amenities and, in particular, to have high demand for software developers. Why do I like this city? Let me explain."
 ---
 
 A couple of years ago, I never thought that I would move to Tallinn. Not because of any lack of opportunities for programmers in Europe, but because I did not expect this small city to be so comfortable with so many amenities and, in particular, to have high demand for software developers.
