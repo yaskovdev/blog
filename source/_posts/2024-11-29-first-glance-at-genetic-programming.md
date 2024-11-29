@@ -1,23 +1,23 @@
 ---
 layout: post
-title: "Genetic Programming And The Push Language"
+title: "Intro To Genetic Programming: Can Evolution Write Computer Programs?"
 date: 2024-11-29 14:41:57
 show_date: true
 image: /assets/tallinn.png
 categories: [ genetic-programming, push ]
 comments: true
-excerpt: What would the check if an integer number is even look like if the program was "written" by the evolution?
+excerpt: Evolution is a powerful force. It has created the human brain, the eye's retina and the tapir. But can it write computer programs?
 ---
 
-## Can Evolution Write Computer Programs?
+Evolution is a powerful force. It has created the human brain, the eye's retina and the tapir. But can it write computer programs?
 
-### Genetic Algorithms
+# Genetic Algorithms
 
-I'm sure you have heard about the genetic algorithms. They are [a method of solving optimization problems that is based on natural selection, the process that drives biological evolution](https://www.mathworks.com/help/gads/what-is-the-genetic-algorithm.html).
+I'm sure you have heard about the [genetic algorithms](https://www.mathworks.com/help/gads/what-is-the-genetic-algorithm.html). They are a method of solving optimization problems that is based on natural selection, the process that drives biological evolution.
 
 One classic (and somewhat artificial) example of the problem that can be solved by the genetic algorithms is the backpack problem.
 
-You have a backpack and a set of items. Each item has a weight and a value. You have to put the items into the backpack so that the total weight does not exceed the maximum weight of the backpack and the total value of the items is maximized.
+It goes like this. You have a backpack and a set of items. Each item has a weight and a value. You have to put the items into the backpack so that the total weight does not exceed the maximum weight of the backpack and the total value of the items is maximized.
 
 For example, you have a backpack that can hold `5 kg` and the following items:
 
@@ -49,15 +49,17 @@ The algorithm ends when on step 2 the fitness of the best individual is higher t
 
 In our example we may find the best individual after a few iterations. It is the individual `1011` that represents the combination of the laptop, the phone and the watch. However, just like in with the real evolution, it is not guaranteed that the algorithm will find the most optimal solution.
 
-### From Genetic Algorithms To Genetic Programming
+# From Genetic Algorithms To Genetic Programming
 
-But what if instead of packing the backpack we want a genetic algorithm to write a computer program?
+But what if instead of packing the backpack you want a genetic algorithm to write a computer program? Can it do that?
 
+Yes. You just need to replace the backpack items with the instructions of a programming language. Then your individuals become computer programs. The fitness of the individuals is evaluated based on the result of the program execution. The crossover and mutation stay pretty much the same.
 
+Using genetic algorithms to write computer programs is called [genetic programming](https://en.wikipedia.org/wiki/Genetic_programming).
 
-The genetic programming is a bit different. It is a method of automatically creating computer programs. The genetic programming is a part of the genetic algorithms, but it is not the same thing.
+### Push Programming Language
 
-Evolution is a powerful force. It has created the human brain, the giraffe's *** nerve, and the eye's retina. It has also created the computer programs. The latter is not so obvious, but it is true. The genetic programming is a field of computer science that studies how to evolve computer programs.
+TODO: a few words about Turing-completeness of the Push.
 
 Were you ever wondering why is the part of our brain that is responsible for processing signals from our eyes located on the back side of our brain? Wouldn't it be more logical to put it to the front side? Or why the giraffe *** nerve is twice as long as its neck, while it could be only a couple of centimeters work?
 
