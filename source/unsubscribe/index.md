@@ -30,11 +30,10 @@ comments: false
     }
 </style>
 
-<form action="https://formsubmit.co/2fbaff1baa2edf1cab112c50135fdf9b" method="POST">
-    <input type="hidden" name="_next" value="{% fixed_full_url_for /unsubscribed %}"/>
-    <input type="hidden" name="_subject" value="Unsubscribe Me"/>
+<form action="https://submit-form.com/lVazsESIY">
+    <input type="hidden" name="_redirect" value="{% fixed_full_url_for /unsubscribed %}"/>
+    <input type="hidden" name="_email.subject" value="Unsubscribe Me"/>
     <label for="email">Your email</label>
-    <input id="email" class="field field-text" name="email" size="25" maxlength="255" type="email"
-        required="required"/>
+    <input id="email" class="field field-text" name="email" size="25" maxlength="255" type="email" required="required"/>
     <button type="submit">Unsubscribe</button>
 </form>
