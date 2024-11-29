@@ -1,9 +1,6 @@
 ---
-layout: page
 title: Subscribe
-menu: main
-order: 0
-permalink: /subscribe
+date: 2024-11-29 02:31:24
 ---
 
 <style type="text/css">
@@ -33,7 +30,7 @@ permalink: /subscribe
 </style>
 
 <form action="https://formsubmit.co/2fbaff1baa2edf1cab112c50135fdf9b" method="POST">
-    <input type="hidden" name="_next" value="{{ site.url }}/subscribed"/>
+    <input type="hidden" name="_next" value="{% fixed_full_url_for /subscribed %}"/>
     <input type="hidden" name="_subject" value="Subscribe Me"/>
     <label for="email">Your email</label>
     <input id="email" class="field field-text" name="email" size="25" maxlength="255" type="email" required="required"/>

@@ -1,9 +1,6 @@
 ---
-layout: page
 title: About
-menu: main
-order: 1
-permalink: /about
+date: 2024-11-29 02:31:24
 ---
 
 Hello!
