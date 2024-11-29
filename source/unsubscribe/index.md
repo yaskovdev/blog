@@ -1,8 +1,10 @@
 ---
-title: Unsubscribe
+title: Sorry to See You Go
 show_date: false
 comments: false
 ---
+
+Enter your email to unsubscribe and stop receiving updates.
 
 <style type="text/css">
     input[type=email] {
@@ -16,17 +18,19 @@ comments: false
     }
 
     button {
-        background-color: #4CAF50;
-        color: white;
+        background-color: var(--link-color);
+        color: var(--text-color);
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-size: 0.8em;
+        font-family: var(--body-stack);
     }
 
     button:hover {
-        background-color: #45a049;
+        background-color: var(--link-hover-color);
     }
 </style>
 

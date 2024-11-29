@@ -2,6 +2,7 @@
 layout: post
 title:  "I Don't Know"
 date:   2018-02-19 11:00:00 +0300
+show_date: true
 categories: [development]
 comments: true
 excerpt: "Imagine you had a toothache. You went to a dentist who began to treat it right after you arrived. Once the appointment ran on for more than two hours, you started to worry. You took a chance to speak and asked \"Doctor, what is going on, what is the cause of my toothache? What is taking so long?\" And he said very calmly, \"I don’t know. I just try this and that*, maybe something will work, maybe not. I don’t really know, mate.\""

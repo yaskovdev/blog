@@ -2,6 +2,7 @@
 layout: post
 title:  "The Shape Of Your Unit Tests Says A Lot About Their Quality"
 date:   2017-11-27 11:00:00 +0300
+show_date: true
 categories: [java, testing]
 comments: true
 excerpt: "Whether you are writing your own unit tests or reviewing ones written by someone else, you can easily assess their quality by the shape of the test methods. You don't even need to read them."

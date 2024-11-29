@@ -1,5 +1,5 @@
 ---
-title: Subscribe
+title: Stay Updated
 show_date: false
 comments: false
 ---
@@ -16,19 +16,23 @@ comments: false
     }
 
     button {
-        background-color: #4CAF50;
-        color: white;
+        background-color: var(--link-color);
+        color: var(--text-color);
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        font-size: 0.8em;
+        font-family: var(--body-stack);
     }
 
     button:hover {
-        background-color: #45a049;
+        background-color: var(--link-hover-color);
     }
 </style>
+
+Subscribe with your email to receive notifications whenever a new article is published. You’ll receive a confirmation email once your subscription is processed.
 
 <form action="https://submit-form.com/lVazsESIY">
     <input type="hidden" name="_redirect" value="{% fixed_full_url_for /subscribed %}"/>
