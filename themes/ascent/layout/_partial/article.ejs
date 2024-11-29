@@ -4,7 +4,9 @@
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
         <div class="article-meta">
-          <%- partial('post/date', {class_name: 'article-date', date_format: 'MMMM D, YYYY, HH:mm'}) %>
+          <% if (post.show_date){ %>
+            <%- partial('post/date', {class_name: 'article-date', date_format: 'MMMM D, YYYY, HH:mm'}) %>
+          <% } %>
           <% if (theme.word_count){ %>
             × <span class="article-word-count"><%= wordcount(post.content) %> words</span>
             <% if (min2read(post.content) == 1){ %>
