@@ -47,7 +47,7 @@ The mutation is a process of changing an individual randomly. In our example the
 
 The algorithm ends when on step 2 the fitness of the best individual is higher than some predefined threshold or the maximum number of iterations is reached.
 
-In our example we may find the best individual after a few iterations. It is the individual `1011` that represents the combination of the laptop, the phone and the watch. However, just like in with the real evolution, it is not guaranteed that the algorithm will find the most optimal solution.
+In our example we may find the best individual after a few iterations. It is the individual `1011` that represents the combination of the laptop, the phone and the watch. However, just like in with the real evolution, it is not guaranteed that the algorithm will find the most fit individual.
 
 # From Genetic Algorithms To Genetic Programming
 
