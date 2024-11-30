@@ -28,7 +28,7 @@ For example, you have a backpack that can hold `5 kg` and the following items:
 | Phone  | 1 kg   | 50 €  |
 | Watch  | 1 kg   | 70 €  |
 
-A combination of items is called a solution or, in the context of the genetic algorithms, an individual. An individual can be represented as a set of binary strings. For example, the string `1010` means that you put the laptop and the phone into the backpack. A set of individuals is called "population". 
+A combination of items is called a solution or, in the context of the genetic algorithms, an individual. In case if the backpack problem, an individual can be represented as a binary string. For example, the string `1010` means that you put the laptop and the phone into the backpack. A set of individuals is called a "population". 
 
 The genetic algorithms work as follows:
 
