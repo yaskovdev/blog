@@ -4,12 +4,14 @@ title: "Intro To Genetic Programming: Can Evolution Write Computer Programs?"
 date: 2024-11-29 14:41:57
 show_date: true
 image: /assets/tallinn.png
-categories: [ genetic-programming, push ]
+categories: [ genetic-algorithms, genetic-programming, push ]
 comments: true
 excerpt: Evolution is a powerful force. It has created the human brain, the eye's retina and the tapir. But can it write computer programs?
 ---
 
 Evolution is a powerful force. It has created the human brain, the eye's retina and the tapir. But can it write computer programs?
+
+{% asset_img tapir.png Tapir %}
 
 # Genetic Algorithms
 
@@ -57,28 +59,74 @@ Yes. You just need to replace the backpack items with the instructions of a prog
 
 Using genetic algorithms to write computer programs is called [genetic programming](https://en.wikipedia.org/wiki/Genetic_programming).
 
-### Push Programming Language
+# Push Programming Language
+
+But what programming language should we use to represent the individuals? Obviously, not every language suits this task. Consider the next valid C# program:
+
+```csharp
+int i = 10;
+int j = i - 2;
+```
+
+Now imagine that due to the crossover or mutation the instructions are swapped:
+
+```csharp
+int j = i - 2;
+int i = 10;
+```
+
+This program will not even compile. In fact, almost all the individuals of a population will not be valid programs, meaning that we won't be able to even calculate their fitness. Clearly, C# and similar languages are too strict for genetic programming.  We need a more forgiving language.
+
+One option is Perl. It is so forgiving that [93% of paint splatters are valid Perl programs](https://www.mcmillen.dev/sigbovik/).
+
+Another option is [Push](https://erp12.github.io/push-redux/pages/intro_to_push/). It is also very forgiving, however, it has an additional advantage: since it was created specifically for evolutionary computation, there is [a significant number of genetic programming frameworks for Push](http://faculty.hampshire.edu/lspector/push.html), meaning that you don't need to implement the steps the genetic algorithms yourself.
+
+Push is a very simple stack-backed language. The interpreter reads the instruction from left to right. If it sees an integer number, it pushes it to the stack. If it sees an operation, it applies it to the top elements of the stack.
+
+In addition to integers, Push has a few more types of data (float, boolean, code, etc.), each of which has its own stack. You can read more about Push in the [official documentation](http://faculty.hampshire.edu/lspector/push3-description.html).
 
 TODO: a few words about Turing-completeness of the Push.
 
-Were you ever wondering why is the part of our brain that is responsible for processing signals from our eyes located on the back side of our brain? Wouldn't it be more logical to put it to the front side? Or why the giraffe *** nerve is twice as long as its neck, while it could be only a couple of centimeters work?
+The above C# example would look like this in Push:
+
+```push
+(10 2 integer.-)
+```
+
+It says to the Push interpreter:
+
+1. Push `10` to the stack.
+2. Push `2` to the stack.
+3. Subtract the top two numbers from the stack and push the result back to the stack. The result will be `8`.
+
+The second example would be:
+
+```push
+(2 integer.- 10)
+```
+
+It says to the Push interpreter:
+
+1. Push `2` to the stack.
+2. Subtract the top two numbers from the stack and push the result back to the stack. However, we only have one number on the stack at the moment. But instead of raising an error the Push interpreter will simply ignore the instruction.
+3. Push `10` to the stack. So the result will be two numbers: `10 2`.
+
+# Running Genetic Programming With Push
+
+After checking the available Push implementations, I've ended up using the [Psh](https://github.com/yaskovdev/Psh) — a Push interpreter and genetic algorithm written in Java. It is simple, well-documented, supports most of the Push instructions and the necessary steps of the genetic algorithms (like crossover and mutation).
 
 How would you check if an integer number is even?
 
 I bet you would do something like this:
 
-```java
-boolean isEven(int number) {
-    return number % 2 == 0;
-}
+```csharp
+bool IsEven(int number) => number % 2 == 0;
 ```
 
 Or maybe like this, if you tend to preliminarily optimize your code:
 
-```java
-boolean isEven(int number) {
-    return number & 1 == 0;
-}
+```csharp
+bool IsEven(int number) => number & 1 == 0;
 ```
 
 In Push the solution would look like below one, assuming the input is on the integer stack.
@@ -108,9 +156,15 @@ Also correct, but I cannot say what it is doing:
 (float.rand (((exec.stackdepth integer.% exec.do*count) boolean.fromfloat ((((exec.stackdepth) boolean.swap code.do*count) integer.abs) boolean.not boolean.not boolean.not exec.do*count boolean.not)) float.pow ()) float.shove ())
 ```
 
+TODO: add visualization of the stack (GIF).
+
 The most crazy way:
 ```push
 (exec.equal boolean_swap float_add exec.yankdup exec.yankdup exec.y boolean.rot (code.cdr integer.stackdepth float.mult) integer.yank exec.equal integer.rot exec.equal boolean.not exec.y boolean.not)
 ```
+
+# Summary
+
+Were you ever wondering why is the part of our brain that is responsible for processing signals from our eyes located on the back side of our brain? Wouldn't it be more logical to put it to the front side? Or why the giraffe *** nerve is twice as long as its neck, while it could be only a couple of centimeters work?
 
 TODO: (false) vs (boolean.rand) (both are right in 50% of cases).
