@@ -36,11 +36,11 @@ The genetic algorithms work as follows:
 
 1. Randomly generate the initial population. In our case the population could be consisting of the next individuals:
 
-   | Individual |
-   |------------|
-   | `1000`     |
-   | `0110`     |
-   | `1110`     |
+   | Individual                                       |
+   |--------------------------------------------------|
+   | `1000` (take only the laptop)                    |
+   | `0110` (take the book and the phone)             |
+   | `1110` (take the laptop, the book and the phone) |
 2. Evaluate the fitness of each individual in the population. In our case, the fitness is the total value of the items in the backpack. Note that the fitness of the last individual is `0`. It is because its total weight exceeds our constraint (the maximum capacity of our backpack).
 
     | Individual | Total Weight | Total Value |
@@ -91,7 +91,7 @@ Another option is [Push](https://erp12.github.io/push-redux/pages/intro_to_push/
 
 ## Push
 
-Push is a very simple stack-backed language. The interpreter reads the instructions from left to right. If it sees a number, it pushes it to the stack. If it sees an operation, it pops the necessary elements from the stack, applies the operation to them and pushes the result back to the stack.
+Push is a very simple stack-backed interpreted language. The interpreter reads the instructions from left to right. If it sees a number, it pushes it to the stack. If it sees an operation, it pops the necessary elements from the stack, applies the operation to them and pushes the result back to the stack.
 
 In addition to the `integer`s, Push has a few more types of data: `boolean`, `float`, `code`, `exec` and `name`, each of which has its own stack. You can read more about Push in the [official documentation](http://faculty.hampshire.edu/lspector/push3-description.html).
 
@@ -156,9 +156,7 @@ Remember that the crossover is a process of creating a new individual by combini
 
 How do we combine two Push programs?
 
-Let's also remember that a program is a tree of instructions. Push programs are no exception.
-
-To combine two trees, we can select a random node from each tree and *swap the subtrees that root from that node*. The result will be two new trees. Since we only need one new individual, we can discard one of the new trees.
+A program is a tree of instructions. Push programs are no exception. To combine two trees, we can select a random node from each tree and *swap the subtrees that root from that node*. The result will be two new trees. Since we only need one new individual, we can discard one of the new trees.
 
 For example, if we have the next two trees and the random nodes are marked with yellow:
 
@@ -176,7 +174,9 @@ To mutate a push program we simply select a random subtree and replace it with a
 
 ## The Results
 
-Interesting way to check if a number from [0, 10) is even:
+### Solution 1
+
+Interesting way to check if a number is even:
 
 ```push
 (false code.quote boolean.not code.stackdepth code.do*range)
@@ -187,13 +187,68 @@ of the integer stack. The number on the top of the integer stack is what we want
 number is `n`). I.e., we apply `boolean.not` to `true` `n` times. If `n` is even, the result is `false`. If `n` is odd,
 the result is `true`.
 
+### Solution 2
+
 Correct way:
 ```push
-(exec.stackdepth (integer.% boolean.frominteger boolean.not) float.dup)
+(exec.stackdepth 
+    (integer.% boolean.frominteger boolean.not) float.dup)
 ```
-Interesting how the evolution invented the number 2: just the depth of the exec stack.
 
-TODO: add more cases and visualization of the stack (GIF).
+Note how the evolution invented the number `2`: just the depth of the execution stack (`exec.stackdepth`).
+
+### Solution 3
+
+```push
+(
+    exec.stackdepth
+        (integer.- exec.stackdepth)
+        (integer.% boolean.frominteger)
+        float.%
+)
+```
+
+It is equivalent to the following C# code:
+
+```csharp
+bool IsEven(int number) =>
+    Convert.ToBoolean((number - 3) % 2);
+```
+
+The evolution "invented" the numbers `3` and `2` again using the depth of the execution stack at certain points of the program execution.
+
+### Solution 4
+
+This is probably the worst possible way to check if a number is even.
+
+```push
+(integer.abs integer.neg true integer.dup integer.abs integer.pow exec.do*times code.= exec.= code.dup exec.do*times)
+```
+
+It only works if the absolute value of the number is `4` or bigger. It relies on the fact that the `execution-limit` was set to `150` during the evolution, meaning that no program was allowed to execute more than 150 instructions during the fitness calculation.
+
+It is equivalent to the following C# code:
+
+```csharp
+bool IsEven(int number)
+{
+    const int executionLimit = 150;
+    var answer = true;
+    for (var i = 0; i < Math.Pow(-Math.Abs(number), Math.Abs(number)); i++)
+    {
+        if (i == executionLimit)
+        {
+            return answer;
+        }
+
+        i = i + 1 - 1; // Do some dummy work
+    }
+
+    answer = false;
+
+    return answer;
+}
+```
 
 # Summary
 

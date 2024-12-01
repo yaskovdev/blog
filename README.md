@@ -17,7 +17,7 @@ http-server
 ## Build And Run Locally
 
 ```shell
-hexo server
+hexo clean && hexo server
 ```
 
 If you want Disqus to work locally, you need to add the following to your `hosts` file (`/private/etc/hosts` in macOS):
