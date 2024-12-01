@@ -6,10 +6,10 @@ show_date: true
 image: /assets/tallinn.png
 categories: [ genetic-algorithms, genetic-programming, push ]
 comments: true
-excerpt: Evolution is a powerful force. It has created the human brain, the eye's retina and the tapir. But can it write computer programs?
+excerpt: Evolution is a powerful force. It has created the eye’s retina, the human brain and the tapir. But can it write computer programs?
 ---
 
-Evolution is a powerful force. It has created the human brain, the eye's retina and the tapir. But can it write computer programs?
+Evolution is a powerful force. It has created the eye's retina, the human brain and the tapir. But can it write computer programs?
 
 {% asset_img tapir.png Tapir %}
 
@@ -19,7 +19,7 @@ I'm sure you have heard about the [genetic algorithms](https://www.mathworks.com
 
 One classic (and somewhat artificial) example of the problem that can be solved by the genetic algorithms is the backpack problem.
 
-It goes like this. You have a backpack and a set of items. Each item has a weight and a value. You have to put the items into the backpack so that the total weight does not exceed the maximum weight of the backpack and the total value of the items is maximized.
+It goes like this: You have a backpack and a set of items. Each item has a weight and a value. You need to pack the items into the backpack so that the total weight does not exceed its maximum capacity, while maximizing the total value of the items.
 
 For example, you have a backpack that can hold `5 kg` and the following items:
 
@@ -34,20 +34,26 @@ A combination of items is called a solution or, in the context of the genetic al
 
 The genetic algorithms work as follows:
 
-1. Randomly generate the initial population. In our case the population could be consisting of the next individuals: `{ 1000, 0110, 1110 }`.
-2. Evaluate the fitness of each individual in the population. In our case, the fitness is the total value of the items in the backpack. Note that the fitness of the last individual is `0`. It is because its total weight exceeds our constraint (the maximum weight of the backpack).
+1. Randomly generate the initial population. In our case the population could be consisting of the next individuals:
+
+   | Individual |
+   |------------|
+   | `1000`     |
+   | `0110`     |
+   | `1110`     |
+2. Evaluate the fitness of each individual in the population. In our case, the fitness is the total value of the items in the backpack. Note that the fitness of the last individual is `0`. It is because its total weight exceeds our constraint (the maximum capacity of our backpack).
 
     | Individual | Total Weight | Total Value |
     |------------|--------------|-------------|
     | `1000`     | 3 kg         | 150 €       |
     | `0110`     | 3 kg         | 150 €       |
     | `1110`     | 6 kg         | 0 €         |
-3. Select the best individuals ("parents") from the population. The selection is based on the fitness of the individuals. The higher the fitness, the higher the chance to become a parent. In our example the selection will be `{ 1000, 0110 }`.
+3. Select the best individuals ("parents") from the population. The selection is based on the fitness of the individuals. The higher the fitness, the higher the chance to become a parent. In our example the parents will be: `1000`, `0110`.
 4. Create a new population by crossing over or mutating the selected individuals. The crossover is a process of creating a new individual by combining two parents. The combining can be done in different ways. For example, you can take the first half of the first individual and the second half of the second individual.
 The mutation is a process of changing an individual randomly. In our example the new population could be `{ 1010, 0100, 1001 }`, where the first two individuals are the result of the crossover and the last one is the result of the mutation of one of the parents.
 5. Go to step 2.
 
-The algorithm ends when on step 2 the fitness of the best individual is higher than some predefined threshold or the maximum number of iterations is reached.
+The algorithm ends when on step 2 the fitness of the best individual is higher than some predefined threshold or the maximum number of iterations (also called "generations") is reached.
 
 In our example we may find the best individual after a few iterations. It is the individual `1011` that represents the combination of the laptop, the phone and the watch. However, just like in with the real evolution, it is not guaranteed that the algorithm will find the most fit individual.
 
@@ -59,41 +65,45 @@ Yes. You just need to replace the backpack items with the instructions of a prog
 
 Using genetic algorithms to write computer programs is called [genetic programming](https://en.wikipedia.org/wiki/Genetic_programming).
 
-# Push Programming Language
+# Finding The Right Language
 
-But what programming language should we use to represent the individuals? Obviously, not every language suits this task. Consider the next valid C# program:
+But what programming language should we use to represent the individuals? Not every language suits this task.
+
+Consider, for example, the next valid C# program:
 
 ```csharp
 int i = 10;
 int j = i - 2;
 ```
 
-Now imagine that due to the crossover or mutation the instructions are swapped:
+Now imagine that due to the crossover or mutation the instructions have swapped:
 
 ```csharp
 int j = i - 2;
 int i = 10;
 ```
 
-This program will not even compile. In fact, almost all the individuals of a population will not be valid programs, meaning that we won't be able to even calculate their fitness. Clearly, C# and similar languages are too strict for genetic programming.  We need a more forgiving language.
+This program will not compile. In fact, almost all the individuals of a population will be invalid programs, meaning that we won't be able to even calculate their fitness. Clearly, C# and similar languages are too strict for genetic programming.  We need a more forgiving language.
 
 One option is Perl. It is so forgiving that [93% of paint splatters are valid Perl programs](https://www.mcmillen.dev/sigbovik/).
 
-Another option is [Push](https://erp12.github.io/push-redux/pages/intro_to_push/). It is also very forgiving, however, it has an additional advantage: since it was created specifically for evolutionary computation, there is [a significant number of genetic programming frameworks for Push](http://faculty.hampshire.edu/lspector/push.html), meaning that you don't need to implement the steps the genetic algorithms yourself.
+Another option is [Push](https://erp12.github.io/push-redux/pages/intro_to_push/). It is also very forgiving, however, it has an additional advantage: since it was created specifically for evolutionary computation, there is [a significant number of genetic programming libraries for Push](http://faculty.hampshire.edu/lspector/push.html).
 
-Push is a very simple stack-backed language. The interpreter reads the instruction from left to right. If it sees an integer number, it pushes it to the stack. If it sees an operation, it applies it to the top elements of the stack.
+## Push
 
-In addition to integers, Push has a few more types of data (float, boolean, code, etc.), each of which has its own stack. You can read more about Push in the [official documentation](http://faculty.hampshire.edu/lspector/push3-description.html).
+Push is a very simple stack-backed language. The interpreter reads the instructions from left to right. If it sees a number, it pushes it to the stack. If it sees an operation, it pops the necessary elements from the stack, applies the operation to them and pushes the result back to the stack.
 
-TODO: a few words about Turing-completeness of the Push.
+In addition to the `integer`s, Push has a few more types of data: `boolean`, `float`, `code`, `exec` and `name`, each of which has its own stack. You can read more about Push in the [official documentation](http://faculty.hampshire.edu/lspector/push3-description.html).
 
-The above C# example would look like this in Push:
+The result of a program execution is what is left on the stack after the last instruction is executed.
+
+Our C# example would look like this in Push:
 
 ```push
 (10 2 integer.-)
 ```
 
-It says to the Push interpreter:
+It instructs the Push interpreter to:
 
 1. Push `10` to the stack.
 2. Push `2` to the stack.
@@ -105,15 +115,16 @@ The second example would be:
 (2 integer.- 10)
 ```
 
-It says to the Push interpreter:
+It says to the interpreter:
 
 1. Push `2` to the stack.
-2. Subtract the top two numbers from the stack and push the result back to the stack. However, we only have one number on the stack at the moment. But instead of raising an error the Push interpreter will simply ignore the instruction.
+2. Subtract the top two numbers from the stack and push the result back to the stack.
+   Oh no, we only have one number on the stack! The C# compiler would raise the error, but the Push interpreter will simply ignore the instruction and proceed as if nothing happened.
 3. Push `10` to the stack. So the result will be two numbers: `10 2`.
 
 # Running Genetic Programming With Push
 
-After checking the available Push implementations, I've ended up using the [Psh](https://github.com/yaskovdev/Psh) — a Push interpreter and genetic algorithm written in Java. It is simple, well-documented, supports most of the Push instructions and the necessary steps of the genetic algorithms (like crossover and mutation).
+After checking the available Push implementations, I've ended up using the [Psh](https://github.com/yaskovdev/Psh) — a Push interpreter and genetic algorithm written in Java. It is supports most of the Push instructions and the main stages of genetic algorithms (including crossover and mutation).
 
 How would you check if an integer number is even?
 
@@ -123,16 +134,47 @@ I bet you would do something like this:
 bool IsEven(int number) => number % 2 == 0;
 ```
 
-Or maybe like this, if you tend to preliminarily optimize your code:
+Or maybe like this:
 
 ```csharp
-bool IsEven(int number) => number & 1 == 0;
+bool IsEven(int number) => (number & 1) == 0;
 ```
 
-In Push the solution would look like below one, assuming the input is on the integer stack.
+In Push the solution would look like this, assuming the input is already on the integer stack:
+
 ```push
 (2 integer.% 0 integer.=)
 ```
+
+Now let's see how the evolution will tackle this task. For that, let's set up [the genetic programming problem](https://github.com/yaskovdev/Psh/blob/master/src/main/resources/gpsamples/IsNumberEven.pushgp).
+
+As you can see from the file, we are going to run up to `10000` generations maintaining the population of `700` individuals. At each iteration, `70%` of the population will be selected for the crossover and `30%` for the mutation.
+
+## Crossing Over Push Programs
+
+Remember that the crossover is a process of creating a new individual by combining two parents.
+
+How do we combine two Push programs?
+
+Let's also remember that a program is a tree of instructions. Push programs are no exception.
+
+To combine two trees, we can select a random node from each tree and *swap the subtrees that root from that node*. The result will be two new trees. Since we only need one new individual, we can discard one of the new trees.
+
+For example, if we have the next two trees and the random nodes are marked with yellow:
+
+{% asset_img before-crossing-over.png Before Crossing Over %}
+
+Then the result of the swapping will be:
+
+{% asset_img after-crossing-over.png After Crossing Over %}
+
+Now we can discard one of the trees and use another one as the new individual.
+
+## Mutating Push Programs
+
+To mutate a push program we simply select a random subtree and replace it with another randomly generated tree of instructions.
+
+## The Results
 
 Interesting way to check if a number from [0, 10) is even:
 
@@ -151,20 +193,9 @@ Correct way:
 ```
 Interesting how the evolution invented the number 2: just the depth of the exec stack.
 
-Also correct, but I cannot say what it is doing:
-```push
-(float.rand (((exec.stackdepth integer.% exec.do*count) boolean.fromfloat ((((exec.stackdepth) boolean.swap code.do*count) integer.abs) boolean.not boolean.not boolean.not exec.do*count boolean.not)) float.pow ()) float.shove ())
-```
-
-TODO: add visualization of the stack (GIF).
-
-The most crazy way:
-```push
-(exec.equal boolean_swap float_add exec.yankdup exec.yankdup exec.y boolean.rot (code.cdr integer.stackdepth float.mult) integer.yank exec.equal integer.rot exec.equal boolean.not exec.y boolean.not)
-```
+TODO: add more cases and visualization of the stack (GIF).
 
 # Summary
 
-Were you ever wondering why is the part of our brain that is responsible for processing signals from our eyes located on the back side of our brain? Wouldn't it be more logical to put it to the front side? Or why the giraffe *** nerve is twice as long as its neck, while it could be only a couple of centimeters work?
+Were you ever wondering why is the part of our brain that is responsible for processing signals from our eyes located on the back side of our brain? Wouldn't it be more logical to put it to the front side? Or why the giraffe recurrent laryngeal nerve is twice as long as its neck, while it could be only a couple of centimeters long?
 
-TODO: (false) vs (boolean.rand) (both are right in 50% of cases).
