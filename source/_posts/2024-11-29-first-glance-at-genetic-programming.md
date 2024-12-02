@@ -256,9 +256,9 @@ bool IsEven(int number)
 
 It also illustrates how `code.do*range` works: it runs given instructions in a loop, adjusting the current index — either increasing or decreasing it — to move closer to the destination index.
 
-# Solution 3: The Craziest, But Still Working
+# Solution 3: The Most Unconventional, Yet Functional
 
-This is probably the most inefficient way to check if a number is even, so don't use it in production. It perfectly illustrates that evolution can be very inventive, but it does not aim to find the best possible solution — only one that is good enough from the perspective of survival, which, in the case of genetic algorithms, is formalized as a fitness function.
+This is probably the most inefficient way to check if a number is even, so don’t use it in production. However, it’s fascinating to see how evolution arrived at this solution in such an unexpected way. It perfectly illustrates that evolution can be highly inventive, but it doesn’t aim to find the best possible solution — only one that is good enough for survival, which, in the case of genetic algorithms, is formalized as a fitness function.
 
 ```push
 (
