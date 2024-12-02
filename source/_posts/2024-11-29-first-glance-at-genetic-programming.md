@@ -163,7 +163,7 @@ If the program's output correctly matches the parity (even or odd) of the input,
 
 After all `50` tests are completed, the fitness function calculates and returns the average error across all tests.
 
-# How To Cross Over Push Programs?
+# How To Perform Crossover On Push Programs?
 
 Remember that the crossover is a process of creating a new individual by combining its parents.
 
