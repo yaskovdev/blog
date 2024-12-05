@@ -3,7 +3,7 @@ layout: post
 title:  "How Your Employer Makes You Steal Money"
 date:   2018-01-22 17:00:00 +0300
 show_date: true
-categories: [client, employer]
+categories: [ client, employer ]
 comments: true
 excerpt: "Speaking abstractly, there are many ways of how an unscrupulous person can steal your money. He can take your wallet by force. This is the most straightforward way, but risky for the thief. Alternatively, he can silently pull the wallet out of your pocket. Sneakier, but still risky. Or, he can take your money in exchange for goods or for a certain service, but then give you only half of what he initially promised. This is the safest and the “most civilized” option. So, not providing the agreed upon amount of work, but still demanding the same pay is as bad as stealing."
 ---

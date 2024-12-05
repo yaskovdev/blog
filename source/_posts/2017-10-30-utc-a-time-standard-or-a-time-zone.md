@@ -3,7 +3,7 @@ layout: post
 title:  "UTC – A Time Standard Or A Time Zone?"
 date:   2017-10-30 21:00:00 +0300
 show_date: true
-categories: [utc]
+categories: [ utc ]
 comments: true
 excerpt: "The short answer is both. Let me explain."
 ---

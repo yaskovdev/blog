@@ -2,8 +2,7 @@
 layout: post
 title:  "Using Genetic Programming To Evolve A Robocode Robot"
 date:   2020-01-20 21:00:00 +0300
-image: /assets/tallinn.png
-categories: city
+categories: [ city ]
 comments: true
 ---
 

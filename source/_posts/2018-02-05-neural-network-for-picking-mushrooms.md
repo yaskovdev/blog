@@ -3,7 +3,7 @@ layout: post
 title:  "Neural Network For Picking Mushrooms"
 date:   2018-02-05 11:00:00 +0300
 show_date: true
-categories: [scala, ann, knn]
+categories: [ scala, ann, knn ]
 comments: true
 excerpt: "Imagine yourself in a forest picking mushrooms, either for fun or, probably more likely, so you won’t starve to death. How do you decide if a mushroom is edible or poisonous? Is there a way to utilize an artificial neural network to help you with the decision? If so, can you come up with a simpler, but more efficient solution? Let’s figure it out!"
 ---

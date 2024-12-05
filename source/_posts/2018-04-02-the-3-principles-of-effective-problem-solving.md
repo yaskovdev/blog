@@ -3,7 +3,7 @@ layout: post
 title:  "The 3 Principles Of Effective Problem Solving"
 date:   2018-04-02 11:00:00 +0300
 show_date: true
-categories: [development]
+categories: [ development ]
 comments: true
 excerpt: "Imagine yourself watching your brain while thinking through the solution of a complex problem. Do you notice that this little rogue always tries to dodge the problem solving, switching completely irrelevant things?"
 ---

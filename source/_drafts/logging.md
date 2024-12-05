@@ -2,8 +2,7 @@
 layout: post
 title:  "Could logging be simpler?"
 date:   2017-09-23 17:28:39 +0300
-image: /assets/placeholder.png
-categories: guide java logging
+categories: [ guide java logging ]
 comments: true
 ---
 

@@ -2,8 +2,7 @@
 layout: post
 title:  "Time zones explained"
 date:   2017-07-05 17:00:00 +0300
-image: /assets/placeholder.png
-categories: jekyll update
+categories: [ jekyll update ]
 comments: true
 ---
 
@@ -77,10 +76,10 @@ But that's not enough again. Imagine the City ABC. It is located in such place t
 
 But as a result, our simple model with offsets does not work anymore. Now a time zone is not only current offset, but also all previous offsets. Other words, now a time zone also includes the history of the changes. Now time zone is not only the clock, but also the table with changes which looks somehow like this:
 
-Offset  |Valid until
---------|-----------------------
-UTC+3:00|20.08.2017 00:00 UTC
-UTC+4:00|n/a (still valid)
+| Offset   | Valid until          |
+|----------|----------------------|
+| UTC+3:00 | 20.08.2017 00:00 UTC |
+| UTC+4:00 | n/a (still valid)    |
 
 Do we need to keep all this historical data? Yes. Even to answer a simple question "How many seconds ago the event happened?" we need to know not only the current offset but also the offset at the moment of the event.
 

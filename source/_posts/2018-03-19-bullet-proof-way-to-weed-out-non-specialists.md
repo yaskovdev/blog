@@ -3,7 +3,7 @@ layout: post
 title:  "Bullet-Proof Way To Weed Out Non-Specialists"
 date:   2018-03-19 11:00:00 +0300
 show_date: true
-categories: [screening, reading]
+categories: [ screening, reading ]
 comments: true
 excerpt: "Imagine you are an interviewer. To check if a person is a non-specialist (someone who really has no clue about their supposed field), you have to ask a really simple question: \"Could you please recommend a book on your speciality?\""
 ---

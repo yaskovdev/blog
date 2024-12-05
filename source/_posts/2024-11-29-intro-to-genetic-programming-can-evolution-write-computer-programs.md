@@ -3,7 +3,6 @@ layout: post
 title: "Intro To Genetic Programming: Can Evolution Write Computer Programs?"
 date: 2024-11-29 14:41:57
 show_date: true
-image: /assets/tallinn.png
 categories: [ genetic-algorithms, genetic-programming, push, psh ]
 comments: true
 excerpt: Evolution is a powerful force. It has created the eye’s retina, the human brain and the tapir. But can it write computer programs?

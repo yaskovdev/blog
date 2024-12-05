@@ -3,7 +3,7 @@ layout: post
 title:  "Team-Building Is Your Enemy"
 date:   2018-05-28 11:00:00 +0300
 show_date: true
-categories: [development, testing]
+categories: [ development, testing ]
 comments: true
 excerpt: "Team-building is very useful for your career growth: it helps you build and maintain relationships with your colleagues and your employer. It also improves your performance in a team-based environment. Right? Not at all. In fact, it is an enemy of your career. Let me explain why."
 ---

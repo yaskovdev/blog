@@ -3,7 +3,7 @@ layout: post
 title:  "Happy Birthday, Mr. Johnson!"
 date:   2018-04-30 11:00:00 +0300
 show_date: true
-categories: [development, testing]
+categories: [ development, testing ]
 comments: true
 excerpt: "This happened a long time ago, when I was supporting production deployment of the large enterprise system of a bank."
 ---

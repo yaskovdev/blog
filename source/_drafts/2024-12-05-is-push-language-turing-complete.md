@@ -3,7 +3,6 @@ layout: post
 title: "Is Push Language Turing-Complete?"
 date: 2024-12-05 16:33:16
 show_date: true
-image: /assets/tallinn.png
 categories: [ push, psh, turing-completeness, universal-register-machine, urm ]
 comments: true
 excerpt: "Think of your favourite piece of software. It could be a web browser, a text editor, or a game. What programming language is it written in? Chances are, it's a high-level language like C++, Java, or Python. But could you rewrite the same software in a language like the assembly, or SQL, or HTML, or Factorio?"
@@ -11,7 +10,7 @@ excerpt: "Think of your favourite piece of software. It could be a web browser, 
 
 # Turing Completeness
 
-Think of your favourite piece of software. It could be a web browser, a text editor, or a game. What programming language is it written in? Chances are, it's a high-level language like C++, Java, or Python. But could you rewrite the same software in a language like the assembly, or SQL, or HTML, or [Factorio](https://www.youtube.com/watch?v=0bAuP0gO5pc)?
+Think of your favourite piece of software. It could be a web browser, a text editor, or a game. What programming language is it written in? Chances are, it's a high-level language like C++, Java, or Python. But could you rewrite the same software in a language like the assembly, or SQL, or HTML, or [Factorio](https://youtu.be/0bAuP0gO5pc)?
 
 Turns out that there is a property of programming languages that, if present, allows you to write any program in that language. This property is called Turing-completeness. A language is Turing-complete if it can simulate a Universal Turing Machine (UTM). A UTM is a theoretical machine that can simulate any algorithm, given enough time and memory.
 
