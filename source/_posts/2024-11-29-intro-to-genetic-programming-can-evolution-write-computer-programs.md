@@ -221,7 +221,7 @@ bool IsEven(int number) => !Convert.ToBoolean(number % 2);
 
 Note how it invented the number `2`: it's just the depth of the execution stack at the beginning of the execution (`exec.stackdepth`).
 
-The solution is also doing dummy work that does not bring us any closer to solving the problem (`float.dup`). This is a consequence of the fitness function imperfection. Indeed, our fitness function is not giving preference to concise and efficient solutions. Just like in the real world: if the natural selection does not favor a trait, the next generations will most likely not have it.
+The solution is also doing dummy work that does not bring us any closer to solving the problem (`float.dup`). This is a consequence of the fitness function imperfection. Indeed, our fitness function is not picking the most concise and efficient solutions. Just like in the real world: if the natural selection does not endorse a trait, the next generations will most likely not have it.
 
 # Solution 2: Less Expected
 
