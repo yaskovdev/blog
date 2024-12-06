@@ -5,7 +5,7 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
         <div class="article-meta">
           <% if (post.show_date){ %>
-            <%- partial('post/date', {class_name: 'article-date', date_format: 'MMMM D, YYYY, HH:mm'}) %>
+            <%- partial('post/date', {class_name: 'article-date', date_format: 'DD.MM.y'}) %>
           <% } %>
           <% if (theme.word_count){ %>
             × <span class="article-word-count"><%= wordcount(post.content) %> words</span>

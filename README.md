@@ -34,6 +34,8 @@ hexo server -p 80
 
 ## Deploy To GitHub Pages
 
+It will deploy the local version of the site to GitHub Pages.
+
 ```shell
 hexo clean && hexo deploy
 ```
