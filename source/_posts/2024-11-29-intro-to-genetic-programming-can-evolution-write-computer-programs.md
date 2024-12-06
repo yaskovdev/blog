@@ -305,6 +305,6 @@ For numbers `-2`, `0`, `2` it gives the wrong answer, because for them the `numb
 
 # To Summarize
 
-Can evolution write computer programs? Sure, it can. But as programmers, we must pay close attention to how we set up the evolutionary process. In particular, we need to design the fitness function carefully.
+Can evolution write computer programs? Sure, it can. And it can be very creative. But as programmers, we must pay close attention to how we set up the evolutionary process. In particular, we need to design the fitness function carefully.
 
 The true power of genetic programming lies in its ability to find solutions for tasks that are difficult for humans to solve. Next time, we'll take a look at one such task. Stay tuned!
