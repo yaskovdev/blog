@@ -34,7 +34,7 @@ Enter your email to unsubscribe and stop receiving updates.
     }
 </style>
 
-<form action="https://submit-form.com/lVazsESIY">
+<form method="POST" action="https://submit-form.com/lVazsESIY" data-botpoison-public-key="pk_bcda581e-0b42-49ea-af0e-8d66292d774f">
     <input type="hidden" name="_redirect" value="{% fixed_full_url_for /unsubscribed %}"/>
     <input type="hidden" name="_email.subject" value="Unsubscribe Me"/>
     <label for="email">Your email</label>

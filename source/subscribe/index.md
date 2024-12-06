@@ -34,7 +34,7 @@ comments: false
 
 Subscribe with your email to receive notifications whenever a new article is published. You’ll receive a confirmation email once your subscription is processed.
 
-<form action="https://submit-form.com/lVazsESIY">
+<form method="POST" action="https://submit-form.com/lVazsESIY" data-botpoison-public-key="pk_bcda581e-0b42-49ea-af0e-8d66292d774f">
     <input type="hidden" name="_redirect" value="{% fixed_full_url_for /subscribed %}"/>
     <input type="hidden" name="_email.subject" value="Subscribe Me"/>
     <label for="email">Your email</label>
