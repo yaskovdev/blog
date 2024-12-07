@@ -1,1 +1,0 @@
-Давайте не будем переходить на constructor based dependency injection.
