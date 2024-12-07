@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What HTTP Status Code Should My REST API Return?"
-date: 2024-11-03 14:20:19
+date: 2024-12-07 18:39:16
 show_date: true
 categories: [ development ]
 comments: true
