@@ -10,9 +10,9 @@ excerpt: "500, 400 and 404 are all you need."
 
 What HTTP status code should my REST API return? It is the question that developers ask themselves surprisingly often. Or maybe it's not that surprising: after all, the popularity of RESTful services keeps growing, errors always happen and there exist [a few dozens](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses) of the `4xx` and `5xx` status codes.
 
-# The Simple Rule
+# Who Is To Blame?
 
-Just like in the real life, if crap happens, first thing you need to ask is: who is to blame for what has happened?
+Just like in real life, when crap happens, the first thing you need to ask is: who is to blame for what has happened?
 
 There are only two possible answers: either the client or the server. Usually it is very easy to figure out which is guilty.
 
@@ -31,6 +31,8 @@ Modern frameworks for building REST APIs (like Spring or ASP.NET) provide a way 
 | `ServerErrorException`      | `500`            |
 | `ClientErrorException`      | `400`            |
 | `ResourceNotFoundException` | `404`            |
+
+Throw those exceptions in your code and let the framework handle the rest.
 
 # To Summarize
 
