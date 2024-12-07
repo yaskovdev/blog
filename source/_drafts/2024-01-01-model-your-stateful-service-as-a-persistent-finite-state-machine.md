@@ -13,6 +13,7 @@ One (though [not the only](https://github.com/NitorCreations/nflow)) way to thin
 What problems does nFlow (or other implementations of the persistent FSM) solve?
 
 1. Handling retries from upstream services (should be idempotent).
-2. TODO: check the work item you created earlier.
+2. Restoring the state of my system after a failure (an exception, a restart or a crash). By the way, another way is a persistent event log. It has its own trade-offs (TODO: what trade-offs?)
+3. TODO: check the work item you created earlier.
 
 The repository with the demo: https://github.com/yaskovdev/distributed-transaction-sandbox.
