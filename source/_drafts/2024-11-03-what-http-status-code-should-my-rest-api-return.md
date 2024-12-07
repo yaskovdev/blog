@@ -8,7 +8,9 @@ comments: true
 excerpt: "500, 400 and 404 are all you need."
 ---
 
-What HTTP status code should my REST API return? It is the question that developers ask themselves surprisingly often. Or maybe it's not that surprising: after all, the popularity of RESTful services keeps growing, errors always happen and there exist [a few dozens](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses) of the `4xx` and `5xx` status codes.
+What HTTP status code should my REST API return?
+
+It is the question that developers ask themselves surprisingly often. Or maybe it's not that surprising: after all, the popularity of RESTful services keeps growing, errors always happen and there exist [a few dozens](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses) of the `4xx` and `5xx` status codes.
 
 # Who Is To Blame?
 
