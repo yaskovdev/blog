@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "Is Push Language Turing-Complete?"
+title: "Is It Possible to Write Complex Programs in Push?"
 date: 2024-12-05 16:33:16
 show_date: true
 categories: [ push, psh, turing-completeness, universal-register-machine, urm ]
 comments: true
-excerpt: "Think of your favourite piece of software. It could be a web browser, a text editor, or a game. What programming language is it written in? Chances are, it's a high-level language like C++, Java, or Python. But could you rewrite the same software in a language like the assembly, or SQL, or HTML, or Factorio?"
+excerpt: "At first, Push might seem like a toy language that can’t do much. But is that true? Let’s find out."
 ---
+
+If you’re wondering what Push is and why it’s needed, you might have missed my earlier article. You can catch up by reading {% post_link 2024-11-29-intro-to-genetic-programming-can-evolution-write-computer-programs '"Intro To Genetic Programming: Can Evolution Write Computer Programs?"' %}. Alternatively, you can quickly learn about Push [here](https://erp12.github.io/push-redux/pages/intro_to_push/).
 
 # Turing Completeness
 
