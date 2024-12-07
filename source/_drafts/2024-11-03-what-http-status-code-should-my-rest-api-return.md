@@ -12,15 +12,17 @@ What HTTP status code should my REST API return?
 
 It is the question that developers ask themselves surprisingly often. Or maybe it's not that surprising: after all, the popularity of RESTful services keeps growing, errors always happen and there exist [a few dozens](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses) of the `4xx` and `5xx` status codes.
 
+{% asset_img client-vs-server.png Client Vs. Server %}
+
 # Who Is To Blame?
 
 Just like in real life, when crap happens, the first thing you need to ask is: who is to blame for what has happened?
 
-There are only two possible answers: either the client or the server. Usually it is very easy to figure out which is guilty.
+There are only two possible answers: either the client or the server. Usually, it is very easy to figure out which one is guilty.
 
-If the server is to blame, this is a server error, return `500`.
+If the server is to blame, this is a server error — return `500`.
 
-If the client is to blame, this is a client error, return `400`. 
+If the client is to blame, this is a client error — return `400`. 
 
 One common category of client errors is when the client requests a non-existing resource. In this case, return `404`.
 
@@ -40,6 +42,6 @@ Throw those exceptions in your code and let the framework handle the rest.
 
 Keep things simple. Do not make up complex rules trying to categorize errors as "business" or "technical" and then look for the HTTP codes to map to those categories.
 
-Do not try to be too specific trying to map every possible error to an HTTP error code: there is no requirement for you to utilize all the existing HTTP error codes.
+Do not try to be too specific trying to map every possible error to its own HTTP error code: there is no requirement for you to utilize all the existing HTTP error codes.
 
 `500`, `400` and `404` are all you need. Keep things as simple as possible as long as possible and only make them more complex if it's absolutely necessary.
