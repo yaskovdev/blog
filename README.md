@@ -17,8 +17,10 @@ http-server
 ## Build And Run Locally
 
 ```shell
-hexo clean && hexo server
+hexo clean && hexo server --draft
 ```
+
+The option `--draft` will render drafts, see [this section](https://hexo.io/docs/writing.html#Drafts) for more info.
 
 If you want Disqus to work locally, you need to add the following to your `hosts` file (`/private/etc/hosts` in macOS):
 
