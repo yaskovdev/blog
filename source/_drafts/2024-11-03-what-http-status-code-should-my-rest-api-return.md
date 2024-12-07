@@ -8,7 +8,7 @@ comments: true
 excerpt: "500, 400 and 404 are all you need."
 ---
 
-What HTTP status code should my REST API return? It is the question that developers ask themselves surprisingly often. Or maybe it's not that surprising: after all, the popularity of RESTful services is growing, errors always happen and there exist [a few dozens](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses) of the `4xx` and `5xx` status codes (the list keeps growing).
+What HTTP status code should my REST API return? It is the question that developers ask themselves surprisingly often. Or maybe it's not that surprising: after all, the popularity of RESTful services keeps growing, errors always happen and there exist [a few dozens](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses) of the `4xx` and `5xx` status codes.
 
 # The Simple Rule
 
@@ -16,13 +16,15 @@ Just like in the real life, if crap happens, first thing you need to ask is: who
 
 There are only two possible answers: either the client or the server. Usually it is very easy to figure out which is guilty.
 
-If the server is to blame, return `500`.
+If the server is to blame, this is a server error, return `500`.
 
-If the client is to blame, return `400`. 
+If the client is to blame, this is a client error, return `400`. 
 
-It is also very common to treat a situation when the client requested a non-existing resource separately, so you can return `404` in this case.
+One common category of client errors is when the client requests a non-existing resource. In this case, return `404`.
 
-Modern frameworks for building REST APIs (like Spring or ASP.NET) provide a way to map custom exceptions to HTTP status codes. You can introduce the next custom exception and map them in this way:
+# A Few Words About Custom Exceptions
+
+Modern frameworks for building REST APIs (like Spring or ASP.NET) provide a way to map custom exceptions to HTTP status codes. You can introduce the next custom exceptions and map them to the status codes like this:
 
 | Custom Exception            | HTTP Status Code |
 |-----------------------------|------------------|
@@ -32,8 +34,8 @@ Modern frameworks for building REST APIs (like Spring or ASP.NET) provide a way 
 
 # To Summarize
 
-Keep things simple. No need to invent complex rules trying to figure out whether it is a "business" or a "technical" error and then to try to find the HTTP codes to map those categories to.
+Keep things simple. Do not make up complex rules trying to categorize errors as "business" or "technical" and then look for the HTTP codes to map to those categories.
 
-Do not try to be too specific about what happened: there is no requirement for you to utilize all the existing HTTP error codes.
+Do not try to be too specific trying to map every possible error to an HTTP error code: there is no requirement for you to utilize all the existing HTTP error codes.
 
-`500`, `400` and `404` are all you need. Keep things simple as long as possible and only make them more complex if it's absolutely necessary.
+`500`, `400` and `404` are all you need. Keep things as simple as possible as long as possible and only make them more complex if it's absolutely necessary.
