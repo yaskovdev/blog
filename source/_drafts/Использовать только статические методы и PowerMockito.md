@@ -1,0 +1,1 @@
+Note: works for stateless services only.

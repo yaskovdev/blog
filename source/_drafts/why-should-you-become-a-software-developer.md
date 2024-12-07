@@ -6,7 +6,8 @@ categories: [ jekyll update ]
 comments: true
 ---
 
-И как в этом может помочь программирование.
+You can contribute to the most cool projects in the world:
+
 1. Победил смерть
 2. И старение
 3. Изобрёл лекарство от рака

@@ -9,7 +9,7 @@ excerpt: "what-every-programmer-needs-to-know"
 ---
 
 * Algorithms and data structures: basics.
-* Basic communication skills (how not to be an asshole)
+* Basic communication skills (how not to be an asshole; https://nohello.net/en/)
 * "Boring" security basics
 * chmod (basic Linux commands)
 * DB indexes (both for SQL and noSQL, they are different)

@@ -1,1 +1,0 @@
-Why years of experience is bullshit? Usually a person spends 2 hours to grow. Motivated person can spend 16.
