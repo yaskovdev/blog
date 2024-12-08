@@ -8,15 +8,17 @@ comments: true
 excerpt: "At first, Push might seem like a toy language that can’t do much. But is that true? What makes a language capable of expressing any kind of software — from Minesweeper to a full-fledged operating system like macOS or Windows? Let’s find out."
 ---
 
+At first, Push might seem like a toy language that can’t do much. But is that true? What makes a language capable of expressing any kind of software — from Minesweeper to a full-fledged operating system like macOS or Windows? Let’s find out.
+
 If you’re wondering what Push is and what it was created for, you might have missed my previous article. You can catch up by reading {% post_link 2024-11-29-intro-to-genetic-programming-can-evolution-write-computer-programs '"Intro To Genetic Programming: Can Evolution Write Computer Programs?"' %}. Alternatively, you can quickly learn about Push [here](https://erp12.github.io/push-redux/pages/intro_to_push/).
 
 {% asset_img turing-completeness.png Turing Completeness %}
 
 # Turing Completeness
 
-Think of your favourite piece of software. It could be a web browser, a text editor, or a game. What programming language is it written in? Chances are, it's a high-level language like C++, Java, or Python. But could you rewrite the same software in a language like the assembly, or SQL, or HTML, or [Conway's Game of Life](https://youtu.be/Kk2MH9O4pXY)?
+Think of your favourite piece of software. It could be a web browser, a text editor, or a game. What programming language is it written in? Chances are, it's a high-level language like C++, Java, or Python. But have you ever wondered if you can, at least in theory, rewrite the same software in SQL, HTML, or [Conway's Game of Life](https://youtu.be/Kk2MH9O4pXY)?
 
-Turns out that there is a property of programming languages that, if present, allows you to write any program in that language. This property is called Turing-completeness. A language is Turing-complete if it can simulate a Universal Turing Machine (UTM). A UTM is a theoretical machine that can simulate any algorithm, given enough time and memory.
+Turns out that there is a property of programming languages that, if present, allows you to write any program in that language. This property is called Turing-completeness. A language is [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) if you can use it to simulate any Turing machine.
 
 # Is Push Language Turing-Complete?
 
