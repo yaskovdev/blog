@@ -20,7 +20,7 @@ If you’re wondering what I'm talking about, you might have missed my previous 
 
 If only we could prove that Push is Turing-complete...
 
-Push being Turing-complete means that we can compute the whole set of computable functions in it.
+It would mean that we could compute the whole set of computable functions with Push.
 
 According to the Church–Turing thesis, computable functions are exactly the functions that can be computed using a mechanical calculation device given unlimited amounts of time and storage space ([source](https://en.wikipedia.org/wiki/Computable_function)).
 
