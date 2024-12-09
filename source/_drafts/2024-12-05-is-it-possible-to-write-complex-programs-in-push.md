@@ -54,16 +54,16 @@ The language maintains an array of registers. Each register can store an integer
 
 Some URM program examples:
 
-Swap non-negative values in registers `1` and `2`:
-
-```urm
-(s1;a3)1; (s2;a1)2; (a2;s3)3.
-```
-
 Add register 3 to register 2:
 
 ```urm
 (a2;s3)3.
+```
+
+Swap non-negative values in registers `1` and `2`:
+
+```urm
+(s1;a3)1; (s2;a1)2; (a2;s3)3.
 ```
 
 Multiply register 2 with register 3:
