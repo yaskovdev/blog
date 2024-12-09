@@ -5,32 +5,74 @@ date: 2024-12-05 16:33:16
 show_date: true
 categories: [ push, psh, turing-completeness, universal-register-machine, urm ]
 comments: true
-excerpt: "At first, Push might seem like a toy language that can’t do much. But is that true? What makes a language capable of expressing any kind of software — from Minesweeper to a full-fledged operating system like macOS or Windows? Let’s find out."
+excerpt: "When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough for any piece of software to be written in it?"
 ---
 
-At first, Push might seem like a toy language that can’t do much. But is that true? What makes a language capable of expressing any kind of software — from Minesweeper to a full-fledged operating system like macOS or Windows? Let’s find out.
+When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough for _any_ piece of software to be written in it?
 
-If you’re wondering what Push is and what it was created for, you might have missed my previous article. You can catch up by reading {% post_link 2024-11-29-intro-to-genetic-programming-can-evolution-write-computer-programs '"Intro To Genetic Programming: Can Evolution Write Computer Programs?"' %}. Alternatively, you can quickly learn about Push [here](https://erp12.github.io/push-redux/pages/intro_to_push/).
+If yes, then artificial evolution equipped with Push will eventually create arbitrarily complex software for us. If no, then there will always be programs that it will never produce, no matter how long we wait. In this case the question is: what are those "unreachable" programs?
+
+If you’re wondering what I'm talking about, you might have missed my previous article. You can catch up by reading {% post_link 2024-11-29-intro-to-genetic-programming-can-evolution-write-computer-programs '"Intro To Genetic Programming: Can Evolution Write Computer Programs?"' %}. Alternatively, you can quickly learn about Push [here](https://erp12.github.io/push-redux/pages/intro_to_push/).
 
 {% asset_img turing-completeness.png Turing Completeness %}
 
 # Turing Completeness
 
-Think of your favourite piece of software. It could be a web browser, a text editor, or a game. What programming language is it written in? Chances are, it's a high-level language like C++, Java, or Python. But have you ever wondered if you can, at least in theory, rewrite the same software in SQL, HTML, or [Conway's Game of Life](https://youtu.be/Kk2MH9O4pXY)?
+If only we could prove that Push is Turing-complete...
 
-Turns out that there is a property of a programming language that, if present, allows you to use that language [to solve any problem that can be solved using a computer](https://www.lenovo.com/us/en/glossary/what-is-turing-completeness/). This property is called Turing-completeness. A language is Turing-complete if you can implement any computable function in that language.
+Push being Turing-complete means that we can compute the whole set of computable functions in it.
 
-A computable function is a function that you can express with a Turing machine. I.e., you can construct a Turing machine that for any input of the function will produce the same output as the function.
+According to the Church–Turing thesis, computable functions are exactly the functions that can be computed using a mechanical calculation device given unlimited amounts of time and storage space ([source](https://en.wikipedia.org/wiki/Computable_function)).
 
-# Is Push Language Turing-Complete?
+From this we could conclude that there is nothing that a computer can do that Push cannot.
 
-We have already discussed Push language in the previous article. It is a stack-based language that is [not intended for people to write computer programs in](https://youtu.be/ryW9w5cAwaI?t=26). Instead, it is used in genetic programming and allows genetic algorithms to do that job.
+This would mean that evolutionary process equipped with Push, at least in theory, would be capable of producing arbitrarily complex software, provided it was given enough time and storage space.
 
-When I only started to learn about Push, I was curious whether it is powerful enough for any piece of software to be written in it. In other words, is Push Turing-complete?
+# How To Prove Turing Completeness?
 
-If yes, then evolution could potentially write any software for us (just need to figure out where to take the computing power to speed up the process a little bit). If no, then we need to find another language for genetic programming.
+There are [three ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete:
+
+1. Show there is some mapping from each possible Turing machine to a program in the language.
+2. Show that there is a program in the language that emulates a Universal Turing Machine (think of it as a programmable Turing machine).
+3. Show that the language is equivalent with (or a superset of) a language that is known to be Turing-complete.
+
+Let's try the third way: Instead of proving that Push is Turing-complete, let's try to find a Turing-complete language and prove the language to be Push-complete.
+
+Ideally, the language should either be very simple, or very similar to Push.
 
 # Universal Register Machine
+
+One of the simplest Turing-complete languages I've found is the Universal Register Machine (URM).
+
+The language maintains an array of registers. Each register can store an integer. The language has only five commands:
+
+1. `an` — increment register `n`,
+2. `sn` — decrement register `n`,
+3. `x;y` — execute command x and then y,
+4. `(x)n` — execute command `x` while register `n` is nonzero,
+5. `.` — halt.
+
+Some URM program examples:
+
+Swap non-negative values in registers `1` and `2`:
+
+```urm
+(s1;a3)1; (s2;a1)2; (a2;s3)3.
+```
+
+Add register 3 to register 2:
+
+```urm
+(a2;s3)3.
+```
+
+Multiply register 2 with register 3:
+
+```urm
+a4;a5;s2)2; ((a2;s4)4; s3; (a1;a4;s5)5; (a5;s1)1)3.
+```
+
+# Psh Improvements
 
 1. Add multiline support.
 2. Add a way to leave comments.
