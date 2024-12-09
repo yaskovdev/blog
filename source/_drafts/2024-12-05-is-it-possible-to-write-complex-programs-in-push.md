@@ -20,13 +20,13 @@ If you’re wondering what I'm talking about, you might have missed my previous 
 
 If only we could prove that Push is Turing-complete...
 
-It would mean that we could compute the whole set of computable functions with Push.
+This would mean that we could compute the whole set of computable functions with Push (see [this great article](https://evinsellin.medium.com/what-exactly-is-turing-completeness-a08cc36b26e2) for more details).
 
 According to the Church–Turing thesis, computable functions are exactly the functions that can be computed using a mechanical calculation device given unlimited amounts of time and storage space ([source](https://en.wikipedia.org/wiki/Computable_function)).
 
-From this we could conclude that there is nothing that a computer can do that Push cannot.
+From this, we could conclude that there is nothing a computer can do that Push cannot.
 
-This would mean that evolutionary process equipped with Push, at least in theory, would be capable of producing arbitrarily complex software, provided it was given enough time and storage space.
+This would imply that an evolutionary process equipped with Push, at least in theory, could produce arbitrarily complex software, as long as it had sufficient time and storage space.
 
 # How To Prove Turing Completeness?
 
@@ -42,7 +42,7 @@ Ideally, the language should either be very simple, or very similar to Push.
 
 # Universal Register Machine
 
-One of the simplest Turing-complete languages I've found is the Universal Register Machine (URM).
+One of the simplest [Turing-complete](http://brainfuck.org/urmutm.txt) languages I've found is the Universal Register Machine (URM).
 
 The language maintains an array of registers. Each register can store an integer. The language has only five commands:
 
