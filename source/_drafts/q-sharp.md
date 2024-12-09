@@ -1,1 +1,1 @@
-Q#
+Q#, see https://learn.microsoft.com/en-us/azure/quantum/qsharp-overview.

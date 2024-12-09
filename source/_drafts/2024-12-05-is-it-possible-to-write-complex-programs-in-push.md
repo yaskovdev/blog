@@ -18,15 +18,13 @@ If you’re wondering what I'm talking about, you might have missed my previous 
 
 # Turing Completeness
 
-If only we could prove that Push is Turing-complete...
+If we could prove that Push is Turing-complete, it would mean that Push can compute any function that is computable. [This article](https://evinsellin.medium.com/what-exactly-is-turing-completeness-a08cc36b26e2) provides a great explanation of Turing-completeness.
 
-This would mean that we could compute the whole set of computable functions with Push (see [this great article](https://evinsellin.medium.com/what-exactly-is-turing-completeness-a08cc36b26e2) for more details).
+According to the Church–Turing thesis, any mechanical device, no matter how complex, can compute only computable functions ([source](https://en.wikipedia.org/wiki/Computable_function)).
 
-According to the Church–Turing thesis, computable functions are exactly the functions that can be computed using a mechanical calculation device given unlimited amounts of time and storage space ([source](https://en.wikipedia.org/wiki/Computable_function)).
+This would mean that anything a computer can do, Push could also do.
 
-From this, we could conclude that there is nothing a computer can do that Push cannot.
-
-This would imply that an evolutionary process equipped with Push, at least in theory, could produce arbitrarily complex software, as long as it had sufficient time and storage space.
+In theory, this implies that an evolutionary process using Push could eventually create software of unlimited complexity, provided it had enough time and storage space.
 
 # How To Prove Turing Completeness?
 
