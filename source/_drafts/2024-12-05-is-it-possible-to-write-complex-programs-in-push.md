@@ -8,9 +8,9 @@ comments: true
 excerpt: "When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough for any piece of software to be written in it?"
 ---
 
-When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough for _any_ piece of software to be written in it?
+When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough to express _any_ piece of software?
 
-If yes, then artificial evolution equipped with Push will eventually create arbitrarily complex software for us. If no, then there will always be programs that it will never produce, no matter how long we wait. In this case the question is: what are those "unreachable" programs?
+If it is, then artificial evolution "equipped" with Push will eventually create arbitrarily complex software. If it isn't, there will always be programs that it will never produce, no matter how long we wait. In this case the question becomes: what are those "unreachable" programs?
 
 If you’re wondering what I'm talking about, you might have missed my previous article. You can catch up by reading {% post_link 2024-11-29-intro-to-genetic-programming-can-evolution-write-computer-programs '"Intro To Genetic Programming: Can Evolution Write Computer Programs?"' %}. Alternatively, you can quickly learn about Push [here](https://erp12.github.io/push-redux/pages/intro_to_push/).
 
