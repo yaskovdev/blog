@@ -67,8 +67,10 @@ Swap non-negative values in registers `1` and `2`:
 Multiply register 2 with register 3:
 
 ```urm
-a4;a5;s2)2; ((a2;s4)4; s3; (a1;a4;s5)5; (a5;s1)1)3.
+(a4;a5;s2)2; ((a2;s4)4; s3; (a1;a4;s5)5; (a5;s1)1)3.
 ```
+
+TODO: it's enough to emulate an URM with 5 registers.
 
 # Psh Improvements
 
