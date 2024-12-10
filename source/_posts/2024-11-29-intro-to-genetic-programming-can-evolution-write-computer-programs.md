@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Intro To Genetic Programming: Can Evolution Write Computer Programs?"
+title: "Intro to Genetic Programming: Can Evolution Write Computer Programs?"
 date: 2024-11-29 14:41:57
 show_date: true
-categories: [ genetic-algorithms, genetic-programming, push, psh ]
+categories: [ genetic-algorithm, genetic-programming, push, psh ]
 comments: true
 excerpt: Evolution is a powerful force. It has created the eye’s retina, the human brain and the tapir. But can it write computer programs?
 ---
@@ -14,13 +14,13 @@ Evolution is a powerful force. It has generated the incredible diversity of life
 
 # Genetic Algorithms
 
-I'm sure you have heard about the [genetic algorithms](https://www.mathworks.com/help/gads/what-is-the-genetic-algorithm.html). They are a method of solving optimization problems that is based on natural selection, the process that drives biological evolution.
+I'm sure you have heard about the [genetic algorithm](https://www.mathworks.com/help/gads/what-is-the-genetic-algorithm.html). It is a method of solving optimization problems that is based on natural selection, the process that drives biological evolution.
 
-One classic (and somewhat artificial) problem that genetic algorithms can solve is the backpack problem.
+One classic (and somewhat artificial) problem that the genetic algorithm can solve is the backpack problem.
 
-It goes like this: You have a backpack and a set of items. Each item has a weight and a value. You need to pack the items into the backpack so that the total weight does not exceed its maximum capacity, while maximizing the total value of the items.
+It goes like this: You have a backpack and a set of items. Each item has a weight and a value. You need to pack the items into the backpack so that the total weight does not exceed its maximum capacity, while simultaneously maximizing the total value of the items.
 
-For example, you have a backpack that can hold `5 kg` and the following items:
+Let's say you have a backpack that can hold `5 kg` and the following items:
 
 | Item   | Weight | Value |
 |--------|--------|-------|
@@ -31,40 +31,40 @@ For example, you have a backpack that can hold `5 kg` and the following items:
 
 A combination of items is called a solution or, in the context of the genetic algorithms, an individual. The solution can be represented as a binary string (a string that consists of `0`s and `1`s). For example, the string `1010` means that you put the laptop and the phone into the backpack. A set of solutions (individuals) is called a "population". 
 
-The genetic algorithms work as follows:
+The genetic algorithm works as follows:
 
-1. Randomly generate the initial population. In our case the population could be consisting of the next individuals:
+* __Step 1.__ Randomly generates the initial population. In our case, the population could consist of the following individuals:
 
    | Individual                                       |
    |--------------------------------------------------|
    | `1000` (take only the laptop)                    |
    | `0110` (take the book and the phone)             |
    | `1110` (take the laptop, the book and the phone) |
-2. Evaluate the fitness of each individual in the population. In our example, the fitness is the total value of the items in the backpack. Note that the fitness of the last individual is `0`. It is because its total weight exceeds our constraint (the maximum capacity of our backpack).
+* __Step 2.__ Evaluates the fitness of each individual in the population. In our example, the fitness is the total value of the items in the backpack. Note that the fitness of the last individual is `0`. This is because its total weight exceeds our constraint (the maximum capacity of our backpack).
 
     | Individual | Total Weight | Total Value |
     |------------|--------------|-------------|
     | `1000`     | 3 kg         | 150 €       |
     | `0110`     | 3 kg         | 150 €       |
     | `1110`     | 6 kg         | 0 €         |
-3. Select the best individuals ("parents") from the population. The selection is based on the fitness of the individuals. The higher the fitness, the higher the chance to become a parent. In our example `1000` and `0110` will become the parents.
-4. Create a new population by crossing over or mutating the parents. The crossover is a process of creating a new individual by combining two parents. The combining can be done in different ways. For example, you can take the first half of the first parent and the second half of the second parent.
+* __Step 3.__ Selects the best individuals ("parents") from the population. The selection is based on the fitness of the individuals. The higher the fitness, the higher the chance to become a parent. In our example `1000` and `0110` will become the parents.
+* __Step 4.__ Creates a new population by either crossing over or mutating the parents. The crossover is a process of creating a new individual by combining two parents. The combining can be done in different ways. For example, you can take the first half of the first parent and the second half of the second parent.
 The mutation is a process of changing an individual randomly. In our example the new population could be: `1010`, `0100`, `1001`, where the first two individuals are the result of the crossover and the last one is the result of the mutation of one of the parents.
-5. Go to step 2.
+* __Step 5.__ Goes to Step 2.
 
-The algorithm ends when on step 2 the fitness of the best individual is higher than some predefined threshold or the maximum number of iterations (also called "generations") is reached.
+The algorithm ends when, on Step 2, the fitness of the best individual is higher than some predefined threshold _or_ the maximum number of iterations (also called "generations") is reached.
 
-In our example the algorithm will likely find the best individual after just a few iterations. It is the individual `1011` that represents the combination of the laptop, phone and watch with a total value of `270 €`. However, just like in real evolution, the algorithm does not guarantee finding the most fit individual.
+In our example, the algorithm will likely find the best individual after just a few iterations. It is the individual `1011` that represents the combination of the laptop, phone and watch with a total value of `270 €`. However, just like in the real evolutionary process, the algorithm does not guarantee the outcome of finding the most fit individual.
 
-# From Genetic Algorithms To Genetic Programming
+# From Genetic Algorithms to Genetic Programming
 
-Let us now replace the backpack items with instructions of a programming language. Then our individuals become computer programs. The fitness of the individuals is evaluated based on the result of the program execution. The crossover and mutation stay almost the same (we will return to them below).
+Let us now replace the backpack items with the instructions of a programming language. Now, our individuals become computer programs. The fitness of the individuals is evaluated based on the result of the program execution. The crossover and mutation stay almost the same (we will return to them below).
 
 Using genetic algorithms to create computer programs is called [genetic programming](https://en.wikipedia.org/wiki/Genetic_programming).
 
-# Finding The Right Language
+# Finding the Right Language
 
-But what programming language should we use to represent the individuals, i.e., our computer programs? Not every language suits this task.
+So, what programming language should we use to represent the individuals, i.e., our computer programs? Not every language suits this task.
 
 Consider, for example, the next valid C# code:
 
@@ -73,14 +73,14 @@ int i = 10;
 int j = i - 2;
 ```
 
-Now imagine that due to the crossover or mutation the instructions have swapped:
+Now, imagine that due to the crossover or mutation, the instructions have swapped:
 
 ```csharp
 int j = i - 2;
 int i = 10;
 ```
 
-This program will not compile. In fact, almost all the individuals produced by crossover and mutation will be invalid programs, meaning that we won't be able to even calculate their fitness. Clearly, C# and similar languages are too strict for genetic programming.  We need a more forgiving language.
+This program will not compile. In fact, almost all the individuals produced by crossover and mutation will be invalid programs, meaning that we won't even be able to calculate their fitness. Clearly, C# and similar languages are too strict for genetic programming.  We need a more forgiving language.
 
 One obvious option is Perl: it is so forgiving that [93% of paint splatters are valid Perl programs](https://www.mcmillen.dev/sigbovik/).
 
@@ -90,7 +90,7 @@ The other option is [Push](https://erp12.github.io/push-redux/pages/intro_to_pus
 
 Push is a very simple stack-backed interpreted language. The interpreter reads the instructions from left to right. If it sees a number, it pushes it to the stack. If it sees an operation, it pops the necessary elements from the stack, applies the operation to them and pushes the result back to the stack.
 
-In addition to the `integer`s, Push has a few more types of data: `boolean`, `float`, `code`, `exec` and `name`, each of which has its own stack. You can read more about Push in the [official documentation](http://faculty.hampshire.edu/lspector/push3-description.html).
+In addition to the `integer`s, Push has a few more types of data: `boolean`, `float`, `code`, `exec` and `name`, each of which has its own stack. You can read more about Push in the [official description](http://faculty.hampshire.edu/lspector/push3-description.html).
 
 Whatever remains on the stack after the final instruction is considered the result of the program's execution.
 
@@ -122,11 +122,11 @@ It says to the interpreter:
 
 The result of the program execution is two numbers: `10 2`.
 
-# Psh: Genetic Programming With Push
+# Psh: Genetic Programming with Push
 
 After checking the available Push implementations, I ended up using [Psh](https://github.com/yaskovdev/Psh) — a Push interpreter and genetic algorithm written in Java. It supports most of the Push instructions and the main stages of genetic algorithms (including crossover and mutation).
 
-# The Problem: Checking If A Number Is Even
+# The Problem: Checking if a Number is Even
 
 Let's consider a simple problem: checking if an integer number is even.
 
@@ -162,13 +162,13 @@ If the program's output correctly matches the parity (even or odd) of the input,
 
 After all `50` tests are completed, the fitness function calculates and returns the average error across all tests.
 
-# How To Perform Crossover On Push Programs?
+# How to Perform Crossover on Push Programs
 
-Remember that the crossover is a process of creating a new individual by combining its parents.
+Remember that crossover is the process of creating a new individual by combining its parents.
 
-How do we combine two Push programs?
+So, how do we combine two Push programs?
 
-A program is a tree of instructions. Push programs are no exception. To combine two trees, we can select a random node from each tree and *swap the subtrees that root from that node*. The result is two new trees. Since we only need one new individual, we can discard one of the new trees.
+A program is a tree of instructions, and Push programs are no exception. To combine two trees, we can select a random node from each tree and *swap the subtrees that root from that node*. The result is two new trees. Since we only need one new individual, we can discard one of the new trees.
 
 For example, if we have the next two trees and the random nodes are marked with yellow:
 
@@ -180,9 +180,9 @@ Then the result of the swapping is:
 
 Now we can discard one of the trees and use another one as the new individual.
 
-# How To Mutate A Push Program?
+# How to Mutate a Push Program
 
-To mutate a push program we select a random subtree and replace it with another randomly generated tree of instructions.
+To mutate a Push program, we must select a random subtree and replace it with another randomly generated tree of instructions.
 
 For example, the subtree that grows from the node marked with red:
 
@@ -194,7 +194,7 @@ May mutate into another subtree:
 
 # Running Psh
 
-We are finally ready to run the genetic programming and see what the evolution comes up with.
+We are finally ready to run the genetic programming and see what evolution comes up with.
 
 I ran it multiple times. In each run it found a solution within 200 generations. The solution consistently produced correct answers for all the tests that the fitness function executed.
 
@@ -206,7 +206,7 @@ The final output included the best individual found by the genetic programming. 
 
 # Solution 1: Almost Perfect
 
-Let's start from the most neat solution that the evolution has found:
+Let's start from the neatest solution that evolution has found:
 
 ```push
 (exec.stackdepth 
@@ -221,7 +221,7 @@ bool IsEven(int number) => !Convert.ToBoolean(number % 2);
 
 Note how it invented the number `2`: it's just the depth of the execution stack at the beginning of the execution (`exec.stackdepth`).
 
-The solution is also doing dummy work that does not bring us any closer to solving the problem (`float.dup`). This is a consequence of the fitness function imperfection. Indeed, our fitness function is not picking the most concise and efficient solutions. Just like in the real world: if the natural selection does not endorse a trait, the next generations will most likely not have it.
+The solution is also performing dummy work that does not bring us any closer to solving the problem (`float.dup`). This is a consequence of the fitness function imperfection. Indeed, our fitness function is not picking the most concise and efficient solutions. Just like in the real world: if natural selection does not endorse a trait, the next generations will most likely not have it.
 
 # Solution 2: Less Expected
 
@@ -257,7 +257,7 @@ It also illustrates how `code.do*range` works: it runs given instructions in a l
 
 # Solution 3: The Most Unconventional, Yet Functional
 
-This is probably the most inefficient way to check if a number is even, so don’t use it in production. However, it’s fascinating to see how evolution arrived at this solution in such an unexpected way. It perfectly illustrates that evolution can be highly inventive, but it doesn’t aim to find the best possible solution — only one that is good enough for survival, which, in the case of genetic algorithms, is formalized as a fitness function.
+This is probably the most inefficient way to check if a number is even, so I wouldn't recommend using it in production. However, it’s fascinating to see how evolution arrived at this solution in such an unexpected way. It perfectly illustrates that evolution can be highly inventive, but it doesn’t aim to find the best possible solution — only one that is good enough for survival, which, in the case of genetic algorithms, is formalized as a fitness function.
 
 ```push
 (
@@ -299,9 +299,9 @@ bool IsEven(int number)
 }
 ```
 
-The solution relies on the fact that I set the `execution-limit` to `150` during the evolution, meaning that no program (individual) was allowed to execute more than 150 instructions during the fitness calculation. Had it not been for the execution limit, the program would have given an incorrect answer for all the even numbers.
+The solution relies on the fact that I set the `execution-limit` to `150` during evolution, meaning that no program (individual) was allowed to execute more than 150 instructions during the fitness calculation. Had it not been for the execution limit, the program would have given an incorrect answer for all the even numbers.
 
-For numbers `-2`, `0`, `2` it gives the wrong answer, because for them the `numberOfIterations` is not big enough for the loop to hit the execution limit. Just like a real evolution that creates organisms fit for the environment they live in, the genetic programming produces solutions that are fit from the point of view of the fitness function. Our fitness function uses a sample from a range of integer numbers and may not take into consideration some of the edge cases, like, for example, the numbers that are too close to zero.
+For numbers `-2`, `0`, `2` it gives the wrong answer, because for them the `numberOfIterations` is not big enough for the loop to hit the execution limit. Just like a real evolution that creates organisms fit for the environment they live in, genetic programming produces solutions that are fit from the point of view of the fitness function. Our fitness function uses a sample from a range of integer numbers and may not take into consideration some of the edge cases, like, for example, the numbers that are too close to zero.
 
 # To Summarize
 
