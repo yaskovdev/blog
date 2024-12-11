@@ -299,9 +299,15 @@ bool IsEven(int number)
 }
 ```
 
-The solution relies on the fact that I set the `execution-limit` to `150` during evolution, meaning that no program (individual) was allowed to execute more than 150 instructions during the fitness calculation. Had it not been for the execution limit, the program would have given an incorrect answer for all the even numbers.
+If `number` is odd, `Math.Pow(-Math.Abs(number), Math.Abs(number))` evaluates to a negative value, and the program immediately returns `false`.
 
-For numbers `-2`, `0`, `2` it gives the wrong answer, because for them the `numberOfIterations` is not big enough for the loop to hit the execution limit. Just like a real evolution that creates organisms fit for the environment they live in, genetic programming produces solutions that are fit from the point of view of the fitness function. Our fitness function uses a sample from a range of integer numbers and may not take into consideration some of the edge cases, like, for example, the numbers that are too close to zero.
+If `number` is even, `Math.Pow(-Math.Abs(number), Math.Abs(number))` is positive, so the program proceeds into the loop, where the most interesting behavior occurs.
+
+Inside the loop, the program exploits the fact that an `execution-limit` of `150` instructions was imposed during evolution. This limit means that no program (individual) could execute more than 150 instructions during fitness evaluation. Crucially, for nearly all integers, `Math.Pow(-Math.Abs(number), Math.Abs(number))` is greater than `150`. As a result, the program never reaches the `answer = false` line. Instead, it exits the loop and returns `true`.
+
+However, for the numbers `-2`, `0`, and `2`, `Math.Pow(-Math.Abs(number), Math.Abs(number))` is less than `150`. In these cases, the program produces incorrect results.
+
+This behavior further illustrates a key characteristic of genetic programming: it produces solutions that excel at meeting the fitness function's specific requirements, even if they are not optimal or entirely correct. As mentioned earlier, the fitness function in this scenario does not prioritize conciseness or efficiency. Additionally, it does not fully account for edge cases like numbers near zero. Similarly, the `execution-limit` acts as an implicit constraint within the fitness function, and the evolutionary process has exploited this limitation to achieve success within the given parameters. This is analogous to natural selection: traits that are not explicitly endorsed or penalized by the environment—or, in this case, the fitness function—persist in the resulting solutions, regardless of their true utility.
 
 # To Summarize
 
