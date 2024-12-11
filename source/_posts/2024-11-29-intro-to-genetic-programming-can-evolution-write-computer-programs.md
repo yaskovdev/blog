@@ -307,7 +307,7 @@ Inside the loop, the program exploits the fact that an `execution-limit` of `150
 
 However, for the numbers `-2`, `0`, and `2`, `Math.Pow(-Math.Abs(number), Math.Abs(number))` is less than `150`. In these cases, the program produces incorrect results.
 
-This behavior further illustrates a key characteristic of genetic programming: it produces solutions that excel at meeting the fitness function's specific requirements, even if they are not optimal or entirely correct. As mentioned earlier, the fitness function in this scenario does not prioritize conciseness or efficiency. Additionally, it does not fully account for edge cases like numbers near zero. Similarly, the `execution-limit` acts as an implicit constraint within the fitness function, and the evolutionary process has exploited this limitation to achieve success within the given parameters. This is analogous to natural selection: traits that are not explicitly endorsed or penalized by the environment—or, in this case, the fitness function—persist in the resulting solutions, regardless of their true utility.
+This behavior further illustrates a key characteristic of genetic programming: it produces solutions that excel at meeting the fitness function's specific requirements, even if they are not optimal or entirely correct. As mentioned earlier, the fitness function in this scenario does not prioritize conciseness or efficiency. Additionally, it does not fully account for edge cases like numbers near zero. Similarly, the `execution-limit` acts as an implicit constraint within the fitness function, and the evolutionary process has exploited this limitation to achieve success within the given parameters.
 
 # To Summarize
 
