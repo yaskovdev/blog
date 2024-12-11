@@ -253,7 +253,7 @@ bool IsEven(int number)
 }
 ```
 
-It also illustrates how `code.do*range` works: it runs given instructions in a loop, adjusting the current index — either increasing or decreasing it — to move closer to the destination index.
+It also illustrates how `code.do*range` works: it runs given instructions in a loop, adjusting the current index—either increasing or decreasing it—to move closer to the destination index.
 
 # Solution 3: The Most Unconventional, Yet Functional
 
