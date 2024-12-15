@@ -24,11 +24,11 @@ According to the Church–Turing thesis, any mechanical device, no matter how co
 
 This would mean that anything a computer can do, Push could also do.
 
-In theory, this implies that an evolutionary process using Push could eventually create software of unlimited complexity, provided it had enough time and storage space.
+In theory<sup>*</sup>, this implies that an evolutionary process using Push could eventually create software of unlimited complexity, provided it had enough time and storage space.
 
 # How to Prove Turing Completeness?
 
-One of [the ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete<sup>*</sup> is to show that it can simulate a Universal Turing Machine.
+One of [the ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete<sup>**</sup> is to show that it can simulate a Universal Turing Machine.
 
 We don't have to simulate a Universal Turing machine directly though. Instead, we can demonstrate the ability to simulate a language X that, in turn, can simulate a Universal Turing machine. The language X, ideally, should either be simple or very similar to the language we are trying to prove Turing-complete.
 
@@ -253,4 +253,5 @@ Since we successfully simulated a URM with 5 registers in Push — and a URM wit
 
 This demonstrates that Push is powerful enough to represent any computation, and by extension, any piece of software.
 
-<sup>*</sup> Strictly speaking, a language itself cannot be Turing-complete. When we say "a language is Turing-complete," we actually mean that a computational system using the language to express programs is Turing-complete.
+<sup>*</sup> In practice, Turing-completeness is often not enough. For example, Push programs might become so slow and memory-intensive that they can't scale to the size of real-world programs. But one problem at a time.
+<sup>**</sup> Strictly speaking, a language itself cannot be Turing-complete. When we say "a language is Turing-complete," we actually mean that a computational system using the language to express programs is Turing-complete.
