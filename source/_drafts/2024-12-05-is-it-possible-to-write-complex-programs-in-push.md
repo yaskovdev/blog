@@ -28,19 +28,13 @@ In theory, this implies that an evolutionary process using Push could eventually
 
 # How To Prove Turing Completeness?
 
-There are [three ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete:
+One of [the ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete is to show that it can simulate a Universal Turing Machine.
 
-1. Show there is some mapping from each possible Turing machine to a program in the language.
-2. Show that there is a program in the language that emulates a Universal Turing Machine (think of it as a programmable Turing machine).
-3. Show that the language is equivalent with (or a superset of) a language that is known to be Turing-complete.
-
-Let's try the third way: Instead of proving that Push is Turing-complete, let's try to find a Turing-complete language and prove the language to be Push-complete.
-
-Ideally, the language should either be very simple, or very similar to Push.
+We don't have to simulate a Universal Turing machine directly though. Instead, we can show that we can simulate a language X that, in turn, can simulate a Universal Turing machine. The language X, ideally, should either be simple or very similar to the language we are trying to prove Turing-complete.
 
 # Universal Register Machine
 
-One of the simplest [Turing-complete](http://brainfuck.org/urmutm.txt) languages I've found is the Universal Register Machine (URM).
+One of the simplest languages that can simulate a Universal Turing Machine is the Universal Register Machine (URM).
 
 The language maintains an array of registers. Each register can store an integer. The language has only five commands:
 
@@ -70,7 +64,31 @@ Multiply register 2 with register 3:
 (a4;a5;s2)2; ((a2;s4)4; s3; (a1;a4;s5)5; (a5;s1)1)3.
 ```
 
-TODO: it's enough to emulate an URM with 5 registers.
+Daniel Cristofani managed to [prove](http://brainfuck.org/urmutm.txt) that URM with only 5 registers is Turing-complete.
+
+Therefore, __to prove that Push is Turing-complete, we need to show that it can simulate URM with 5 registers__.
+
+# Writing a URM Interpreter in Push
+
+At first, I was not sure if it was even possible and how to approach it. Luckily, Lee Spector, the creator of Push, [drew my attention](https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700) to the `yank` and `shove` instructions which provide random access to Push stacks, essentially turning them into URM registers. All that remained was to apply the instructions correctly.
+
+## Stage 1: Writing a URM Interpreter in C#
+
+I decided to start with a URM interpreter in a more familiar language — C#. Then I could gradually get rid of the C# specific features to turn the implementation into something that I could easily (ideally almost "mechanically") translate into Push.
+
+This part was relatively easy, you can find the code [here](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs).
+
+The interpreter only supports registers from `0` to `9`, however, it is more than enough for our purposes: remember that we only need to simulate URM programs with 5 registers.
+
+## Stage 2: Re-Writing the Interpreter in C# Without Using Local Variables
+
+In Push, we do not have the luxury of local variables, including function arguments. We can only use the stacks, which we can think of as arrays of registers, thanks to the `yank` and `shove` instructions.
+
+This means that I have to now rewrite my C# interpreter so that it could only use an array of registers for all the data it needs. What data specifically? The URM program itself, the registers, an integer pointer to the current URM instruction, and an [auxiliary integer variable that the interpreter uses to count the number of brackets](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs#L26).
+
+## Stage 3: Re-Writing the Interpreter in C# in Push
+
+TODO: explain the encoding table that maps URM characters to integers.
 
 # Psh Improvements
 
