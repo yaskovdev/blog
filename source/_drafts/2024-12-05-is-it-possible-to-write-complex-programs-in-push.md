@@ -26,9 +26,9 @@ This would mean that anything a computer can do, Push could also do.
 
 In theory, this implies that an evolutionary process using Push could eventually create software of unlimited complexity, provided it had enough time and storage space.
 
-# How To Prove Turing Completeness?
+# How to Prove Turing Completeness?
 
-One of [the ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete is to show that it can simulate a Universal Turing Machine.
+One of [the ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete<sup>*</sup> is to show that it can simulate a Universal Turing Machine.
 
 We don't have to simulate a Universal Turing machine directly though. Instead, we can show that we can simulate a language X that, in turn, can simulate a Universal Turing machine. The language X, ideally, should either be simple or very similar to the language we are trying to prove Turing-complete.
 
@@ -70,7 +70,7 @@ Therefore, __to prove that Push is Turing-complete, we need to show that it can 
 
 # Writing a URM Interpreter in Push
 
-At first, I was not sure if it was even possible and how to approach it. Luckily, Lee Spector, the creator of Push, [drew my attention](https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700) to the `yank` and `shove` instructions which provide random access to Push stacks, essentially turning them into URM registers. All that remained was to apply the instructions correctly.
+At first, I was not sure if it was even possible and how to approach it. Luckily, Lee Spector, the creator of Push, [drew my attention](https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700) to the `yank` and `shove` instructions which provide random access to Push stacks, essentially turning them into random access memory. All that remained was to apply the instructions correctly.
 
 ## Stage 1: Writing a URM Interpreter in C#
 
@@ -80,21 +80,45 @@ This part was relatively easy, you can find the code [here](https://github.com/y
 
 The interpreter only supports registers from `0` to `9`, however, it is more than enough for our purposes: remember that we only need to simulate URM programs with 5 registers.
 
-## Stage 2: Re-Writing the Interpreter in C# Without Using Local Variables
+## Stage 2: Re-Writing the Interpreter Without Relying on C# Features
 
-In Push, we do not have the luxury of local variables, including function arguments. We can only use the stacks, which we can think of as arrays of registers, thanks to the `yank` and `shove` instructions.
+In Push, we do not have the luxury of local variables, including function arguments. We can only use the stacks, which we can think of as arrays with random access, thanks to the `yank` and `shove` instructions.
 
-This means that I have to now rewrite my C# interpreter so that it could only use an array of registers for all the data it needs. What data specifically? The URM program itself, the registers, an integer pointer to the current URM instruction, and an [auxiliary integer variable that the interpreter uses to count the number of brackets](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs#L26).
+This means that I have to now rewrite my C# interpreter so that it could only use an array for all the data it needs. What data specifically? The URM program itself, the registers, an integer pointer to the current URM instruction, and an [auxiliary integer variable that the interpreter uses to count the number of brackets](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs#L26).
 
-## Stage 3: Re-Writing the Interpreter in C# in Push
+To accommodate the registers, the URM program and the auxiliary variables, I decided to organize the memory as follows:
 
-TODO: explain the encoding table that maps URM characters to integers.
+{% asset_img urm-interpreter-memory.png URM Interpreter Memory %}
 
-# Psh Improvements
+(Now I finally understand what my programming teacher was saying when he was explaining the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture).)
 
-1. Add multiline support.
-2. Add a way to leave comments.
+Another issue to address is that the URM program is a string, but our memory is an array of integers. To solve this, I decided to encode the URM program as an array of integers as follows:
+
+| URM Symbol | Encoding |
+|------------|----------|
+| .          | 0        |
+| a          | -1       |
+| s          | -2       |
+| (          | -3       |
+| )          | -4       |
+| 1          | 1        |
+| 2          | 2        |
+| 3          | 3        |
+| 4          | 4        |
+| 5          | 5        |
+
+The result is (quite an ugly) [C# implementation](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/LimitedInterpreter.cs). Although is not pretty, we now can easily translate it into Push...
+
+## Stage 3: Translating the Interpreter in C# into Push
+
+...or not that easily.
+
+1. Psh needs improvements (Add multiline support, Add a way to leave comments).
+2. No debug.
+3. A tricky bug with a limited main loop instead of an infinite loop.
 
 # To Summarize
 
 In fact, you could cut most of the features of Push and still have a Turing-complete language.
+
+<sup>*</sup> Strictly speaking, a language itself cannot be Turing-complete. When we say "a language is Turing-complete," we actually mean that a computational system or model using the language to express algorithms or programs is Turing-complete.
