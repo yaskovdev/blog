@@ -107,21 +107,21 @@ Another issue to address is that the URM program is a string, but our memory is 
 | 4          | 4        |
 | 5          | 5        |
 
-The result is (quite an ugly) [C# implementation](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/LimitedInterpreter.cs). Although is not pretty, we now can easily translate it into Push...
+The result is (quite an ugly) [C# implementation](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/LimitedInterpreter.cs). Although is not pretty, we now can translate it into Push relatively easily.
 
 ## Stage 3: Translating the Interpreter in C# into Push
-
-...or not that easily.
 
 ### Adding Multiline Programs Support To Psh
 
 If you've read my previous article, you may know that I have been using [Psh](https://github.com/yaskovdev/Psh) to run Push programs.
 
-However, Psh did not support multiline programs. I quickly abandoned attempts to write the interpreter in one line and added the support for multiline Push programs to Psh.
+However, Psh did not support multiline programs.
+
+I quickly abandoned attempts to write the interpreter in one line and added the support for multiline Push programs to Psh.
 
 ### Adding Comments Support To Psh
 
-Another problem with Psh was that it did not support comments. You rarely need comments in conventional languages: meaningful names for variables and functions make comments an almost redundant feature. Since Push has neither variables nor functions, comments are essential. Though the [official Push specification](http://faculty.hampshire.edu/lspector/push3-description.html) says nothing about comments, I decided to add them to Psh in this way:
+Another problem with Psh was that it did not support comments. You rarely need comments in conventional languages: meaningful names for variables and functions make comments an almost redundant feature. Since Push has neither variables nor functions, comments are essential. Since the [official Push specification](http://faculty.hampshire.edu/lspector/push3-description.html) says nothing about the format of the comments, I decided to add them to Psh in this way:
 
 ```push
 (1 2 integer.+) # This line adds 1 and 2
@@ -129,11 +129,13 @@ Another problem with Psh was that it did not support comments. You rarely need c
 
 ### Finding a Way To "Debug" Push Programs
 
-As John Carmack explain in one of his interviews, it is very important to be able to debug our code, because our head is a "faulty interpreter." Unfortunately, Psh does not have a debugger.
+As John Carmack [explained](https://youtu.be/tzr7hRXcwkw?t=232) in one of his interviews, it is crucial to be able to debug your code, because your head is a "faulty interpreter." Unfortunately, Psh does not have a debugger.
 
-There is a way to mitigate this issue though: the `exec.flush` instruction. The instruction causes the Push interpreter to stop immediately. So, you can think of it as a breakpoint. Since Psh prints the stacks after each instruction, you can see the state of the stacks at the "breakpoint," just like in a normal debugger.
+There is a way to mitigate this issue though: the `exec.flush` instruction. The instruction causes the Push interpreter to stop immediately. So, you can think of it as a breakpoint.
 
-There are limitations. For example, you cannot resume the program execution after hitting such a "breakpoint." However, I thought that I would give it a try before writing the debugger myself.
+Since Psh prints the stacks after each instruction, I could see the state of the stacks at the "breakpoint," just like in a normal debugger.
+
+There are limitations. For example, I couldn't resume the program execution after hitting such a "breakpoint." However, it was worth giving it a try before writing the debugger myself.
 
 By the way, the same `exec.flush` instruction is what I need to implement the `.` command in URM.
 
@@ -189,7 +191,10 @@ exec.y
     exec.if
     (
         # The body of the loop
-    ) exec.pop
+    ) 
+    (
+        exec.pop
+    )
 )
 ```
 
@@ -226,11 +231,11 @@ becomes:
 
 ### Putting It All Together
 
-After carefully applying the above transformations, I ended up with the [final Push implementation of the interpreter](https://gist.github.com/yaskovdev/71010ede2d070ed88c11334160fedc88).
+After carefully applying the above transformations, I ended up with the [__final Push implementation of the interpreter__](https://gist.github.com/yaskovdev/71010ede2d070ed88c11334160fedc88).
 
 The interpreter takes the registers and the encoded URM program as input and executes the program. The state of the registers after the execution is the result of the URM program.
 
-## Testing The Interpreter
+## Testing the Interpreter
 
 Let's test the URM interpreter against the next input:
 
