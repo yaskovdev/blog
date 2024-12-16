@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Can We Write Complex Programs in Push?"
-date: 2024-12-05 16:33:16
+date: 2024-12-16 16:33:16
 show_date: true
 categories: [ push, psh, turing-completeness, universal-register-machine, urm ]
 comments: true
