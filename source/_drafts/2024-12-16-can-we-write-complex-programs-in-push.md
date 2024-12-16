@@ -70,7 +70,7 @@ Therefore, __to prove that Push is Turing-complete, I need to show that it can s
 
 # Writing a URM Interpreter in Push
 
-At first, I was not sure if it was even possible and how to approach it. Luckily, Lee Spector, the creator of Push, [drew my attention](https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700) to the `yank` and `shove` instructions which provide random access to Push stacks, essentially turning them into random access memory. All that remained was to use the instructions correctly.
+At first, I was not sure if it was even possible and how to approach it. Luckily, Lee Spector, the creator of Push, [drew my attention](https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700) to the `yank` and `shove` instructions which provide random access to Push stacks, essentially turning them into random-access memory. All that remained was to use the instructions correctly.
 
 ## Stage 1: Writing a URM Interpreter in C#
 
