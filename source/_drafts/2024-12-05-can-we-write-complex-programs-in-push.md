@@ -10,15 +10,15 @@ excerpt: "When I first saw Push, I wondered: Is this suspiciously simple languag
 
 When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough to express _any_ piece of software?
 
-If it is, then artificial evolution "equipped" with Push will eventually create arbitrarily complex software. If it isn't, there will always be programs that it will never produce, no matter how long we wait. In this case the question becomes: what are those "unreachable" programs?
+If it is, then artificial evolution "equipped" with Push will eventually create arbitrarily complex software. If it isn't, there will always be programs that it will never produce, no matter how long I wait. In this case the question becomes: what are those "unreachable" programs?
 
 If you’re wondering what I'm talking about, you might have missed my previous article. You can catch up by reading {% post_link 2024-11-29-intro-to-genetic-programming-can-evolution-write-computer-programs '"Intro To Genetic Programming: Can Evolution Write Computer Programs?"' %}. Alternatively, you can quickly learn about Push [here](https://erp12.github.io/push-redux/pages/intro_to_push/).
 
-{% asset_img turing-completeness.png Turing Completeness %}
+{% asset_img mechanical-calculator.png Mechanical Calculator %}
 
 # Turing Completeness
 
-If we could prove that Push is Turing-complete, it would mean that Push can compute any function that is computable. [This article](https://evinsellin.medium.com/what-exactly-is-turing-completeness-a08cc36b26e2) provides a great explanation of Turing-completeness.
+If I could prove that Push is Turing-complete, it would mean that Push can compute any function that is computable. [This article](https://evinsellin.medium.com/what-exactly-is-turing-completeness-a08cc36b26e2) provides a great explanation of Turing-completeness.
 
 According to the Church–Turing thesis, any mechanical device, no matter how complex, can compute only computable functions ([source](https://en.wikipedia.org/wiki/Computable_function)).
 
@@ -30,13 +30,13 @@ In theory<sup>*</sup>, this implies that an evolutionary process using Push coul
 
 One of [the ways](https://iwriteiam.nl/Ha_bf_Turing.html) to prove that a language is Turing-complete<sup>**</sup> is to show that it can simulate a Universal Turing Machine.
 
-We don't have to simulate a Universal Turing machine directly though. Instead, we can demonstrate the ability to simulate a language X that, in turn, can simulate a Universal Turing machine. The language X, ideally, should either be simple or very similar to the language we are trying to prove Turing-complete.
+I don’t need to simulate a Universal Turing Machine directly though. Instead, I can show that I can simulate a language that is already proven to simulate a Universal Turing Machine. Ideally, this language should be either simple or very similar to the one I’m trying to prove is Turing-complete.
 
 # Universal Register Machine
 
 One of the simplest languages that can simulate a Universal Turing Machine is the Universal Register Machine (URM).
 
-The language maintains an array of registers. Each register can store an integer. The language has only five commands:
+The language manipulates an array of registers. Each register can store an integer. The language has only five commands:
 
 1. `an` — increment register `n`,
 2. `sn` — decrement register `n`,
@@ -66,33 +66,33 @@ Multiply register 2 with register 3:
 
 Daniel Cristofani managed to [prove](http://brainfuck.org/urmutm.txt) that URM with only 5 registers is Turing-complete.
 
-Therefore, __to prove that Push is Turing-complete, we need to show that it can simulate URM with 5 registers__.
+Therefore, __to prove that Push is Turing-complete, I need to show that it can simulate URM with 5 registers__.
 
 # Writing a URM Interpreter in Push
 
-At first, I was not sure if it was even possible and how to approach it. Luckily, Lee Spector, the creator of Push, [drew my attention](https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700) to the `yank` and `shove` instructions which provide random access to Push stacks, essentially turning them into random access memory. All that remained was to apply the instructions correctly.
+At first, I was not sure if it was even possible and how to approach it. Luckily, Lee Spector, the creator of Push, [drew my attention](https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700) to the `yank` and `shove` instructions which provide random access to Push stacks, essentially turning them into random access memory. All that remained was to use the instructions correctly.
 
 ## Stage 1: Writing a URM Interpreter in C#
 
 I decided to start with a URM interpreter in a more familiar language — C#. Then I could gradually get rid of the C# specific features to turn the implementation into something that I could easily (ideally almost "mechanically") translate into Push.
 
-This part was relatively easy, you can find the code [here](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs).
+This part was relatively easy, you can find the C# implementation [here](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs).
 
-You may notice that the interpreter only supports registers from `0` to `9`, however, it is more than enough for our purposes: remember that we only need to simulate URM programs with 5 registers.
+You may notice that the interpreter only supports registers from `0` to `9`, however, it is more than enough for my purposes: remember that I only need to simulate URM programs with 5 registers.
 
 ## Stage 2: Re-Writing the Interpreter Without Relying on Variables and Strings
 
-In Push, we do not have the luxury of variables in the conventional sense, including those to store function arguments. We can only use the stacks, which we can think of as arrays with random access, thanks to the `yank` and `shove` instructions.
+In Push, there are no conventional variables, including those to store function arguments. I can only use the stacks, which can act like arrays with random access, thanks to the `yank` and `shove` instructions.
 
-This means that we have to now rewrite my C# interpreter so that it could only use an array for all the data it needs. What data specifically? The URM program itself, the registers, an integer pointer to the current URM instruction, and an [auxiliary integer variable that the interpreter uses to count the number of brackets](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs#L26).
+This means that I should now rewrite my C# interpreter so that it could only use an array for all the data it needs. What data does it need, specifically? The URM program itself, the registers, the integer pointer to the current URM instruction, and the [auxiliary integer variable `b` that it uses to count the number of brackets](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs#L26).
 
-To accommodate the registers, the URM program and the auxiliary variables, I decided to organize the memory as follows:
+To accommodate all that, I decided to organize the memory as follows:
 
 {% asset_img urm-interpreter-memory.png URM Interpreter Memory %}
 
-(Now I finally understand what my programming teacher was saying when he was explaining that in the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) instructions and data are stored in the same memory and appearance indistinguishable from each other.)
+(Now I finally understand what my programming teacher was saying when he was explaining that in the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) instructions and data are stored in the same memory and appear indistinguishable from each other.)
 
-Another issue to address is that the URM program is a string, but our memory is an array of integers. To solve this, I decided to encode the URM program as an array of integers as follows:
+Another issue to address is that a URM program is a string, but our memory is an array of integers. To solve this, I decided to encode a URM program as an array of integers as follows:
 
 | URM Symbol | Encoding |
 |------------|----------|
@@ -107,21 +107,21 @@ Another issue to address is that the URM program is a string, but our memory is 
 | 4          | 4        |
 | 5          | 5        |
 
-The result is (quite an ugly) [C# implementation](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/LimitedInterpreter.cs). Although is not pretty, we now can translate it into Push relatively easily.
+The result is (quite an ugly) [C# implementation](https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/LimitedInterpreter.cs). Although is not pretty, I can now translate it into Push relatively easily.
 
 ## Stage 3: Translating the Interpreter in C# into Push
 
 ### Adding Multiline Programs Support To Psh
 
-If you've read my previous article, you may know that I have been using [Psh](https://github.com/yaskovdev/Psh) to run Push programs.
+If you've seen my previous article, you may know that I have been using [Psh](https://github.com/yaskovdev/Psh) to run Push programs.
 
 However, Psh did not support multiline programs.
 
-I quickly abandoned attempts to write the interpreter in one line and added the support for multiline Push programs to Psh.
+I quickly abandoned futile attempts to write the interpreter in one line and instead added the support for multiline Push programs to Psh.
 
 ### Adding Comments Support To Psh
 
-Another problem with Psh was that it did not support comments. You rarely need comments in conventional languages: meaningful names for variables and functions make comments an almost redundant feature. Since Push has neither variables nor functions, comments are essential. Since the [official Push specification](http://faculty.hampshire.edu/lspector/push3-description.html) says nothing about the format of the comments, I decided to add them to Psh in this way:
+Another problem with Psh was that it did not support code comments. You rarely need comments in conventional languages: meaningful names for variables and functions make comments an almost redundant feature. Since Push has neither variables nor functions, comments are essential. Since the [official Push specification](http://faculty.hampshire.edu/lspector/push3-description.html) says nothing about the format of the comments, I decided to add them to Psh in this way:
 
 ```push
 (1 2 integer.+) # This line adds 1 and 2
@@ -129,21 +129,25 @@ Another problem with Psh was that it did not support comments. You rarely need c
 
 ### Finding a Way To "Debug" Push Programs
 
-As John Carmack [explained](https://youtu.be/tzr7hRXcwkw?t=232) in one of his interviews, it is crucial to be able to debug your code, because your head is a "faulty interpreter." Unfortunately, Psh does not have a debugger.
+As John Carmack [explained](https://youtu.be/tzr7hRXcwkw?t=232) in one of his interviews, it is crucial to be able to debug your code, because your head is a "faulty interpreter."
+
+Unfortunately, Psh does not have a debugger.
 
 There is a way to mitigate this issue though: the `exec.flush` instruction. The instruction causes the Push interpreter to stop immediately. So, you can think of it as a breakpoint.
 
-Since Psh prints the stacks after each instruction, I could see the state of the stacks at the "breakpoint," just like in a normal debugger.
+Since Psh prints the Push stacks after each instruction, I could see the state of the stacks at the "breakpoint," just like in a normal debugger:
+
+{% asset_img psh-output.png Psh Output %}
 
 There are limitations. For example, I couldn't resume the program execution after hitting such a "breakpoint." However, it was worth giving it a try before writing the debugger myself.
 
-By the way, the same `exec.flush` instruction is what I need to implement the `.` command in URM.
+By the way, the same `exec.flush` instruction is what I need to implement the `.` (halt) command in URM.
 
-### Translating The `if` Statement Into Push
+### Translating The C# `if-else` Statement Into Push
 
 After solving the above issues the only thing left was to find the Push alternatives for the remaining C# statements.
 
-The `if` statement in C#:
+The `if-else` statement in C#
 
 ```csharp
 if (condition)
@@ -156,7 +160,7 @@ else
 }
 ```
 
-Can be implemented using the conditional execution (`exec.if`) in Push:
+can be expressed in Push using the conditional execution (`exec.if`):
 
 ```push
 # The condition (will be pushed to the boolean stack)
@@ -170,9 +174,9 @@ exec.if
 )
 ```
 
-### Translating The `while` Statement Into Push
+### Translating The C# `while` Statement Into Push
 
-The simple `while` loop that looks like this in C#
+The `while` loop that looks like this in C#
 
 ```csharp
 while (condition)
@@ -181,7 +185,7 @@ while (condition)
 }
 ```
 
-Can be implemented using the Y combinator (`exec.y`) and the conditional execution (`exec.if`) in Push:
+can be written in Push using the Y combinator (`exec.y`) and the conditional execution (`exec.if`):
 
 ```push
 exec.y
@@ -198,11 +202,11 @@ exec.y
 )
 ```
 
-### Translating The Indexing Operator Into Push
+### Translating The C# Indexing Operator Into Push
 
-The interpreter needs to access element of array elements by index quite a lot. Its C# version is doing it like this: `memory[i]`. It is called the indexing operator. It allows us to read or write the value of the array element at the specified index.
+The interpreter needs to access array elements by index quite a lot. The C# version is doing it like this: `memory[i]`. The `[]` is called "the indexing operator." It allows to read or write the array element at the specified index.
 
-In Push, you can only "access" the top of the stack. So, you need to use `integer.yank` to move the element you need to the top of the stack. Then you can modify the element and use `integer.shove` to put it back. For example,
+In Push, I can only "access" the top of the stack. So, I need to use `integer.yank` to move the element I need to the top of the stack. Then I can modify the element and use `integer.shove` to move it back. For example,
 
 ```csharp
 memory[60] += 1;
@@ -216,7 +220,7 @@ turns into:
 60 integer.shove
 ```
 
-If you only need to read the element without modifying it, you can use `integer.yankdup` (no need to `integer.shove` it then). For example,
+If I only need to read the element without modifying it, I can use `integer.yankdup` (no need to `integer.shove` it then). For example,
 
 ```csharp
 memory[6] == 0;
@@ -231,9 +235,9 @@ becomes:
 
 ### Putting It All Together
 
-After carefully applying the above transformations, I ended up with the [__final Push implementation of the interpreter__](https://gist.github.com/yaskovdev/71010ede2d070ed88c11334160fedc88).
+After applying the above transformations to the C# code, I ended up with the [__final Push implementation of the interpreter__](https://gist.github.com/yaskovdev/71010ede2d070ed88c11334160fedc88).
 
-The interpreter takes the registers and the encoded URM program as input and executes the program. The state of the registers after the execution is the result of the URM program.
+The interpreter takes the registers and the encoded URM program as input, executes the program, and produces the final state of the registers as the result.
 
 ## Testing the Interpreter
 
@@ -244,13 +248,19 @@ Let's test the URM interpreter against the next input:
 -3 -1 4 -1 5 -2 2 -4 2 -3 -3 -1 2 -2 4 -4 4 -2 3 -3 -1 1 -1 4 -2 5 -4 5 -3 -1 5 -2 1 -4 1 -4 3 0
 ```
 
-This is the encoded URM program from above that multiplies register 2 (initialized with `6`) with register 3 (initialized with `3`). The result of the program is the next `integer` stack:
+The second line is the encoded URM program that multiplies register 2 (initialized with `6` in the first line) with register 3 (initialized with `3`). The result of the program is the next `integer` stack:
 
 ```
 0 0 18 0 6 6 -3 -1 4 -1 5 -2 2 -4 2 -3 -3 -1 2 -2 4 -4 4 -2 3 -3 -1 1 -1 4 -2 5 -4 5 -3 -1 5 -2 1 -4 1 -4 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 37 0
 ```
 
-As you can see, the register 2 now contains `18`, which is the expected result of the multiplication.
+As you can see, the state of the registers has changed to:
+
+```
+0 0 18 0 6 6
+```
+
+The register 2 now contains `18`, which is the expected result of the multiplication (the program treats registers 4 and 5 as auxiliary registers).
 
 # To Summarize
 
@@ -259,4 +269,4 @@ Since we successfully simulated a URM with 5 registers in Push — and a URM wit
 This demonstrates that Push is powerful enough to represent any computation, and by extension, any piece of software.
 
 <sup>*</sup> In practice, Turing-completeness is often not enough. For example, Push programs might become so slow and memory-intensive that they can't scale to the size of real-world programs. But one problem at a time.
-<sup>**</sup> Strictly speaking, a language itself cannot be Turing-complete. When we say "a language is Turing-complete," we actually mean that a computational system using the language to express programs is Turing-complete.
+<sup>**</sup> Strictly speaking, a language itself cannot be Turing-complete. When I say "a language is Turing-complete," I actually mean that a computational system using the language to express programs is Turing-complete.
