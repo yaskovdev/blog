@@ -4,6 +4,8 @@ https://docs.oracle.com/javase/specs/, 17.4
 
 https://chatgpt.com/share/6760c540-5b90-8011-8e1d-07f1e6de71a7
 
+https://stackoverflow.com/questions/54081251/happens-before-and-reordering-of-volatile
+
 ----
 
 For each program, there are many possible executions.
@@ -49,3 +51,21 @@ Look at an execution of a program. Is this a legal execution? Feel free to reord
 ----
 
 Probably related: https://stackoverflow.com/questions/32492621/happens-before-and-program-order-in-java-memory-model
+
+----
+The definition of what programs are called "correctly synchronized":
+
+"A program is correctly synchronized <=> all sequentially consistent executions are free of data races."
+NOTE: it's good that we only need to check data races in "sequentially consistent" executions only, because it's easier to reason about them, and they are a very small part of all the executions (with all the reordering and other magic that the compiler, the CPU, the OS and other parts of the computer can do). 
+
+An important property of correctly synchronized programs:
+
+"A program is correctly synchronized => all executions of the program will appear to be sequentially consistent."
+
+"sequentially consistent" very informally means that the program behaves in the most intuitive way possible.
+
+Could I, as a application (not JVM) developer, summarize the JMM like this:
+
+You have to write programs that are correctly synchronized (TODO: why?). By definition of "correctly synchronized", this means that you have to write programs all sequentially consistent executions of which are free of data races.
+
+By definition of a data race, this is the same as saying that you have to write programs all conflicting accesses of all sequentially consistent executions of which are ordered by a happens-before relationship.
