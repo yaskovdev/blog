@@ -1,4 +1,16 @@
+---
+layout: post
+title: "Java Memory Model Explained"
+date: 2025-01-01 00:54:16
+show_date: true
+categories: [ java, java-language-specification, java-memory-model, concurrency ]
+comments: true
+excerpt: "Java Memory Model Explained"
+---
+
 Java Memory Model
+
+{% asset_img java-memory-model.png Java Memory Model %}
 
 https://docs.oracle.com/javase/specs/, 17.4
 
