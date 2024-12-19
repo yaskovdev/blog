@@ -6,6 +6,11 @@ https://chatgpt.com/share/6760c540-5b90-8011-8e1d-07f1e6de71a7
 
 https://stackoverflow.com/questions/54081251/happens-before-and-reordering-of-volatile
 
+https://stackoverflow.com/a/2441402/8217032
+https://preshing.com/20130702/the-happens-before-relation/
+
+Check also: https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/
+
 ----
 
 For each program, there are many possible executions.
@@ -56,11 +61,12 @@ Probably related: https://stackoverflow.com/questions/32492621/happens-before-an
 The definition of what programs are called "correctly synchronized":
 
 "A program is correctly synchronized <=> all sequentially consistent executions are free of data races."
-NOTE: it's good that we only need to check data races in "sequentially consistent" executions only, because it's easier to reason about them, and they are a very small part of all the executions (with all the reordering and other magic that the compiler, the CPU, the OS and other parts of the computer can do). 
+NOTE: it's good that we only need to check data races in "sequentially consistent" executions only, because it's easier to reason about them, and they are a very small part of all the executions (with all the reordering and other magic that the compiler, the CPU, the OS and other parts of the computer can do).
+There is a clarification of this definition in the JLS, see "a program is correctly synchronized if, when it is executed in a sequentially consistent manner, there are no data races." Also check the ChatGPT link and search by the quote, it has additional explanation that seems plausible.
 
 An important property of correctly synchronized programs:
 
-"A program is correctly synchronized => all executions of the program will appear to be sequentially consistent."
+"A program is correctly synchronized => all executions of the program will appear to be sequentially consistent." Note: the comment right after this statement in the JLS further clarifies this and the above point.
 
 "sequentially consistent" very informally means that the program behaves in the most intuitive and predictable way possible. See the JMM for the formal definition.
 
