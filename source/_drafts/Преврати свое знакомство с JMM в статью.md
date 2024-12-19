@@ -7,9 +7,12 @@ https://chatgpt.com/share/6760c540-5b90-8011-8e1d-07f1e6de71a7
 https://stackoverflow.com/questions/54081251/happens-before-and-reordering-of-volatile
 
 https://stackoverflow.com/a/2441402/8217032
-https://preshing.com/20130702/the-happens-before-relation/
 
 Check also: https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/
+
+Probably related: https://stackoverflow.com/questions/32492621/happens-before-and-program-order-in-java-memory-model
+It also has a link to this great article: https://preshing.com/20130702/the-happens-before-relation/.
+It also introduces po, similarly to hb. You can write po(x, y) looking at the program code in the same way as you write hb(x, y) looking at the code and the execution.
 
 ----
 
@@ -52,10 +55,6 @@ There should be the happens-before relationship between the write of a default v
 ----
 
 Look at an execution of a program. Is this a legal execution? Feel free to reorder the actions of one thread as long as the reordering "does not affect the execution of that thread in isolation." I.e., reorder if the reordering does not break your program.
-
-----
-
-Probably related: https://stackoverflow.com/questions/32492621/happens-before-and-program-order-in-java-memory-model
 
 ----
 The definition of what programs are called "correctly synchronized":
