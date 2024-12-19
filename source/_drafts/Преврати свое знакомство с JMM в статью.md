@@ -62,7 +62,7 @@ An important property of correctly synchronized programs:
 
 "A program is correctly synchronized => all executions of the program will appear to be sequentially consistent."
 
-"sequentially consistent" very informally means that the program behaves in the most intuitive way possible.
+"sequentially consistent" very informally means that the program behaves in the most intuitive and predictable way possible. See the JMM for the formal definition.
 
 Could I, as a application (not JVM) developer, summarize the JMM like this:
 
