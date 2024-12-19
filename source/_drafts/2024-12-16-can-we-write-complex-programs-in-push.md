@@ -163,7 +163,7 @@ else
 can be expressed in Push using the conditional execution (`exec.if`):
 
 ```push
-# The condition (will be pushed to the boolean stack)
+true # The condition (will be pushed to the boolean stack)
 
 exec.if
 (
@@ -190,7 +190,7 @@ can be written in Push using the Y combinator (`exec.y`) and the conditional exe
 ```push
 exec.y
 (
-    # The condition (will be pushed to the boolean stack)
+    true # The condition (will be pushed to the boolean stack)
 
     exec.if
     (
