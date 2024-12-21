@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Can We Write Complex Programs in Push? | Developer Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+  
+  <meta name="description" content="When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough for any piece of software to be written in it?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can We Write Complex Programs in Push?">
+<meta property="og:url" content="https://yaskovdev.com/2024/12/21/can-we-write-complex-programs-in-push/index.html">
+<meta property="og:site_name" content="Developer Notes">
+<meta property="og:description" content="When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough for any piece of software to be written in it?">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yaskovdev.com/2024/12/21/can-we-write-complex-programs-in-push/mechanical-calculator.png">
+<meta property="og:image" content="https://yaskovdev.com/2024/12/21/can-we-write-complex-programs-in-push/urm-interpreter-memory.png">
+<meta property="og:image" content="https://yaskovdev.com/2024/12/21/can-we-write-complex-programs-in-push/psh-output.png">
+<meta property="article:published_time" content="2024-12-21T14:33:16.000Z">
+<meta property="article:modified_time" content="2024-12-21T01:50:27.635Z">
+<meta property="article:author" content="Sergey Yaskov">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yaskovdev.com/2024/12/21/can-we-write-complex-programs-in-push/mechanical-calculator.png"><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">Developer Notes</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/subscribe">Subscribe</a>
+    
+    
+  </nav>
+</header>
+
+    <div id="content">
+      <article id="post-can-we-write-complex-programs-in-push" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      Can We Write Complex Programs in Push?
+    </h2>
+  
+
+
+        <div class="article-meta">
+          
+            <time class="article-date" datetime="2024-12-21T14:33:16.000Z" itemprop="datePublished">21.12.2024</time>
+
+          
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>When I first saw Push, I wondered: Is this suspiciously simple language really powerful enough to express <em>any</em> piece of software?</p>
+<p>If it is, then artificial evolution “equipped” with Push will eventually create arbitrarily complex software. If it isn’t, there will always be programs that it will never produce, no matter how long I wait. In this case, the question then becomes: What are those “unreachable” programs?</p>
+<p>If you’re wondering what I’m talking about, you might have missed my previous article. You can catch up by reading <a href="/2024/11/29/intro-to-genetic-programming-can-evolution-write-computer-programs/" title="Intro to Genetic Programming: Can Evolution Write Computer Programs?">&quot;Intro To Genetic Programming: Can Evolution Write Computer Programs?&quot;</a>. Alternatively, you can quickly learn about Push <a target="_blank" rel="noopener" href="https://erp12.github.io/push-redux/pages/intro_to_push/">here</a>.</p>
+<img src="/2024/12/21/can-we-write-complex-programs-in-push/mechanical-calculator.png" class="" title="Mechanical Calculator">
+
+<h1 id="Turing-Completeness"><a href="#Turing-Completeness" class="headerlink" title="Turing Completeness"></a>Turing Completeness</h1><p>If I could prove that Push is Turing-complete, it would mean that Push can compute any function that is computable. <a target="_blank" rel="noopener" href="https://evinsellin.medium.com/what-exactly-is-turing-completeness-a08cc36b26e2">This article</a> provides a great explanation of Turing-completeness.</p>
+<p>According to the Church–Turing thesis, any mechanical device, no matter how complex, can compute only computable functions (<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Computable_function">source</a>).</p>
+<p>This would mean that anything a computer can do, Push could also do.</p>
+<p>In theory<sup>*</sup>, this implies that an evolutionary process using Push could eventually create software of unlimited complexity, provided it had enough time and storage space.</p>
+<h1 id="How-to-Prove-Turing-Completeness"><a href="#How-to-Prove-Turing-Completeness" class="headerlink" title="How to Prove Turing Completeness"></a>How to Prove Turing Completeness</h1><p>One of <a target="_blank" rel="noopener" href="https://iwriteiam.nl/Ha_bf_Turing.html">the ways</a> to prove that a language is Turing-complete<sup>**</sup> is to show that it can simulate a Universal Turing Machine.</p>
+<p>I don’t need to simulate a Universal Turing Machine directly, though. Instead, I can show that it’s possible to simulate a language that is already proven to simulate a Universal Turing Machine. Ideally, this language should be either simple or very similar to the one I’m trying to prove is Turing-complete.</p>
+<h1 id="Universal-Register-Machine"><a href="#Universal-Register-Machine" class="headerlink" title="Universal Register Machine"></a>Universal Register Machine</h1><p>One of the simplest languages that can simulate a Universal Turing Machine is the Universal Register Machine (URM).</p>
+<p>The language manipulates an array of registers. Each register can store an integer. The language has only five commands:</p>
+<ol>
+<li><code>an</code> — increment register <code>n</code>;</li>
+<li><code>sn</code> — decrement register <code>n</code>;</li>
+<li><code>x;y</code> — execute command x and then y;</li>
+<li><code>(x)n</code> — execute command <code>x</code> while register <code>n</code> is nonzero; and</li>
+<li><code>.</code> — halt.</li>
+</ol>
+<p>Some URM program examples include:</p>
+<p>Add register 3 to register 2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a2;s3)3.</span><br></pre></td></tr></table></figure>
+
+<p>Swap registers <code>1</code> and <code>2</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(s1;a3)1; (s2;a1)2; (a2;s3)3.</span><br></pre></td></tr></table></figure>
+
+<p>Multiply register 2 with register 3:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a4;a5;s2)2; ((a2;s4)4; s3; (a1;a4;s5)5; (a5;s1)1)3.</span><br></pre></td></tr></table></figure>
+
+<p>Daniel Cristofani managed to <a target="_blank" rel="noopener" href="http://brainfuck.org/urmutm.txt">prove</a> that URM with only 5 registers is Turing-complete.</p>
+<p>Therefore, <strong>to prove that Push is Turing-complete, I need to show that it can simulate URM with 5 registers</strong>.</p>
+<h1 id="Writing-a-URM-Interpreter-in-Push"><a href="#Writing-a-URM-Interpreter-in-Push" class="headerlink" title="Writing a URM Interpreter in Push"></a>Writing a URM Interpreter in Push</h1><p>At first, I was not sure if it was even possible, let alone how to approach it. Luckily, Lee Spector, the creator of Push, <a target="_blank" rel="noopener" href="https://github.com/erp12/pyshgp/discussions/167#discussioncomment-11430700">drew my attention</a> to the <code>yank</code> and <code>shove</code> instructions which provide random access to Push stacks, essentially turning them into random-access memory. All that remained was to use the instructions correctly.</p>
+<h2 id="Stage-1-Writing-a-URM-Interpreter-in-C"><a href="#Stage-1-Writing-a-URM-Interpreter-in-C" class="headerlink" title="Stage 1: Writing a URM Interpreter in C#"></a>Stage 1: Writing a URM Interpreter in C#</h2><p>I decided to start with a URM interpreter in a more familiar language — C#. Then I could gradually get rid of the C# specific features to turn the implementation into something that I could easily (ideally almost “mechanically”) translate into Push.</p>
+<p>This part was relatively straightforward, and you can find the C# implementation <a target="_blank" rel="noopener" href="https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs">here</a>.</p>
+<p>You may notice that the interpreter only supports registers from <code>0</code> to <code>9</code>, however, it is more than enough for my purposes—remember that I only need to simulate URM programs with 5 registers.</p>
+<h2 id="Stage-2-Re-Writing-the-Interpreter-Without-Relying-on-Variables-and-Strings"><a href="#Stage-2-Re-Writing-the-Interpreter-Without-Relying-on-Variables-and-Strings" class="headerlink" title="Stage 2: Re-Writing the Interpreter Without Relying on Variables and Strings"></a>Stage 2: Re-Writing the Interpreter Without Relying on Variables and Strings</h2><p>In Push, there are no conventional variables, including those to store function arguments. I can only use the stacks, which act like arrays with random access, thanks to the <code>yank</code> and <code>shove</code> instructions.</p>
+<p>This means that I should now rewrite my C# interpreter so that it can only use an array for all the data it needs. What data does it need, specifically? The answer is the URM program itself, the registers, the integer pointer to the current URM instruction, and the <a target="_blank" rel="noopener" href="https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/OriginalInterpreter.cs#L26">auxiliary integer variable <code>b</code> that it uses to count the number of brackets</a>.</p>
+<p>To accommodate all of that, I decided to organize the memory as follows:</p>
+<img src="/2024/12/21/can-we-write-complex-programs-in-push/urm-interpreter-memory.png" class="" title="URM Interpreter Memory">
+
+<p>Now I finally understand what my programming teacher was explaining back when I was attending university. He said that in the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">Von Neumann architecture</a>, instructions and data are stored in the same memory and appear indistinguishable from each other.</p>
+<p>Another issue to address is that a URM program is a string, but our memory is an array of integers. To solve this, I decided to encode a URM program as an array of integers as follows:</p>
+<table>
+<thead>
+<tr>
+<th>URM Symbol</th>
+<th>Encoding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>a</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>s</td>
+<td>-2</td>
+</tr>
+<tr>
+<td>(</td>
+<td>-3</td>
+</tr>
+<tr>
+<td>)</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody></table>
+<p>The result is (quite an ugly) <a target="_blank" rel="noopener" href="https://github.com/yaskovdev/sandbox/blob/master/UniversalRegisterMachineInterpreter/UniversalRegisterMachineInterpreter/LimitedInterpreter.cs">C# implementation</a>. Although it is not pretty, I can now translate it into Push relatively easily.</p>
+<h2 id="Stage-3-Translating-the-Interpreter-in-C-into-Push"><a href="#Stage-3-Translating-the-Interpreter-in-C-into-Push" class="headerlink" title="Stage 3: Translating the Interpreter in C# into Push"></a>Stage 3: Translating the Interpreter in C# into Push</h2><h3 id="Adding-Multiline-Programs-Support-to-Psh"><a href="#Adding-Multiline-Programs-Support-to-Psh" class="headerlink" title="Adding Multiline Programs Support to Psh"></a>Adding Multiline Programs Support to Psh</h3><p>If you’ve seen my previous article, you may know that I have been using <a target="_blank" rel="noopener" href="https://github.com/yaskovdev/Psh">Psh</a> to run Push programs.</p>
+<p>However, Psh did not support multiline programs.</p>
+<p>I quickly abandoned the futile attempts to write the interpreter in one line, and instead added the support for multiline Push programs to Psh.</p>
+<h3 id="Adding-Comments-Support-to-Psh"><a href="#Adding-Comments-Support-to-Psh" class="headerlink" title="Adding Comments Support to Psh"></a>Adding Comments Support to Psh</h3><p>Another problem with Psh was that it did not support code comments. You rarely need comments in conventional languages—meaningful names for variables and functions make comments an almost redundant feature. But because Push has neither variables nor functions, comments are essential. Since the <a target="_blank" rel="noopener" href="http://faculty.hampshire.edu/lspector/push3-description.html">official Push specification</a> says nothing about the format of the comments, I decided to add them to Psh in this way:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1 2 integer.+) # This line adds 1 and 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="Finding-a-Way-to-“Debug”-Push-Programs"><a href="#Finding-a-Way-to-“Debug”-Push-Programs" class="headerlink" title="Finding a Way to “Debug” Push Programs"></a>Finding a Way to “Debug” Push Programs</h3><p>As John Carmack <a target="_blank" rel="noopener" href="https://youtu.be/tzr7hRXcwkw?t=232">explained</a> in one of his interviews, it is crucial to be able to debug your code, because your head is a “faulty interpreter.”</p>
+<p>Unfortunately, Psh does not have a debugger.</p>
+<p>There is a way to mitigate this issue, though: the <code>exec.flush</code> instruction. The instruction causes the Push interpreter to stop immediately. So, you can think of it as a breakpoint.</p>
+<p>Since Psh prints the Push stacks after each instruction, I could see the state of the stacks at the “breakpoint,” just like in a normal debugger:</p>
+<img src="/2024/12/21/can-we-write-complex-programs-in-push/psh-output.png" class="" title="Psh Output">
+
+<p>There are limitations. For example, I couldn’t resume the program execution after hitting such a “breakpoint.” However, it was worth giving it a try before writing the debugger myself.</p>
+<p>By the way, the same <code>exec.flush</code> instruction is what I need to implement the <code>.</code> (halt) command in URM.</p>
+<h3 id="Translating-the-C-if-else-Statement-Into-Push"><a href="#Translating-the-C-if-else-Statement-Into-Push" class="headerlink" title="Translating the C# if-else Statement Into Push"></a>Translating the C# <code>if-else</code> Statement Into Push</h3><p>After solving the above issues, the only thing left was to find the Push alternatives for the remaining C# statements.</p>
+<p>The <code>if-else</code> statement in C#</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// The body of the if statement</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// The body of the else statement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>can be expressed in Push using the conditional execution (<code>exec.if</code>):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">true # The condition (will be pushed to the boolean stack)</span><br><span class="line"></span><br><span class="line">exec.if</span><br><span class="line">(</span><br><span class="line">    # The body of the if statement</span><br><span class="line">)</span><br><span class="line">(</span><br><span class="line">    # The body of the else statement</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Translating-the-C-while-Statement-Into-Push"><a href="#Translating-the-C-while-Statement-Into-Push" class="headerlink" title="Translating the C# while Statement Into Push"></a>Translating the C# <code>while</code> Statement Into Push</h3><p>The <code>while</code> loop that looks like this in C#</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// The body of the loop</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>can be written in Push using the Y combinator (<code>exec.y</code>) and the conditional execution (<code>exec.if</code>):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">exec.y</span><br><span class="line">(</span><br><span class="line">    true # The condition (will be pushed to the boolean stack)</span><br><span class="line"></span><br><span class="line">    exec.if</span><br><span class="line">    (</span><br><span class="line">        # The body of the loop</span><br><span class="line">    ) </span><br><span class="line">    (</span><br><span class="line">        exec.pop</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Translating-the-C-Indexing-Operator-Into-Push"><a href="#Translating-the-C-Indexing-Operator-Into-Push" class="headerlink" title="Translating the C# Indexing Operator Into Push"></a>Translating the C# Indexing Operator Into Push</h3><p>The interpreter needs to access array elements by index quite a lot. The C# version is doing it like this: <code>memory[i]</code>. The <code>[]</code> is called “the indexing operator.” It allows for reading or writing the array element at the specified index.</p>
+<p>In Push, I can only “access” the top of the stack. So, I need to use <code>integer.yank</code> to move the element I need to the top of the stack. Then I can modify the element and use <code>integer.shove</code> to move it back. For example:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">memory[<span class="number">60</span>] += <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>turns into:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">60 integer.yank</span><br><span class="line">1 integer.+</span><br><span class="line">60 integer.shove</span><br></pre></td></tr></table></figure>
+
+<p>If I only need to read the element without modifying it, I can use <code>integer.yankdup</code> (no need to <code>integer.shove</code> it in this instance). For example:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">memory[<span class="number">6</span>] == <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>becomes:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6 integer.yankdup</span><br><span class="line">0 integer.=</span><br></pre></td></tr></table></figure>
+
+<h3 id="Putting-it-all-Together"><a href="#Putting-it-all-Together" class="headerlink" title="Putting it all Together"></a>Putting it all Together</h3><p>After applying the above transformations to the C# code, I ended up with the <a target="_blank" rel="noopener" href="https://gist.github.com/yaskovdev/71010ede2d070ed88c11334160fedc88"><strong>final Push implementation of the interpreter</strong></a>.</p>
+<p>The interpreter takes the registers and the encoded URM program as input, executes the program, and produces the final state of the registers as the result.</p>
+<h2 id="Testing-the-Interpreter"><a href="#Testing-the-Interpreter" class="headerlink" title="Testing the Interpreter"></a>Testing the Interpreter</h2><p>Let’s test the URM interpreter against the next input:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0 0 6 3 0 0</span><br><span class="line">-3 -1 4 -1 5 -2 2 -4 2 -3 -3 -1 2 -2 4 -4 4 -2 3 -3 -1 1 -1 4 -2 5 -4 5 -3 -1 5 -2 1 -4 1 -4 3 0</span><br></pre></td></tr></table></figure>
+
+<p>The second line is the encoded URM program that multiplies register 2 (initialized with <code>6</code> in the first line) with register 3 (initialized with <code>3</code>). The result of the program is the next <code>integer</code> stack:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0 18 0 6 6 -3 -1 4 -1 5 -2 2 -4 2 -3 -3 -1 2 -2 4 -4 4 -2 3 -3 -1 1 -1 4 -2 5 -4 5 -3 -1 5 -2 1 -4 1 -4 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 37 0</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, the state of the registers has changed to:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0 18 0 6 6</span><br></pre></td></tr></table></figure>
+
+<p>The register 2 now contains <code>18</code>, which is the expected result of the multiplication (the program treats registers 4 and 5 as auxiliary registers).</p>
+<h1 id="To-Summarize"><a href="#To-Summarize" class="headerlink" title="To Summarize"></a>To Summarize</h1><p>Now that we’ve successfully simulated a URM with 5 registers in Push — and a URM with 5 registers can simulate a Universal Turing Machine — we can conclude that Push is Turing-complete. In fact, we could strip away most of Push’s features and still retain a Turing-complete language.</p>
+<p>This demonstrates that Push is powerful enough to represent any computation, and by extension, any piece of software.</p>
+<hr>
+<p><sup>*</sup> In practice, Turing-completeness is often not enough. For example, Push programs might become so slow and memory-intensive that they can’t scale to the size of real-world programs. But—let’s deal with one problem at a time.<br><sup>**</sup> Strictly speaking, a language itself cannot be Turing-complete. When I say “a language is Turing-complete,” I actually mean that a computational system using the language to express programs is Turing-complete.</p>
+
+      
+    </div>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/push/">push</a>, <a class="article-category-link" href="/categories/push/psh/">psh</a>, <a class="article-category-link" href="/categories/push/psh/turing-completeness/">turing-completeness</a>, <a class="article-category-link" href="/categories/push/psh/turing-completeness/universal-register-machine/">universal-register-machine</a>, <a class="article-category-link" href="/categories/push/psh/turing-completeness/universal-register-machine/urm/">urm</a>
+      
+      
+      
+    </div>
+    
+    
+  </div>
+</article>
+
+  
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2024/11/29/intro-to-genetic-programming-can-evolution-write-computer-programs/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Intro to Genetic Programming: Can Evolution Write Computer Programs?
+        
+      </div>
+    </a>
+  
+</nav>
+
+
+
+
+
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var disqusShortname = 'yaskovdev';
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+    </div>
+  </div>
+  
+
+
+
+
+<div id="settings-container">
+  <div id="dark-mode">dark</div>
+  <div id="sans-font">sans</div>
+</div>
+<script type="text/javascript">
+let d=document,r=d.documentElement.style,f=r.setProperty.bind(r),l=localStorage,s=l.getItem('s')||(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches),n=l.getItem('n'),m=d.getElementById("dark-mode"),b=()=>{f('--bg-color','#fafafa');f('--code-bg-color','#f4f4f4');f('--text-color','#212121');f('--secondary-color','#808080');f('--tertiary-color','#b0b0b0');f('--link-color','#b5c8cf');f('--link-hover-color','#618794');f('--link-bg-color','#dae4e7');f('--selection-color','#dae4e7');m.innerHTML="dark"},c=()=>{f('--bg-color','#212121');f('--code-bg-color','#292929');f('--text-color','#fff');f('--secondary-color','#c0c0c0');f('--tertiary-color','#6e6e6e');f('--link-color','#4d6b75');f('--link-hover-color','#96b1bb');f('--link-bg-color','#5d828e');f('--selection-color','#acc1c9');m.innerHTML="light"},o=d.getElementById("sans-font"),e=()=>{f('--body-stack','"Lora", "Georgia", "Times New Roman", serif');o.innerHTML="sans"},g=()=>{f('--body-stack','"Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Verdana", sans-serif');o.innerHTML="serif"};m.onclick=()=>{if(s==2){s=1;l.setItem('s',s);c()}else{s=2;l.setItem('s',s);b()}};o.onclick=()=>{if(n==2){n=1;l.setItem('n',n);g()}else{n=2;l.setItem('n',n);e()}};if(!s){s=2;l.setItem('s',2)};if(s==1){c()};if(!n){n=2;l.setItem('n',2)};if(n==1){g()};
+</script>
+
+
+
+<script src="https://unpkg.com/@botpoison/browser" async></script>
+
+</body>
+</html>
