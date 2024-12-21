@@ -163,9 +163,7 @@ else
 can be expressed in Push using the conditional execution (`exec.if`):
 
 ```push
-true # The condition (will be pushed to the boolean stack)
-
-exec.if
+<condition> exec.if
 (
     # The body of the if statement
 )
@@ -190,9 +188,7 @@ can be written in Push using the Y combinator (`exec.y`) and the conditional exe
 ```push
 exec.y
 (
-    true # The condition (will be pushed to the boolean stack)
-
-    exec.if
+    <condition> exec.if
     (
         # The body of the loop
     ) 
