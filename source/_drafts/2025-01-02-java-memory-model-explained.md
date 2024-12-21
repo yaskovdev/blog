@@ -86,3 +86,25 @@ Could I, as a application (not JVM) developer, summarize the JMM like this:
 You have to write programs that are correctly synchronized (TODO: why?). By definition of "correctly synchronized", this means that you have to write programs all sequentially consistent executions of which are free of data races.
 
 By definition of a data race, this is the same as saying that you have to write programs all conflicting accesses of all sequentially consistent executions of which are ordered by a happens-before relationship.
+
+----
+
+https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/#wishful-all-my-hb
+Statements cannot hb, only actions can hb. To turn statements into actions we need an actual execution. Therefore, to analyze the hb relationships to understand if we have data races, we need to look at the actual execution.
+The difference between a program and its executions is very important to talk about at the brownbag.
+```
+program = statement+
+execution = action+
+1 program has * (many) executions
+```
+
+----
+
+https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/#wishful-hb-actual
+"Marking field a with volatile modifier precludes the 1, 0 outcome, because then the synchronization order consistency rule will take power over both reads." probably references to the next guarantee from the JMM: "For each thread t, the synchronization order of the synchronization actions (§17.4.2) in t is consistent with the program order (§17.4.3) of t."
+The same guarantee, by the way, explains the result you see in your 2nd comment to https://stackoverflow.com/a/79289382/1862286.
+By the way, it does not mean that _other threads_ will see the synchronization actions in the same order as the program order of the thread that generated them. It only means that the thread itself will see them in the order they're written in the program code. This "does not mean" explains this result https://github.com/openjdk/jcstress/blob/4434266ec6c3bb5f98567d9d069cef39f7b1609c/jcstress-samples/src/main/java/org/openjdk/jcstress/samples/jmm/advanced/AdvancedJMM_01_SynchronizedBarriers.java. See also https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/#wishful-so-is-actual.
+
+----
+
+In brownbag mention https://shipilev.net/blog/2014/safe-public-construction. A good example of why `final` (or `readonly` in C#) is important. "It may save days of debugging time for you", see https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/#wishful-tso-is-fine.
