@@ -90,7 +90,7 @@ To accommodate all of that, I decided to organize the memory as follows:
 
 {% asset_img urm-interpreter-memory.png URM Interpreter Memory %}
 
-(Now I finally understand what my programming teacher was saying when he explained that in the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) instructions and data are stored in the same memory and appear indistinguishable from each other.)
+Now I finally understand what my programming teacher was explaining back when I was attending university. He said that in the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture), instructions and data are stored in the same memory and appear indistinguishable from each other.
 
 Another issue to address is that a URM program is a string, but our memory is an array of integers. To solve this, I decided to encode a URM program as an array of integers as follows:
 
@@ -204,7 +204,7 @@ exec.y
 
 ### Translating the C# Indexing Operator Into Push
 
-The interpreter needs to access array elements by index quite a lot. The C# version is doing it like this: `memory[i]`. The `[]` is called "the indexing operator." It allows to read or write the array element at the specified index.
+The interpreter needs to access array elements by index quite a lot. The C# version is doing it like this: `memory[i]`. The `[]` is called "the indexing operator." It allows for reading or writing the array element at the specified index.
 
 In Push, I can only "access" the top of the stack. So, I need to use `integer.yank` to move the element I need to the top of the stack. Then I can modify the element and use `integer.shove` to move it back. For example:
 
@@ -267,6 +267,8 @@ The register 2 now contains `18`, which is the expected result of the multiplica
 Now that we've successfully simulated a URM with 5 registers in Push — and a URM with 5 registers can simulate a Universal Turing Machine — we can conclude that Push is Turing-complete. In fact, we could strip away most of Push's features and still retain a Turing-complete language.
 
 This demonstrates that Push is powerful enough to represent any computation, and by extension, any piece of software.
+
+----
 
 <sup>*</sup> In practice, Turing-completeness is often not enough. For example, Push programs might become so slow and memory-intensive that they can't scale to the size of real-world programs. But—let's deal with one problem at a time.
 <sup>**</sup> Strictly speaking, a language itself cannot be Turing-complete. When I say "a language is Turing-complete," I actually mean that a computational system using the language to express programs is Turing-complete.
