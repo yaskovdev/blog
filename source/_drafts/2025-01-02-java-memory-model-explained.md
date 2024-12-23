@@ -108,3 +108,39 @@ By the way, it does not mean that _other threads_ will see the synchronization a
 ----
 
 In brownbag mention https://shipilev.net/blog/2014/safe-public-construction. A good example of why `final` (or `readonly` in C#) is important. "It may save days of debugging time for you", see https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/#wishful-tso-is-fine.
+
+The goal of the brownbag: to build a mental model.
+
+----
+
+"Thread interleaving is not deterministic (https://youtu.be/WTVooKLLVT8?t=293)."
+
+"The performance boost is orders of magnitudes. So it's absolutely necessary (https://youtu.be/WTVooKLLVT8?t=843)."
+
+----
+
+See "зачем нужен этот весь матан, который начинается с пункта 17.4.6" from the chat with Arthur for a way to look at the 17.4.6-17.4.9 sections.
+
+See also Table 17.4.5-A and Table 17.4.8-A.
+
+----
+
+It's better to write the executions in the Example 17.4.5-1 like this (see the https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/ article for the notation):
+
+```
+write(B, 1)
+write(A, 2)
+read(A):0
+read(B):0
+```
+
+```
+read(A):2
+read(B):1
+write(B, 1)
+write(A, 2)
+```
+
+----
+
+One _possible_ way to explain what this means (see https://stackoverflow.com/questions/79301954/why-does-the-java-memory-model-allow-reads-to-observe-future-writes) is that we want all the traces in the §17.4.5 to be legal (because although weird, their results may be explained via a sequentially consistent executions). At the same time, we want the trace in §17.4.8 to be illegal (it is not only weird, but also illegal, because the result it leaves us with cannot be explained via a sequentially consistent execution).
