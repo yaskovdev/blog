@@ -111,6 +111,13 @@ In brownbag mention https://shipilev.net/blog/2014/safe-public-construction. A g
 
 The goal of the brownbag: to build a mental model.
 
+Imagine you wrote a program. What you do next? You pass it to an executor (usually compiler + CPU) that runs it. Every time you run your program, you produce a so-called execution of the program. If you run it multiple times, you may (and in practice almost always will) produce multiple different executions.
+
+But what is an execution, exactly? In our model it's a sequence of reads from and writes to memory. E.g., read() -> 1 (read that returned 1) or write(2) (an attempt to write 2). TODO: why does it matter what writes our execution contains? Don't only reads matter?
+
+Misconceptions:
+1. I only need to cover writes with the lock, if I read the variable, the lock is not needed
+
 ----
 
 "Thread interleaving is not deterministic (https://youtu.be/WTVooKLLVT8?t=293)."
@@ -144,3 +151,30 @@ write(A, 2)
 ----
 
 One _possible_ way to explain what this means (see https://stackoverflow.com/questions/79301954/why-does-the-java-memory-model-allow-reads-to-observe-future-writes) is that we want all the traces in the §17.4.5 to be legal (because although weird, their results may be explained via a sequentially consistent executions). At the same time, we want the trace in §17.4.8 to be illegal (it is not only weird, but also illegal, because the result it leaves us with cannot be explained via a sequentially consistent execution).
+
+----
+
+Good paper: http://www-sop.inria.fr/everest/personnel/Gustavo.Petri/publis/jmm-vamp07.pdf
+
+```
+r2 := y; // assume that in Thread 2 the read of 42 from y could happen
+x := r2; // it justifies the write of 42 to x in Thread 2
+r1 := x; // we conclude that the read of x in Thread 1 could see a value of 42
+y := r1; // it justifies the write of 42 to x in Thread 1
+```
+
+"The main idea to prevent the behaviours depicted in Figure 1 is to disallow circular justification of actions. The committing procedure guarantees this by disallowing reads not already committed to see writes that do not happen before them. Moreover, for a read `r` to be able to see a write `w` that is not `hb` related to it, `w` must be committed before `r`, thus, it must be able to happen regardless of whether `r` sees it."
+
+See Java Language Specification (23), page 776:
+Construct the C0, C1, ..., Cn = A sets and for each Ci provide a well-formed execution Ei so that every action in Ci must be one of the actions in Ei. And also 2 and 3.
+
+E — justified execution (the execution being justified).
+Ei — justifying execution.
+
+"A simple way to achieve this would be to require that all reads see only writes that happen before them", but that would forbid data races, which is not what we want. Therefore, we require "all __uncommitted__ reads to see writes that happen before them."
+
+"it is impossible to find a justifying execution", i.e., that intermediate execution Ei.
+
+Very abstractly, we require that each execution E should be constructed step by step.
+
+----
