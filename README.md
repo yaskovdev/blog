@@ -43,3 +43,13 @@ hexo clean && hexo deploy
 ```
 
 See [this article](https://hexo.io/docs/one-command-deployment#Git) for more information.
+
+## Email Subscriptions
+
+Subscriptions are managed by [Buttondown](https://buttondown.com/yaskovdev).
+
+The form in `source\subscribe\index.md` uses Buttondown's native HTML POST endpoint so Buttondown can handle CAPTCHA, validation errors, and email confirmation. It does not need an API key.
+
+Readers unsubscribe using links in Buttondown emails or the [subscriber portal](https://buttondown.com/portal). The `/unsubscribe/` page links to these options.
+
+The `/subscribed/` and `/unsubscribed/` pages remain available for old links; they do not confirm a subscription or unsubscribe anyone.

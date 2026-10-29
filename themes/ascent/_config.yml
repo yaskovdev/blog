@@ -12,6 +12,7 @@ excerpt_link: read more
 
 # Settings toggle
 settings: true
+font_switch: false
 
 # Code CSS toggle
 highlight: true

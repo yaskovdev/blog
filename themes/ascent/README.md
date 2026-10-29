@@ -38,7 +38,9 @@ menu:
 
 * `favicon`. Path to the favicon.
 
-* `settings`. Toggles whether the settings (sans-serif/serif, light/dark) appear in the lower-right corner of the screen.
+* `settings`. Toggles the settings controls in the lower-right corner of the screen.
+
+* `font_switch`. Shows the serif/sans-serif switch when `settings` is enabled. Defaults to `false`; while hidden, the main text always uses serif.
 
 * `highlight`. Toggles whether code blocks are styled. Changing this to `false` improves performance by a little bit.
 

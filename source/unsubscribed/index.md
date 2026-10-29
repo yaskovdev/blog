@@ -1,9 +1,9 @@
 ---
-title: You’ve Unsubscribed
+title: Manage Your Subscription
 show_date: false
 comments: false
 ---
 
-You have successfully unsubscribed.
+To unsubscribe, use the link at the bottom of an email from this blog or {% full_url_for 'manage your subscription' /unsubscribe %} using Buttondown.
 
-You can always subscribe again using {% full_url_for 'the link' /subscribe %}.
+You can always {% full_url_for 'subscribe again' /subscribe %}.

@@ -4,40 +4,16 @@ show_date: false
 comments: false
 ---
 
-<style type="text/css">
-    input[type=email] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    button {
-        background-color: var(--link-color);
-        color: var(--text-color);
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 0.8em;
-        font-family: var(--body-stack);
-    }
-
-    button:hover {
-        background-color: var(--link-hover-color);
-    }
-</style>
-
-Subscribe with your email to receive notifications whenever a new article is published. You’ll receive a confirmation email once your subscription is processed.
-
-<form method="POST" action="https://submit-form.com/lVazsESIY" data-botpoison-public-key="pk_bcda581e-0b42-49ea-af0e-8d66292d774f">
-    <input type="hidden" name="_redirect" value="{% fixed_full_url_for /subscribed %}"/>
-    <input type="hidden" name="_email.subject" value="Subscribe Me"/>
-    <label for="email">Your email</label>
-    <input id="email" class="field field-text" name="email" size="25" maxlength="255" type="email" required="required"/>
-    <button type="submit">Subscribe</button>
-</form>
+<div class="subscription">
+    <p class="subscription-intro">Get an email whenever a new article is published.</p>
+    <form class="subscription-form" method="POST" action="https://buttondown.com/api/emails/embed-subscribe/yaskovdev">
+        <input type="hidden" name="embed" value="1"/>
+        <label for="email">Email address</label>
+        <div class="subscription-controls">
+            <input id="email" name="email" maxlength="255" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="subscription-note" required="required"/>
+            <button type="submit">Subscribe</button>
+        </div>
+        <p class="subscription-note" id="subscription-note">We'll send you a link to confirm your subscription.</p>
+    </form>
+    <p class="subscription-footer">Unsubscribe at any time. Managed by <a href="https://buttondown.com/yaskovdev">Buttondown</a>.</p>
+</div>
