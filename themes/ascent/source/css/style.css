@@ -367,18 +367,8 @@ blockquote {
   max-width: 28em;
 }
 
-.subscription-intro {
-  text-align: center;
-}
-
-.subscription-form {
-  font-size: clamp(16px, 2.1vw, 18px);
-  padding: 1rem 0;
-}
-
 .subscription-form label {
   display: block;
-  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
@@ -414,7 +404,6 @@ blockquote {
   border: 1px solid transparent;
   color: var(--text-color);
   cursor: pointer;
-  font-weight: bold;
   padding: 0.65rem 1.1rem;
 }
 
@@ -428,20 +417,12 @@ blockquote {
 }
 
 .subscription-note {
-  font-size: 0.875em;
+  font-size: 1rem;
   margin: 0.875rem 0 0;
   opacity: 0.8;
 }
 
-.subscription-footer {
-  font-family: var(--secondary-stack);
-  font-size: 0.875rem;
-  margin: 1rem 0 0;
-  opacity: 0.8;
-  text-align: center;
-}
-
-.subscription-footer a, .subscription-footer a:hover {
+.subscription-note a, .subscription-note a:hover {
   border-bottom-width: 1px;
 }
 

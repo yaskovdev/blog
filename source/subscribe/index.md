@@ -5,7 +5,7 @@ comments: false
 ---
 
 <div class="subscription">
-    <p class="subscription-intro">Get an email whenever a new article is published.</p>
+    <p>Get an email whenever a new article is published.</p>
     <form class="subscription-form" method="POST" action="https://buttondown.com/api/emails/embed-subscribe/yaskovdev">
         <input type="hidden" name="embed" value="1"/>
         <label for="email">Email address</label>
@@ -13,7 +13,9 @@ comments: false
             <input id="email" name="email" maxlength="255" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="subscription-note" required="required"/>
             <button type="submit">Subscribe</button>
         </div>
-        <p class="subscription-note" id="subscription-note">We'll send you a link to confirm your subscription.</p>
+        <p class="subscription-note">
+            <span id="subscription-note">We'll send you a link to confirm your subscription.</span>
+            Unsubscribe at any time. Managed by <a href="https://buttondown.com/yaskovdev">Buttondown</a>.
+        </p>
     </form>
-    <p class="subscription-footer">Unsubscribe at any time. Managed by <a href="https://buttondown.com/yaskovdev">Buttondown</a>.</p>
 </div>
