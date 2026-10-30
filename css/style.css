@@ -20,6 +20,7 @@ html {
   height: 100%;
 }
  
+/* Keep body unpositioned for autofill overlays that use document coordinates. */
 body {
   background: var(--bg-color);
   color: var(--text-color);
@@ -28,7 +29,6 @@ body {
   font-size: clamp(16px, 2.4vw, 21px);
   margin: auto;
   min-height: 100%;
-  position: relative;
   width: 100%;
 }
  
@@ -360,6 +360,76 @@ blockquote {
   margin-bottom: 1.1em;
   text-align: center;
   text-transform: uppercase;
+}
+
+.subscription {
+  margin: 0 auto;
+  max-width: 28em;
+}
+
+.subscription-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.subscription-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.subscription-form input[type=email], .subscription-form button {
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  font: inherit;
+  min-height: 2.75rem;
+}
+
+.subscription-form input[type=email] {
+  background: var(--bg-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--text-color);
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem 2.75rem 0.65rem 0.8rem;
+  width: 100%;
+}
+
+.subscription-form input[type=email]::placeholder {
+  color: var(--text-color);
+  opacity: 0.65;
+}
+
+.subscription-form button {
+  background: var(--link-color);
+  border: 1px solid transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.65rem 1.1rem;
+}
+
+.subscription-form button:hover {
+  border-color: var(--link-hover-color);
+}
+
+.subscription-form input[type=email]:focus-visible, .subscription-form button:focus-visible {
+  outline: 2px solid var(--link-hover-color);
+  outline-offset: 3px;
+}
+
+.subscription-note {
+  font-size: 1rem;
+  margin: 0.875rem 0 0;
+  opacity: 0.8;
+}
+
+.subscription-note a, .subscription-note a:hover {
+  border-bottom-width: 1px;
+}
+
+@media all and (max-width:520px) {
+  .subscription-controls {
+    flex-direction: column;
+  }
 }
  
 /* miscellaneous */
