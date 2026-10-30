@@ -15,15 +15,15 @@
 <link rel="stylesheet" href="/css/highlight.css">
 
   
-  <meta name="description" content="To complete your subscription, open the confirmation email from Buttondown and follow the link. You will receive updates only after confirming your email address. If you cannot find the email, check y">
+  <meta name="description" content="To complete your subscription, open the confirmation email from Buttondown sent to  and follow the link. You will receive updates only after confirming your email address. If you cannot find the email">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Check Your Inbox">
 <meta property="og:url" content="https://yaskovdev.com/check-email/index.html">
 <meta property="og:site_name" content="Developer Notes">
-<meta property="og:description" content="To complete your subscription, open the confirmation email from Buttondown and follow the link. You will receive updates only after confirming your email address. If you cannot find the email, check y">
+<meta property="og:description" content="To complete your subscription, open the confirmation email from Buttondown sent to  and follow the link. You will receive updates only after confirming your email address. If you cannot find the email">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-10-29T22:54:03.411Z">
-<meta property="article:modified_time" content="2026-10-29T22:54:03.411Z">
+<meta property="article:published_time" content="2026-10-30T20:56:25.166Z">
+<meta property="article:modified_time" content="2026-10-30T20:56:25.166Z">
 <meta property="article:author" content="Sergey Yaskov">
 <meta name="twitter:card" content="summary"><meta name="generator" content="Hexo 7.3.0"></head>
 
@@ -70,8 +70,23 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <p>To complete your subscription, open the confirmation email from Buttondown and follow the link. You will receive updates only after confirming your email address.</p>
+        <p>To complete your subscription, open the confirmation email from Buttondown<span id="subscription-recipient" hidden> sent to <strong id="subscription-email"></strong></span> and follow the link. You will receive updates only after confirming your email address.</p>
 <p>If you cannot find the email, check your spam folder.</p>
+<script>
+(() => {
+    const email = new URLSearchParams(window.location.search).get('email_address')?.trim();
+    if (email) {
+        const address = document.getElementById('subscription-email');
+        const at = email.lastIndexOf('@');
+        if (at > 0) {
+            address.append(email.slice(0, at), document.createElement('wbr'), email.slice(at));
+        } else {
+            address.textContent = email;
+        }
+        document.getElementById('subscription-recipient').hidden = false;
+    }
+})();
+</script>
 
       
     </div>
