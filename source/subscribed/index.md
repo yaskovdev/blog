@@ -1,11 +1,9 @@
 ---
-title: Check Your Inbox
+title: Subscription Confirmed
 show_date: false
 comments: false
 ---
 
-To complete your subscription, open the confirmation email from Buttondown and click the link inside. You will receive updates only after confirming your email address.
+Thank you for confirming your subscription! You'll receive an email whenever a new article is published.
 
-If you cannot find the email, check your spam folder.
-
-You can unsubscribe at any time using the link at the bottom of any newsletter. You can also {% full_url_for 'manage your subscription' /unsubscribe %}.
+You can {% full_url_for 'unsubscribe at any time' /unsubscribe %}.

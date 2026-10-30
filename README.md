@@ -50,6 +50,17 @@ Subscriptions are managed by [Buttondown](https://buttondown.com/yaskovdev).
 
 The form in `source\subscribe\index.md` uses Buttondown's native HTML POST endpoint so Buttondown can handle CAPTCHA, validation errors, and email confirmation. It does not need an API key.
 
-Readers unsubscribe using links in Buttondown emails or the [subscriber portal](https://buttondown.com/portal). The `/unsubscribe/` page links to these options.
+Configure the redirects in Buttondown under **Settings > Subscribing > Redirects**:
 
-The `/subscribed/` and `/unsubscribed/` pages remain available for old links; they do not confirm a subscription or unsubscribe anyone.
+| Setting | Production URL |
+| --- | --- |
+| After subscribing | https://yaskovdev.com/check-email/ |
+| After confirming | https://yaskovdev.com/subscribed/ |
+
+Deploy these pages before using the production URLs. For local testing, replace `https://yaskovdev.com` with `http://127.0.0.1:4000`. These settings apply to the whole newsletter, so switch back to production URLs after testing and deployment.
+
+The flow is `/subscribe/` -> Buttondown -> `/check-email/` -> the confirmation email's signed link -> Buttondown -> `/subscribed/`. The blog pages only display instructions or success messages; Buttondown performs the actual confirmation. Move the initial-submission redirect to `/check-email/` before making `/subscribed/` a success page.
+
+Readers unsubscribe using links in Buttondown emails or the [subscriber portal](https://buttondown.com/portal). Unsubscribe actions and their completion screens stay in Buttondown. The `/unsubscribe/` page explains these options and asks readers on the old, manually managed list to request removal by replying to an earlier newsletter.
+
+The legacy `/unsubscribed/` page remains available for old links and points to `/unsubscribe/`; opening it does not unsubscribe anyone.
